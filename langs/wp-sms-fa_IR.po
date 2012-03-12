@@ -1,0 +1,474 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Sms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-12 11:29+0330\n"
+"PO-Revision-Date: 2012-03-12 11:30+0330\n"
+"Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
+"Language-Team: Web Studio <mst404@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: F:\\Program Files\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wp-sms\n"
+"X-Poedit-Language: Persian\n"
+"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
+"X-Poedit-SearchPath-0: F:\\Program Files\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wp-sms\n"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:25
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:199
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:25
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:136
+msgid "SMS Setting"
+msgstr "تنظیمات پیامک"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:26
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:340
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:389
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:444
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:26
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:253
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:302
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:357
+msgid "Send SMS"
+msgstr "ارسال پیامک"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:27
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:27
+msgid "Members Newsletter"
+msgstr "کاربران خبرنامه"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:45
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:53
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:416
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:420
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:422
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:53
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:329
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:333
+msgid "SMS"
+msgstr "پیامک"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:64
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:453
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:64
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:366
+#, php-format
+msgid "Please check the <a href=\"%s\">SMS credit</a> the settings"
+msgstr "لطفا تنظیمات <a href=\"%s\">اعتباری پیامک</a> را بررسی کنید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:93
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:94
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:93
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:94
+msgid "Subscribe to SMS"
+msgstr "خبرنامه پیامکی"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:106
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/form.php:32
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:34
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:43
+msgid "Subscribe"
+msgstr "اشتراک"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:121
+msgid "Send this post to subscribers?"
+msgstr "ارسال این نوشته به کاربران خبرنامه؟"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:123
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:431
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:344
+msgid "Yes"
+msgstr "بله"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:124
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:434
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:347
+msgid "No"
+msgstr "خیر"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:174
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:532
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:570
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:591
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:112
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:442
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:480
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:501
+msgid "Name"
+msgstr "نام"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:185
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:282
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:462
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:123
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:195
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:375
+msgid "You do not have sufficient permissions to access this page."
+msgstr "شما مجوز کافی برای دیدن این برگه را ندارید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:203
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:140
+msgid "Credit SMS Setting"
+msgstr "تنظیمات اعتبار پیامک"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:205
+msgid "Web Service"
+msgstr "وب‌سرویس"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:208
+msgid "Select your Web Service"
+msgstr "وب‌سرویس خودرا انتخاب کنید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:214
+msgid "Select"
+msgstr "انتخاب"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:220
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:142
+msgid "Username"
+msgstr "نام‌کاربری"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:223
+msgid "Your username in"
+msgstr "نام‌کاربری شما در"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:228
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:150
+msgid "Password"
+msgstr "رمزعبور"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:231
+msgid "Your password in"
+msgstr "رمزعبور شما در"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:236
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:158
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:171
+msgid "Status"
+msgstr "وضعیت"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:240
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:253
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:261
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:162
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:174
+msgid "Active"
+msgstr "فعال"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:242
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:164
+msgid "Deactive"
+msgstr "غیرفعال"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:248
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:169
+msgid "Newsletter"
+msgstr "خبرنامه"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:250
+msgid "Register?"
+msgstr "نام‌نویسی؟"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:258
+msgid "Posts sent to subscribers?"
+msgstr "ارسال نوشته‌ها به مشترکین؟"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:270
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:183
+msgid "Update"
+msgstr "به‌روزرسانی"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:377
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:290
+msgid "SMS was sent with success"
+msgstr "پیامک با موفقیت ارسال شد"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:380
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:293
+msgid "Please enter a message"
+msgstr "لطفا قسمت پیامک را وارد کنید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:391
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:304
+msgid "Send from"
+msgstr "ارسال از"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:400
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:313
+msgid "Send to"
+msgstr "ارسال به"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:404
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:317
+msgid "Subscribe users"
+msgstr "کاربران خبرنامه"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:404
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:317
+msgid "Peaple"
+msgstr "نفر"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:405
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:318
+msgid "Numbers"
+msgstr "شماره‌ها"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:410
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:323
+msgid "For example"
+msgstr "برای مثال"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:419
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:332
+msgid "The remaining words"
+msgstr "کلمات باقی‌مانده"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:422
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:335
+msgid "Your credit"
+msgstr "اعتبار شما"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:428
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:341
+msgid "Send a Flash"
+msgstr "ارسال یه‌صورت فلش"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:437
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:350
+msgid "Flash is possible to send messages without being asked, opens"
+msgstr "ارسال فلش امکانی است که پیام را بدون درخواست گیرند، باز می کند"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:472
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:385
+msgid "Subscribes list"
+msgstr "لیست مشترک‌ها"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:493
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:406
+msgid "Number with success was added"
+msgstr "با موفقیت اضافه شد"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:496
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:409
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/newsletter.php:24
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:39
+msgid "Phone number is repeated"
+msgstr "شماره موبایل تکراری است"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:499
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:412
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/newsletter.php:27
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:42
+msgid "Please enter a valid mobile number"
+msgstr "شماره موبایل معتبر نیست"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:502
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:415
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/newsletter.php:30
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:45
+msgid "Please complete all fields"
+msgstr "لطفا تمامی فیلدها را کامل کنید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:518
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:428
+msgid "With success was removed"
+msgstr "باموفقیت حذف شد"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:520
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:430
+msgid "Not Found"
+msgstr "چیزی یافت نشد"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:530
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:568
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:440
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:478
+msgid "ID"
+msgstr "شماره"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:531
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:569
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:441
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:479
+msgid "Register date"
+msgstr "تاریخ عضویت"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:533
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:571
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:592
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:443
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:481
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:502
+msgid "Mobile"
+msgstr "موبایل"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:560
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:470
+msgid "Not Found!"
+msgstr "چیزی یافت نشد!"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:579
+msgid "Bulk Actions"
+msgstr "کارهای دسته جمعی"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:580
+msgid "Remove"
+msgstr "حذف"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:582
+msgid "Apply"
+msgstr "اجرا"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:593
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:503
+msgid "Add"
+msgstr "افزودن"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:45
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:335
+msgid "Rial"
+msgstr "ریال"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:145
+msgid "Your username in sms.webstudio.ir"
+msgstr "نام کاربری شما در sms.webstudio.ir"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/wp-sms.php:153
+msgid "Your password in sms.webstudio.ir"
+msgstr "رمزعبور شما در sms.webstudio.ir"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/form.php:17
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:18
+msgid "Enter your information for SMS Subscribe"
+msgstr "برای عضویت در خبرنامه پیامکی، اطلاعات خود را وارد کنید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/form.php:21
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:22
+msgid "Your name"
+msgstr "نام شما"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/form.php:26
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:27
+msgid "Your mobile"
+msgstr "موبایل شما"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/form.php:40
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:51
+msgid "Subscribe is Deactive!"
+msgstr "خبرنامه غیرفعال است!"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/bkf/inc/newsletter.php:21
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:24
+msgid "You will join the newsletter"
+msgstr "شما عضو خبرنامه شدید"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:37
+msgid "Unsubscribe"
+msgstr "لغو اشتراک"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:32
+msgid "Your subscription was canceled."
+msgstr "عضویت شما لغو شد."
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:35
+msgid "Nothing found!"
+msgstr "چیزی یافت نشد!"
+
+#~ msgid "Please select a Web service"
+#~ msgstr "لطفا وب‌سرویس خودرا انتخاب کنید"
+
+#~ msgid "To receive a username and password to visit:"
+#~ msgstr "برای دریافت نام‌کاربری و رمزعبور، مراجعه کنید به:"
+
+#~ msgid "Number"
+#~ msgstr "شماره"
+
+#~ msgid "Subscibe Manager"
+#~ msgstr "مدیریت کاربران"
+
+#~ msgid "Minimum words"
+#~ msgstr "حداقل کلمات"
+
+#~ msgid "Words"
+#~ msgstr "کلمات"
+
+#~ msgid "Dollar"
+#~ msgstr "دلار"
+
+#~ msgid "Unit Money"
+#~ msgstr "واحد پول"
+
+#~ msgid "Error! Please Credit check settings"
+#~ msgstr "خطا! لطفا تنظیمات اعتباری را بررسی کنید"
+
+#~ msgid "Dolar"
+#~ msgstr "دلار"
+
+#~ msgid "Message"
+#~ msgstr "پیغام"
