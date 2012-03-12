@@ -13,13 +13,13 @@ Newsletter and SMS through WordPress
 
 Features:
 
-* Send SMS to number and numbers
-* Send SMS to subscribes
-* Subscribe sms.
+* Send SMS to Number(s)
+* Send SMS to Subscribe(s)
+* Subscribe SMS
 * Show Credit
 * Send SMS via FLASH
-* Send SMS After publishing the post.
-* Widget support
+* Send SMS After Publishing the Post
+* Widget Support
 
 Support for Web services:
 
