@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 1.1
+Stable tag: 1.2
 
 Send SMS via wordpress
 
@@ -12,15 +12,17 @@ Send SMS via wordpress
 The SMS via wordpress very easy
 
 Features:
+
 * Send SMS to number and numbers
 * Send SMS to subscribes
-* Subsribe sms.
+* Subsribe sms
 * Show Credit
 * Send SMS via FLASH
 * Widget support
 * Support Shortcode
 
 Language Support:
+
 * English
 * Persian
 
@@ -46,8 +48,12 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 2. Screen shot (screenshot-2.png) in Send SMS Page.
 3. Screen shot (screenshot-3.png) in Subscribe list Page.
 4. Screen shot (screenshot-4.png) in SMS Subscribe widget.
+5. Screen shot (screenshot-5.png) in Dashboard right now.
 
 == Upgrade Notice ==
+= 1.2 =
+* Fix a problem.
+
 = 1.1 =
 * Adding show SMS credit in the dashboard right now.
 * Adding show total subscribers in the dashboard right now.
@@ -59,6 +65,9 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 * Start plugin
 
 == Changelog ==
+= 1.2 =
+* Fix a problem.
+
 = 1.1 =
 * Adding show SMS credit in the dashboard right now.
 * Adding show total subscribers in the dashboard right now.
