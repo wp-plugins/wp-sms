@@ -49,6 +49,7 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 3. Screen shot (screenshot-3.png) in Subscribe list Page.
 4. Screen shot (screenshot-4.png) in SMS Subscribe widget.
 5. Screen shot (screenshot-5.png) in Dashboard right now.
+6. Screen shot (screenshot-6.png) in Subscribe new-post.php.
 
 == Upgrade Notice ==
 = 1.2 =
