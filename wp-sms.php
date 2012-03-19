@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://www.webstudio.ir/
 Description: Send SMS from wordpress
-Version: 1.2
+Version: 1.2.1
 Author: Mostafa Soufi
 Author URI: http://www.webstudio.ir/sms-services/extensions/
 License: GPL2

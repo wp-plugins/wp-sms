@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 Send SMS via wordpress
 
@@ -52,6 +52,9 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 6. Screen shot (screenshot-6.png) in Subscribe new-post.php.
 
 == Upgrade Notice ==
+= 1.2.1 =
+* Fix a wordpress problem.
+
 = 1.2 =
 * Fix a problem.
 
@@ -66,6 +69,9 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 * Start plugin
 
 == Changelog ==
+= 1.2.1 =
+* Fix a wordpress problem.
+
 = 1.2 =
 * Fix a problem.
 
