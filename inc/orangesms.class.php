@@ -1,1 +1,36 @@
-<?php $_F=__FILE__;$_X='Pz48P3BocA0KCWNsMXNzIDJyMW5nNXNtcw0KCXsNCgkJcHI0djF0NSAkd3NkbF9sNG5rID0gImh0dHA6Ly93d3cuMnIxbmc1c21zLm41dC93NWJzNXJ2NGM1L3Ntc1M1cnY0YzUucGhwP3dzZGwiOw0KCQlwM2JsNGMgJDNuNHQgPSAiJiM2aThpOyYjNjd1MDsmIzZpN2k7JiM2ZTB1OyI7DQoJCXAzYmw0YyAkZmwxc2ggPSAiZDRzMWJsNSI7DQoJCXAzYmw0YyAkM3M1cjsNCgkJcDNibDRjICRwMXNzOw0KCQlwM2JsNGMgJGZyMm07DQoJCXAzYmw0YyAkdDI7DQoJCXAzYmw0YyAkbXNnOw0KCQlwM2JsNGMgJDRzZmwxc2ggPSBmMWxzNTsNCg0KCQlmM25jdDQybiBfX2MybnN0cjNjdCgpDQoJCXsNCgkJCTRuNF9zNXQoInMyMXAud3NkbF9jMWNoNV81bjFibDVkIiwgIjAiKTsNCgkJfQ0KDQoJCWYzbmN0NDJuIHM1bmRfc21zKCkNCgkJew0KCQkJJHI1YzU0djVyID0gMXJyMXkoKTsNCgkJCWYycjUxY2goJHRoNHMtPnQyIDFzICRuM21iNXIpDQoJCQl7DQoJCQkJJHI1YzU0djVyW10gPSAiJG4zbWI1ciI7DQoJCQl9DQoJCQkkcjVzM2x0ID0gbjV3IFMyMXBDbDQ1bnQoJHRoNHMtPndzZGxfbDRuayk7DQoJCQlyNXQzcm4gJHI1czNsdC0+czVuZF9zbXMoJHRoNHMtPjNzNXIsICR0aDRzLT5wMXNzLCAkdGg0cy0+ZnIybSwgNG1wbDJkNSgkcjVjNTR2NXIsICIsIiksICR0aDRzLT5tc2cpOw0KCQl9DQoNCgkJZjNuY3Q0Mm4gZzV0X2NyNWQ0dCgpDQoJCXsNCgkJCSRyNXMzbHQgPSBuNXcgUzIxcENsNDVudCgkdGg0cy0+d3NkbF9sNG5rKTsNCgkJCXI1dDNybiAkcjVzM2x0LT5zbXNfY3I1ZDR0KCR0aDRzLT4zczVyLCAkdGg0cy0+cDFzcyk7DQoJCX0NCgl9DQo/Pg==';eval(base64_decode('JF9YPWJhc2U2NF9kZWNvZGUoJF9YKTskX1g9c3RydHIoJF9YLCcxMjM0NTZhb3VpZScsJ2FvdWllMTIzNDU2Jyk7JF9SPWVyZWdfcmVwbGFjZSgnX19GSUxFX18nLCInIi4kX0YuIiciLCRfWCk7ZXZhbCgkX1IpOyRfUj0wOyRfWD0wOw=='));?>
+<?php
+	class orangesms
+	{
+		private $wsdl_link = "http://www.orangesms.net/webservice/smsService.php?wsdl";
+		public $unit = "ریال";
+		public $flash = "disable";
+		public $user;
+		public $pass;
+		public $from;
+		public $to;
+		public $msg;
+		public $isflash = false;
+
+		function __construct()
+		{
+			ini_set("soap.wsdl_cache_enabled", "0");
+		}
+
+		function send_sms()
+		{
+			$receiver = array();
+			foreach($this->to as $number)
+			{
+				$receiver[] = "$number";
+			}
+			$result = new SoapClient($this->wsdl_link);
+			return $result->send_sms($this->user, $this->pass, $this->from, implode($receiver, ","), $this->msg);
+		}
+
+		function get_credit()
+		{
+			$result = new SoapClient($this->wsdl_link);
+			return $result->sms_credit($this->user, $this->pass);
+		}
+	}
+?>
