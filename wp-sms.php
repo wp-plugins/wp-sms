@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://www.webstudio.ir/
 Description: Send SMS from wordpress
-Version: 1.2
+Version: 1.3
 Author: Mostafa Soufi
 Author URI: http://www.webstudio.ir/sms-services/extensions/
 License: GPL2
@@ -133,6 +133,21 @@ License: GPL2
 			include("inc/form.php");
 	}
 
+	function wp_subscribe_control_widget()
+	{
+		if($_POST['wp_sms_submit_widget'])
+		{
+			update_option('wp_sms_widget_name', $_POST['wp_sms_widget_name']);
+		} ?>
+
+		<p>
+			<?php _e('Name', 'wp-sms'); ?>:<br />
+			<input id="wp_sms_widget_name" name="wp_sms_widget_name" type="text" value="<?php echo get_option('wp_sms_widget_name'); ?>" />
+		</p>
+
+		<input type="hidden" id="wp_sms_submit_widget" name="wp_sms_submit_widget" value="1" />
+<?php }
+
 	function wp_subscribe_meta_box()
 	{
 		add_meta_box('subscribe-meta-box', __('Subscribe', 'wp-sms'), 'wp_subscribe_post', 'post', 'normal', 'high');
@@ -195,23 +210,74 @@ License: GPL2
 	}
 	add_action('publish_post', 'wp_subscribe_send');
 
-	function wp_subscribe_control_widget()
+	function wp_tell_a_freind_head()
+	{ ?>
+		<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>style.css" type="text/css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#send_friend").click(function(){
+					$("#tell_friend_form").slideToggle();
+				});
+			})
+		</script>
+	<?php
+	}
+
+	function wp_tell_a_freind($content)
 	{
-		if($_POST['wp_sms_submit_widget'])
+		if(is_single())
 		{
-			update_option('wp_sms_widget_name', $_POST['wp_sms_widget_name']);
-		} ?>
+			global $obj;
+			echo '<span id="send_friend">'.__('Suggested by SMS', 'wp-sms').'</span>';
+			echo '
+			<form action="" method="post" id="tell_friend_form">
+				<table width="100%">
+					<tr>
+						<td><label for="get_name">'.__('Your name', 'wp-sms').':</label></td>
+						<td><label for="get_fname">'.__('Your friend name', 'wp-sms').':</label></td>
+						<td><label for="get_fmobile">'.__('Your friend mobile', 'wp-sms').':</label></td>
+						<td></td>
+					</tr>
 
-		<p>
-			<?php _e('Name', 'wp-sms'); ?>:<br />
-			<input id="wp_sms_widget_name" name="wp_sms_widget_name" type="text" value="<?php echo get_option('wp_sms_widget_name'); ?>" />
-		</p>
+					<tr>
+						<td><input type="text" name="get_name" id="get_name"/></td>
+						<td><input type="text" name="get_fname" id="get_fname"/></td>
+						<td><input type="text" name="get_fmobile" id="get_fmobile" value="09"/></td>
+						<td><input type="submit" name="send_post" value="'.__('Send', 'wp-sms').'"/></td>
+					</tr>
+				</table>
+			</form>';
 
-		<input type="hidden" id="wp_sms_submit_widget" name="wp_sms_submit_widget" value="1" />
-<?php }
+			if($_POST['send_post'])
+			{
+				$mobile = $_POST['get_fmobile'];
+				if($_POST['get_name'] && $_POST['get_fname'] && $_POST['get_fmobile'])
+				{
+					if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) )
+					{
+						$obj->to = array($_POST['get_fmobile']);
+						$obj->msg = sprintf(__('Hi %s, the %s post suggested to you by %s. url: %s', 'wp-sms'), $_POST['get_fname'], get_the_title(), $_POST['get_name'], wp_get_shortlink());
+						$obj->send_sms();
+					} else {
+						_e('Please enter a valid mobile number', 'wp-sms');
+					}
+				} else {
+					_e('Please complete all fields', 'wp-sms');
+				}
+			}
+		}
+		return $content;
+	}
+
+	if(get_option('wp_suggestion_status'))
+	{
+		add_action('wp_head', 'wp_tell_a_freind_head');
+		add_action('the_content', 'wp_tell_a_freind');
+	}
 
 	function wp_sms_setting_page()
 	{
+		global $obj;
 		if (!current_user_can('manage_options'))
 		{
 			wp_die(__('You do not have sufficient permissions to access this page.'));
@@ -226,6 +292,21 @@ License: GPL2
 			}
 		}
 	?>
+	<style>
+	p.register{
+		background: #FF6600;
+		border-radius: 4px;
+		padding: 4px;
+		color: #FFFFFF;
+		font-size: 11px;
+		float: <?php echo is_rtl() == true? "right":"left"; ?>
+	}
+	p.register a{
+		color: #FFFFFF;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	</style>
 	<div class="wrap">
 	<h2><?php _e('SMS Setting', 'wp-sms'); ?></h2>
 	<table class="form-table">
@@ -256,6 +337,9 @@ License: GPL2
 			<td>
 				<input type="text" style="direction: ltr; width: 200px;" name="wp_username" value="<?php echo get_option('wp_username'); ?>"/>
 				<span style="font-size: 10px"><?php _e('Your username in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></span>
+				<?php if(!get_option('wp_username')) { ?>
+				<br /><p class="register"><?php echo sprintf(__('If you do not have a username for this service <a href="%s">click here..</a>', 'wp-sms'), $obj->tariff) ?></p>
+				<?php } ;?>
 			</td>
 		</tr>
 
@@ -264,6 +348,9 @@ License: GPL2
 			<td>
 				<input type="password" style="direction: ltr; width: 200px;" name="wp_password" value="<?php echo get_option('wp_password'); ?>"/>
 				<span style="font-size: 10px"><?php _e('Your password in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></span>
+				<?php if(!get_option('wp_password')) { ?>
+				<br /><p class="register"><?php echo sprintf(__('If you do not have a password for this service <a href="%s">click here..</a>', 'wp-sms'), $obj->tariff) ?></p>
+				<?php } ?>
 			</td>
 		</tr>
 
@@ -311,11 +398,20 @@ License: GPL2
 			</td>
 		</tr>
 
+		<tr><th><h3><?php _e('Post Suggestion', 'wp-sms'); ?></h4></th></tr>
+		<tr>
+			<td><?php _e('Suggested post by SMS?', 'wp-sms'); ?></td>
+			<td>
+				<input type="checkbox" name="wp_suggestion_status" id="wp_suggestion_status" <?php echo get_option('wp_suggestion_status') ==true? 'checked="checked"':'';?>/>
+				<label for="wp_suggestion_status"><?php _e('Active', 'wp-sms'); ?></label>
+			</td>
+		</tr>
+
 		<tr>
 			<td>
 				<p class="submit">
 				<input type="hidden" name="action" value="update" />
-				<input type="hidden" name="page_options" value="wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_send" />
+				<input type="hidden" name="page_options" value="wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_send,wp_suggestion_status" />
 				<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 				</p>
 			</td>

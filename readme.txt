@@ -3,8 +3,8 @@ Contributors: mostafa.s1990
 Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 1.2
+Tested up to: 3.3.1
+Stable tag: 1.3
 
 Send SMS via wordpress
 
@@ -50,8 +50,13 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 4. Screen shot (screenshot-4.png) in SMS Subscribe widget.
 5. Screen shot (screenshot-5.png) in Dashboard right now.
 6. Screen shot (screenshot-6.png) in Subscribe new-post.php.
+7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.3 =
+* Added register link for webservice.
+* Added Suggestion post by SMS.
+
 = 1.2 =
 * Fix a problem.
 
@@ -66,6 +71,10 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 * Start plugin
 
 == Changelog ==
+= 1.3 =
+* Added register link for webservice.
+* Added Suggestion post by SMS.
+
 = 1.2 =
 * Fix a problem.
 

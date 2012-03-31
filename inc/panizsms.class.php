@@ -2,6 +2,7 @@
 	class panizsms
 	{
 		private $wsdl_link = "http://www.panizsms.ir/webservice/smsService.php?wsdl";
+		public $tariff = "http://www.panizsms.ir/fullmode/register.html";
 		public $unit = "ریال";
 		public $flash = "disable";
 		public $user;

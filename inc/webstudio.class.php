@@ -2,6 +2,7 @@
 	class webstudio
 	{
 		private $wsdl_link = "http://sms.webstudio.ir/post/send.asmx?wsdl";
+		public $tariff = "http://www.webstudio.ir/sms-services/compare/";
 		public $unit = "پیامک";
 		public $flash = "enable";
 		public $user;
