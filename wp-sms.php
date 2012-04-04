@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://www.webstudio.ir/
 Description: Send SMS from wordpress
-Version: 1.3.1
+Version: 1.3.2
 Author: Mostafa Soufi
 Author URI: http://www.webstudio.ir/sms-services/extensions/
 License: GPL2
@@ -26,6 +26,11 @@ License: GPL2
 			add_submenu_page('wp-sms', __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', 'wp-sms/send', 'wp_send_sms_setting_page');
 			add_submenu_page('wp-sms', __('Members Newsletter', 'wp-sms'), __('Members Newsletter', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_setting_page');
 		}
+	}
+
+	if(get_option('wp_webservice') != 'webstudio' || get_option('wp_webservice') != 'orangesms' || get_option('wp_webservice') != 'panizsms')
+	{
+		update_option('wp_webservice', 'webstudio');
 	}
 
 	if(get_option('wp_webservice'))
@@ -125,8 +130,6 @@ License: GPL2
 
 		dbDelta($create_subscribes_table);
 		add_option('wp_sms_db_version', 'wp_sms_db_version');
-
-		update_option('wp_webservice', 'webstudio');
 	}
 
 	function wp_sms_widget()
