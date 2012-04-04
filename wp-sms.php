@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://www.webstudio.ir/
 Description: Send SMS from wordpress
-Version: 1.3
+Version: 1.3.1
 Author: Mostafa Soufi
 Author URI: http://www.webstudio.ir/sms-services/extensions/
 License: GPL2
@@ -36,6 +36,15 @@ License: GPL2
 		$obj->user = get_option('wp_username');
 		$obj->pass = get_option('wp_password');
 		$obj->from = get_option('wp_number');
+
+		if($obj->unitrial == true)
+		{
+			$obj->unit = __('Rial', 'wp-sms');
+		}
+		else
+		{
+			$obj->unit = __('SMS', 'wp-sms');
+		}
 	}
 
 	function wp_subscribes()
@@ -117,7 +126,7 @@ License: GPL2
 		dbDelta($create_subscribes_table);
 		add_option('wp_sms_db_version', 'wp_sms_db_version');
 
-		update_option('wp_webservice', '');
+		update_option('wp_webservice', 'webstudio');
 	}
 
 	function wp_sms_widget()
@@ -257,7 +266,10 @@ License: GPL2
 					{
 						$obj->to = array($_POST['get_fmobile']);
 						$obj->msg = sprintf(__('Hi %s, the %s post suggested to you by %s. url: %s', 'wp-sms'), $_POST['get_fname'], get_the_title(), $_POST['get_name'], wp_get_shortlink());
-						$obj->send_sms();
+						if($obj->send_sms())
+						{
+							_e('SMS was sent with success', 'wp-sms');
+						}
 					} else {
 						_e('Please enter a valid mobile number', 'wp-sms');
 					}
