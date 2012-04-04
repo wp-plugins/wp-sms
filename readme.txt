@@ -76,6 +76,10 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 * Start plugin
 
 == Changelog ==
+= 1.3.1 =
+* Fix a problem.
+* Fix credit unit in multi language.
+
 = 1.3 =
 * Added register link for webservice.
 * Added Suggestion post by SMS.
