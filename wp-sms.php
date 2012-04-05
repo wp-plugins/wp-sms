@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://www.webstudio.ir/
 Description: Send SMS from wordpress
-Version: 1.3.2
+Version: 1.3.3
 Author: Mostafa Soufi
 Author URI: http://www.webstudio.ir/sms-services/extensions/
 License: GPL2
@@ -28,7 +28,7 @@ License: GPL2
 		}
 	}
 
-	if(get_option('wp_webservice') != 'webstudio' || get_option('wp_webservice') != 'orangesms' || get_option('wp_webservice') != 'panizsms')
+	if(get_option('wp_webservice') == 'sms.webstudio')
 	{
 		update_option('wp_webservice', 'webstudio');
 	}
@@ -724,7 +724,7 @@ License: GPL2
 					?>
 					<tr class="<?php echo $i % 2 == 0 ? 'alternate':'author-self'; ?>" valign="middle" id="link-2">
 						<th class="check-column" scope="row"><input type="checkbox" name="column_ID[]" value="<?php echo $gets->ID ; ?>" /></th>
-						<td class="column-name"><?php echo $gets->ID; ?></td>
+						<td class="column-name"><?php echo $i; ?></td>
 						<td class="column-name"><?php echo $gets->date; ?></td>
 						<td class="column-name"><?php echo $gets->name; ?></td>
 						<td class="column-name"><?php echo $gets->mobile; ?></td>
