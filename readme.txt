@@ -83,6 +83,10 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 * Start plugin
 
 == Changelog ==
+= 1.3.3 =
+* Fix a problem.
+* Fix a display the correct number in the list of newsletter subscribers.
+
 = 1.3.2 =
 * Fix a problem.
 
