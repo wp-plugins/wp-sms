@@ -1,0 +1,490 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Sms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-04 17:31+0330\n"
+"PO-Revision-Date: 2012-04-08 22:57+0330\n"
+"Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
+"Language-Team: Matteo Moxx <mattmoxx@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;_e;__\n"
+"X-Poedit-Language: Brazilian Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:25
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:323
+msgid "SMS Setting"
+msgstr "Configuração SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:26
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:497
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:550
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:601
+msgid "Send SMS"
+msgstr "Enviar SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:27
+msgid "Members Newsletter"
+msgstr "Boletim de membros"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:42
+msgid "Rial"
+msgstr "Rial"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:46
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:77
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:573
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:577
+msgid "SMS"
+msgstr "SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:96
+msgid "Common"
+msgstr "Comum"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:103
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:614
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:624
+#, php-format
+msgid "Please check the <a href=\"%s\">SMS credit</a> the settings"
+msgstr "Por favor, verifique os <a href=\"%s\">créditos SMS</a> nas configurações"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:134
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:135
+msgid "Subscribe to SMS"
+msgstr "Assinar SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:153
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:705
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:743
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:764
+msgid "Name"
+msgstr "Nome"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:162
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:34
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:43
+msgid "Subscribe"
+msgstr "Assinar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:177
+msgid "Send this post to subscribers?"
+msgstr "Enviar esta publicação para os assinantes?"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:179
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:588
+msgid "Yes"
+msgstr "Sim"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:180
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:591
+msgid "No"
+msgstr "Não"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:240
+msgid "Suggested by SMS"
+msgstr "Sugerido por SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:245
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:22
+msgid "Your name"
+msgstr "Seu nome"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:246
+msgid "Your friend name"
+msgstr "Nome do seu amigo"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:247
+msgid "Your friend mobile"
+msgstr "Celular do seu amigo"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:255
+msgid "Send"
+msgstr "Enviar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:268
+#, php-format
+msgid "Hi %s, the %s post suggested to you by %s. url: %s"
+msgstr "Olá %s, a publicação %s foi sugerida a você por %s. url: %s"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:271
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:537
+msgid "SMS was sent with success"
+msgstr "SMS foi enviado com sucesso"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:274
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:672
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:42
+msgid "Please enter a valid mobile number"
+msgstr "Por favor, insira um número de celular válido"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:277
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:675
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:45
+msgid "Please complete all fields"
+msgstr "Por favor, preencha todos os campos"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:295
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:439
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:635
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Você não tem permissões suficientes para acessar esta página."
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:327
+msgid "Credit SMS Setting"
+msgstr "Configuração de crédito SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:329
+msgid "Web Service"
+msgstr "Servidor Web"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:332
+msgid "Select your Web Service"
+msgstr "Selecione seu Servidor Web"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:333
+msgid "The main server"
+msgstr "Servidor principal"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:334
+msgid "Webstudio (sms.webstudio.ir)"
+msgstr "Webstudio (sms.webstudio.ir)"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:335
+msgid "Other servers"
+msgstr "Outros servidores"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:336
+msgid "Paniz SMS (panizsms.ir)"
+msgstr "Paniz SMS (panizsms.ir)"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:337
+msgid "Orange SMS (orangesms.net)"
+msgstr "Orange SMS (orangesms.net)"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:342
+msgid "Select"
+msgstr "Selecionar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:348
+msgid "Username"
+msgstr "Usuário"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:351
+msgid "Your username in"
+msgstr "Seu nome de usuário em"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:353
+#, php-format
+msgid "If you do not have a username for this service <a href=\"%s\">click here..</a>"
+msgstr "Se você não tem um nome de usuário para este serviço <a href=\"%s\">clique aqui.</a>"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:359
+msgid "Password"
+msgstr "Senha"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:362
+msgid "Your password in"
+msgstr "Sua senha em"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:364
+#, php-format
+msgid "If you do not have a password for this service <a href=\"%s\">click here..</a>"
+msgstr "Se você não tem uma senha para este serviço <a href=\"%s\">clique aqui.</a>"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:370
+msgid "Number"
+msgstr "Número"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:373
+msgid "Your SMS sender number in"
+msgstr "O seu número de remetente SMS em"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:378
+msgid "Credit"
+msgstr "Credito"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:385
+msgid "Status"
+msgstr "Estado"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:388
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:401
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:409
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:418
+msgid "Active"
+msgstr "Ativar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:390
+msgid "Deactive"
+msgstr "Desativar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:396
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:398
+msgid "Register?"
+msgstr "Registrar?"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:406
+msgid "Posts sent to subscribers?"
+msgstr "Enviadas publicações para assinantes?"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:413
+msgid "Post Suggestion"
+msgstr "Sugestão de Publicação"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:415
+msgid "Suggested post by SMS?"
+msgstr "Sugerir publicação por SMS?"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:427
+msgid "Update"
+msgstr "Atualizar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:542
+msgid "Please enter a message"
+msgstr "Por favor insira uma mensagem"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:553
+msgid "Send from"
+msgstr "Enviar de"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:557
+msgid "Send to"
+msgstr "Enviar para"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:561
+msgid "Subscribe users"
+msgstr "Usuários assinantes"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:561
+msgid "Peaple"
+msgstr "Pessoas"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:562
+msgid "Numbers"
+msgstr "Números"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:567
+msgid "For example"
+msgstr "Por exemplo"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:576
+msgid "The remaining words"
+msgstr "Palavras restantes"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:579
+msgid "Your credit"
+msgstr "Seu credito"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:585
+msgid "Send a Flash"
+msgstr "Envie um Flash"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:594
+msgid "Flash is possible to send messages without being asked, opens"
+msgstr "Flash é possível enviar mensagens sem ser perguntado, abre"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:645
+msgid "Subscribes list"
+msgstr "Lista de inscritos"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:666
+msgid "Number with success was added"
+msgstr "Número adicionado com sucesso"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:669
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:39
+msgid "Phone number is repeated"
+msgstr "O número do telefone é repetido"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:691
+msgid "With success was removed"
+msgstr "Foi removido com sucesso"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:693
+msgid "Not Found"
+msgstr "Não encontrado"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:703
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:741
+msgid "ID"
+msgstr "ID"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:704
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:742
+msgid "Register date"
+msgstr "Data de registro"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:706
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:744
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:765
+msgid "Mobile"
+msgstr "Celular"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:733
+msgid "Not Found!"
+msgstr "Não encontrado!"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:752
+msgid "Bulk Actions"
+msgstr "Ações em Massa"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:753
+msgid "Remove"
+msgstr "Remover"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:755
+msgid "Apply"
+msgstr "Aplicar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/wp-sms.php:766
+msgid "Add"
+msgstr "Adicionar"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:18
+msgid "Enter your information for SMS Subscribe"
+msgstr "Digite suas informações para Assinar SMS"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:27
+msgid "Your mobile"
+msgstr "Seu celular"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:37
+msgid "Unsubscribe"
+msgstr "Anular a subscrição"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/form.php:51
+msgid "Subscribe is Deactive!"
+msgstr "Assinaturas estão desativadas!"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:24
+msgid "You will join the newsletter"
+msgstr "Você vai aderir à Newsletter"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:32
+msgid "Your subscription was canceled."
+msgstr "Sua assinatura foi cancelada."
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/inc/newsletter.php:35
+msgid "Nothing found!"
+msgstr "Nada encontrado!"
+
+#~ msgid "Your username in sms.webstudio.ir"
+#~ msgstr "نام کاربری شما در sms.webstudio.ir"
+
+#~ msgid "Please select a Web service"
+#~ msgstr "لطفا وب‌سرویس خودرا انتخاب کنید"
+
+#~ msgid "To receive a username and password to visit:"
+#~ msgstr "برای دریافت نام‌کاربری و رمزعبور، مراجعه کنید به:"
+
+#~ msgid "Subscibe Manager"
+#~ msgstr "مدیریت کاربران"
+
+#~ msgid "Minimum words"
+#~ msgstr "حداقل کلمات"
+
+#~ msgid "Words"
+#~ msgstr "کلمات"
+
+#~ msgid "Dollar"
+#~ msgstr "دلار"
+
+#~ msgid "Unit Money"
+#~ msgstr "واحد پول"
+
+#~ msgid "Error! Please Credit check settings"
+#~ msgstr "خطا! لطفا تنظیمات اعتباری را بررسی کنید"
+
+#~ msgid "Dolar"
+#~ msgstr "دلار"
+
+#~ msgid "Message"
+#~ msgstr "پیغام"
