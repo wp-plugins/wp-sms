@@ -18,6 +18,7 @@
 				{
 					$get_current_date = date('Y-m-d H:i:s' ,current_time('timestamp',0));
 					$check = $wpdb->query("INSERT INTO {$table_prefix}subscribes (date, name, mobile) VALUES ('".$get_current_date."', '".$name."', '".$mobile."')");
+					echo $rand;
 
 					if($check)
 					{

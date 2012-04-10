@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://www.webstudio.ir/
 Description: Send SMS from wordpress
-Version: 1.3.3
+Version: 1.4
 Author: Mostafa Soufi
 Author URI: http://www.webstudio.ir/sms-services/extensions/
 License: GPL2
@@ -25,6 +25,7 @@ License: GPL2
 			add_menu_page(__('SMS Setting', 'wp-sms'), __('SMS Setting', 'wp-sms'), 'manage_options', 'wp-sms', 'wp_sms_setting_page', plugin_dir_url( __FILE__ ).'/images/sms.png');
 			add_submenu_page('wp-sms', __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', 'wp-sms/send', 'wp_send_sms_setting_page');
 			add_submenu_page('wp-sms', __('Members Newsletter', 'wp-sms'), __('Members Newsletter', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_setting_page');
+			add_submenu_page('wp-sms', __('About Plugin', 'wp-sms'), __('About Plugin', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_about_setting_page');
 		}
 	}
 
@@ -307,6 +308,16 @@ License: GPL2
 			}
 		}
 	?>
+	<script type="text/javascript">
+		function openwin()
+		{
+			var url=document.form.wp_webservice.value;
+			if(url==1)
+			{
+				document.location.href="<?php echo get_bloginfo('url'); ?>/wp-admin/admin.php?page=wp-sms/about";
+			}
+		}
+	</script>
 	<style>
 	p.register{
 		background: #FF6600;
@@ -325,19 +336,22 @@ License: GPL2
 	<div class="wrap">
 	<h2><?php _e('SMS Setting', 'wp-sms'); ?></h2>
 	<table class="form-table">
-	<form method="post" action="options.php">
+	<form method="post" action="options.php" name="form">
 	<?php wp_nonce_field('update-options');?>
 		<tr><th><h3><?php _e('Credit SMS Setting', 'wp-sms'); ?></h4></th></tr>
 		<tr>
 			<td><?php _e('Web Service', 'wp-sms'); ?>:</td>
 			<td>
-				<select name="wp_webservice">
+				<select name="wp_webservice" onChange="javascript:openwin()">
 					<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
-					<option value="" disabled="disabled"><?php _e('The main server', 'wp-sms'); ?></option>
+					<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('The main server', 'wp-sms'); ?></option>
 					<option value="webstudio" <?php selected(get_option('wp_webservice'), 'webstudio'); ?>>&nbsp;&nbsp;- <?php _e('Webstudio (sms.webstudio.ir)', 'wp-sms'); ?></option>
-					<option value="" disabled="disabled"><?php _e('Other servers', 'wp-sms'); ?></option>
+					<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Other servers', 'wp-sms'); ?></option>
 					<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>&nbsp;&nbsp;- <?php _e('Paniz SMS (panizsms.ir)', 'wp-sms'); ?></option>
 					<option value="orangesms" <?php selected(get_option('wp_webservice'), 'orangesms'); ?>>&nbsp;&nbsp;- <?php _e('Orange SMS (orangesms.net)', 'wp-sms'); ?></option>
+					<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>&nbsp;&nbsp;- <?php _e('Hostiran SMS (hostiran.net)', 'wp-sms'); ?></option>
+					<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Your Web Service does not exist?', 'wp-sms'); ?></option>
+					<option value="1">&nbsp;&nbsp;- <?php _e('Click for more information', 'wp-sms'); ?></option>
 				</select>
 
 				<input type="hidden" name="action" value="update" />
@@ -538,6 +552,7 @@ License: GPL2
 									if($obj->send_sms())
 									{
 										echo "<div class='updated'><p>" . __('SMS was sent with success', 'wp-sms') . "</p></div>";
+										update_option('wp_last_credit', $obj->get_credit());
 									}
 								}
 								else
@@ -770,5 +785,30 @@ License: GPL2
 				</tr>
 			</table>
 		</form>
+	</div>
+	<?php
+	}
+	function wp_about_setting_page()
+	{
+		if (!current_user_can('manage_options'))
+		{
+			wp_die(__('You do not have sufficient permissions to access this page.'));
+		}
+	?>
+	<div class="wrap">
+		<h2><?php _e('About Plugin', 'wp-sms'); ?></h2>
+		<div align="center"><a href="http://www.webstudio.ir"><img src="<?php echo plugin_dir_url(__FILE__); ?>images/logo.png"/></a></div>
+		<p><?php echo sprintf(__('this is a free plugin for wordpress that powered by <a href="%s">web studio</a>', 'wp-sms'), 'http://www.webstudio.ir'); ?>.</p>
+
+		<h3><?php _e('do you have problem with plugin?', 'wp-sms'); ?></h3>
+		<p><?php echo sprintf(__('if you have you can tell your problem in <a href="%s">forum</a>.', 'wp-sms'), 'http://iran98.org/forum/plugins/wp-sms/'); ?>.</p>
+
+		<h3><?php _e('are you a translator?', 'wp-sms'); ?></h3>
+		<p></p>
+		<p><?php echo sprintf(__('please send your translation to <code>%s</code>.', 'wp-sms'), 'm.soufi@webstudio.ir'); ?></p>
+
+		<h3><?php _e('you want to know about how to add your web service to this plugin?', 'wp-sms'); ?></h3>
+		<p></p>
+		<p><?php echo sprintf(__('to adding your web service please call with %s.', 'wp-sms'), '+98(861)3124270'); ?></p>
 	</div>
 	<?php } ?>

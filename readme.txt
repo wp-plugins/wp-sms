@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 1.3.3
+Stable tag: 1.4
 
 Send SMS via wordpress
 
@@ -26,6 +26,7 @@ Language Support:
 
 * English
 * Persian
+* Portuguese (Thanks Matt Moxx)
 
 Send email for Translation files: mst404[a]gmail[dot].com
 for translate, please open langs/default.po by Poedit and translate strings.
@@ -54,6 +55,11 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.4 =
+* Added Portuguese language.
+* Update last credit when send sms page.
+* Added Hostiran SMS Web Service.
+
 = 1.3.3 =
 * Fix a problem.
 * Fix a display the correct number in the list of newsletter subscribers.
@@ -77,7 +83,7 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 * Adding show total subscribers in the dashboard right now.
 * Adding Shortcode.
 * Added Panizsms Web Service.
-* Added orangesms Web Service.
+* Added Orangesms Web Service.
 
 = 1.0 =
 * Start plugin
