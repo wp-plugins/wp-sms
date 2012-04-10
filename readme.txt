@@ -58,7 +58,6 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 = 1.4 =
 * Added Portuguese language.
 * Update last credit when send sms page.
-* Added Hostiran SMS Web Service.
 
 = 1.3.3 =
 * Fix a problem.
@@ -92,7 +91,6 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 = 1.4 =
 * Added Portuguese language.
 * Update last credit when send sms page.
-* Added Hostiran SMS Web Service.
 
 = 1.3.3 =
 * Fix a problem.

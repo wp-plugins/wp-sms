@@ -349,7 +349,6 @@ License: GPL2
 					<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Other servers', 'wp-sms'); ?></option>
 					<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>&nbsp;&nbsp;- <?php _e('Paniz SMS (panizsms.ir)', 'wp-sms'); ?></option>
 					<option value="orangesms" <?php selected(get_option('wp_webservice'), 'orangesms'); ?>>&nbsp;&nbsp;- <?php _e('Orange SMS (orangesms.net)', 'wp-sms'); ?></option>
-					<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>&nbsp;&nbsp;- <?php _e('Hostiran SMS (hostiran.net)', 'wp-sms'); ?></option>
 					<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Your Web Service does not exist?', 'wp-sms'); ?></option>
 					<option value="1">&nbsp;&nbsp;- <?php _e('Click for more information', 'wp-sms'); ?></option>
 				</select>
