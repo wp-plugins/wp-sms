@@ -39,13 +39,6 @@ for translate, please open langs/default.po by Poedit and translate strings.
 
 or using this Shortcode `[subscribe]` in Posts pages or Widget.
 
-== Frequently Asked Questions ==
-= How to get SMS credit? =
-This is a free plugin, But you need to account for text messaging and Web services. Beginning to see the http://sms.webstudio.ir
-
-= What are the tariffs? =
-Please refer to this site: http://www.webstudio.ir/sms-services/compare/
-
 == Screenshots ==
 1. Screen shot (screenshot-1.png) in SMS Setting Page.
 2. Screen shot (screenshot-2.png) in Send SMS Page.
@@ -59,6 +52,7 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 = 1.5 =
 * Added Hostiran Web Service.
 * Added Iran SMS Panel Web Service.
+* Remove Orangesms Service.
 * Added Activation subscribe.
 * Optimize plugin.
 * Update jquery to 1.7.2
@@ -99,6 +93,7 @@ Please refer to this site: http://www.webstudio.ir/sms-services/compare/
 = 1.5 =
 * Added Hostiran Web Service.
 * Added Iran SMS Panel Web Service.
+* Remove Orangesms Service.
 * Added Activation subscribe.
 * Optimize plugin.
 * Update jquery to 1.7.2
