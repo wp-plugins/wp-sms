@@ -96,6 +96,12 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.6 =
+* Added Enable/Disable User in subscribe page.
+* Fix a problem in show credit.
+* Fix a problem in menu link.
+* Fix a problem in word counter.
+
 = 1.5 =
 * Added Hostiran Web Service.
 * Added Iran SMS Panel Web Service.
