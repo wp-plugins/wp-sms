@@ -18,7 +18,7 @@
 
 		private $wsdl_link = "http://www.2972.ir/wsdl?XML";
 
-		public $tariff = "http://iransmspanel.ir/?TheAction=viewpage&title=smscharge/";
+		public $tariff = "http://iransmspanel.ir/?TheAction=viewpage&title=smscharge";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
