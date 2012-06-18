@@ -1,12 +1,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
-	<script src="<?php echo plugin_dir_url(__FILE__); ?>js/functions.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/js/functions.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var boxId2 = 'wp_get_message';
 		var counter = 'wp_counter';
 		var part = 'wp_part';
 		var max = 'wp_max';
-		function charLeft2()
-		{
+		function charLeft2() {
 			checkSMSLength(boxId2, counter, part, max);
 		}
 
@@ -27,16 +26,13 @@
 			});
 
 			charLeft2();
-			$("#" + boxId2).bind('keyup', function()
-			{
+			$("#" + boxId2).bind('keyup', function() {
 				charLeft2();
 			});
-			$("#" + boxId2).bind('keydown', function()
-			{
+			$("#" + boxId2).bind('keydown', function() {
 				charLeft2();
 			});
-			$("#" + boxId2).bind('paste', function(e)
-			{
+			$("#" + boxId2).bind('paste', function(e) {
 				charLeft2();
 			});
 		});
@@ -50,49 +46,40 @@
 		<h2><?php _e('Send SMS', 'wp-sms'); ?></h2>
 		<?php
 		global $obj, $wpdb, $table_prefix;
-		if(get_option('wp_webservice'))
-		{
+		if(get_option('wp_webservice')) {
 			update_option('wp_last_credit', $obj->get_credit());
-			if($obj->get_credit())
-			{
+			if($obj->get_credit()) {
 				?>
 				<form method="post" action="">
 				<table class="form-table">
 					<tr>
 						<td colspan="2">
 						<?php
-							if(isset($_POST['send_sms']))
-							{
-								if($_POST['wp_get_message'])
-								{
-									if($_POST['wp_send_to'] == "wp_subscribe_user")
-									{
+							if(isset($_POST['send_sms'])) {
+
+								if($_POST['wp_get_message']) {
+
+									if($_POST['wp_send_to'] == "wp_subscribe_user") {
 										$obj->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}subscribes");
 									}
-									else if($_POST['wp_send_to'] == "wp_tellephone")
-									{
+									else if($_POST['wp_send_to'] == "wp_tellephone") {
 										$obj->to = explode(",", $_POST['wp_get_number']);
 									}
 
 									$obj->msg = $_POST['wp_get_message'];
 
-									if($_POST['wp_flash'] == "true")
-									{
+									if($_POST['wp_flash'] == "true") {
 										$obj->isflash = true;
 									}
-									elseif($_POST['wp_flash'] == "false")
-									{
+									elseif($_POST['wp_flash'] == "false") {
 										$obj->isflash = false;
 									}
 
-									if($obj->send_sms())
-									{
+									if($obj->send_sms()) {
 										echo "<div class='updated'><p>" . __('SMS was sent with success', 'wp-sms') . "</p></div>";
 										update_option('wp_last_credit', $obj->get_credit());
 									}
-								}
-								else
-								{
+								} else {
 									echo "<div class='error'><p>" . __('Please enter a message', 'wp-sms') . "</p></div>";
 								}
 							}
@@ -112,7 +99,12 @@
 						<td>
 							<select name="wp_send_to" id="select_sender">
 								<?php global $wpdb, $table_prefix; ?>
-								<option value="wp_subscribe_user" id="wp_subscribe_user"><?php _e('Subscribe users', 'wp-sms'); ?> (<?php echo $wpdb->query("SELECT * FROM {$table_prefix}subscribes"); ?> <?php _e('Peaple', 'wp-sms'); ?>)</option>
+								<option value="wp_subscribe_user" id="wp_subscribe_user">
+									<?php
+										$user_active = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE status = '1'");
+										echo sprintf(__('Subscribe users (%s) active', 'wp-sms'), $user_active);
+									?>
+								</option>
 								<option value="wp_tellephone" id="wp_tellephone"><?php _e('Numbers', 'wp-sms'); ?></option>
 							</select>
 
@@ -159,9 +151,7 @@
 				</form>
 				</table>
 				<?php
-			}
-			else
-			{
+			} else {
 				?>
 				<div class="error">
 					<?php $get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms"; ?>
@@ -169,15 +159,12 @@
 				</div>
 				<?php
 			}
-		}
-		else
-		{
+		} else {
 			?>
 			<div class="error">
 				<?php $get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms"; ?>
 				<p><?php echo sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url); ?></p>
 			</div>
 			<?php
-		}
-		?>
+		} ?>
 	</div>

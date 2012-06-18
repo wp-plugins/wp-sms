@@ -142,8 +142,7 @@
 		 * @param   bool        Is Flash SMS?
 		 * @return
 		 */
-		private function Send_Via_cURL($username, $password, $number, $recipient, $port, $message, $flash)
-		{
+		private function Send_Via_cURL($username, $password, $number, $recipient, $port, $message, $flash) {
 			$handle = null;
 			$options = array();
 			$this->curl_post_fields($options, array(
@@ -170,21 +169,22 @@
 		 * @param   bool        Is Flash SMS?
 		 * @return
 		 */
-		function send_sms()
-		{
+		function send_sms() {
 			if (@function_exists('curl_init')) {
 				$result = $this->Send_Via_cURL($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
 				if ($result !== '') return $result;
 			}
 			
-			//return $this->Send_Via_Socket($this->user, $this->pass, $this->from, $this->to, $this->port, $this->msg, $this->isflash);
 			$this->Send_Via_Socket($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
 		}
 
 		function get_credit() {
-			$soap = new SoapClient($this->wsdl_link);
-			if ($soap->Authentication($this->user, $this->pass)){
-				return 1;
+
+			$client = new SoapClient($this->wsdl_link);
+			$client->Authentication($this->user, $this->pass);
+
+			if ($client->GetCredit()){
+				return $client->GetCredit();
 			}
 		}
 	}

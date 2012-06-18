@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://wpbazar.com/products/wp-upload-player/
 Description: Send SMS from wordpress
-Version: 1.5
+Version: 1.6
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
@@ -74,7 +74,7 @@ License: GPL2
 					(
 						'id'		=>	'wp-credit-sms',
 						'title'		=>	'<img src="'.plugin_dir_url(__FILE__).'images/money_coin.png" align="bottom"/> ' . number_format($get_last_credit) . ' ' . $obj->unit,
-						'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms'
+						'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
 					));
 			}
 			$wp_admin_bar->add_menu(array
@@ -132,7 +132,7 @@ License: GPL2
 		");
 
 		// Add secound column in 1.5 version plugin.
-		$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status INT(3), activate_key VARCHAR(20))");
+		$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status tinyint(1), activate_key INT(11))");
 
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($create_subscribes_table);
@@ -319,6 +319,70 @@ License: GPL2
 	function wp_subscribes_page() {
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
+		}
+
+		$name = trim($_POST['wp_subscribe_name']);
+		$mobile = trim($_POST['wp_subscribe_mobile']);
+		$date = date('Y-m-d H:i:s' ,current_time('timestamp',0));
+
+		if($_POST['wp_add_subscribe']) {
+			if($name && $mobile) {
+				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+					global $wpdb, $table_prefix;
+					$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE mobile='".$mobile."'");
+
+					if(!$check_mobile) {
+						$check = $wpdb->query("INSERT INTO {$table_prefix}subscribes (date, name, mobile, status) VALUES ('".$date."', '".$name."', '".$mobile."', '1')");
+
+						if($check) {
+							echo "<div class='updated'><p>" . __('Number with success was added', 'wp-sms') . "</div></p>";
+						}
+					} else {
+						echo "<div class='error'><p>" . __('Phone number is repeated', 'wp-sms') . "</div></p>";
+					}
+				} else {
+					echo "<div class='error'><p>" . __('Please enter a valid mobile number', 'wp-sms') . "</div></p>";
+				}
+			} else {
+				echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
+			}
+		}
+
+		if($_POST['doaction']) {
+			global $wpdb, $table_prefix;
+
+			$get_IDs = implode(",", $_POST['column_ID']);
+			$check_ID = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE ID='".$get_IDs."'");
+
+			switch($_POST['action']) {
+				case 'trash':
+					if($check_ID) {
+						$wpdb->query("DELETE FROM {$table_prefix}subscribes WHERE ID IN (".$get_IDs.")");
+						echo "<div class='updated'><p>" . __('With success was removed', 'wp-sms') . "</div></p>";
+					} else {
+						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
+					}
+				break;
+
+				case 'active':
+					if($check_ID) {
+						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '1' WHERE ID = '".$get_IDs."'");
+						echo "<div class='updated'><p>" . __('User actived.', 'wp-sms') . "</div></p>";
+					} else {
+						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
+					}
+				break;
+
+				case 'deactive':
+					if($check_ID) {
+						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '0' WHERE ID = '".$get_IDs."'");
+						echo "<div class='updated'><p>" . __('User deactived.', 'wp-sms') . "</div></p>";
+					} else {
+						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
+					}
+				break;
+			}
+
 		}
 
 		include_once('setting/subscribes.php');
