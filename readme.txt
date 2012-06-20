@@ -1,0 +1,153 @@
+=== WP SMS ===
+Contributors: mostafa.s1990
+Donate link: http://iran98.org/
+Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
+Requires at least: 3.0
+Tested up to: 3.3.1
+Stable tag: 1.7
+
+Send SMS via wordpress
+
+== Description ==
+The SMS via wordpress very easy
+
+Features:
+
+* Send SMS to number and numbers
+* Send SMS to subscribes
+* Subsribe sms
+* Show credit
+* Send SMS via FLASH
+* Widget support
+* Support shortcode
+* Support suggestion post by SMS.
+* Send activation from subscribe.
+
+Language Support:
+
+* English
+* Persian
+* Portuguese (Thanks Matt Moxx)
+
+Send email for Translation files: info[a]webstudio[dot].ir
+for translate, please open langs/default.po by Poedit and translate strings.
+
+== Installation ==
+1. Upload `wp-sms` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. To display Subscribe goto Themes -> Widgets, and adding `Subscribe to SMS` into your sidebar Or using this functions: `<?php wp_subscribes(); ?>` into theme.
+
+or using this Shortcode `[subscribe]` in Posts pages or Widget.
+
+== Screenshots ==
+1. Screen shot (screenshot-1.png) in SMS Setting Page.
+2. Screen shot (screenshot-2.png) in Send SMS Page.
+3. Screen shot (screenshot-3.png) in Subscribe list Page.
+4. Screen shot (screenshot-4.png) in SMS Subscribe widget.
+5. Screen shot (screenshot-5.png) in Dashboard right now.
+6. Screen shot (screenshot-6.png) in Subscribe new-post.php.
+7. Screen shot (screenshot-7.png) in Suggestion post in single.
+
+== Upgrade Notice ==
+= 1.7 =
+* Fix a problem in Get credit method.
+* Fix a problem in ALTER TABLE.
+* Fix a problem Active/Deactive all subscribe.
+
+= 1.6 =
+* Added Enable/Disable User in subscribe page.
+* Fix a problem in show credit.
+* Fix a problem in menu link.
+* Fix a problem in word counter.
+
+= 1.5 =
+* Added Hostiran Web Service.
+* Added Iran SMS Panel Web Service.
+* Remove Orangesms Service.
+* Added Activation subscribe.
+* Optimize plugin.
+* Update jquery to 1.7.2
+
+= 1.4 =
+* Added Portuguese language.
+* Update last credit when send sms page.
+
+= 1.3.3 =
+* Fix a problem.
+* Fix a display the correct number in the list of newsletter subscribers.
+
+= 1.3.2 =
+* Fix a problem.
+
+= 1.3.1 =
+* Fix a problem.
+* Fix credit unit in multi language.
+
+= 1.3 =
+* Added register link for webservice.
+* Added Suggestion post by SMS.
+
+= 1.2 =
+* Fix a problem.
+
+= 1.1 =
+* Adding show SMS credit in the dashboard right now.
+* Adding show total subscribers in the dashboard right now.
+* Adding Shortcode.
+* Added Panizsms Web Service.
+* Added Orangesms Web Service.
+
+= 1.0 =
+* Start plugin
+
+== Changelog ==
+= 1.7 =
+* Fix a problem in Get credit method.
+* Fix a problem in ALTER TABLE.
+* Fix a problem Active/Deactive all subscribe.
+
+= 1.6 =
+* Added Enable/Disable User in subscribe page.
+* Fix a problem in show credit.
+* Fix a problem in menu link.
+* Fix a problem in word counter.
+
+= 1.5 =
+* Added Hostiran Web Service.
+* Added Iran SMS Panel Web Service.
+* Remove Orangesms Service.
+* Added Activation subscribe.
+* Optimize plugin.
+* Update jquery to 1.7.2
+
+= 1.4 =
+* Added Portuguese language.
+* Update last credit when send sms page.
+
+= 1.3.3 =
+* Fix a problem.
+* Fix a display the correct number in the list of newsletter subscribers.
+
+= 1.3.2 =
+* Fix a problem.
+
+= 1.3.1 =
+* Fix a problem.
+* Fix credit unit in multi language.
+
+= 1.3 =
+* Added register link for webservice.
+* Added Suggestion post by SMS.
+
+= 1.2 =
+* Fix a problem.
+
+= 1.1 =
+* Adding show SMS credit in the dashboard right now.
+* Adding show total subscribers in the dashboard right now.
+* Adding Shortcode.
+* Added Panizsms Web Service.
+* Added orangesms Web Service.
+
+= 1.0 =
+* Start plugin
