@@ -29,7 +29,7 @@ Language Support:
 * Persian
 * Portuguese (Thanks Matt Moxx)
 
-Send email for Translation files: info[a]webstudio[dot].ir
+Send email for Translation files: mst404[a]gmail[dot].com
 for translate, please open langs/default.po by Poedit and translate strings.
 
 == Installation ==
