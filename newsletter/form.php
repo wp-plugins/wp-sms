@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/css/style.css" />
-<script src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<?php /*<script src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/js/jquery-1.7.2.min.js" type="text/javascript"></script>*/ ?>
 <script type="text/javascript">
 	$(document).ready(function()
 	{

@@ -3,7 +3,7 @@
 Plugin Name: WP SMS
 Plugin URI: http://wpbazar.com/products/wp-upload-player/
 Description: Send SMS from wordpress
-Version: 1.6
+Version: 1.7
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
@@ -92,7 +92,7 @@ License: GPL2
 
 	function wp_sms_rightnow_discussion() {
 		global $obj;
-		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms'>".$obj->unit."</a></td></tr>";
+		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".$obj->unit."</a></td></tr>";
 	}
 	add_action('right_now_discussion_table_end', 'wp_sms_rightnow_discussion');
 
@@ -105,7 +105,7 @@ License: GPL2
 
 	function wp_sms_enable() {
 
-		$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms";
+		$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/wp-sms.php";
 		echo '<div class="error"><p><img src="'.plugin_dir_url(__FILE__).'/images/exclamation.png" alt="Bottom" align="top"/> '.sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url).'</p></div>';
 
 	}
@@ -131,15 +131,15 @@ License: GPL2
 			PRIMARY KEY(ID)) CHARSET=utf8
 		");
 
-		// Add secound column in 1.5 version plugin.
-		$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status tinyint(1), activate_key INT(11))");
-
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($create_subscribes_table);
 		add_option('wp_sms_db_version', 'wp_sms_db_version');
 
 	}
 	register_activation_hook(__FILE__,'wp_sms_install');
+
+	// Add secound column in 1.5 version plugin.
+	$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status tinyint(1), activate_key INT(11))");
 
 	function wp_sms_widget() {
 
@@ -366,7 +366,7 @@ License: GPL2
 
 				case 'active':
 					if($check_ID) {
-						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '1' WHERE ID = '".$get_IDs."'");
+						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '1' WHERE ID IN (".$get_IDs.")");
 						echo "<div class='updated'><p>" . __('User actived.', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -375,7 +375,7 @@ License: GPL2
 
 				case 'deactive':
 					if($check_ID) {
-						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '0' WHERE ID = '".$get_IDs."'");
+						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '0' WHERE ID IN (".$get_IDs.")");
 						echo "<div class='updated'><p>" . __('User deactived.', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";

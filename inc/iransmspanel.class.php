@@ -181,10 +181,11 @@
 		function get_credit() {
 
 			$client = new SoapClient($this->wsdl_link);
-			$client->Authentication($this->user, $this->pass);
 
-			if ($client->GetCredit()){
-				return $client->GetCredit();
+			if($client->Authentication($this->user, $this->pass)) {
+				if ($client->GetCredit()){
+					return $client->GetCredit();
+				}
 			}
 		}
 	}

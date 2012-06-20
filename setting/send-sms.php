@@ -154,7 +154,7 @@
 			} else {
 				?>
 				<div class="error">
-					<?php $get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms"; ?>
+					<?php $get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/wp-sms.php"; ?>
 					<p><?php echo sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url); ?></p>
 				</div>
 				<?php

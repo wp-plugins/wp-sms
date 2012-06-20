@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 1.6
+Stable tag: 1.7
 
 Send SMS via wordpress
 
@@ -49,6 +49,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.7 =
+* Fix a problem in Get credit method.
+* Fix a problem in ALTER TABLE.
+* Fix a problem Active/Deactive all subscribe.
+
 = 1.6 =
 * Added Enable/Disable User in subscribe page.
 * Fix a problem in show credit.
@@ -96,6 +101,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.7 =
+* Fix a problem in Get credit method.
+* Fix a problem in ALTER TABLE.
+* Fix a problem Active/Deactive all subscribe.
+
 = 1.6 =
 * Added Enable/Disable User in subscribe page.
 * Fix a problem in show credit.
