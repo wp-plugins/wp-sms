@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: WP SMS
-Plugin URI: http://wpbazar.com/products/wp-upload-player/
+Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.7.1
+Version: 1.8
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
@@ -169,7 +169,7 @@ License: GPL2
 
 	function wp_subscribe_meta_box() {
 
-		add_meta_box('subscribe-meta-box', __('Subscribe', 'wp-sms'), 'wp_subscribe_post', 'post', 'normal', 'high');
+		add_meta_box('subscribe-meta-box', __('Subscribe SMS', 'wp-sms'), 'wp_subscribe_post', 'post', 'normal', 'high');
 
 	}
 
@@ -184,16 +184,8 @@ License: GPL2
 		$values = get_post_custom($post->ID);
 		$selected = isset( $values['subscribe_post'] ) ? esc_attr( $values['subscribe_post'][0] ) : '';
 		wp_nonce_field('subscribe_box_nonce', 'meta_box_nonce');
-		?>
-		<p>
-			<label for="subscribe_post"><?php _e('Send this post to subscribers?', 'wp-sms'); ?></label>
-			<select name="subscribe_post" id="subscribe_post">
-				<option value="yes" <?php selected($selected, 'yes'); ?>><?php _e('Yes'); ?></option>
-				<option value="no" <?php selected($selected, 'no'); ?>><?php _e('No'); ?></option>
-			</select>
-		</p>
-		<?php
 
+		include_once('setting/meta-box.php');
 	}
 
 	function wp_subscribe_post_save($post_id) {
@@ -201,14 +193,6 @@ License: GPL2
 		if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 		if(!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'subscribe_box_nonce')) return;
 		if(!current_user_can('edit_post')) return;
-
-		$allowed = array
-		( 
-			'a' => array
-			(
-				'href' => array()
-			)
-		);
 
 		if( isset( $_POST['subscribe_post'] ) )
 		update_post_meta($post_id, 'subscribe_post', esc_attr($_POST['subscribe_post']));
@@ -289,6 +273,28 @@ License: GPL2
 		add_action('the_content', 'wp_tell_a_freind');
 	}
 
+	if(get_option('wp_notification_new_wp_version')) {
+
+		$update = get_site_transient('update_core');
+		$update = $update->updates;
+		
+		if($update[1]->current > $wp_version) {
+
+			if(get_option('wp_last_send_notification') == false) {
+
+				$obj->to = array(get_option('wp_admin_mobile'));
+				$obj->msg = sprintf(__('WordPress %s is available! Please update now', 'wp-sms'), $update[1]->current);
+
+				$obj->send_sms();
+
+				update_option('wp_last_send_notification', true);
+
+			}
+		} else {
+			update_option('wp_last_send_notification', false);
+		}
+	}
+
 	function wp_sms_setting_page() {
 		global $obj;
 
@@ -296,13 +302,6 @@ License: GPL2
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 
 			settings_fields('wp_sms_options');
-			function register_mysettings() {
-				register_setting('wp_sms_options', 'wp_username');
-				register_setting('wp_sms_options', 'wp_password');
-				register_setting('wp_sms_options', 'wp_subscribes_status');
-				register_setting('wp_sms_options', 'wp_subscribes_activation');
-				register_setting('wp_sms_options', 'wp_subscribes_send');
-			}
 		}
 
 		include_once('setting/setting.php');
