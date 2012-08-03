@@ -42,9 +42,22 @@ p.register a{
 				<td>
 					<select name="wp_webservice" onChange="javascript:openwin()">
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
-						<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>&nbsp;&nbsp;- <?php _e('Iransmspanel (iransmspanel.ir)', 'wp-sms'); ?></option>
-						<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>&nbsp;&nbsp;- <?php _e('Host Iran (hostiran.net)', 'wp-sms'); ?></option>
-						<option value="webstudio" <?php selected(get_option('wp_webservice'), 'webstudio'); ?>>&nbsp;&nbsp;- <?php _e('Webstudio (sms.webstudio.ir)', 'wp-sms'); ?></option>
+						<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Iransmspanel (%s)', 'wp-sms'), 'iransmspanel.ir'); ?>
+						</option>
+						<option value="smsfa" <?php selected(get_option('wp_webservice'), 'smsfa'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMSFa (%s)', 'wp-sms'), 'smsfa.us'); ?>
+						</option>
+						<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Host Iran (%s)', 'wp-sms'), 'hostiran.net'); ?>
+						</option>
+						<option value="webstudio" <?php selected(get_option('wp_webservice'), 'webstudio'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Webstudio (%s)', 'wp-sms'), 'sms.webstudio.ir'); ?>
+						</option>
 						<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>&nbsp;&nbsp;- <?php _e('Paniz SMS (panizsms.ir)', 'wp-sms'); ?></option>
 						<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Your Web Service does not exist?', 'wp-sms'); ?></option>
 						<option value="1">&nbsp;&nbsp;- <?php _e('Click for more information', 'wp-sms'); ?></option>

@@ -3,11 +3,12 @@
 Plugin Name: WP SMS
 Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.8
+Version: 1.9
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
 */
+	define('WP_SMS_VERSION', '1.9');
 
 	load_plugin_textdomain('wp-sms', 'wp-content/plugins/wp-sms/langs');
 
@@ -73,7 +74,7 @@ License: GPL2
 				$wp_admin_bar->add_menu(array
 					(
 						'id'		=>	'wp-credit-sms',
-						'title'		=>	'<img src="'.plugin_dir_url(__FILE__).'images/money_coin.png" align="bottom"/> ' . number_format($get_last_credit) . ' ' . $obj->unit,
+						'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), number_format($get_last_credit), $obj->unit),
 						'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
 					));
 			}
@@ -320,35 +321,9 @@ License: GPL2
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		}
 
-		$name = trim($_POST['wp_subscribe_name']);
-		$mobile = trim($_POST['wp_subscribe_mobile']);
-		$date = date('Y-m-d H:i:s' ,current_time('timestamp',0));
-
-		if($_POST['wp_add_subscribe']) {
-			if($name && $mobile) {
-				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
-					global $wpdb, $table_prefix;
-					$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE mobile='".$mobile."'");
-
-					if(!$check_mobile) {
-						$check = $wpdb->query("INSERT INTO {$table_prefix}subscribes (date, name, mobile, status) VALUES ('".$date."', '".$name."', '".$mobile."', '1')");
-
-						if($check) {
-							echo "<div class='updated'><p>" . __('Number with success was added', 'wp-sms') . "</div></p>";
-						}
-					} else {
-						echo "<div class='error'><p>" . __('Phone number is repeated', 'wp-sms') . "</div></p>";
-					}
-				} else {
-					echo "<div class='error'><p>" . __('Please enter a valid mobile number', 'wp-sms') . "</div></p>";
-				}
-			} else {
-				echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
-			}
-		}
+		global $wpdb, $table_prefix;
 
 		if($_POST['doaction']) {
-			global $wpdb, $table_prefix;
 
 			$get_IDs = implode(",", $_POST['column_ID']);
 			$check_ID = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE ID='".$get_IDs."'");
@@ -380,6 +355,55 @@ License: GPL2
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
 					}
 				break;
+			}
+
+		}
+
+		$name = trim($_POST['wp_subscribe_name']);
+		$mobile = trim($_POST['wp_subscribe_mobile']);
+		$date = date('Y-m-d H:i:s' ,current_time('timestamp',0));
+
+		if(isset($_POST['wp_add_subscribe'])) {
+
+			if($name && $mobile) {
+				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+
+					$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE mobile='".$mobile."'");
+
+					if(!$check_mobile) {
+						$check = $wpdb->query("INSERT INTO {$table_prefix}subscribes (date, name, mobile, status) VALUES ('".$date."', '".$name."', '".$mobile."', '1')");
+
+						if($check) {
+							echo "<div class='updated'><p>" . sprintf(__('User <strong>%s</strong> was added successfully.', 'wp-sms'), $name) . "</div></p>";
+						}
+					} else {
+						echo "<div class='error'><p>" . __('Phone number is repeated', 'wp-sms') . "</div></p>";
+					}
+				} else {
+					echo "<div class='error'><p>" . __('Please enter a valid mobile number', 'wp-sms') . "</div></p>";
+				}
+			} else {
+				echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
+			}
+
+		}
+
+		if(isset($_POST['wp_edit_subscribe'])) {
+
+			if($name && $mobile) {
+				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+
+					$check = $wpdb->query("UPDATE {$table_prefix}subscribes SET `name` = '".$name."', `mobile` = '".$mobile."', `status` = '".$_POST['wp_subscribe_status']."' WHERE `ID` = '".$_GET['ID']."'");
+
+					if($check) {
+						echo "<div class='updated'><p>" . sprintf(__('User <strong>%s</strong> was update successfully.', 'wp-sms'), $name) . "</div></p>";
+					}
+
+				} else {
+					echo "<div class='error'><p>" . __('Please enter a valid mobile number', 'wp-sms') . "</div></p>";
+				}
+			} else {
+				echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
 			}
 
 		}

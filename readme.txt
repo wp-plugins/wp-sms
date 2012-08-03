@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.8
+Stable tag: 1.9
 
 Send SMS via wordpress
 
@@ -50,6 +50,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.9 =
+* Added SMSFa Web Service.
+* Optimize in translation functions.
+* Added edit subscribers.
+
 = 1.8 =
 * Added your mobile number.
 * Added Enable/Disable calling jQuery in wordpress.
@@ -110,6 +115,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9 =
+* Added SMSFa Web Service.
+* Optimize in translation functions.
+* Added edit subscribers.
+
 = 1.8 =
 * Added your mobile number.
 * Added Enable/Disable calling jQuery in wordpress.
