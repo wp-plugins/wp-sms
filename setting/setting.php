@@ -58,6 +58,7 @@ p.register a{
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Webstudio (%s)', 'wp-sms'), 'sms.webstudio.ir'); ?>
 						</option>
+						<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>&nbsp;&nbsp;- <?php _e('Payame Avval (payameavval.com)', 'wp-sms'); ?></option>
 						<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>&nbsp;&nbsp;- <?php _e('Paniz SMS (panizsms.ir)', 'wp-sms'); ?></option>
 						<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Your Web Service does not exist?', 'wp-sms'); ?></option>
 						<option value="1">&nbsp;&nbsp;- <?php _e('Click for more information', 'wp-sms'); ?></option>
