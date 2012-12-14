@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 
 Send SMS via wordpress
 
