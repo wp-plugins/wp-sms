@@ -50,7 +50,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
-= 1.9.0 =
+= 1.9.1 =
 * Added PayameAvval Web Service.
 
 = 1.9 =
@@ -118,6 +118,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.1 =
+* Added PayameAvval Web Service.
+
 = 1.9 =
 * Added SMSFa Web Service.
 * Optimize in translation functions.
