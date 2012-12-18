@@ -37,7 +37,7 @@ License: GPL2
 	if(get_option('wp_webservice')) {
 
 		$webservice = get_option('wp_webservice');
-		include_once("inc/$webservice.class.php");
+		require_once(ABSPATH . "wp-content/plugins/wp-sms/inc/$webservice.class.php");
 
 		$obj = new $webservice;
 		$obj->user = get_option('wp_username');
