@@ -23,18 +23,9 @@
 			$options = array('login' => $this->user, 'password' => $this->pass);
 			$client = new SoapClient($this->wsdl_link, $options);
 
-			try
-			{
-				$messageId = $client->sendToMany($this->to, $this->msg, $this->from = false);
-				//print ($client->deliveryStatus($messageId));
-				return $messageID;
-			}
-
-			catch (SoapFault $sf)
-			{
-				print $sf->faultcode."\n";
-				print $sf->faultstring."\n";
-			}
+			$result = $client->sendToMany($this->to, $this->msg, $this->from);
+			
+			return $result;
 		}
 
 		function get_credit()

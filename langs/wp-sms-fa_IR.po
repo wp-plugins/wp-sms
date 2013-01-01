@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-Sms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-14 12:17+0330\n"
-"PO-Revision-Date: 2012-12-14 12:18+0330\n"
+"POT-Creation-Date: 2013-01-01 19:46+0330\n"
+"PO-Revision-Date: 2013-01-01 19:46+0330\n"
 "Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
 "Language-Team: Web Studio <mst404@gmail.com>\n"
 "Language: fa_IR\n"
@@ -424,64 +424,70 @@ msgstr "وب‌سرویس خودرا انتخاب کنید"
 #: F:\Program
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:47
 #, php-format
+msgid "Parand Host (%s)"
+msgstr "پرند هاست (%s)"
+
+#: F:\Program
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:51
+#, php-format
 msgid "Iransmspanel (%s)"
 msgstr "سامانه پیامک ایران اس‌ام‌اس پنل (%s)"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:51
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:55
 #, php-format
 msgid "SMSFa (%s)"
 msgstr "اس‌ام‌اس فا (%s)"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:55
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:59
 #, php-format
 msgid "Host Iran (%s)"
 msgstr "سامانه پیامک هاست ایران (%s)"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:59
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:63
 #, php-format
 msgid "Webstudio (%s)"
 msgstr "سامانه پیامک وب استودیو (%s)"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:61
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:65
 msgid "Payame Avval (payameavval.com)"
 msgstr "سامانه پیام کوتاه پیام اول (payameavval.com)"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:62
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:66
 msgid "Paniz SMS (panizsms.ir)"
 msgstr "سامانه پیامک پانیز (panizsms.ir)"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:63
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:67
 msgid "Your Web Service does not exist?"
 msgstr "سرویس دهنده شما وجود ندارد؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:64
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:68
 msgid "Click for more information"
 msgstr "برای اطلاعات بیشتر کلیک کنید"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:69
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:73
 msgid "Select"
 msgstr "انتخاب"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:75
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:79
 msgid "Username"
 msgstr "نام‌کاربری"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:78
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:82
 msgid "Your username in"
 msgstr "نام‌کاربری شما در"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:80
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:84
 #, php-format
 msgid ""
 "If you do not have a username for this service <a href=\"%s\">click here..</"
@@ -491,17 +497,17 @@ msgstr ""
 "کنید."
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:86
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:90
 msgid "Password"
 msgstr "رمزعبور"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:89
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:93
 msgid "Your password in"
 msgstr "رمزعبور شما در"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:91
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:95
 #, php-format
 msgid ""
 "If you do not have a password for this service <a href=\"%s\">click here..</"
@@ -510,22 +516,22 @@ msgstr ""
 "درصورتی که رمزعبور این سرویس را ندارید <a href=\"%s\">اینجا را</a> کلیک کنید."
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:97
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:101
 msgid "Number"
 msgstr "شماره"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:100
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:104
 msgid "Your SMS sender number in"
 msgstr "شماره ارسال کننده پیامک شما در"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:105
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:109
 msgid "Credit"
 msgstr "اعتبار"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:112
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:116
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:31
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:73
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:112
@@ -533,77 +539,77 @@ msgid "Status"
 msgstr "وضعیت"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:115
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:128
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:136
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:144
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:152
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:162
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:171
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:119
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:132
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:140
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:148
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:156
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:166
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:175
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:84
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:115
 msgid "Active"
 msgstr "فعال"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:117
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:121
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:85
 #: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/subscribes.php:116
 msgid "Deactive"
 msgstr "غیرفعال"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:123
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:127
 msgid "Newsletter"
 msgstr "خبرنامه"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:125
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:129
 msgid "Register?"
 msgstr "نام‌نویسی؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:133
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:137
 msgid "Send activation code via SMS?"
 msgstr "ارسال کدفعال سازی از طریق پیامک؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:141
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:145
 msgid "Posts sent to subscribers?"
 msgstr "ارسال نوشته‌ها به مشترکین؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:149
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:153
 msgid "Calling jQuery in Wordpress?"
 msgstr "فراخوانی جی‌کوئری در وردپرس؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:153
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:157
 msgid "Enable this option with JQuery is called in the theme"
 msgstr "با فعال کردن این گزینه جی کوئری در پوسته فراخوانی میشود"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:157
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:161
 msgid "Post Suggestion"
 msgstr "پیشنهاد نوشته"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:159
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:163
 msgid "Suggested post by SMS?"
 msgstr "پیشنهاد نوشته از طریق پیامک؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:166
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:170
 msgid "Notification Setting"
 msgstr "تنظیمات اطلاع رسانی"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:168
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:172
 msgid "Notification of a new wordPress version by SMS?"
 msgstr "اطلاع رسانی از نسخه جدید وردپرس توسط پیامک؟"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:172
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:176
 msgid ""
 "Enable this option with When a new version of WordPress was ready, will be "
 "informed via SMS"
@@ -612,7 +618,7 @@ msgstr ""
 "داده می شود"
 
 #: F:\Program
-#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:181
+#: Files\xampp\htdocs\wordpress\wp-content\plugins\wp-sms/setting/setting.php:185
 msgid "Update"
 msgstr "به‌روزرسانی"
 

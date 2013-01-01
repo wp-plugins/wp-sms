@@ -42,6 +42,10 @@ p.register a{
 				<td>
 					<select name="wp_webservice" onChange="javascript:openwin()">
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
+						<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Parand Host (%s)', 'wp-sms'), 'sms.parandhost.com'); ?>
+						</option>
 						<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Iransmspanel (%s)', 'wp-sms'), 'iransmspanel.ir'); ?>

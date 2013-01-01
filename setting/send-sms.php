@@ -1,4 +1,3 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/js/functions.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var boxId2 = 'wp_get_message';
@@ -9,30 +8,30 @@
 			checkSMSLength(boxId2, counter, part, max);
 		}
 
-		$(document).ready(function(){
-			$("select#select_sender").change(function(){
+		jQuery(document).ready(function(){
+			jQuery("select#select_sender").change(function(){
 				var get_method = "";
-				$("select#select_sender option:selected").each(
+				jQuery("select#select_sender option:selected").each(
 					function(){
-						get_method += $(this).attr('id');
+						get_method += jQuery(this).attr('id');
 					}
 				);
 				if(get_method == 'wp_tellephone'){
-					$("#wp_get_numbers").fadeIn();
-					$("#wp_get_number").focus();
+					jQuery("#wp_get_numbers").fadeIn();
+					jQuery("#wp_get_number").focus();
 				} else {
-					$("#wp_get_numbers").fadeOut();
+					jQuery("#wp_get_numbers").fadeOut();
 				}
 			});
 
 			charLeft2();
-			$("#" + boxId2).bind('keyup', function() {
+			jQuery("#" + boxId2).bind('keyup', function() {
 				charLeft2();
 			});
-			$("#" + boxId2).bind('keydown', function() {
+			jQuery("#" + boxId2).bind('keydown', function() {
 				charLeft2();
 			});
-			$("#" + boxId2).bind('paste', function(e) {
+			jQuery("#" + boxId2).bind('paste', function(e) {
 				charLeft2();
 			});
 		});
