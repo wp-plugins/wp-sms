@@ -44,27 +44,39 @@ p.register a{
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
 						<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>
 							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Parand Host (%s)', 'wp-sms'), 'sms.parandhost.com'); ?>
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'sms.parandhost.com'); ?>
 						</option>
 						<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
 							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Iransmspanel (%s)', 'wp-sms'), 'iransmspanel.ir'); ?>
-						</option>
-						<option value="smsfa" <?php selected(get_option('wp_webservice'), 'smsfa'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('SMSFa (%s)', 'wp-sms'), 'smsfa.us'); ?>
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'iransmspanel.ir'); ?>
 						</option>
 						<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>
 							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Host Iran (%s)', 'wp-sms'), 'hostiran.net'); ?>
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'hostiran.net'); ?>
+						</option>
+						<option value="smsfa" <?php selected(get_option('wp_webservice'), 'smsfa'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'smsfa.us'); ?>
 						</option>
 						<option value="webstudio" <?php selected(get_option('wp_webservice'), 'webstudio'); ?>>
 							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Webstudio (%s)', 'wp-sms'), 'sms.webstudio.ir'); ?>
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'sms.webstudio.ir'); ?>
 						</option>
-						<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>&nbsp;&nbsp;- <?php _e('Payame Avval (payameavval.com)', 'wp-sms'); ?></option>
-						<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>&nbsp;&nbsp;- <?php _e('Paniz SMS (panizsms.ir)', 'wp-sms'); ?></option>
-						<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;"><?php _e('Your Web Service does not exist?', 'wp-sms'); ?></option>
+						<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'payameavval.com'); ?>
+						</option>
+						<option value="smsclick" <?php selected(get_option('wp_webservice'), 'smsclick'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'smsclick.ir'); ?>
+						</option>
+						<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'panizsms.ir'); ?>
+						</option>
+						<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;">
+							<?php _e('Your Web Service does not exist?', 'wp-sms'); ?>
+						</option>
 						<option value="1">&nbsp;&nbsp;- <?php _e('Click for more information', 'wp-sms'); ?></option>
 					</select>
 
