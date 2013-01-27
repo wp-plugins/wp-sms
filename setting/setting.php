@@ -74,6 +74,10 @@ p.register a{
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'persiansms.com'); ?>
 						</option>
+						<option value="ariaideh" <?php selected(get_option('wp_webservice'), 'ariaideh'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'sms.ariaideh.com'); ?>
+						</option>
 						<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'panizsms.ir'); ?>
