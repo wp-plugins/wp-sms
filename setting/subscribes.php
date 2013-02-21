@@ -19,6 +19,7 @@
 
 <div class="wrap">
 	<h2><?php _e('Subscribes list', 'wp-sms'); ?></h2>
+	<?php if(!$_GET['action'] == 'edit') { ?>
 	<form action="" method="post">
 		<table class="widefat fixed" cellspacing="0">
 			<thead>
@@ -37,7 +38,7 @@
 			<tbody>
 				<?php
 				global $wpdb, $table_prefix;
-				$get_result = $wpdb->get_results("SELECT * FROM {$table_prefix}subscribes");
+				$get_result = $wpdb->get_results("SELECT * FROM {$table_prefix}subscribes ORDER BY `{$table_prefix}subscribes`.`ID` DESC");
 
 				if(count($get_result ) > 0)
 				{
@@ -90,11 +91,28 @@
 		</div>
 	</form>
 
-	<?php if($_GET['action'] == 'edit') { ?>
+	<form action="" method="post">
+		<table>
+			<tr><td colspan="2"><h3><?php _e('Add new subscribe:', 'wp-sms'); ?></h4></td></tr>
+			<tr>
+				<td><span class="label_td" for="wp_subscribe_name"><?php _e('Name', 'wp-sms'); ?>:</span></td>
+				<td><input type="text" id="wp_subscribe_name" name="wp_subscribe_name"/></td>
+			</tr>
 
-	<?php
-		$get_result = $wpdb->get_results("SELECT * FROM {$table_prefix}subscribes WHERE ID = '".$_GET['ID']."'");
-	?>
+			<tr>
+				<td><span class="label_td" for="wp_subscribe_mobile"><?php _e('Mobile', 'wp-sms'); ?>:</span></td>
+				<td><input type="text" name="wp_subscribe_mobile" id="wp_subscribe_mobile" class="code"/></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><input type="submit" class="button-primary" name="wp_add_subscribe" value="<?php _e('Add', 'wp-sms'); ?>" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<?php } else { ?>
+
+	<?php $get_result = $wpdb->get_results("SELECT * FROM {$table_prefix}subscribes WHERE ID = '".$_GET['ID']."'"); ?>
 	<form action="" method="post">
 		<table>
 			<tr><td colspan="2"><h3><?php _e('Edit subscribe:', 'wp-sms'); ?></h4></td></tr>
@@ -124,28 +142,7 @@
 		</table>
 	</form>
 
-	<h4><a href="" onclick="window.history.back();"><?php _e('Back', 'wp-sms'); ?></a></h4>
-
-	<?php } else { ?>
-
-	<form action="" method="post">
-		<table>
-			<tr><td colspan="2"><h3><?php _e('Add new subscribe:', 'wp-sms'); ?></h4></td></tr>
-			<tr>
-				<td><span class="label_td" for="wp_subscribe_name"><?php _e('Name', 'wp-sms'); ?>:</span></td>
-				<td><input type="text" id="wp_subscribe_name" name="wp_subscribe_name"/></td>
-			</tr>
-
-			<tr>
-				<td><span class="label_td" for="wp_subscribe_mobile"><?php _e('Mobile', 'wp-sms'); ?>:</span></td>
-				<td><input type="text" name="wp_subscribe_mobile" id="wp_subscribe_mobile" class="code"/></td>
-			</tr>
-
-			<tr>
-				<td colspan="2"><input type="submit" class="button-primary" name="wp_add_subscribe" value="<?php _e('Add', 'wp-sms'); ?>" /></td>
-			</tr>
-		</table>
-	</form>
-
+	<h4><a href="<?php echo admin_url(); ?>admin.php?page=wp-sms/subscribe"><?php _e('Back', 'wp-sms'); ?></a></h4>
+	
 	<?php } ?>
 </div>

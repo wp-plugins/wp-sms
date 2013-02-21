@@ -187,13 +187,22 @@ p.register a{
 				</td>
 			</tr>
 
-			<tr><th colspan="2"><h3><?php _e('Notification Setting', 'wp-sms'); ?></h4></th></tr>
+			<tr><th colspan="2"><h3><?php _e('Notification', 'wp-sms'); ?></h4></th></tr>
 			<tr>
-				<td><?php _e('Notification of a new wordPress version by SMS?', 'wp-sms'); ?></td>
+				<td><?php _e('Notification SMS of a new wordPress version?', 'wp-sms'); ?></td>
 				<td>
 					<input type="checkbox" name="wp_notification_new_wp_version" id="wp_notification_new_wp_version" <?php echo get_option('wp_notification_new_wp_version') ==true? 'checked="checked"':'';?>/>
 					<label for="wp_notification_new_wp_version"><?php _e('Active', 'wp-sms'); ?></label>
 					<span style="font-size: 10px">(<?php _e('Enable this option with When a new version of WordPress was ready, will be informed via SMS', 'wp-sms'); ?>)</span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><?php _e('Notification SMS when messages received from Contact Form 7 plugin?', 'wp-sms'); ?></td>
+				<td>
+					<input type="checkbox" name="wp_notification_wpcf7" id="wp_notification_wpcf7" <?php echo get_option('wp_notification_wpcf7') ==true? 'checked="checked"':'';?>/>
+					<label for="wp_notification_wpcf7"><?php _e('Active', 'wp-sms'); ?></label>
+					<span style="font-size: 10px">(<?php _e('Enable this option with When a new message received of Contact Form 7 plugin, will be informed via SMS', 'wp-sms'); ?>)</span>
 				</td>
 			</tr>
 
@@ -201,7 +210,7 @@ p.register a{
 				<td>
 					<p class="submit">
 					<input type="hidden" name="action" value="update" />
-					<input type="hidden" name="page_options" value="wp_admin_mobile,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version" />
+					<input type="hidden" name="page_options" value="wp_admin_mobile,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version,wp_notification_wpcf7" />
 					<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>

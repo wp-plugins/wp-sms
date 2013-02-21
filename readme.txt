@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 
 Send SMS via wordpress
 
@@ -28,6 +28,7 @@ Language Support:
 
 * English
 * Persian
+* Arabic (Thanks Hamad Al-Shammari)
 * Portuguese (Thanks Matt Moxx)
 
 Send email for Translation files: mst404[a]gmail[dot].com
@@ -50,6 +51,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.9.6 =
+* Added Arabic language.
+* Added Notification SMS when messages received from Contact Form 7 plugin.
+* Small changes in editing Subscribers.
+
 = 1.9.5 =
 * Added Ariaideh Web Service.
 
@@ -131,6 +137,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.6 =
+* Added Arabic language.
+* Added Notification SMS when messages received from Contact Form 7 plugin.
+* Small changes in editing Subscribers.
+
 = 1.9.5 =
 * Added Ariaideh Web Service.
 

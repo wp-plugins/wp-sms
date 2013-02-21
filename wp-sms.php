@@ -3,12 +3,12 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.9.5
+Version: 1.9.6
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
 */
-	define('WP_SMS_VERSION', '1.9');
+	define('WP_SMS_VERSION', '1.9.6');
 
 	load_plugin_textdomain('wp-sms', 'wp-content/plugins/wp-sms/langs');
 
@@ -136,12 +136,11 @@ License: GPL2
 		dbDelta($create_subscribes_table);
 		add_option('wp_sms_db_version', 'wp_sms_db_version');
 
+		// Add secound column in 1.5 version plugin.
+		$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status tinyint(1), activate_key INT(11))");
 	}
 	register_activation_hook(__FILE__,'wp_sms_install');
-
-	// Add secound column in 1.5 version plugin.
-	$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status tinyint(1), activate_key INT(11))");
-
+	
 	function wp_sms_widget() {
 
 		wp_register_sidebar_widget('wp_sms', __('Subscribe to SMS', 'wp-sms'), 'wp_subscribe_show_widget', array('description'	=>	__('Subscribe to SMS', 'wp-sms')));
@@ -295,6 +294,28 @@ License: GPL2
 			update_option('wp_last_send_notification', false);
 		}
 	}
+	
+	function wpcf7_send_to_wpsms($data) {
+	
+		global $obj;
+		
+		$form_data = $data->posted_data;
+		
+		unset($form_data['_wpcf7']);
+		unset($form_data['_wpcf7_version']);
+		unset($form_data['_wpcf7_unit_tag']);
+		unset($form_data['_wpnonce']);
+		unset($form_data['_wpcf7_is_ajax_call']);
+		
+		$obj->to = array(get_option('wp_admin_mobile'));
+		$obj->msg = __('A message was received from the Contact Form 7: ', 'wp-sms') . implode(', ', $form_data) . __('(SMS wordpress plugin)', 'wp-sms');
+
+		$obj->send_sms();
+	}
+	
+	if( get_option('wp_notification_wpcf7') ) {
+		add_action('wpcf7_mail_sent', 'wpcf7_send_to_wpsms', 1);
+	}
 
 	function wp_sms_setting_page() {
 		global $obj;
@@ -389,7 +410,7 @@ License: GPL2
 		}
 
 		if(isset($_POST['wp_edit_subscribe'])) {
-
+		
 			if($name && $mobile) {
 				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 
