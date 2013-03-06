@@ -1,11 +1,11 @@
 <?php
-	class panizsms
+	class sadat24
 	{
-		private $wsdl_link = "http://www.panizsms.ir/post/send.asmx?wsdl";
-		public $tariff = "http://www.panizsms.com/";
-		public $unitrial = true;
+		private $wsdl_link = "http://sms.sadat24.ir/post/send.asmx?wsdl";
+		public $tariff = "http://sadat24.ir/";
+		public $unitrial = false;
 		public $unit;
-		public $flash = "disable";
+		public $flash = "enable";
 		public $user;
 		public $pass;
 		public $from;
