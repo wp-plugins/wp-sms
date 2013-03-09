@@ -46,8 +46,6 @@
 			try
 			{
 				$client = new SoapClient($this->wsdl_link);
-				$parameters['username'] = $this->user;
-				$parameters['password'] = $this->pass;
 				return $client->GetCredit(array("username"=>$this->user,"password"=>$this->pass))->GetCreditResult;
 			}
 			catch(SoapFault $ex)

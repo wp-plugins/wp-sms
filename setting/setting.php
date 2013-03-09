@@ -54,6 +54,10 @@ p.register a{
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'hostiran.net'); ?>
 						</option>
+						<option value="smsdehi" <?php selected(get_option('wp_webservice'), 'smsdehi'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'smsdehi.ir'); ?>
+						</option>
 						<option value="webstudio" <?php selected(get_option('wp_webservice'), 'webstudio'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'sms.webstudio.ir'); ?>
