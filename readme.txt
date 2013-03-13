@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.9.8
+Stable tag: 1.9.9
 
 Send SMS via wordpress
 
@@ -22,7 +22,8 @@ Features:
 * Support shortcode
 * Support suggestion post by SMS.
 * Send activation from subscribe.
-* Notification of a new wordPress version by SMS (New)
+* Notification of a new wordPress version by SMS (New).
+* Notification SMS when messages received from Contact Form 7 plugin.
 
 Language Support:
 
@@ -51,6 +52,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.9.9 =
+* Added Smscall Webservice.
+
 = 1.9.8 =
 * Added Smsdehi Webservice.
 
@@ -143,6 +147,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.9 =
+* Added Smscall Webservice.
+
 = 1.9.8 =
 * Added Smsdehi Webservice.
 

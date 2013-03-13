@@ -17,22 +17,26 @@
 		}
 
 		function send_sms() {
+		
 			$client = new SoapClient($this->wsdl_link);
 			
-			$result= $client->SendSms(array(
-				'username'	=> $this->user,
-				'password'	=> $this->pass,
-				'from'		=> $this->from,
-				'to'		=> $this->to,
-				'text'		=> $this->msg,
-				'flash'		=> false,
-				'udh'		=> ''
-			));
+			$result= $client->SendSms(
+				array(
+					'username'	=> $this->user,
+					'password'	=> $this->pass,
+					'from'		=> $this->from,
+					'to'		=> $this->to,
+					'text'		=> $this->msg,
+					'flash'		=> false,
+					'udh'		=> ''
+				)
+			);
 			
 			return $result;
 		}
 
 		function get_credit() {
+		
 			$client = new SoapClient($this->wsdl_link);
 
 			$result = $client->Credit(array('username' => $this->user, 'password' => $this->pass));

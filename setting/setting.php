@@ -86,6 +86,10 @@ p.register a{
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'sadat24.ir'); ?>
 						</option>
+						<option value="smscall" <?php selected(get_option('wp_webservice'), 'smscall'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'smscall.ir'); ?>
+						</option>
 						<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;">
 							<?php _e('Your Web Service does not exist?', 'wp-sms'); ?>
 						</option>
