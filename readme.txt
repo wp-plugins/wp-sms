@@ -4,7 +4,7 @@ Donate link: http://iran98.org/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.9.9
+Stable tag: 1.9.10
 
 Send SMS via wordpress
 
@@ -52,6 +52,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.9.10 =
+* Added Tablighsmsi Webservice.
+
 = 1.9.9 =
 * Added Smscall Webservice.
 
@@ -147,6 +150,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.10 =
+* Added Tablighsmsi Webservice.
+
 = 1.9.9 =
 * Added Smscall Webservice.
 
