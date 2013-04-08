@@ -82,6 +82,10 @@ p.register a{
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'panizsms.ir'); ?>
 						</option>
+						<option value="sms_s" <?php selected(get_option('wp_webservice'), 'sms_s'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'SMS-S.ir'); ?>
+						</option>
 						<option value="sadat24" <?php selected(get_option('wp_webservice'), 'sadat24'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'sadat24.ir'); ?>
@@ -93,6 +97,10 @@ p.register a{
 						<option value="tablighsmsi" <?php selected(get_option('wp_webservice'), 'tablighsmsi'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'tablighsmsi.com'); ?>
+						</option>
+						<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('SMS Panel (%s)', 'wp-sms'), 'smsglobal.com'); ?>
 						</option>
 						<option value="" disabled="disabled" style="background:#BBBBBB; color:#FFFFFF;">
 							<?php _e('Your Web Service does not exist?', 'wp-sms'); ?>
