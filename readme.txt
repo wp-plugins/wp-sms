@@ -52,7 +52,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
-= 1.9.2 =
+= 1.9.2.0 =
 * Added: CSS file in setting page.
 * Resolved: Loads the plugin's translated strings problem.
 * Language: updated.
@@ -159,6 +159,11 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.2.0 =
+* Added: CSS file in setting page.
+* Resolved: Loads the plugin's translated strings problem.
+* Language: updated.
+
 = 1.9.1.1 =
 * Added SMS-S Webservice.
 * Added SMSGlobal Webservice.
