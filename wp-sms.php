@@ -3,14 +3,14 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.9.1.1
+Version: 1.9.2.0
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
 */
-	define('WP_SMS_VERSION', '1.9.8');
+	define('WP_SMS_VERSION', '1.9.2.0');
 
-	load_plugin_textdomain('wp-sms', 'wp-content/plugins/wp-sms/langs');
+	load_plugin_textdomain('wp-sms', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/');
 
 	global $wp_sms_db_version, $wpdb;
 	$wp_sms_db_version = "1.0";
@@ -19,11 +19,11 @@ License: GPL2
 
 		if (function_exists('add_options_page')) {
 
-			add_menu_page(__('WP SMS', 'wp-sms'), __('WP SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_sms_setting_page', plugin_dir_url( __FILE__ ).'/images/sms.png');
-			add_submenu_page(__FILE__, __('SMS Setting', 'wp-sms'), __('SMS Setting', 'wp-sms'), 'manage_options', __FILE__, 'wp_sms_setting_page');
-			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', 'wp-sms/send', 'wp_send_sms_page');
-			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Members Newsletter', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
-			add_submenu_page(__FILE__, __('About Plugin', 'wp-sms'), __('About Plugin', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_about_setting_page');
+			add_menu_page(__('WP SMS', 'wp-sms'), __('WP SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page', plugin_dir_url( __FILE__ ).'/images/sms.png');
+			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page');
+			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Newsletter subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
+			add_submenu_page(__FILE__, __('Setting', 'wp-sms'), __('Setting', 'wp-sms'), 'manage_options', 'wp-sms/setting', 'wp_sms_setting_page');
+			add_submenu_page(__FILE__, __('About', 'wp-sms'), __('About', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_about_setting_page');
 
 		}
 
@@ -53,6 +53,10 @@ License: GPL2
 			$obj->unit = __('SMS', 'wp-sms');
 		}
 	}
+	
+	if( !get_option('wp_sms_mcc') ) {
+		update_option('wp_sms_mcc', '09');
+	}
 
 	function wp_subscribes() {
 
@@ -75,7 +79,7 @@ License: GPL2
 					(
 						'id'		=>	'wp-credit-sms',
 						'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), number_format($get_last_credit), $obj->unit),
-						'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
+						'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/setting'
 					));
 			}
 			$wp_admin_bar->add_menu(array
@@ -83,7 +87,7 @@ License: GPL2
 					'id'		=>	'wp-send-sms',
 					'parent'	=>	'new-content',
 					'title'		=>	__('SMS', 'wp-sms'),
-					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/send'
+					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
 				));
 		} else {
 			return false;
@@ -93,14 +97,14 @@ License: GPL2
 
 	function wp_sms_rightnow_discussion() {
 		global $obj;
-		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".$obj->unit."</a></td></tr>";
+		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".__('Credit', 'wp-sms')." (".$obj->unit.")</a></td></tr>";
 	}
 	add_action('right_now_discussion_table_end', 'wp_sms_rightnow_discussion');
 
 	function wp_sms_rightnow_content() {
 		global $wpdb, $table_prefix;
 		$users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}subscribes");
-		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".$users."</a></td><td><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".__('Common', 'wp-sms')."</a></td></tr>";
+		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".$users."</a></td><td><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".__('Newsletter Subscriber', 'wp-sms')."</a></td></tr>";
 	}
 	add_action('right_now_content_table_end', 'wp_sms_rightnow_content');
 
@@ -250,7 +254,7 @@ License: GPL2
 			if($_POST['send_post']) {
 				$mobile = $_POST['get_fmobile'];
 				if($_POST['get_name'] && $_POST['get_fname'] && $_POST['get_fmobile']) {
-					if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+					if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 						$obj->to = array($_POST['get_fmobile']);
 						$obj->msg = sprintf(__('Hi %s, the %s post suggested to you by %s. url: %s', 'wp-sms'), $_POST['get_fname'], get_the_title(), $_POST['get_name'], wp_get_shortlink());
 						if($obj->send_sms()) {
@@ -316,19 +320,7 @@ License: GPL2
 	if( get_option('wp_notification_wpcf7') ) {
 		add_action('wpcf7_mail_sent', 'wpcf7_send_to_wpsms', 1);
 	}
-
-	function wp_sms_setting_page() {
-		global $obj;
-
-		if (!current_user_can('manage_options')) {
-			wp_die(__('You do not have sufficient permissions to access this page.'));
-
-			settings_fields('wp_sms_options');
-		}
-
-		include_once('setting/setting.php');
-	}
-
+	
 	function wp_send_sms_page() {
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
@@ -431,7 +423,21 @@ License: GPL2
 
 		include_once('setting/subscribes.php');
 	}
+	
+	function wp_sms_setting_page() {
+	
+		global $obj;
 
+		if (!current_user_can('manage_options')) {
+			wp_die(__('You do not have sufficient permissions to access this page.'));
+
+			settings_fields('wp_sms_options');
+		}
+
+		wp_enqueue_style('css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.0');
+		include_once('setting/setting.php');
+	}
+	
 	function wp_about_setting_page() {
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));

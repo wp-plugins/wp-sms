@@ -136,7 +136,7 @@
 							<label for="flash_no"><?php _e('No', 'wp-sms'); ?></label>
 
 							<br />
-							<span style="font-size: 10px"><?php _e('Flash is possible to send messages without being asked, opens', 'wp-sms'); ?></span>
+							<p class="description"><?php _e('Flash is possible to send messages without being asked, opens', 'wp-sms'); ?></p>
 						</td>
 					</tr>
 					<?php } ?>
