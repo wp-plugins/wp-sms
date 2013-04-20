@@ -162,6 +162,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.2.1 =
+* Added paaz Webservice.
+
 = 1.9.2.0 =
 * Added: CSS file in setting page.
 * Resolved: Loads the plugin's translated strings problem.
