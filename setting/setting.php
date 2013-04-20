@@ -101,6 +101,10 @@
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'tablighsmsi.com'); ?>
 						</option>
+						<option value="paaz" <?php selected(get_option('wp_webservice'), 'paaz'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'paaz.ir'); ?>
+						</option>
 						
 						<!--Seprator-->
 						<option value="" disabled="disabled" class="option-seprator"><?php _e('Australia', 'wp-sms'); ?></option>
