@@ -1,8 +1,7 @@
 <?php
-	class persianSMS
-	{
-		private $wsdl_link = "http://persian-sms.com/API/SendSMS.asmx?WSDL";
-		public $tariff = "http://www.persian-sms.com/";
+	class jahanpayamak {
+		private $wsdl_link = "http://jahanpayamak.ir/API/SendSMS.asmx?WSDL";
+		public $tariff = "http://www.jahanpayamak.info/";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
@@ -14,19 +13,26 @@
 		public $api;
 		public $isflash = false;
 
-		function __construct()
-		{
+		function __construct() {
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms()
-		{
-			try
-			{
+		function send_sms() {
+		
+			if( substr($this->from, 0, 4) == '1000' ) {
+				$this->api = 11;
+			} else if( substr($this->from, 0, 4) == '2000' ) {
+				$this->api = 22;
+			} else if( substr($this->from, 0, 4) == '3000' ) {
+				$this->api = 13;
+			}
+			
+			try {
 				$client = new SoapClient($this->wsdl_link);
+				
 				$parameters['USERNAME']	= $this->user;
 				$parameters['PASSWORD']	= $this->pass;
-				$parameters['TO']	= $this->to;
+				$parameters['TO'] = implode(',', $this->to);
 				$parameters['FROM'] = $this->from;
 				$parameters['TEXT'] = $this->msg;
 				$parameters['API']	= $this->api;
@@ -35,22 +41,17 @@
 				$parameters['Internation']	= false;
 				
 				return $client->Send_Sms4($parameters)->Send_Sms4Result;
-			}
-			catch(SoapFault $ex)
-			{
+				
+			} catch(SoapFault $ex) {
 				return $ex->faultstring;
 			}
 		}
 
-		public function get_credit()
-		{
-			try
-			{
+		public function get_credit() {
+			try {
 				$client = new SoapClient($this->wsdl_link);
 				return $client->CHECK_CREDIT(array("USERNAME"=>$this->user,"PASSWORD"=>$this->pass))->CHECK_CREDITResult;
-			}
-			catch(SoapFault $ex)
-			{
+			} catch(SoapFault $ex) {
 				return $ex->faultstring;
 			}
 
