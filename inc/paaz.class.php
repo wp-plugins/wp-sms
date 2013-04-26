@@ -1,8 +1,8 @@
 <?php
 	class paaz
 	{
-		private $wsdl_link = "http://www.paaz.ir/post/send.asmx?wsdl";
-		public $tariff = "http://www.paaz.ir/";
+		private $wsdl_link = "http://sms.paaz.ir/post/send.asmx?wsdl";
+		public $tariff = "http://sms.paaz.ir/";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
