@@ -3,7 +3,7 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.9.13
+Version: 1.9.14
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
