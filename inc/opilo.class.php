@@ -1,8 +1,8 @@
 <?php
-    class opilo
+    class webstudio
     {
         private $wsdl_link = "http://webservice.opilo.com/WS/";
-        public $tariff = "http://www.opilo.com/?mref=wp";
+        public $tariff = "http://cms.opilo.com/?p=179";
         public $unitrial = false;
         public $unit;
         public $flash = "enable";
@@ -20,39 +20,48 @@
 
         function send_sms()
         {
-			$url = $this->wsdl_link .
-			"httpsend/?username=" . $this->user
-			. "&password=" . $this->pass . 
-			"&from=" .$this->from .
-			"&to=" .$this->to 
-			. "&text=" . urlencode($this->msg)
-			. "&flash=" . $this->isflash;
+            $url = $this->wsdl_link .
+            "httpsend/?username=" . $this->user
+            . "&password=" . $this->pass . 
+            "&from=" .$this->from .
+            "&to=" .$this->to 
+            . "&text=" . urlencode($this->msg)
+            . "&flash=" . $this->isflash
 
-			$response = file($url);
+            ;
 
-			if(!is_numeric($response)) {
-				echo "Error"; 
-				return;
-			}
+            $response = file($url);
 
-			if( strlen ($response) > 2){
-				return $response;
-			} else {
-				echo  "System Error n:" .$response;
-			}
+            if(!is_numeric($response[1])){ 
+                echo "Error"; 
+                return;
+
+            }    
+
+            if( strlen ($response[1]) > 2){
+
+                return $response[1];
+
+            }else{
+
+                echo  "System Error n:" .$response[1];
+
+            }
+
+
         }
 
         function get_credit()
         {
-			$url=$this->wsdl_link . "getCredit/?username=" . $this->user
-			."&password=" . $this->pass;
-			$response = file($url);
-			
-			if(strstr($response,"Error")){
-				echo "System Error n:" . $response;
-				return;
-			}
+            $url=$this->wsdl_link . "getCredit/?username=" . $this->user
+            ."&password=" . $this->pass;
+            $response = file($url);
+            if(strstr($response[1],"Error")){
+                echo $response[1];
+                return;
+            }
 
-			return $response;
-        }
-}
+            return $response[1];
+        } 
+    }
+
