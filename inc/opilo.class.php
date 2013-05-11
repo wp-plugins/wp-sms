@@ -1,5 +1,5 @@
 <?php
-    class webstudio
+    class opilo
     {
         private $wsdl_link = "http://webservice.opilo.com/WS/";
         public $tariff = "http://cms.opilo.com/?p=179";
@@ -20,34 +20,35 @@
 
         function send_sms()
         {
-            $url = $this->wsdl_link .
-            "httpsend/?username=" . $this->user
-            . "&password=" . $this->pass . 
-            "&from=" .$this->from .
-            "&to=" .$this->to 
-            . "&text=" . urlencode($this->msg)
-            . "&flash=" . $this->isflash
+            foreach($this->to as $number){
+                $url = $this->wsdl_link .
+                "httpsend/?username=" . $this->user
+                . "&password=" . $this->pass . 
+                "&from=" .$this->from .
+                "&to=" .$number 
+                . "&text=" . urlencode($this->msg)
+                . "&flash=" . $this->isflash
 
-            ;
+                ;
 
-            $response = file($url);
+                $response = file($url);
 
-            if(!is_numeric($response[1])){ 
-                echo "Error"; 
-                return;
+                if(!is_numeric($response[1])){ 
+                    echo "Error"; 
+                    return;
 
-            }    
+                }    
 
-            if( strlen ($response[1]) > 2){
+                if( strlen ($response[1]) > 2){
 
-                return $response[1];
+                    return $response[1];
 
-            }else{
+                }else{
 
-                echo  "System Error n:" .$response[1];
+                    echo  "System Error n:" .$response[1] . ' for '. $number;
 
+                }
             }
-
 
         }
 
