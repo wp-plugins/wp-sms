@@ -52,6 +52,10 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 1.9.15 =
+* Added BarzinSMS Webservice.
+* Update jQuery to 1.9.1.
+
 = 1.9.14 =
 * Resolved opilo Webservice.
 
@@ -167,6 +171,10 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 1.9.15 =
+* Added BarzinSMS Webservice.
+* Update jQuery to 1.9.1.
+
 = 1.9.14 =
 * Resolved opilo Webservice.
 
