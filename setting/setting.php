@@ -61,10 +61,6 @@
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsdehi.ir'); ?>
 						</option>
-						<option value="webstudio" <?php selected(get_option('wp_webservice'), 'webstudio'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.webstudio.ir'); ?>
-						</option>
 						<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payameavval.com'); ?>
