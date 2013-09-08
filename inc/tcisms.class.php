@@ -2,7 +2,7 @@
 	class tcisms
 	{
 		private $wsdl_link = "http://www.tcisms.com/webservice/smsService.php?wsdl";
-		public $tariff = "http://ipmg.ir/";
+		public $tariff = "http://tcisms.com/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "disable";
