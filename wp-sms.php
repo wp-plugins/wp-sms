@@ -3,12 +3,12 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.9.19
+Version: 1.9.20
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
 */
-	define('WP_SMS_VERSION', '1.9.19');
+	define('WP_SMS_VERSION', '1.9.20');
 
 	load_plugin_textdomain('wp-sms', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/');
 
@@ -404,7 +404,7 @@ License: GPL2
 		if(isset($_POST['wp_edit_subscribe'])) {
 		
 			if($name && $mobile) {
-				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 
 					$check = $wpdb->query("UPDATE {$table_prefix}subscribes SET `name` = '".$name."', `mobile` = '".$mobile."', `status` = '".$_POST['wp_subscribe_status']."' WHERE `ID` = '".$_GET['ID']."'");
 

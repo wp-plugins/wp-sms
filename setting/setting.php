@@ -129,6 +129,10 @@
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'imencms.com'); ?>
 						</option>
+						<option value="tcisms" <?php selected(get_option('wp_webservice'), 'tcisms'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'tcisms.com'); ?>
+						</option>
 						
 						<!--Seprator-->
 						<option value="" disabled="disabled" class="option-seprator"><?php _e('Australia', 'wp-sms'); ?></option>
