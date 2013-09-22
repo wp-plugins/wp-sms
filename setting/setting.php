@@ -137,6 +137,10 @@
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'caffeweb.com'); ?>
 						</option>
+						<option value="nasrpayam" <?php selected(get_option('wp_webservice'), 'nasrpayam'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'nasrpayam.ir'); ?>
+						</option>
 						
 						<!--Seprator-->
 						<option value="" disabled="disabled" class="option-seprator"><?php _e('Australia', 'wp-sms'); ?></option>
