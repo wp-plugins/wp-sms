@@ -3,7 +3,7 @@
 	{
 		private $wsdl_link = "http://panel.nasrpayam.ir/webservice/index.php?wsdl";
 		public $tariff = "http://nasrpayam.ir/tariff-panel.php";
-		public $unitrial = false;
+		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
 		public $user;
