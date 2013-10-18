@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Wordpress SMS
-Plugin URI: http://wpbazar.com/plugins/wp-sms/
+Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
 Description: Send SMS from wordpress
 Version: 2.0
 Author: Mostafa Soufi
-Author URI: URI: http://iran98.org/
+Author URI: URI: http://mostafa-soufi.ir/
 License: GPL2
 */
 	define('WP_SMS_VERSION', '2.0');
