@@ -206,9 +206,9 @@
 				<td><?php _e('Status', 'wp-sms'); ?>:</td>
 				<td>
 					<?php if($obj->get_credit()) { ?>
-						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/green.png" alt="Active" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Active', 'wp-sms'); ?></span>
+						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/1.png" alt="Active" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Active', 'wp-sms'); ?></span>
 					<?php } else { ?>
-						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/grey.png" alt="Deactive" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Deactive', 'wp-sms'); ?></span>
+						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/0.png" alt="Deactive" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Deactive', 'wp-sms'); ?></span>
 					<?php } ?>
 				</td>
 			</tr>
