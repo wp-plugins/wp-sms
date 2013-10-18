@@ -1,6 +1,6 @@
 === Wordpress SMS ===
 Contributors: mostafa.s1990
-Donate link: http://iran98.org/
+Donate link: http://mostafa-soufi.ir/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.5
@@ -10,6 +10,11 @@ Send SMS via wordpress
 
 == Description ==
 Very easy SMS Send by WordPress.
+
+1. `global $obj;`
+2. `$obj->to = array('09000000000');`
+3. `$obj->msg = "Hello World!";`
+4. `$obj->send_sms();`
 
 Features:
 
