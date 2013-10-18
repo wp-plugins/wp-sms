@@ -1,63 +1,68 @@
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/css/style.css" />
-<?php if(get_option('wp_call_jquery')) { ?>
-<script src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/js/jquery.js" type="text/javascript"></script>
-<?php } ?>
 <script type="text/javascript">
-	$(document).ready(function()
-	{
-		$("#submit_newsletter").click(function()
-		{
-			var get_subscribe_name = $("#subscribe_name").val();
-			var get_subscribe_mobile = $("#subscribe_mobile").val();
+	jQuery(document).ready(function($) {
+		$("#wpsms-submit").click(function() {
+			var get_subscribe_name = $("#wpsms-name").val();
+			var get_subscribe_mobile = $("#wpsms-mobile").val();
+			var get_subscribe_group = $("#wpsms-groups").val();
 			var get_subscribe_type = $('input[name=subscribe_type]:checked').val();
-
-			$("#show_result").html('<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/loading.gif"/>');
-			$("#show_result").load('<?php echo plugin_dir_url(__FILE__); ?>/newsletter.php', {name:get_subscribe_name, mobile:get_subscribe_mobile, type:get_subscribe_type});
+			
+			$("#wpsms-result").html('<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/loading.gif"/>');
+			$("#wpsms-result").load('<?php echo plugin_dir_url(__FILE__); ?>/newsletter.php', {name:get_subscribe_name, mobile:get_subscribe_mobile, group:get_subscribe_group, type:get_subscribe_type});
 		});
 
 		<?php if(get_option('wp_subscribes_activation')) { ?>
-		$("#activation").live('click', function()
-		{
-			var get_subscribe_mobile = $("#subscribe_mobile").val();
-			var get_activation = $("#get_activation").val();
+		$("#activation").live('click', function() {
+			var get_subscribe_mobile = $("#wpsms-mobile").val();
+			var get_activation = $("#wpsms-ativation").val();
 
-			$("#show_result_activation").html('<img src="<?php echo plugin_dir_url(__FILE__); ?>loading.gif"/>');
+			$("#show_result_activation").html('<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/loading.gif"/>');
 			$("#show_result_activation").load('<?php echo plugin_dir_url(__FILE__); ?>/activation.php', {mobile:get_subscribe_mobile, activation:get_activation});
 		});
 		<?php } ?>
 	});
 </script>
-<table id="subscribe">
+<table id="wpsms-subscribe">
 	<?php if(get_option('wp_subscribes_status')) { ?>
-	<tr class="register-tr">
+	<tr>
 		<td colspan="2"><?php _e('Enter your information for SMS Subscribe', 'wp-sms'); ?></td>
 	</tr>
 
-	<tr class="register-tr">
-		<td><?php _e('Your name', 'wp-sms'); ?>:</td>
-		<td><input type="text" id="subscribe_name"/></td>
+	<tr>
+		<td><?php _e('Name', 'wp-sms'); ?>:</td>
+		<td><input class="wpsms-input" type="text" id="wpsms-name"/></td>
 	</tr>
 
-	<tr class="register-tr">
-		<td><?php _e('Your mobile', 'wp-sms'); ?>:</td>
-		<td><input type="text" id="subscribe_mobile"/></td>
+	<tr>
+		<td><?php _e('Mobile', 'wp-sms'); ?>:</td>
+		<td><input class="wpsms-input" type="text" id="wpsms-mobile"/></td>
 	</tr>
-
-	<tr class="register-tr">
-		<td colspan="2">
-			<input type="radio" name="subscribe_type" id="type_subscribe" value="subscribe" checked="checked"/>
-			<label for="type_subscribe"><?php _e('Subscribe', 'wp-sms'); ?></label>
-
-			<input type="radio" name="subscribe_type" id="type_unsubscribe" value="unsubscribe"/>
-			<label for="type_unsubscribe"><?php _e('Unsubscribe', 'wp-sms'); ?></label>
+	
+	<tr>
+		<td><?php _e('Group', 'wp-sms'); ?>:</td>
+		<td>
+			<select class="wpsms-input" name="wpsms_grop_name" id="wpsms-groups">
+				<?php foreach($get_group_result as $items): ?>
+				<option value="<?php echo $items->ID; ?>"><?php echo $items->name; ?></option>
+				<?php endforeach; ?>
+			</select>
 		</td>
 	</tr>
 
 	<tr>
 		<td colspan="2">
-			<button id="submit_newsletter"><?php _e('Subscribe', 'wp-sms'); ?></button>
-			<span id="show_result"></span>
-			<span id="show_result_activation"></span>
+			<input type="radio" name="subscribe_type" id="wpsms-type-subscribe" value="subscribe" checked="checked"/>
+			<label for="wpsms-type-subscribe"><?php _e('Subscribe', 'wp-sms'); ?></label>
+
+			<input type="radio" name="subscribe_type" id="wpsms-type-unsubscribe" value="unsubscribe"/>
+			<label for="wpsms-type-unsubscribe"><?php _e('Unsubscribe', 'wp-sms'); ?></label>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">
+			<button class="wpsms-submit" id="wpsms-submit"><?php _e('Subscribe', 'wp-sms'); ?></button>
+			<div id="wpsms-result"></div>
+			<div id="show_result_activation"></div>
 		</td>
 	</tr>
 	<?php } else { ?>

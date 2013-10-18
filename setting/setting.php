@@ -279,9 +279,9 @@
 			<tr>
 				<td>
 					<p class="submit">
-					<input type="hidden" name="action" value="update" />
-					<input type="hidden" name="page_options" value="wp_admin_mobile,wp_sms_mcc,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version,wp_notification_wpcf7" />
-					<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
+						<input type="hidden" name="action" value="update" />
+						<input type="hidden" name="page_options" value="wp_admin_mobile,wp_sms_mcc,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version,wp_notification_wpcf7" />
+						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>
 			</tr>

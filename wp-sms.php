@@ -3,17 +3,19 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://wpbazar.com/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 1.9.22
+Version: 2.0
 Author: Mostafa Soufi
 Author URI: URI: http://iran98.org/
 License: GPL2
 */
-	define('WP_SMS_VERSION', '1.9.22');
+	define('WP_SMS_VERSION', '2.0');
 
+	include_once dirname( __FILE__ ) . '/install.php';
+	include_once dirname( __FILE__ ) . '/upgrade.php';
+	
 	load_plugin_textdomain('wp-sms', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/');
 
 	global $wp_sms_db_version, $wpdb;
-	$wp_sms_db_version = "1.0";
 
 	function wp_sms_page() {
 
@@ -24,32 +26,24 @@ License: GPL2
 			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Newsletter subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
 			add_submenu_page(__FILE__, __('Setting', 'wp-sms'), __('Setting', 'wp-sms'), 'manage_options', 'wp-sms/setting', 'wp_sms_setting_page');
 			add_submenu_page(__FILE__, __('About', 'wp-sms'), __('About', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_about_setting_page');
-
 		}
 
 	}
 	add_action('admin_menu', 'wp_sms_page');
-
-	if(get_option('wp_webservice') == 'sms.webstudio') {
-		update_option('wp_webservice', 'webstudio');
-	}
-
+	
 	if(get_option('wp_webservice')) {
 
 		$webservice = get_option('wp_webservice');
-		require_once(ABSPATH . "wp-content/plugins/wp-sms/inc/$webservice.class.php");
+		require_once(ABSPATH . "wp-content/plugins/wp-sms/inc/webservice/$webservice.class.php");
 
 		$obj = new $webservice;
 		$obj->user = get_option('wp_username');
 		$obj->pass = get_option('wp_password');
 		$obj->from = get_option('wp_number');
 
-		if($obj->unitrial == true)
-		{
+		if($obj->unitrial == true) {
 			$obj->unit = __('Rial', 'wp-sms');
-		}
-		else
-		{
+		} else {
 			$obj->unit = __('SMS', 'wp-sms');
 		}
 	}
@@ -59,11 +53,23 @@ License: GPL2
 	}
 
 	function wp_subscribes() {
-
+	
+		global $wpdb, $table_prefix;
+		
+		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
+		
 		include_once("newsletter/form.php");
-
 	}
 	add_shortcode('subscribe', 'wp_subscribes');
+	
+	function wpsms_loader(){
+	
+		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.1');
+		
+		if( get_option('wp_call_jquery') )
+			wp_enqueue_script('jquery');
+	}
+	add_action('wp_enqueue_scripts', 'wpsms_loader');
 
 	function wp_sms_menu() {
 
@@ -103,7 +109,7 @@ License: GPL2
 
 	function wp_sms_rightnow_content() {
 		global $wpdb, $table_prefix;
-		$users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}subscribes");
+		$users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}sms_subscribes");
 		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".$users."</a></td><td><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".__('Newsletter Subscriber', 'wp-sms')."</a></td></tr>";
 	}
 	add_action('right_now_content_table_end', 'wp_sms_rightnow_content');
@@ -120,30 +126,6 @@ License: GPL2
 		add_action('admin_notices', 'wp_sms_enable');
 
 	}
-
-	function wp_sms_install() {
-
-		global $wp_sms_db_version, $table_prefix, $wpdb;
-		$subscribes_table	= $table_prefix . "subscribes";
-
-		$create_subscribes_table = ("CREATE TABLE ".$subscribes_table."(
-			ID int(10) NOT NULL auto_increment,
-			date DATETIME,
-			name VARCHAR(20),
-			mobile VARCHAR(20) NOT NULL,
-			status tinyint(1),
-			activate_key INT(11),
-			PRIMARY KEY(ID)) CHARSET=utf8
-		");
-
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		dbDelta($create_subscribes_table);
-		add_option('wp_sms_db_version', 'wp_sms_db_version');
-
-		// Add secound column in 1.5 version plugin.
-		$wpdb->query("ALTER TABLE {$table_prefix}subscribes ADD (status tinyint(1), activate_key INT(11))");
-	}
-	register_activation_hook(__FILE__,'wp_sms_install');
 	
 	function wp_sms_widget() {
 
@@ -157,30 +139,24 @@ License: GPL2
 
 		extract($args);
 			echo $before_title . get_option('wp_sms_widget_name') . $after_title;
-			include("newsletter/form.php");
-
+			wp_subscribes();
 	}
 
 	function wp_subscribe_control_widget() {
-
+	
 		if($_POST['wp_sms_submit_widget']) {
 			update_option('wp_sms_widget_name', $_POST['wp_sms_widget_name']);
 		}
 
 		include_once('widget.php');
-
 	}
 
 	function wp_subscribe_meta_box() {
-
 		add_meta_box('subscribe-meta-box', __('Subscribe SMS', 'wp-sms'), 'wp_subscribe_post', 'post', 'normal', 'high');
-
 	}
 
 	if(get_option('wp_subscribes_send')) {
-
 		add_action('add_meta_boxes', 'wp_subscribe_meta_box');
-
 	}
 
 	function wp_subscribe_post($post) {
@@ -208,8 +184,10 @@ License: GPL2
 
 		if( !strstr($_POST['_wp_http_referer'], "action=edit")) {
 			if(get_post_meta($post_ID, "subscribe_post", true) == 'yes') {
+			
 				global $wpdb, $table_prefix, $obj;
-				$obj->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}subscribes");
+				
+				$obj->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes");
 				$obj->msg = get_the_title($post_ID);
 
 				$obj->send_sms();
@@ -221,9 +199,7 @@ License: GPL2
 	add_action('publish_post', 'wp_subscribe_send');
 
 	function wp_tell_a_freind_head() {
-
 		include_once('tell-a-freind.php');
-
 	}
 
 	function wp_tell_a_freind($content) {
@@ -321,12 +297,32 @@ License: GPL2
 		add_action('wpcf7_mail_sent', 'wpcf7_send_to_wpsms', 1);
 	}
 	
+	function wpsms_pointer($hook_suffix) {
+	
+		/*$admin_bar = get_user_setting('wpsms_p1', 0);
+		
+		if ( ! $admin_bar && apply_filters('show_wp_pointer_admin_bar', TRUE) ) {
+			$enqueue = TRUE;
+			add_action('admin_print_footer_scripts', 'wpsms_group_pointer');
+		}*/
+		
+		wp_enqueue_style('wp-pointer');
+		wp_enqueue_script('wp-pointer');
+		wp_enqueue_script('utils');
+	}
+	add_action('admin_enqueue_scripts', 'wpsms_pointer');
+	
 	function wp_send_sms_page() {
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		}
-
-		include_once('setting/send-sms.php');
+		
+		global $wpdb, $table_prefix;
+		
+		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.1');
+		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
+		
+		include_once dirname( __FILE__ ) . '/setting/send-sms.php';
 	}
 
 	function wp_subscribes_page() {
@@ -335,16 +331,19 @@ License: GPL2
 		}
 
 		global $wpdb, $table_prefix;
-
+		
+		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'css/pagination.css', true, '1.0');
+		include_once dirname( __FILE__ ) . '/inc/pagination.class.php';
+		
 		if($_POST['doaction']) {
 
 			$get_IDs = implode(",", $_POST['column_ID']);
-			$check_ID = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE ID='".$get_IDs."'");
+			$check_ID = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes WHERE ID='".$get_IDs."'");
 
 			switch($_POST['action']) {
 				case 'trash':
 					if($check_ID) {
-						$wpdb->query("DELETE FROM {$table_prefix}subscribes WHERE ID IN (".$get_IDs.")");
+						$wpdb->query("DELETE FROM {$table_prefix}sms_subscribes WHERE ID IN (".$get_IDs.")");
 						echo "<div class='updated'><p>" . __('With success was removed', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -353,7 +352,7 @@ License: GPL2
 
 				case 'active':
 					if($check_ID) {
-						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '1' WHERE ID IN (".$get_IDs.")");
+						$wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '1' WHERE ID IN (".$get_IDs.")");
 						echo "<div class='updated'><p>" . __('User actived.', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -362,7 +361,7 @@ License: GPL2
 
 				case 'deactive':
 					if($check_ID) {
-						$wpdb->query("UPDATE {$table_prefix}subscribes SET `status` = '0' WHERE ID IN (".$get_IDs.")");
+						$wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '0' WHERE ID IN (".$get_IDs.")");
 						echo "<div class='updated'><p>" . __('User deactived.', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -372,19 +371,21 @@ License: GPL2
 
 		}
 
-		$name = trim($_POST['wp_subscribe_name']);
-		$mobile = trim($_POST['wp_subscribe_mobile']);
-		$date = date('Y-m-d H:i:s' ,current_time('timestamp',0));
+		$name	= trim($_POST['wp_subscribe_name']);
+		$mobile	= trim($_POST['wp_subscribe_mobile']);
+		$group	= trim($_POST['wpsms_group_name']);
+		$date	= date('Y-m-d H:i:s' ,current_time('timestamp',0));
 
 		if(isset($_POST['wp_add_subscribe'])) {
 
-			if($name && $mobile) {
+			if($name && $mobile && $group) {
+			
 				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 
-					$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}subscribes WHERE mobile='".$mobile."'");
-
+					$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes WHERE mobile='{$mobile}'");
+					
 					if(!$check_mobile) {
-						$check = $wpdb->query("INSERT INTO {$table_prefix}subscribes (date, name, mobile, status) VALUES ('".$date."', '".$name."', '".$mobile."', '1')");
+						$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes (date, name, mobile, status, group_ID) VALUES ('{$date}', '{$name}', '{$mobile}', '1', '{$group}')");
 
 						if($check) {
 							echo "<div class='updated'><p>" . sprintf(__('User <strong>%s</strong> was added successfully.', 'wp-sms'), $name) . "</div></p>";
@@ -400,13 +401,53 @@ License: GPL2
 			}
 
 		}
+		
+		if(isset($_POST['wpsms_add_group'])) {
+		
+			if($group) {
+			
+				$check_group = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE name='{$group}'");
+
+				if(!$check_group) {
+					$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes_group (name) VALUES ('{$group}')");
+
+					if($check) {
+						echo "<div class='updated'><p>" . sprintf(__('Group <strong>%s</strong> was added successfully.', 'wp-sms'), $group) . "</div></p>";
+					}
+				} else {
+					echo "<div class='error'><p>" . __('Group name is repeated', 'wp-sms') . "</div></p>";
+				}
+			} else {
+				echo "<div class='error'><p>" . __('Please complete field', 'wp-sms') . "</div></p>";
+			}
+		}
+		
+		if(isset($_POST['wpsms_delete_group'])) {
+
+			if($group) {
+			
+				$check_group = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$group}'");
+				
+				if($check_group) {
+					$group_name = $wpdb->get_row("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$group}'");
+					$check = $wpdb->query("DELETE FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$group}'");
+
+					if($check) {
+						echo "<div class='updated'><p>" . sprintf(__('Group <strong>%s</strong> was successfully removed.', 'wp-sms'), $group_name->name) . "</div></p>";
+					}
+				}
+			} else {
+				echo "<div class='error'><p>" . __('Nothing found!', 'wp-sms') . "</div></p>";
+			}
+
+		}
 
 		if(isset($_POST['wp_edit_subscribe'])) {
 		
-			if($name && $mobile) {
+			if($name && $mobile && $group) {
 				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 
-					$check = $wpdb->query("UPDATE {$table_prefix}subscribes SET `name` = '".$name."', `mobile` = '".$mobile."', `status` = '".$_POST['wp_subscribe_status']."' WHERE `ID` = '".$_GET['ID']."'");
+					$check = $wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `name` = '{$name}', `mobile` = '{$mobile}', `status` = '".$_POST['wp_subscribe_status']."', `group_ID` = '{$group}' WHERE `ID` = '".$_GET['ID']."'");
 
 					if($check) {
 						echo "<div class='updated'><p>" . sprintf(__('User <strong>%s</strong> was update successfully.', 'wp-sms'), $name) . "</div></p>";
@@ -420,7 +461,14 @@ License: GPL2
 			}
 
 		}
-
+		
+		$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes`");
+		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
+		
+		if(!$get_group_result) {
+			add_action('admin_print_footer_scripts', 'wpsms_group_pointer');
+		}
+		
 		include_once('setting/subscribes.php');
 	}
 	

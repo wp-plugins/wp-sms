@@ -1,44 +1,74 @@
-p.register{
-	background: #FF6600;
-	border-radius: 4px;
-	padding: 4px;
-	color: #FFFFFF;
-	font-size: 11px;
+
+#wpsms-subscribe {
+    font-family: tahoma;
+    font-size: 12px;
 }
-p.register a{
-	color: #FFFFFF;
-	font-weight: bold;
-	text-decoration: none;
+#wpsms-subscribe tr {
 }
-#wp-webservice {
+#wpsms-subscribe tr td {
 }
-#wp-webservice option {
-    padding: 1px 2px;
+#wpsms-subscribe .wpsms-input {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #B1B1B1;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    font-family: tahoma;
+    font-size: 12px;
+    margin: 4px 0;
 }
-.option-seprator {
-    background: none repeat scroll 0 0 #E1E1E1;
-    color: #333333;
-    font-weight: bold;
+#wpsms-subscribe .wpsms-submit {
+    background: none repeat scroll 0 0 #E35F51;
+    border: 0 none;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 0 #AA4338;
+    color: #FFFFFF;
+    font-family: tahoma;
+    font-size: 11px;
+    margin: 5px 0;
+    padding: 4px 8px;
 }
-#option-information {
-    background: none repeat scroll 0 center #E3E3E3;
-    border-top: 1px solid #373737;
-    margin: 5px 0 0;
+#wpsms-subscribe .wpsms-submit:hover {
+    cursor: pointer;
+}
+#wpsms-subscribe #wpsms-result, #wpsms-subscribe #show_result_activation {
+    margin: 3px 0 0;
     text-align: center;
 }
-table#subscribe {
-    border: 1px solid #DDDDDD;
-    font-family: Tahoma,Arial,sans-serif;
-    font-size: 11px;
-    padding: 5px;
+.wpsms-loading {
+    background: url("../images/loading.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
-table#subscribe input {
-    border: 1px solid #DDDDDD;
-    font-family: Tahoma,Arial,sans-serif;
-    font-size: 11px;
-    padding: 3px;
+#wp_get_number:focus, #wpsms_group_name:focus {
+    border: 1px solid #FF0000;
 }
-table#subscribe button {
-    font-family: Tahoma,Arial,sans-serif;
+.number {
+    font-weight: bold;
+}
+#send_friend {
+    background: url("images/message.png") no-repeat scroll right center rgba(0, 0, 0, 0);
     font-size: 11px;
+    padding: 0 20px;
+}
+#send_friend:hover {
+    cursor: pointer;
+}
+#tell_friend_form {
+    display: none;
+}
+#tell_friend_form table {
+    border: 0 none;
+    font-size: 11px;
+}
+#tell_friend_form table tr {
+    line-height: 25px;
+}
+#tell_friend_form table td {
+    border: 0 none;
+    padding: 0;
+}
+#tell_friend_form input {
+    font-family: Tahoma;
+    font-size: 11px;
+}
+#get_fmobile {
+    direction: ltr;
 }
