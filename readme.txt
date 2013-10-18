@@ -9,7 +9,7 @@ Stable tag: 2.0
 Send SMS via wordpress
 
 == Description ==
-The SMS via wordpress very easy
+Very easy SMS Send by WordPress.
 
 Features:
 
@@ -40,6 +40,7 @@ for translate, please open langs/default.po by Poedit and translate strings.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. To display Subscribe goto Themes -> Widgets, and adding `Subscribe to SMS` into your sidebar Or using this functions: `<?php wp_subscribes(); ?>` into theme.
 4. Using this functions for send manual SMS:
+
 * First: `global $obj;`
 * Enter the recipient's mobile number: `$obj->to = array('MobileNumber');`
 * Enter the SMS text: `$obj->msg = "YourMessage";`
