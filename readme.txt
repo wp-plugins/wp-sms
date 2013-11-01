@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 Send SMS via wordpress
 
@@ -63,6 +63,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 2.0.1 =
+* Added: SMS Bartar Webservice.
+
 = 2.0 =
 * Added: Pagination in Subscribes Newsletter page.
 * Added: Group for Subscribes.
@@ -211,6 +214,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 2.0.1 =
+* Added: SMS Bartar Webservice.
+
 = 2.0 =
 * Added: Pagination in Subscribes Newsletter page.
 * Added: Group for Subscribes.
