@@ -141,7 +141,7 @@
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'nasrpayam.ir'); ?>
 						</option>
-						<option value="nasrpayam" <?php selected(get_option('wp_webservice'), 'smsbartar'); ?>>
+						<option value="smsbartar" <?php selected(get_option('wp_webservice'), 'smsbartar'); ?>>
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms-bartar.com'); ?>
 						</option>
