@@ -1,7 +1,7 @@
 <?php
 	class imencms
 	{
-		private $wsdl_link = "http://www.imencms.com/SMS/SMS.asmx?wsdl";
+		private $wsdl_link = "http://www.imencms.com/SMS/sms.asmx?WSDL";
 		public $tariff = "http://www.imencms.com/sms/";
 		public $unitrial = false;
 		public $unit;

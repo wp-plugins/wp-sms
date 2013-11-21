@@ -3,8 +3,8 @@ Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 2.0.1
+Tested up to: 3.7.1
+Stable tag: 2.0.2
 
 Send SMS via wordpress
 
@@ -63,6 +63,10 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 7. Screen shot (screenshot-7.png) in Suggestion post in single.
 
 == Upgrade Notice ==
+= 2.0.2 =
+* Resolved: loading image.
+* Added: Fayasms.
+
 = 2.0.1 =
 * Added: SMS Bartar Webservice.
 
@@ -214,6 +218,10 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Start plugin
 
 == Changelog ==
+= 2.0.2 =
+* Resolved: loading image.
+* Added: Fayasms.
+
 = 2.0.1 =
 * Added: SMS Bartar Webservice.
 
