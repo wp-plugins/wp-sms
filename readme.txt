@@ -65,7 +65,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 == Upgrade Notice ==
 = 2.0.2 =
 * Resolved: loading image.
-* Added: Fayasms.
+* Added: Fayasms Webservice.
 
 = 2.0.1 =
 * Added: SMS Bartar Webservice.
@@ -220,7 +220,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 == Changelog ==
 = 2.0.2 =
 * Resolved: loading image.
-* Added: Fayasms.
+* Added: Fayasms Webservice.
 
 = 2.0.1 =
 * Added: SMS Bartar Webservice.
