@@ -149,6 +149,10 @@
 							&nbsp;&nbsp;-&nbsp;
 							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'fayasms.ir'); ?>
 						</option>
+						<option value="payamresan" <?php selected(get_option('wp_webservice'), 'payamresan'); ?>>
+							&nbsp;&nbsp;-&nbsp;
+							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payam-resan.com'); ?>
+						</option>
 						
 						<!--Seprator-->
 						<option value="" disabled="disabled" class="option-seprator"><?php _e('Australia', 'wp-sms'); ?></option>
@@ -275,12 +279,13 @@
 				</td>
 			</tr>
 			
+			<tr><th colspan="2"><h3><?php _e('Other Features', 'wp-sms'); ?></h4></th></tr>
 			<tr>
-				<td><?php _e('Notification SMS when messages received from Contact Form 7 plugin?', 'wp-sms'); ?></td>
+				<td><?php _e('Add SMS meta box to contact form 7?', 'wp-sms'); ?></td>
 				<td>
-					<input type="checkbox" name="wp_notification_wpcf7" id="wp_notification_wpcf7" <?php echo get_option('wp_notification_wpcf7') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_notification_wpcf7"><?php _e('Active', 'wp-sms'); ?></label>
-					<p class="description">(<?php _e('Enable this option with When a new message received of Contact Form 7 plugin, will be informed via SMS', 'wp-sms'); ?>)</p>
+					<input type="checkbox" name="wps_add_wpcf7" id="wps_add_wpcf7" <?php echo get_option('wps_add_wpcf7') ==true? 'checked="checked"':'';?>/>
+					<label for="wps_add_wpcf7"><?php _e('Active', 'wp-sms'); ?></label>
+					<p class="description">(<?php _e('Added Wordpress SMS meta box to Contact form 7 plugin when enable this option.', 'wp-sms'); ?>)</p>
 				</td>
 			</tr>
 
@@ -288,7 +293,7 @@
 				<td>
 					<p class="submit">
 						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="wp_admin_mobile,wp_sms_mcc,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version,wp_notification_wpcf7" />
+						<input type="hidden" name="page_options" value="wp_admin_mobile,wp_sms_mcc,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version,wps_add_wpcf7" />
 						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>

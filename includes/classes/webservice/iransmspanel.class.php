@@ -169,23 +169,23 @@
 		 * @param   bool        Is Flash SMS?
 		 * @return
 		 */
-		function send_sms() {
+		public function send_sms() {
 			if (@function_exists('curl_init')) {
-				$result = $this->Send_Via_cURL($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
-				if ($result !== '') return $result;
+				$this->Send_Via_cURL($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
 			}
 			
-			$this->Send_Via_Socket($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
+			$result = $this->Send_Via_Socket($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
+			
+			if(!$result)
+				return true;
 		}
 
-		function get_credit() {
-
+		public function get_credit() {
+		
 			$client = new SoapClient($this->wsdl_link);
-
+			
 			if($client->Authentication($this->user, $this->pass)) {
-				if ($client->GetCredit()){
-					return $client->GetCredit();
-				}
+				return $client->GetCredit();
 			}
 		}
 	}

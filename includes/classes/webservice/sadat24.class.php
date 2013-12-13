@@ -1,7 +1,7 @@
 <?php
 	class sadat24
 	{
-		private $wsdl_link = "http://sms.sadat24.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://panel.sadat24.ir/post/send.asmx?wsdl";
 		public $tariff = "http://sadat24.ir/";
 		public $unitrial = false;
 		public $unit;

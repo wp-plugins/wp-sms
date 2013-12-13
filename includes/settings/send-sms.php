@@ -43,7 +43,7 @@
 <div class="wrap">
 	<h2><?php _e('Send SMS', 'wp-sms'); ?></h2>
 	<?php
-	global $obj, $wpdb, $table_prefix;
+	global $obj, $wpdb, $table_prefix, $date;
 	if(get_option('wp_webservice')) {
 		update_option('wp_last_credit', $obj->get_credit());
 		if($obj->get_credit()) {
@@ -80,6 +80,11 @@
 								}
 
 								if($obj->send_sms()) {
+								
+									$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
+									
+									$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$to}')");
+									
 									echo "<div class='updated'><p>" . __('SMS was sent with success', 'wp-sms') . "</p></div>";
 									update_option('wp_last_credit', $obj->get_credit());
 								}

@@ -7,7 +7,7 @@
 			var get_subscribe_type = $('input[name=subscribe_type]:checked').val();
 			
 			$("#wpsms-result").html('<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/loading.gif"/>');
-			$("#wpsms-result").load('<?php echo plugin_dir_url(__FILE__); ?>/newsletter.php', {name:get_subscribe_name, mobile:get_subscribe_mobile, group:get_subscribe_group, type:get_subscribe_type});
+			$("#wpsms-result").load('<?php echo plugin_dir_url(__FILE__); ?>newsletter.php', {name:get_subscribe_name, mobile:get_subscribe_mobile, group:get_subscribe_group, type:get_subscribe_type});
 		});
 
 		<?php if(get_option('wp_subscribes_activation')) { ?>
@@ -16,7 +16,7 @@
 			var get_activation = $("#wpsms-ativation").val();
 
 			$("#show_result_activation").html('<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/loading.gif"/>');
-			$("#show_result_activation").load('<?php echo plugin_dir_url(__FILE__); ?>/activation.php', {mobile:get_subscribe_mobile, activation:get_activation});
+			$("#show_result_activation").load('<?php echo plugin_dir_url(__FILE__); ?>activation.php', {mobile:get_subscribe_mobile, activation:get_activation});
 		});
 		<?php } ?>
 	});

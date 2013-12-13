@@ -1,5 +1,5 @@
 <?php
-	include_once("../../../../wp-load.php");
+	include_once("../../../../../wp-load.php");
 	
 	$name	= trim($_REQUEST['name']);
 	$mobile	= trim($_REQUEST['mobile']);
@@ -9,7 +9,7 @@
 	if($name && $mobile) {
 		if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 		
-			global $wpdb, $table_prefix, $obj;
+			global $wpdb, $table_prefix, $obj, $date;
 			
 			$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes WHERE mobile='{$mobile}'");
 			
@@ -26,7 +26,13 @@
 
 						$obj->to = array($mobile);
 						$obj->msg = __('Your activation code', 'wp-sms') . ': ' . $key;
-						$obj->send_sms();
+						
+						if( $obj->send_sms() ) {
+						
+							$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
+							
+							$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$to}')");
+						}
 
 						if($check) {
 							echo '<span id="result-activation">' . __('You will join the newsletter, Activation code sent to your number.', 'wp-sms') . '</span>';
@@ -40,6 +46,8 @@
 
 						if($check) {
 							echo '<span id="result-register">' . __('You will join the newsletter', 'wp-sms') . '</span>';
+						} else {
+							echo '<span id="result-register">' . __('Error communicating with the database!', 'wp-sms') . '</span>';
 						}
 						
 						exit(0);

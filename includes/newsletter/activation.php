@@ -1,5 +1,5 @@
 <?php
-	include_once("../../../../wp-load.php");
+	include_once("../../../../../wp-load.php");
 
 	$mobile	= trim($_REQUEST['mobile']);
 	$activation = trim($_REQUEST['activation']);
