@@ -41,127 +41,134 @@
 					<select name="wp_webservice" id="wp-webservice" onChange="javascript:openwin()">
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
 						
-						<!--Seprator-->
-						<option value="" disabled="disabled" class="option-seprator"><?php _e('Iran', 'wp-sms'); ?></option>
-						<!--Seprator-->
+						<optgroup label="<?php _e('Iran', 'wp-sms'); ?>">
+							<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.parandhost.com'); ?>
+							</option>
+							<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'iransmspanel.ir'); ?>
+							</option>
+							<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'hostiran.net'); ?>
+							</option>
+							<option value="smsdehi" <?php selected(get_option('wp_webservice'), 'smsdehi'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsdehi.ir'); ?>
+							</option>
+							<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payameavval.com'); ?>
+							</option>
+							<option value="smsclick" <?php selected(get_option('wp_webservice'), 'smsclick'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsclick.ir'); ?>
+							</option>
+							<option value="persiansms" <?php selected(get_option('wp_webservice'), 'persiansms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'persiansms.com'); ?>
+							</option>
+							<option value="ariaideh" <?php selected(get_option('wp_webservice'), 'ariaideh'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.ariaideh.com'); ?>
+							</option>
+							<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'panizsms.ir'); ?>
+							</option>
+							<option value="sms_s" <?php selected(get_option('wp_webservice'), 'sms_s'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'SMS-S.ir'); ?>
+							</option>
+							<option value="sadat24" <?php selected(get_option('wp_webservice'), 'sadat24'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sadat24.ir'); ?>
+							</option>
+							<option value="smscall" <?php selected(get_option('wp_webservice'), 'smscall'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smscall.ir'); ?>
+							</option>
+							<option value="tablighsmsi" <?php selected(get_option('wp_webservice'), 'tablighsmsi'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'tablighsmsi.com'); ?>
+							</option>
+							<option value="paaz" <?php selected(get_option('wp_webservice'), 'paaz'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'paaz.ir'); ?>
+							</option>
+							<option value="textsms" <?php selected(get_option('wp_webservice'), 'textsms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'textsms.ir'); ?>
+							</option>
+							<option value="jahanpayamak" <?php selected(get_option('wp_webservice'), 'jahanpayamak'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'jahanpayamak.info'); ?>
+							</option>
+							<option value="opilo" <?php selected(get_option('wp_webservice'), 'opilo'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'opilo.com'); ?>
+							</option>
+							<option value="barzinsms" <?php selected(get_option('wp_webservice'), 'barzinsms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'barzinsms.ir'); ?>
+							</option>
+							<option value="payamaknet" <?php selected(get_option('wp_webservice'), 'payamaknet'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'panel.payamaknet.ir'); ?>
+							</option>
+							<option value="smsmart" <?php selected(get_option('wp_webservice'), 'smsmart'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsmart.info'); ?>
+							</option>
+							<option value="imencms" <?php selected(get_option('wp_webservice'), 'imencms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'imencms.com'); ?>
+							</option>
+							<option value="tcisms" <?php selected(get_option('wp_webservice'), 'tcisms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'tcisms.com'); ?>
+							</option>
+							<option value="caffeweb" <?php selected(get_option('wp_webservice'), 'caffeweb'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'caffeweb.com'); ?>
+							</option>
+							<option value="nasrpayam" <?php selected(get_option('wp_webservice'), 'nasrpayam'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'nasrpayam.ir'); ?>
+							</option>
+							<option value="smsbartar" <?php selected(get_option('wp_webservice'), 'smsbartar'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms-bartar.com'); ?>
+							</option>
+							<option value="fayasms" <?php selected(get_option('wp_webservice'), 'fayasms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'fayasms.ir'); ?>
+							</option>
+							<option value="payamresan" <?php selected(get_option('wp_webservice'), 'payamresan'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payam-resan.com'); ?>
+							</option>
+							<option value="payameroz" <?php selected(get_option('wp_webservice'), 'payameroz'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payameroz.ir'); ?>
+							</option>
+						</optgroup>
 						
-						<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.parandhost.com'); ?>
-						</option>
-						<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'iransmspanel.ir'); ?>
-						</option>
-						<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'hostiran.net'); ?>
-						</option>
-						<option value="smsdehi" <?php selected(get_option('wp_webservice'), 'smsdehi'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsdehi.ir'); ?>
-						</option>
-						<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payameavval.com'); ?>
-						</option>
-						<option value="smsclick" <?php selected(get_option('wp_webservice'), 'smsclick'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsclick.ir'); ?>
-						</option>
-						<option value="persiansms" <?php selected(get_option('wp_webservice'), 'persiansms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'persiansms.com'); ?>
-						</option>
-						<option value="ariaideh" <?php selected(get_option('wp_webservice'), 'ariaideh'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.ariaideh.com'); ?>
-						</option>
-						<option value="panizsms" <?php selected(get_option('wp_webservice'), 'panizsms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'panizsms.ir'); ?>
-						</option>
-						<option value="sms_s" <?php selected(get_option('wp_webservice'), 'sms_s'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'SMS-S.ir'); ?>
-						</option>
-						<option value="sadat24" <?php selected(get_option('wp_webservice'), 'sadat24'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sadat24.ir'); ?>
-						</option>
-						<option value="smscall" <?php selected(get_option('wp_webservice'), 'smscall'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smscall.ir'); ?>
-						</option>
-						<option value="tablighsmsi" <?php selected(get_option('wp_webservice'), 'tablighsmsi'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'tablighsmsi.com'); ?>
-						</option>
-						<option value="paaz" <?php selected(get_option('wp_webservice'), 'paaz'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'paaz.ir'); ?>
-						</option>
-						<option value="textsms" <?php selected(get_option('wp_webservice'), 'textsms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'textsms.ir'); ?>
-						</option>
-						<option value="jahanpayamak" <?php selected(get_option('wp_webservice'), 'jahanpayamak'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'jahanpayamak.info'); ?>
-						</option>
-						<option value="opilo" <?php selected(get_option('wp_webservice'), 'opilo'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'opilo.com'); ?>
-						</option>
-						<option value="barzinsms" <?php selected(get_option('wp_webservice'), 'barzinsms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'barzinsms.ir'); ?>
-						</option>
-						<option value="payamaknet" <?php selected(get_option('wp_webservice'), 'payamaknet'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'panel.payamaknet.ir'); ?>
-						</option>
-						<option value="smsmart" <?php selected(get_option('wp_webservice'), 'smsmart'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsmart.info'); ?>
-						</option>
-						<option value="imencms" <?php selected(get_option('wp_webservice'), 'imencms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'imencms.com'); ?>
-						</option>
-						<option value="tcisms" <?php selected(get_option('wp_webservice'), 'tcisms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'tcisms.com'); ?>
-						</option>
-						<option value="caffeweb" <?php selected(get_option('wp_webservice'), 'caffeweb'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'caffeweb.com'); ?>
-						</option>
-						<option value="nasrpayam" <?php selected(get_option('wp_webservice'), 'nasrpayam'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'nasrpayam.ir'); ?>
-						</option>
-						<option value="smsbartar" <?php selected(get_option('wp_webservice'), 'smsbartar'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms-bartar.com'); ?>
-						</option>
-						<option value="fayasms" <?php selected(get_option('wp_webservice'), 'fayasms'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'fayasms.ir'); ?>
-						</option>
-						<option value="payamresan" <?php selected(get_option('wp_webservice'), 'payamresan'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payam-resan.com'); ?>
-						</option>
+						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
+							<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsglobal.com'); ?>
+							</option>
+						</optgroup>
 						
-						<!--Seprator-->
-						<option value="" disabled="disabled" class="option-seprator"><?php _e('Australia', 'wp-sms'); ?></option>
-						<!--Seprator-->
-						
-						<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>
-							&nbsp;&nbsp;-&nbsp;
-							<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsglobal.com'); ?>
-						</option>
+						<optgroup label="<?php _e('New Zealand', 'wp-sms'); ?>">
+							<option value="unisender" <?php selected(get_option('wp_webservice'), 'unisender'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'unisender.com'); ?>
+							</option>
+						</optgroup>
 						
 						<!--Option information-->
 						<option value="1" id="option-information"><?php _e('For more information about adding Web Service', 'wp-sms'); ?></option>

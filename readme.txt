@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 2.1
+Stable tag: 2.2
 
 Send SMS via wordpress
 
@@ -65,11 +65,19 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 9. Screen shot (screenshot-9.png) in Contact Form 7 page.
 
 == Upgrade Notice ==
-= 2.1 =
+= 2.0 =
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.2 =
+* Added: Payameroz Webservice.
+* Added: Unisender Webservice.
+* Fixed: small bug in cf7.
+
 = 2.1 =
+* Resolved: include tell-a-freind.php file.
+
+= 2.0 =
 * Added: Metabox sms to Contact Form 7 plugin.
 * Added: SMS Message sender page.
 * Added: PayamResan Webservice.

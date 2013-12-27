@@ -3,13 +3,13 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 2.1
+Version: 2.2
 Author: Mostafa Soufi
 Author URI: URI: http://mostafa-soufi.ir/
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.1');
+	define('WP_SMS_VERSION', '2.2');
 
 	include_once dirname( __FILE__ ) . '/install.php';
 	include_once dirname( __FILE__ ) . '/upgrade.php';
@@ -207,7 +207,7 @@ License: GPL2
 	add_action('publish_post', 'wp_subscribe_send');
 
 	function wp_tell_a_freind_head() {
-		include_once dirname( __FILE__ ) . "tell-a-freind.php";
+		include_once dirname( __FILE__ ) . "/tell-a-freind.php";
 	}
 		
 	function wp_tell_a_freind($content) {
@@ -321,31 +321,31 @@ License: GPL2
 		
 		$options = get_option('wpcf7_sms_' . $form->id);
 		
-		if( $options['message'] && $options['phone'] == false )
-			return;
+		if( $options['message'] && $options['phone'] ) {
 		
-		// Replace merged Contact Form 7 fields
-		if( defined( 'WPCF7_VERSION' ) && WPCF7_VERSION < 3.1 ) {
-			$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
-		} else {
-			$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
-		}
-		
-		$callback = array( &$form, 'mail_callback' );
-		
-		$message = preg_replace_callback( $regex, $callback, $options['message'] );
-		
-		// Send SMS
-		$obj->to = array( $options['phone'] );
-		$obj->msg = $message;
-
-		if( $obj->send_sms() ) {
-		
-			global $wpdb, $table_prefix, $date;
-		
-			$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
+			// Replace merged Contact Form 7 fields
+			if( defined( 'WPCF7_VERSION' ) && WPCF7_VERSION < 3.1 ) {
+				$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
+			} else {
+				$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
+			}
 			
-			$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$to}')");
+			$callback = array( &$form, 'mail_callback' );
+			
+			$message = preg_replace_callback( $regex, $callback, $options['message'] );
+			
+			// Send SMS
+			$obj->to = array( $options['phone'] );
+			$obj->msg = $message;
+			
+			if( $obj->send_sms() ) {
+			
+				global $wpdb, $table_prefix, $date;
+				
+				$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
+				
+				$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$to}')");
+			}
 		}
 	}
 	
