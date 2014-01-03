@@ -32,6 +32,8 @@
                 ;
 
                 $response = file($url);
+				
+				if($response[0]) return true;
 
                 if(!is_numeric($response[1])){ 
                     echo "Error"; 
@@ -43,7 +45,7 @@
 
                     return $response[1];
 
-                }else{
+                } else {
 
                     echo  "System Error n:" .$response[1] . ' for '. $number;
 
@@ -57,6 +59,9 @@
             $url=$this->wsdl_link . "getCredit/?username=" . $this->user
             ."&password=" . $this->pass;
             $response = file($url);
+			
+			return $response[0];
+			
             if(strstr($response[1],"Error")){
                 echo $response[1];
                 return;

@@ -2,7 +2,7 @@
 	function openwin() {
 		var url=document.form.wp_webservice.value;
 		if(url==1) {
-			document.location.href="<?php echo get_bloginfo('url'); ?>/wp-admin/admin.php?page=wp-sms/about";
+			document.location.href="<?php echo $sms_page['about']; ?>";
 		}
 	}
 </script>
@@ -154,6 +154,10 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payameroz.ir'); ?>
 							</option>
+							<option value="niazpardaz" <?php selected(get_option('wp_webservice'), 'niazpardaz'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'niazpardaz.com'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
@@ -178,6 +182,11 @@
 					<input type="hidden" name="action" value="update" />
 					<input type="hidden" name="page_options" value="wp_webservice" />
 					<input type="submit" class="button" name="Submit" value="<?php _e('Select', 'wp-sms'); ?>" />
+					
+					<?php if(!get_option('wp_webservice')) { ?>
+					<p class="description"><?php echo sprintf(__('If you do not have a web service, <a href="%s" target="_blank">click here.</a>', 'wp-sms'), 'http://www.parandhost.com/sms/webservice-for-wordpress-sms-plugin/'); ?></p>
+					<p class="description"><?php echo sprintf(__('If your Web service is not on the top list, <a href="%s" target="_blank">click here.</a>', 'wp-sms'), $sms_page['about']); ?></p>
+					<?php } ?>
 				</td>
 			</tr>
 

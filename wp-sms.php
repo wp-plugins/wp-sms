@@ -3,13 +3,13 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
 Description: Send SMS from wordpress
-Version: 2.2
+Version: 2.2.1
 Author: Mostafa Soufi
 Author URI: URI: http://mostafa-soufi.ir/
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.2');
+	define('WP_SMS_VERSION', '2.2.1');
 
 	include_once dirname( __FILE__ ) . '/install.php';
 	include_once dirname( __FILE__ ) . '/upgrade.php';
@@ -125,8 +125,8 @@ License: GPL2
 
 	function wp_sms_enable() {
 	
-		$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/wp-sms.php";
-		echo '<div class="error"><p><img src="'.plugin_dir_url(__FILE__).'/images/exclamation.png" alt="Bottom" align="top"/> '.sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url).'</p></div>';
+		$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/setting";
+		echo '<div class="error"><p>'.sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url).'</p></div>';
 
 	}
 
@@ -566,6 +566,8 @@ License: GPL2
 		}
 		
 		wp_enqueue_style('css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.0');
+		
+		$sms_page['about'] = get_bloginfo('url') . "/wp-admin/admin.php?page=wp-sms/about";
 		
 		include_once dirname( __FILE__ ) . "/includes/settings/setting.php";
 	}
