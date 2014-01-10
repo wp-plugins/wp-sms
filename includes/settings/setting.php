@@ -54,9 +54,9 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'hostiran.net'); ?>
 							</option>
-							<option value="smsdehi" <?php selected(get_option('wp_webservice'), 'smsdehi'); ?>>
+							<option value="payamakde" <?php selected(get_option('wp_webservice'), 'payamakde'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsdehi.ir'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payamakde.ir'); ?>
 							</option>
 							<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>
 								&nbsp;&nbsp;-&nbsp;
