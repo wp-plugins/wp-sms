@@ -6,7 +6,7 @@ Requires at least: 3.0
 Tested up to: 3.8
 Stable tag: 2.2.2
 
-Send SMS via wordpress
+Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
 == Description ==
 Very easy SMS Send by WordPress.
