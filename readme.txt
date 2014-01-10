@@ -3,8 +3,8 @@ Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 2.2.1
+Tested up to: 3.8
+Stable tag: 2.2.2
 
 Send SMS via wordpress
 
@@ -69,6 +69,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.2.2 =
+* Added: Hi SMS Webservice.
+
 = 2.2.1 =
 * Added: Niazpardaz Webservice.
 * Fixed: Oplio Webservice.

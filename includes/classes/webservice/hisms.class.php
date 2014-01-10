@@ -1,8 +1,8 @@
 <?php
-	class fayasms
+	class hisms
 	{
-		private $wsdl_link = "http://sms.fayasms.ir/post/send.asmx?wsdl";
-		public $tariff = "http://fayasms.ir/";
+		private $wsdl_link = "http://payamak.hi-sms.ir/post/send.asmx?wsdl";
+		public $tariff = "http://hi-sms.ir/price.html";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "disable";
@@ -32,12 +32,14 @@
 				$parameters['udh'] = "";
 				$parameters['recId'] = array(0);
 				$parameters['status'] = 0x0;
-				return $client->SendSms($parameters)->SendSmsResult;
-				echo $status;
+				$return='';
+				$return .=$client->SendSms($parameters)->SendSmsResult;
+				$return .=$status;
+				return $return;
 			}
 			catch(SoapFault $ex)
 			{
-				echo $ex->faultstring;
+				return $ex->faultstring;
 			}
 		}
 
@@ -50,7 +52,7 @@
 			}
 			catch(SoapFault $ex)
 			{
-				echo $ex->faultstring;
+				return $ex->faultstring;
 			}
 		}
 	}

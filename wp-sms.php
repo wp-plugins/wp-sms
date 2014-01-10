@@ -2,14 +2,15 @@
 /*
 Plugin Name: Wordpress SMS
 Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
-Description: Send SMS from wordpress
-Version: 2.2.1
+Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
+Version: 2.2.2
 Author: Mostafa Soufi
 Author URI: URI: http://mostafa-soufi.ir/
+Text Domain: wp-sms
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.2.1');
+	define('WP_SMS_VERSION', '2.2.2');
 
 	include_once dirname( __FILE__ ) . '/install.php';
 	include_once dirname( __FILE__ ) . '/upgrade.php';
@@ -17,6 +18,7 @@ License: GPL2
 	register_activation_hook(__FILE__, 'wp_sms_install');
 	
 	load_plugin_textdomain('wp-sms', false, dirname( plugin_basename( __FILE__ ) ) . '/includes/languages');
+	__('Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.', 'wp-sms');
 
 	global $wp_sms_db_version, $wpdb;
 	
@@ -26,7 +28,7 @@ License: GPL2
 
 		if (function_exists('add_options_page')) {
 
-			add_menu_page(__('WP SMS', 'wp-sms'), __('WP SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page', plugin_dir_url( __FILE__ ).'/images/sms.png');
+			add_menu_page(__('Wordpress SMS', 'wp-sms'), __('Wordpress SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page', plugin_dir_url( __FILE__ ).'/images/sms.png');
 			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page');
 			add_submenu_page(__FILE__, __('Posted SMS', 'wp-sms'), __('Posted', 'wp-sms'), 'manage_options', 'wp-sms/posted', 'wp_posted_sms_page');
 			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Newsletter subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
