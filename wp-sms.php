@@ -5,7 +5,7 @@ Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 Version: 2.2.2
 Author: Mostafa Soufi
-Author URI: URI: http://mostafa-soufi.ir/
+Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
