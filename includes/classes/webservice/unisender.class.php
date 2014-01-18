@@ -21,13 +21,13 @@
 			
 			$to = implode($this->to, ",");
 			
-			$sms_text = iconv('cp1251', 'utf-8',"salam");
+			$sms_text = iconv('cp1251', 'utf-8', $this->msg);
 			
 			$POST = array (
 				'api_key'	=> $this->pass,
 				'phone'		=> $to,
 				'sender'	=> $this->from,
-				'text'		=> $this->msg
+				'text'		=> $sms_text
 			);
 			
 			$ch = curl_init();

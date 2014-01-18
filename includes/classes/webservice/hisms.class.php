@@ -1,7 +1,7 @@
 <?php
 	class hisms
 	{
-		private $wsdl_link = "http://payamak.hi-sms.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://login.hi-sms.ir/post/send.asmx?wsdl";
 		public $tariff = "http://hi-sms.ir/price.html";
 		public $unitrial = true;
 		public $unit;

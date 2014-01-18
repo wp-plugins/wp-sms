@@ -184,8 +184,10 @@
 		
 			$client = new SoapClient($this->wsdl_link);
 			
-			if($client->Authentication($this->user, $this->pass)) {
+			if( $client->Authentication($this->user, $this->pass) == '1' ) {
 				return $client->GetCredit();
+			} else {
+				return false;
 			}
 		}
 	}
