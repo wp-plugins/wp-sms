@@ -1,7 +1,7 @@
 <?php
 	class parandhost
 	{
-		private $wsdl_link = "http://sms.parandhost.com/webservice/?WSDL";
+		private $wsdl_link = "http://sms.parand-host.ir/webservice/?WSDL";
 		public $tariff = "http://www.parandhost.com/sms/";
 		public $unitrial = true;
 		public $unit;

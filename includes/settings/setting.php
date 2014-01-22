@@ -44,7 +44,7 @@
 						<optgroup label="<?php _e('Iran', 'wp-sms'); ?>">
 							<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.parandhost.com'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'parandhost.com'); ?>
 							</option>
 							<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
 								&nbsp;&nbsp;-&nbsp;
