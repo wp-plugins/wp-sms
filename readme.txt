@@ -69,7 +69,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
-= 2.2.3 =
+= 2.2.4 =
 * Added: Adpdigital Webservice.
 * Added: Joghataysms Webservice.
 * Fixed: Iransmspanel webservice.
