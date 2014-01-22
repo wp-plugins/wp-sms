@@ -1,8 +1,8 @@
 <?php
-	class payamakde
+	class farapayamak
 	{
-	private $wsdl_link = "http://login.payamakde.ir/post/send.asmx?wsdl";
-		public $tariff = "http://payamakde.ir/";
+	private $wsdl_link = "http://87.107.121.54/post/send.asmx?wsdl";
+		public $tariff = "http://payamakde.ir";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";

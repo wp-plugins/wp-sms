@@ -1,9 +1,9 @@
 <?php
-	class nasrpayam
+	class joghataysms
 	{
 		private $wsdl_link = "http://185.4.28.180/class/sms/wssimple/server.php?wsdl";
 		private $client = null;
-		public $tariff = "http://nasrpayam.ir/tariff-panel.php";
+		public $tariff = "http://joghataysms.ir/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
