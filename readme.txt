@@ -73,6 +73,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Added: Adpdigital Webservice.
 * Added: Joghataysms Webservice.
 * Fixed: Iransmspanel webservice.
+* Changed: Parand Host web service URL.
 * Changed: Hi SMS web service URL.
 * Changed: Nasrpayam web service URL.
 
