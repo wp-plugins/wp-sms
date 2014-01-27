@@ -1,9 +1,9 @@
 <?php
 	class sadat24
 	{
-		private $wsdl_link = "http://panel.sadat24.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://sms.tablighsmsi.com/webservice/index.php?wsdl";
 		public $tariff = "http://sadat24.ir/";
-		public $unitrial = false;
+		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
 		public $user;
@@ -20,40 +20,20 @@
 
 		function send_sms()
 		{
-			try
-			{
-				$client = new SoapClient($this->wsdl_link);
-				$parameters['username'] = $this->user;
-				$parameters['password'] = $this->pass;
-				$parameters['from'] = $this->from;
-				$parameters['to'] = $this->to;
-				$parameters['text'] = $this->msg;
-				$parameters['isflash'] = $this->isflash;
-				$parameters['udh'] = "";
-				$parameters['recId'] = array(0);
-				$parameters['status'] = 0x0;
-				return $client->SendSms($parameters)->SendSmsResult;
-				echo $status;
-			}
-			catch(SoapFault $ex)
-			{
-				echo $ex->faultstring;
-			}
+			$client = new SoapClient($this->wsdl_link);
+			
+			$result = $client->sendsms($this->user, $this->pass, $this->to, $this->from, $this->msg);
+			
+			return $result;
 		}
 
 		function get_credit()
 		{
-			try
-			{
-				$client = new SoapClient($this->wsdl_link);
-				$parameters['username'] = $this->user;
-				$parameters['password'] = $this->pass;
-				return $client->GetCredit(array("username"=>$this->user,"password"=>$this->pass))->GetCreditResult;
-			}
-			catch(SoapFault $ex)
-			{
-				echo $ex->faultstring;
-			}
+			$client = new SoapClient($this->wsdl_link);
+			
+			$result = $client->balance($this->user, $this->pass);
+			
+			return $result;
 		}
 	}
 ?>
