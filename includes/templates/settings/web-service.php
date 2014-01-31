@@ -142,7 +142,7 @@
 							</option>
 							<option value="mdpanel" <?php selected(get_option('wp_webservice'), 'mdpanel'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'MP Panel'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'MD Panel'); ?>
 							</option>
 							<option value="payameroz" <?php selected(get_option('wp_webservice'), 'payameroz'); ?>>
 								&nbsp;&nbsp;-&nbsp;
