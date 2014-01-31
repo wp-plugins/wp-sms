@@ -14,29 +14,19 @@
 </style>
 
 <div class="wrap">
-	<h2><?php _e('SMS Setting', 'wp-sms'); ?></h2>
+	<h2 class="nav-tab-wrapper">
+		<a href="?page=wp-sms/setting" class="nav-tab<?php if($_GET['tab'] == '') { echo " nav-tab-active";} ?>"><?php _e('General', 'wp-sms'); ?></a>
+		<a href="?page=wp-sms/setting&tab=web-service" class="nav-tab<?php if($_GET['tab'] == 'web-service') { echo " nav-tab-active"; } ?>"><?php _e('Web Service', 'wp-sms'); ?></a>
+		<a href="?page=wp-sms/setting&tab=newsletter" class="nav-tab<?php if($_GET['tab'] == 'newsletter') { echo " nav-tab-active"; } ?>"><?php _e('Newsletter', 'wp-sms'); ?></a>
+		<a href="?page=wp-sms/setting&tab=features" class="nav-tab<?php if($_GET['tab'] == 'features') { echo " nav-tab-active"; } ?>"><?php _e('Features', 'wp-sms'); ?></a>
+		<a href="?page=wp-sms/setting&tab=notification" class="nav-tab<?php if($_GET['tab'] == 'notification') { echo " nav-tab-active"; } ?>"><?php _e('Notification', 'wp-sms'); ?></a>
+	</h2>
+	
 	<table class="form-table">
 		<form method="post" action="options.php" name="form">
 			<?php wp_nonce_field('update-options');?>
-			<tr><th colspan="2"><h3><?php _e('General Setting', 'wp-sms'); ?></h4></th></tr>
 			<tr>
-				<td><?php _e('Your Mobile Number', 'wp-sms'); ?>:</td>
-				<td>
-					<input type="text" dir="ltr" style="width: 200px;" name="wp_admin_mobile" value="<?php echo get_option('wp_admin_mobile'); ?>"/>
-				</td>
-			</tr>
-			
-			<tr>
-				<td><?php _e('Your mobile country code', 'wp-sms'); ?>:</td>
-				<td>
-					<input type="text" dir="ltr" style="width: 200px;" name="wp_sms_mcc" value="<?php echo get_option('wp_sms_mcc'); ?>"/>
-					<p class="description"><?php _e('Enter your mobile country code. (For example: Iran 09, Australia 61)', 'wp-sms'); ?></p>
-				</td>
-			</tr>
-
-			<tr><th colspan="2"><h3><?php _e('Credit SMS Setting', 'wp-sms'); ?></h4></th></tr>
-			<tr>
-				<td><?php _e('Web Service', 'wp-sms'); ?>:</td>
+				<th><?php _e('Web Service', 'wp-sms'); ?>:</th>
 				<td>
 					<select name="wp_webservice" id="wp-webservice" onChange="javascript:openwin()">
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
@@ -44,7 +34,7 @@
 						<optgroup label="<?php _e('Iran', 'wp-sms'); ?>">
 							<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'parandhost.com'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'Parandhost.com'); ?>
 							</option>
 							<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>
 								&nbsp;&nbsp;-&nbsp;
@@ -52,7 +42,7 @@
 							</option>
 							<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'hostiran.net'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'Hostiran.net'); ?>
 							</option>
 							<option value="adpdigital" <?php selected(get_option('wp_webservice'), 'adpdigital'); ?>>
 								&nbsp;&nbsp;-&nbsp;
@@ -136,7 +126,7 @@
 							</option>
 							<option value="nasrpayam" <?php selected(get_option('wp_webservice'), 'nasrpayam'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'nasrpayam.ir'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'NasrPayam.ir'); ?>
 							</option>
 							<option value="smsbartar" <?php selected(get_option('wp_webservice'), 'smsbartar'); ?>>
 								&nbsp;&nbsp;-&nbsp;
@@ -149,6 +139,10 @@
 							<option value="payamresan" <?php selected(get_option('wp_webservice'), 'payamresan'); ?>>
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payam-resan.com'); ?>
+							</option>
+							<option value="mdpanel" <?php selected(get_option('wp_webservice'), 'mdpanel'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'MP Panel'); ?>
 							</option>
 							<option value="payameroz" <?php selected(get_option('wp_webservice'), 'payameroz'); ?>>
 								&nbsp;&nbsp;-&nbsp;
@@ -165,6 +159,10 @@
 							<option value="joghataysms" <?php selected(get_option('wp_webservice'), 'joghataysms'); ?>>
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'joghataysms.ir'); ?>
+							</option>
+							<option value="mediana" <?php selected(get_option('wp_webservice'), 'mediana'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'mediana.ir'); ?>
 							</option>
 						</optgroup>
 						
@@ -186,10 +184,6 @@
 						<option value="1" id="option-information"><?php _e('For more information about adding Web Service', 'wp-sms'); ?></option>
 						<!--Option information-->
 					</select>
-
-					<input type="hidden" name="action" value="update" />
-					<input type="hidden" name="page_options" value="wp_webservice" />
-					<input type="submit" class="button" name="Submit" value="<?php _e('Select', 'wp-sms'); ?>" />
 					
 					<?php if(!get_option('wp_webservice')) { ?>
 					<p class="description"><?php echo sprintf(__('If you do not have a web service, <a href="%s" target="_blank">click here.</a>', 'wp-sms'), 'http://www.parandhost.com/sms/webservice-for-wordpress-sms-plugin/'); ?></p>
@@ -200,7 +194,7 @@
 
 			<?php if(get_option('wp_webservice')) { ?>
 			<tr>
-				<td><?php _e('Username', 'wp-sms'); ?>:</td>
+				<th><?php _e('Username', 'wp-sms'); ?>:</th>
 				<td>
 					<input type="text" dir="ltr" style="width: 200px;" name="wp_username" value="<?php echo get_option('wp_username'); ?>"/>
 					<p class="description"><?php _e('Your username in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
@@ -212,7 +206,7 @@
 			</tr>
 
 			<tr>
-				<td><?php _e('Password', 'wp-sms'); ?>:</td>
+				<th><?php _e('Password', 'wp-sms'); ?>:</th>
 				<td>
 					<input type="password" dir="ltr" style="width: 200px;" name="wp_password" value="<?php echo get_option('wp_password'); ?>"/>
 					<p class="description"><?php _e('Your password in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
@@ -224,7 +218,7 @@
 			</tr>
 
 			<tr>
-				<td><?php _e('Number', 'wp-sms'); ?>:</td>
+				<th><?php _e('Number', 'wp-sms'); ?>:</th>
 				<td>
 					<input type="text" dir="ltr" style="width: 200px;" name="wp_number" value="<?php echo get_option('wp_number'); ?>"/>
 					<p class="description"><?php _e('Your SMS sender number in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
@@ -232,14 +226,14 @@
 			</tr>
 
 			<tr>
-				<td><?php _e('Credit', 'wp-sms'); ?>:</td>
+				<th><?php _e('Credit', 'wp-sms'); ?>:</th>
 				<td>
 				<?php global $obj; echo $obj->get_credit() . " " . $obj->unit; ?>
 				</td>
 			</tr>
 
 			<tr>
-				<td><?php _e('Status', 'wp-sms'); ?>:</td>
+				<th><?php _e('Status', 'wp-sms'); ?>:</th>
 				<td>
 					<?php if($obj->get_credit()) { ?>
 						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/1.png" alt="Active" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Active', 'wp-sms'); ?></span>
@@ -249,75 +243,12 @@
 				</td>
 			</tr>
 			<?php } ?>
-
-			<tr><th colspan="2"><h3><?php _e('Newsletter', 'wp-sms'); ?></h4></th></tr>
-			<tr>
-				<td><?php _e('Register?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wp_subscribes_status" id="wp_subscribes_status" <?php echo get_option('wp_subscribes_status') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_subscribes_status"><?php _e('Active', 'wp-sms'); ?></label>
-				</td>
-			</tr>
-
-			<tr>
-				<td><?php _e('Send activation code via SMS?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wp_subscribes_activation" id="wp_subscribes_activation" <?php echo get_option('wp_subscribes_activation') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_subscribes_activation"><?php _e('Active', 'wp-sms'); ?></label>
-				</td>
-			</tr>
-
-			<tr>
-				<td><?php _e('Posts sent to subscribers?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wp_subscribes_send" id="wp_subscribes_send" <?php echo get_option('wp_subscribes_send') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_subscribes_send"><?php _e('Active', 'wp-sms'); ?></label>
-				</td>
-			</tr>
-
-			<tr>
-				<td><?php _e('Calling jQuery in Wordpress?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wp_call_jquery" id="wp_call_jquery" <?php echo get_option('wp_call_jquery') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_call_jquery"><?php _e('Active', 'wp-sms'); ?></label>
-					<p class="description">(<?php _e('Enable this option with JQuery is called in the theme', 'wp-sms'); ?>)</p>
-				</td>
-			</tr>
-
-			<tr><th colspan="2"><h3><?php _e('Post Suggestion', 'wp-sms'); ?></h4></th></tr>
-			<tr>
-				<td><?php _e('Suggested post by SMS?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wp_suggestion_status" id="wp_suggestion_status" <?php echo get_option('wp_suggestion_status') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_suggestion_status"><?php _e('Active', 'wp-sms'); ?></label>
-				</td>
-			</tr>
-
-			<tr><th colspan="2"><h3><?php _e('Notification', 'wp-sms'); ?></h4></th></tr>
-			<tr>
-				<td><?php _e('Notification SMS of a new wordPress version?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wp_notification_new_wp_version" id="wp_notification_new_wp_version" <?php echo get_option('wp_notification_new_wp_version') ==true? 'checked="checked"':'';?>/>
-					<label for="wp_notification_new_wp_version"><?php _e('Active', 'wp-sms'); ?></label>
-					<p class="description">(<?php _e('Enable this option with When a new version of WordPress was ready, will be informed via SMS', 'wp-sms'); ?>)</p>
-				</td>
-			</tr>
 			
-			<tr><th colspan="2"><h3><?php _e('Other Features', 'wp-sms'); ?></h4></th></tr>
-			<tr>
-				<td><?php _e('Add SMS meta box to contact form 7?', 'wp-sms'); ?></td>
-				<td>
-					<input type="checkbox" name="wps_add_wpcf7" id="wps_add_wpcf7" <?php echo get_option('wps_add_wpcf7') ==true? 'checked="checked"':'';?>/>
-					<label for="wps_add_wpcf7"><?php _e('Active', 'wp-sms'); ?></label>
-					<p class="description">(<?php _e('Added Wordpress SMS meta box to Contact form 7 plugin when enable this option.', 'wp-sms'); ?>)</p>
-				</td>
-			</tr>
-
 			<tr>
 				<td>
 					<p class="submit">
 						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="wp_admin_mobile,wp_sms_mcc,wp_webservice,wp_username,wp_password,wp_number,wp_unit_money,wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send,wp_call_jquery,wp_suggestion_status,wp_notification_new_wp_version,wps_add_wpcf7" />
+						<input type="hidden" name="page_options" value="wp_webservice,wp_username,wp_password,wp_number" />
 						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>

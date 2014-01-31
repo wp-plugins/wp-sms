@@ -1,10 +1,10 @@
 === Wordpress SMS ===
 Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/
-Tags: sms, wordpress, send, subscribe, sms subscribe, message, register
+Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 2.2.5
+Stable tag: 2.3
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -27,8 +27,11 @@ Features:
 * Support shortcode
 * Support suggestion post by SMS.
 * Send activation from subscribe.
-* Notification of a new wordPress version by SMS (New).
-* Notification SMS when messages received from Contact Form 7 plugin.
+* Notification SMS when published new post to subscribers.
+* Notification SMS when the new release of WordPress.
+* Notification SMS when registering a new user.
+* Notification SMS when get new comment.
+* Notification SMS when user login.
 
 Language Support:
 
@@ -55,6 +58,10 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 
 == Screenshots ==
 1. Screen shot (screenshot-1.png) in SMS Setting Page.
+2. Screen shot (screenshot-1-2.png) in Webservice page.
+2. Screen shot (screenshot-1-3.png) in Newslleter page.
+2. Screen shot (screenshot-1-4.png) in Features page.
+2. Screen shot (screenshot-1-5.png) in Notifications page.
 2. Screen shot (screenshot-2.png) in Send SMS Page.
 3. Screen shot (screenshot-3.png) in SMS Posted Page.
 4. Screen shot (screenshot-4.png) in Subscribe list Page.
@@ -69,6 +76,15 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.3 =
+* Added: Tabs option in setting page.
+* Added: Notification SMS when registering a new user.
+* Added: Notification SMS when get new comment.
+* Added: Notification SMS when user login.
+* Added: Text format to published new post notification.
+* Added: MP Panel Webservice.
+* Added: Mediana Webservice.
+
 = 2.2.5 =
 * Changed: Aadat 24 web service.
 * Changed: Parand Host web service URL.
