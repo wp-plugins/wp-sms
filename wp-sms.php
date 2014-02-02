@@ -3,14 +3,14 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.3
+Version: 2.3.1
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.3');
+	define('WP_SMS_VERSION', '2.3.1');
 
 	include_once dirname( __FILE__ ) . '/install.php';
 	include_once dirname( __FILE__ ) . '/upgrade.php';
@@ -32,7 +32,7 @@ License: GPL2
 
 		if (function_exists('add_options_page')) {
 
-			add_menu_page(__('Wordpress SMS', 'wp-sms'), __('Wordpress SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page', plugin_dir_url( __FILE__ ).'/images/sms.png');
+			add_menu_page(__('Wordpress SMS', 'wp-sms'), __('Wordpress SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page');
 			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page');
 			add_submenu_page(__FILE__, __('Posted SMS', 'wp-sms'), __('Posted', 'wp-sms'), 'manage_options', 'wp-sms/posted', 'wp_posted_sms_page');
 			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Newsletter subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
@@ -42,6 +42,18 @@ License: GPL2
 
 	}
 	add_action('admin_menu', 'wp_sms_page');
+	
+	function wp_sms_icon() {
+	
+		global $wp_version;
+		
+		if( version_compare( $wp_version, '3.8-RC', '>=' ) || version_compare( $wp_version, '3.8', '>=' ) ) {
+			wp_enqueue_style('wps-admin-css', plugin_dir_url(__FILE__) . 'css/admin.css', true, '1.0');
+		} else {
+			wp_enqueue_style('wps-admin-css', plugin_dir_url(__FILE__) . 'css/admin-old.css', true, '1.0');
+		}
+	}
+	add_action('admin_head', 'wp_sms_icon');
 	
 	if(get_option('wp_webservice')) {
 

@@ -110,7 +110,7 @@
 	if(get_option('wpsms_ul_stats'))
 		add_action('wp_login', 'wps_notification_login',99,2);
 	
-	// Contact Form 7
+	// Contact Form 7 Hooks
 	if( get_option('wps_add_wpcf7') ) {
 		add_action('wpcf7_admin_after_form', 'wps_setup_wpcf7_form'); 
 		add_action('wpcf7_after_save', 'wps_save_wpcf7_form');
@@ -147,7 +147,6 @@
 			
 			$message = preg_replace_callback( $regex, $callback, $options['message'] );
 			
-			// Send SMS
 			$obj->to = array( $options['phone'] );
 			$obj->msg = $message;
 			
@@ -161,3 +160,41 @@
 			}
 		}
 	}
+	
+	// Woocommerce Hooks
+	function wps_woocommerce_new_order($order_id){
+	
+		global $obj;
+		
+		$obj->to = array(get_option('wp_admin_mobile'));
+		
+		$string = get_option('wpsms_wc_no_tt');
+		
+		$template_vars = array(
+			'order_id'	=> $order_id,
+		);
+		
+		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
+		
+		$obj->msg = $final_message;
+		
+		$obj->send_sms();
+	}
+	
+	if(get_option('wpsms_wc_no_stats'))
+		add_action('woocommerce_new_order', 'wps_woocommerce_new_order');
+	
+	// Easy Digital Downloads Hooks
+	function wps_edd_new_order() {
+	
+		global $obj;
+		
+		$obj->to = array(get_option('wp_admin_mobile'));
+		
+		$obj->msg = get_option('wpsms_edd_no_tt');
+		
+		$obj->send_sms();
+	}
+	
+	if(get_option('wpsms_edd_no_stats'))
+		add_action('edd_complete_purchase', 'wps_edd_new_order');

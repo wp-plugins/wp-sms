@@ -15,6 +15,14 @@
 		jQuery('#wpsms-ul-stats').click(function() {
 			jQuery('#wpsms-ul').fadeToggle();
 		});
+		
+		jQuery('#wpsms-wc-no-stats').click(function() {
+			jQuery('#wpsms-wc-no').fadeToggle();
+		});
+		
+		jQuery('#wpsms-edd-no-stats').click(function() {
+			jQuery('#wpsms-edd-no').fadeToggle();
+		});
 	});
 </script>
 
@@ -158,11 +166,65 @@
 			</tr>
 			
 			<tr>
-				<th><?php _e('Add SMS meta box to contact form 7?', 'wp-sms'); ?></th>
+				<th><?php _e('SMS meta box', 'wp-sms'); ?></th>
 				<td>
 					<input type="checkbox" name="wps_add_wpcf7" id="wps_add_wpcf7" <?php echo get_option('wps_add_wpcf7') ==true? 'checked="checked"':'';?>/>
 					<label for="wps_add_wpcf7"><?php _e('Active', 'wp-sms'); ?></label>
 					<p class="description"><?php _e('Added Wordpress SMS meta box to Contact form 7 plugin when enable this option.', 'wp-sms'); ?></p>
+				</td>
+			</tr>
+			
+			<tr valign="top">
+				<th scope="row" colspan="2"><h3><?php _e('WooCommerce plugin', 'wp-sms'); ?></h3></th>
+			</tr>
+			
+			<tr>
+				<th><?php _e('New order', 'wp-sms'); ?></th>
+				<td>
+					<input type="checkbox" name="wpsms_wc_no_stats" id="wpsms-wc-no-stats" <?php echo get_option('wpsms_wc_no_stats') ==true? 'checked="checked"':'';?>/>
+					<label for="wpsms-wc-no-stats"><?php _e('Active', 'wp-sms'); ?></label>
+					<p class="description"><?php _e('Send a sms to you When get new order.', 'wp-sms'); ?></p>
+				</td>
+			</tr>
+			
+			<?php if( get_option('wpsms_wc_no_stats') ) { $hidden=""; } else { $hidden=" style='display: none;'"; }?>
+			<tr valign="top"<?php echo $hidden;?> id="wpsms-wc-no">
+				<td scope="row">
+					<label for="wpsms-wc-no-tt"><?php _e('Text template', 'wp-sms'); ?>:</label>
+				</th>
+				
+				<td>
+					<textarea id="wpsms-wc-no-tt" cols="50" rows="7" name="wpsms_wc_no_tt"><?php echo get_option('wpsms_wc_no_tt'); ?></textarea>
+					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
+					<p class="description data">
+						<?php _e('Input data:', 'wp-sms'); ?>
+						<?php _e('Order ID', 'wp-sms'); ?>: <code>%order_id%</code>
+					</p>
+				</td>
+			</tr>
+			
+			<tr valign="top">
+				<th scope="row" colspan="2"><h3><?php _e('Easy Digital Downloads plugin', 'wp-sms'); ?></h3></th>
+			</tr>
+			
+			<tr>
+				<th><?php _e('New order', 'wp-sms'); ?></th>
+				<td>
+					<input type="checkbox" name="wpsms_edd_no_stats" id="wpsms-edd-no-stats" <?php echo get_option('wpsms_edd_no_stats') ==true? 'checked="checked"':'';?>/>
+					<label for="wpsms-edd-no-stats"><?php _e('Active', 'wp-sms'); ?></label>
+					<p class="description"><?php _e('Send a sms to you When get new order.', 'wp-sms'); ?></p>
+				</td>
+			</tr>
+			
+			<?php if( get_option('wpsms_edd_no_stats') ) { $hidden=""; } else { $hidden=" style='display: none;'"; }?>
+			<tr valign="top"<?php echo $hidden;?> id="wpsms-edd-no">
+				<td scope="row">
+					<label for="wpsms-edd-no-tt"><?php _e('Text template', 'wp-sms'); ?>:</label>
+				</th>
+				
+				<td>
+					<textarea id="wpsms-edd-no-tt" cols="50" rows="7" name="wpsms_edd_no_tt"><?php echo get_option('wpsms_edd_no_tt'); ?></textarea>
+					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
 				</td>
 			</tr>
 
@@ -170,7 +232,7 @@
 				<td>
 					<p class="submit">
 						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="wp_subscribes_send,wp_sms_text_template,wp_notification_new_wp_version,wpsms_nrnu_stats,wpsms_nrnu_tt,wpsms_gnc_stats,wpsms_gnc_tt,wpsms_ul_stats,wpsms_ul_tt,wps_add_wpcf7" />
+						<input type="hidden" name="page_options" value="wp_subscribes_send,wp_sms_text_template,wp_notification_new_wp_version,wpsms_nrnu_stats,wpsms_nrnu_tt,wpsms_gnc_stats,wpsms_gnc_tt,wpsms_ul_stats,wpsms_ul_tt,wps_add_wpcf7,wpsms_wc_no_stats,wpsms_wc_no_tt,wpsms_edd_no_stats,wpsms_edd_no_tt" />
 						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>
