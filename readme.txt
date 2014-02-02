@@ -58,18 +58,18 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 
 == Screenshots ==
 1. Screen shot (screenshot-1.png) in SMS Setting Page.
-2. Screen shot (screenshot-1-2.png) in Webservice page.
-3. Screen shot (screenshot-1-3.png) in Newslleter page.
-4. Screen shot (screenshot-1-4.png) in Features page.
-5. Screen shot (screenshot-1-5.png) in Notifications page.
-6. Screen shot (screenshot-2.png) in Send SMS Page.
-7. Screen shot (screenshot-3.png) in SMS Posted Page.
-8. Screen shot (screenshot-4.png) in Subscribe list Page.
-9. Screen shot (screenshot-5.png) in Dashboard right now.
-10. Screen shot (screenshot-6.png) in SMS Subscribe widget.
-11. Screen shot (screenshot-7.png) in Subscribe new-post.php.
-12. Screen shot (screenshot-8.png) in Suggestion post in single.
-13. Screen shot (screenshot-9.png) in Contact Form 7 page.
+2. Screen shot (screenshot-2.png) in Webservice page.
+3. Screen shot (screenshot-3.png) in Newslleter page.
+4. Screen shot (screenshot-4.png) in Features page.
+5. Screen shot (screenshot-5.png) in Notifications page.
+6. Screen shot (screenshot-6.png) in Send SMS Page.
+7. Screen shot (screenshot-7.png) in SMS Posted Page.
+8. Screen shot (screenshot-8.png) in Subscribe list Page.
+9. Screen shot (screenshot-9.png) in Dashboard right now.
+10. Screen shot (screenshot-10.png) in SMS Subscribe widget.
+11. Screen shot (screenshot-11.png) in Subscribe new-post.php.
+12. Screen shot (screenshot-12.png) in Suggestion post in single.
+13. Screen shot (screenshot-13.png) in Contact Form 7 page.
 
 == Upgrade Notice ==
 = 2.0 =
