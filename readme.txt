@@ -76,6 +76,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.3.2 =
+* Added: Arad SMS Webservice.
+
 = 2.3.1 =
 * Added: Notification SMS when get new order from Woocommerce plugin.
 * Added: Notification SMS when get new order from Easy Digital Downloads plugin.
