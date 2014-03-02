@@ -1,10 +1,10 @@
 === Wordpress SMS ===
 Contributors: mostafa.s1990
-Donate link: http://mostafa-soufi.ir/
+Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -16,7 +16,7 @@ Very easy SMS Send by WordPress.
 3. `$obj->msg = "Hello World!";`
 4. `$obj->send_sms();`
 
-Features:
+= Features =
 
 * Send SMS to number and numbers
 * Send SMS to subscribes
@@ -33,7 +33,7 @@ Features:
 * Notification SMS when get new comment.
 * Notification SMS when user login.
 
-Language Support:
+= Translators =
 
 * English
 * Persian
@@ -42,6 +42,10 @@ Language Support:
 
 Send email for Translation files: mst404[a]gmail[dot].com
 for translate, please open langs/default.po by Poedit and translate strings.
+
+= Support =
+* [Donate to this plugin](http://mostafa-soufi.ir/donate/)
+* [Persian Support](http://forum.wp-parsi.com/forum/17-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%DB%8C%DA%AF%D8%B1/)
 
 == Installation ==
 1. Upload `wp-sms` to the `/wp-content/plugins/` directory
@@ -76,6 +80,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.3.3 =
+* Added: Asia Payamak Webservice.
+
 = 2.3.2 =
 * Added: Arad SMS Webservice.
 
