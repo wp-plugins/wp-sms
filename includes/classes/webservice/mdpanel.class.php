@@ -3,7 +3,7 @@
 	{
 		private $wsdl_link = "http://185.4.28.180/class/sms/wssimple/server.php?wsdl";
 		private $client = null;
-		public $tariff = "http://mdpanel.ir/";
+		public $tariff = "http://ippanel.com/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";

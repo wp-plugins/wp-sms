@@ -1,8 +1,9 @@
 <?php
 	class sadat24
 	{
-		private $wsdl_link = "http://sms.tablighsmsi.com/webservice/index.php?wsdl";
-		public $tariff = "http://sadat24.ir/";
+		private $wsdl_link = "http://185.4.28.180/class/sms/wssimple/server.php?wsdl";
+		private $client = null;
+		public $tariff = "http://sadat24.com/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
@@ -15,23 +16,23 @@
 
 		function __construct()
 		{
-			ini_set("soap.wsdl_cache_enabled", "0");
+			include_once dirname( __FILE__ ) . '/../nusoap.class.php';
+			$this->client = new nusoap_client($this->wsdl_link);
+			
+			$this->client->soap_defencoding = 'UTF-8';
+			$this->client->decode_utf8 = true;
 		}
 
 		function send_sms()
 		{
-			$client = new SoapClient($this->wsdl_link);
+			$result = $this->client->call("SendSMS", array('Username' => $this->user, 'Password' => $this->pass, 'SenderNumber' => $this->from, 'RecipientNumbers' => $this->to, 'Message' => $this->msg, 'Type' => 'normal'));
 			
-			$result = $client->sendsms($this->user, $this->pass, $this->to, $this->from, $this->msg);
-			
-			return $result;
+			print_r( $result );
 		}
 
 		function get_credit()
 		{
-			$client = new SoapClient($this->wsdl_link);
-			
-			$result = $client->balance($this->user, $this->pass);
+			$result = $this->client->call("GetCredit", array('Username' => $this->user, 'Password' => $this->pass));
 			
 			return $result;
 		}

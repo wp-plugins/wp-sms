@@ -142,7 +142,7 @@
 							</option>
 							<option value="mdpanel" <?php selected(get_option('wp_webservice'), 'mdpanel'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'MD Panel'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'ippanel.com'); ?>
 							</option>
 							<option value="payameroz" <?php selected(get_option('wp_webservice'), 'payameroz'); ?>>
 								&nbsp;&nbsp;-&nbsp;
@@ -171,6 +171,10 @@
 							<option value="asiapayamak" <?php selected(get_option('wp_webservice'), 'asiapayamak'); ?>>
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payamak.asia'); ?>
+							</option>
+							<option value="sharifpardazan" <?php selected(get_option('wp_webservice'), 'sharifpardazan'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), '2345.ir'); ?>
 							</option>
 						</optgroup>
 						

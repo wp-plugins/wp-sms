@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 2.3.3
+Stable tag: 2.3.4
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -80,6 +80,10 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.3.4 =
+* Updated: Opilio Webservice.
+* Added: Sharif Pardazan (2345.ir) Webservice.
+
 = 2.3.3 =
 * Added: Asia Payamak Webservice.
 
