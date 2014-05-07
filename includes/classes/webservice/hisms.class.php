@@ -1,30 +1,23 @@
 <?php
-	class hisms
-	{
+	class hisms extends WP_SMS {
 		private $wsdl_link = "http://login.hi-sms.ir/post/send.asmx?wsdl";
 		public $tariff = "http://hi-sms.ir/price.html";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "disable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 
-		function __construct()
-		{
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms()
-		{
+		public function SendSMS() {
 			try
 			{
 				$client = new SoapClient($this->wsdl_link);
-				$parameters['username'] = $this->user;
-				$parameters['password'] = $this->pass;
+				$parameters['username'] = $this->username;
+				$parameters['password'] = $this->password;
 				$parameters['from'] = $this->from;
 				$parameters['to'] = $this->to;
 				$parameters['text'] = $this->msg;
@@ -35,6 +28,10 @@
 				$return='';
 				$return .=$client->SendSms($parameters)->SendSmsResult;
 				$return .=$status;
+				
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+				
 				return $return;
 			}
 			catch(SoapFault $ex)
@@ -43,12 +40,11 @@
 			}
 		}
 
-		function get_credit()
-		{
+		public function GetCredit() {
 			try
 			{
 				$client = new SoapClient($this->wsdl_link);
-				return $client->GetCredit(array("username"=>$this->user,"password"=>$this->pass))->GetCreditResult;
+				return $client->GetCredit(array("username" => $this->username, "password" => $this->password))->GetCreditResult;
 			}
 			catch(SoapFault $ex)
 			{

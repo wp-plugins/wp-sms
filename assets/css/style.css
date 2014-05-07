@@ -2,15 +2,19 @@
 #wpsms-subscribe {
     font-family: tahoma;
     font-size: 12px;
+    position: relative;
 }
-#wpsms-subscribe tr {
-}
-#wpsms-subscribe tr td {
+#wpsms-subscribe-loading {
+    background: url("../images/loading.gif") no-repeat scroll center center rgba(0, 0, 0, 0);
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
 #wpsms-subscribe .wpsms-input {
     background: none repeat scroll 0 0 #F9F9F9;
     border: 1px solid #B1B1B1;
-    border-radius: 2px 2px 2px 2px;
+    border-radius: 2px;
     box-shadow: 0 1px 0 #FFFFFF inset;
     font-family: tahoma;
     font-size: 12px;
@@ -19,7 +23,7 @@
 #wpsms-subscribe .wpsms-submit {
     background: none repeat scroll 0 0 #E35F51;
     border: 0 none;
-    border-radius: 2px 2px 2px 2px;
+    border-radius: 2px;
     box-shadow: 0 2px 0 #AA4338;
     color: #FFFFFF;
     font-family: tahoma;
@@ -30,23 +34,49 @@
 #wpsms-subscribe .wpsms-submit:hover {
     cursor: pointer;
 }
-#wpsms-subscribe #wpsms-result, #wpsms-subscribe #show_result_activation {
+#wpsms-ativation-code {
+    text-align: center;
+}
+#wpsms-result, #wpsms-activation-result {
+    color: #ED0000;
+    font-weight: bold;
     margin: 3px 0 0;
     text-align: center;
 }
-.wpsms-loading {
-    background: url("../images/loading.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+.wps-success-message {
+    background: url("../images/smile-happy.png") no-repeat scroll center top #FFFFFF;
+    color: #53B803;
+    font-weight: normal;
+    padding: 65px 0 0;
+}
+.wps-error-message {
+    background: url("../images/smile-sad.png") no-repeat scroll center top #FFFFFF;
+    color: #ED0000;
+    font-weight: normal;
+    padding: 65px 0 0;
+}
+#wpsms-activation {
+    display: none;
+    line-height: 25px;
+    margin: 10px 0 0;
+    text-align: center;
 }
 #wp_get_number:focus, #wpsms_group_name:focus {
     border: 1px solid #FF0000;
+}
+.wpsms-deactive {
+    background: url("../images/smile-sad.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    padding: 65px 0 0;
+    text-align: center;
 }
 .number {
     font-weight: bold;
 }
 #send_friend {
-    background: url("images/message.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    background: url("../images/sms.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    font-family: tahoma;
     font-size: 11px;
-    padding: 0 20px;
+    padding: 2px 20px;
 }
 #send_friend:hover {
     cursor: pointer;

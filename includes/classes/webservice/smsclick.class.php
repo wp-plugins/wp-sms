@@ -1,43 +1,43 @@
 <?php
-	class smsclick 
-	{
+	class smsclick extends WP_SMS {
 		private $wsdl_link = "http://smsclick.ir/post/send.asmx?wsdl";
 		public $tariff = "http://smsclick.info/register";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "disable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 
-		function __construct() {
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms() {
+		public function SendSMS() {
 			$client = new SoapClient($this->wsdl_link);
-				$parameters['username'] = $this->user;
-				$parameters['password'] = $this->pass;
-				$parameters['from'] = $this->from;
-				$parameters['to'] = $this->to;
-				$parameters['text'] = $this->msg;
-				$parameters['isflash'] = false;
-				$parameters['udh'] = "";
-				$parameters['recId'] = array(0);
-				$parameters['status'] = 0x0;
+			$parameters['username'] = $this->username;
+			$parameters['password'] = $this->password;
+			$parameters['from'] = $this->from;
+			$parameters['to'] = $this->to;
+			$parameters['text'] = $this->msg;
+			$parameters['isflash'] = false;
+			$parameters['udh'] = "";
+			$parameters['recId'] = array(0);
+			$parameters['status'] = 0x0;
 			
 			$result= $client->SendSms($parameters);
+			
+			if($result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
 			
 			return $result;
 		}
 
-		function get_credit() {
+		public function GetCredit() {
 			$client = new SoapClient($this->wsdl_link);
 			
-			$result = $client->GetCredit(array('username' => $this->user, 'password' => $this->pass));
+			$result = $client->GetCredit(array('username' => $this->username, 'password' => $this->password));
 
 			return $result->GetCreditResult;
 		}

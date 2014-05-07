@@ -27,7 +27,7 @@ jQuery(document).ready( function($) {
 			offset: '-25 0'
 		},
 		/*close: function() {
-			setUserSetting('wpsms_p1', '1');
+			setusernameSetting('wpsms_p1', '1');
 		}*/
 	}).pointer('open');
 });
@@ -56,7 +56,7 @@ jQuery(document).ready( function($) {
 				<?php
 				global $wpdb, $table_prefix;
 				
-				// Instantiate pagination object with appropriate arguments
+				// Instantiate pagination smsect with appropriate arguments
 				$pagesPerSection = 10;
 				$options = array(25, "All");
 				$stylePageOff = "pageOff";
@@ -90,7 +90,7 @@ jQuery(document).ready( function($) {
 							echo $result->name;
 						?>
 					</td>
-					<td class="column-name"><img src="<?php echo bloginfo('url') . '/wp-content/plugins/wp-sms/images/' . $gets->status; ?>.png" align="middle"/></td>
+					<td class="column-name"><img src="<?php echo WP_SMS_DIR_PLUGIN . '/assets/images/' . $gets->status; ?>.png" align="middle"/></td>
 					<td class="column-name"><a href="?page=wp-sms/subscribe&action=edit&ID=<?php echo $gets->ID; ?>"><?php _e('Edit', 'wp-sms'); ?></a></td>
 				</tr>
 				<?php

@@ -1,29 +1,25 @@
 <?php
-	class payameroz {
+	class payameroz extends WP_SMS {
 		private $wsdl_link = "http://sms.payameroz.ir/API/Send.asmx?WSDL";
 		public $tariff = "http://payameroz.ir";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
-
-		function __construct() {
+		
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
-
-		function send_sms() {
+		
+		public function SendSMS() {
 		
 			$client = new SoapClient($this->wsdl_link);
 			
 			$result= $client->SendSms(
 				array(
-					'username'	=> $this->user,
-					'password'	=> $this->pass,
+					'username'	=> $this->username,
+					'password'	=> $this->password,
 					'from'		=> $this->from,
 					'to'		=> $this->to,
 					'text'		=> $this->msg,
@@ -32,14 +28,19 @@
 				)
 			);
 			
+			if($result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
+			
 			return $result;
 		}
-
-		function get_credit() {
+		
+		public function GetCredit() {
 		
 			$client = new SoapClient($this->wsdl_link);
 
-			$result = $client->Credit(array('username' => $this->user, 'password' => $this->pass));
+			$result = $client->Credit(array('username' => $this->username, 'password' => $this->password));
 
 			return $result->CreditResult;
 		}

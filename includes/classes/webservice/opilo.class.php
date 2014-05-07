@@ -1,86 +1,79 @@
 <?php
-class opilo
-{
-    private $wsdl_link = "http://webservice.opilo.com/WS/";
-    public $tariff = "http://cms.opilo.com/?p=179";
-    public $unitrial = false;
-    public $unit;
-    public $flash = "enable";
-    public $user;
-    public $pass;
-    public $from;
-    public $to;
-    public $msg;
-    public $isflash = false;
+	class opilo extends WP_SMS {
+		private $wsdl_link = "http://webservice.opilo.com/WS/";
+		public $tariff = "http://cms.opilo.com/?p=179";
+		public $unitrial = false;
+		public $unit;
+		public $flash = "enable";
+		public $isflash = false;
 
-    function __construct()
-    {
-        //ini_set("soap.wsdl_cache_enabled", "0");
-    }
+		public function __construct() {
+			parent::__construct();
+		}
 
-    function send_sms()
-    {
-        $to_numbers=null;
-        
-        foreach($this->to as $number){
-            if(!empty($to_numbers)){
-                $to_numbers .= ','.$number;
-            }else{
-                $to_numbers= $number;
-            }
-        }
-        
-        if(empty($to_numbers)){
-            
-            echo "Error"; 
-            return;
-        }
-        
-        $url = $this->wsdl_link .
-        "httpsend/?username=" . $this->user
-        . "&password=" . $this->pass . 
-        "&from=" .$this->from .
-        "&to=" .$to_numbers 
-        . "&text=" . urlencode($this->msg)
-        . "&flash=" . $this->isflash
+		public function SendSMS() {
+			$to_numbers=null;
+			
+			foreach($this->to as $number){
+				if(!empty($to_numbers)){
+					$to_numbers .= ','.$number;
+				}else{
+					$to_numbers= $number;
+				}
+			}
+			
+			if(empty($to_numbers)){
+				
+				echo "Error"; 
+				return;
+			}
+			
+			$url = $this->wsdl_link .
+			"httpsend/?username=" . $this->username
+			. "&password=" . $this->password . 
+			"&from=" .$this->from .
+			"&to=" .$to_numbers 
+			. "&text=" . urlencode($this->msg)
+			. "&flash=" . $this->isflash
 
-        ;
+			;
 
-        $response = file($url);
+			$response = file($url);
 
-        if($response[0]) return true;
+			if($response[0]) return true;
 
-        if(!is_numeric($response[1])){ 
-            echo "Error"; 
-            return;
+			if(!is_numeric($response[1])){ 
+				echo "Error"; 
+				return;
 
-        }    
+			}    
 
-        if( strlen ($response[1]) > 2){
+			if( strlen ($response[1]) > 2){
+			
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+				
+				return $response[1];
 
-            return $response[1];
+			} else {
 
-        } else {
+				echo  "System Error n:" .$response[1] . ' for '. $number;
 
-            echo  "System Error n:" .$response[1] . ' for '. $number;
+			}
+		}
 
-        }
-    }
+		public function GetCredit() {
+			$url=$this->wsdl_link . "getCredit/?username=" . $this->username
+			."&password=" . $this->password;
+			$response = file($url);
 
-    function get_credit()
-    {
-        $url=$this->wsdl_link . "getCredit/?username=" . $this->user
-        ."&password=" . $this->pass;
-        $response = file($url);
+			return $response[0];
 
-        return $response[0];
+			if(strstr($response[1],"Error")){
+				echo $response[1];
+				return;
+			}
 
-        if(strstr($response[1],"Error")){
-            echo $response[1];
-            return;
-        }
-
-        return $response[1];
-    } 
-}
-
+			return $response[1];
+		} 
+	}

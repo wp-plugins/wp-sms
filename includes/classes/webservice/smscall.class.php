@@ -1,35 +1,36 @@
 <?php
-	class smscall
-	{
+	class smscall extends WP_SMS {
 		private $wsdl_link = "http://webservice.smscall.ir/index.php?wsdl";
 		public $tariff = "http://www.smscall.ir/?page_id=63";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 
-		function __construct() {
-		
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms() {
+		public function SendSMS() {
 			
 			$client = new SoapClient($this->wsdl_link);
 			
-			return $client->Send_Group_SMS($this->user, $this->pass, implode(',', $this->to), $this->msg, $this->from, 1);
+			$result = $client->Send_Group_SMS($this->username, $this->password, implode(',', $this->to), $this->msg, $this->from, 1);
+			
+			if($result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
+			
+			return $result;
 		}
 
-		function get_credit() {
+		public function GetCredit() {
 		
 			$client = new SoapClient($this->wsdl_link);
 			
-			return $client->CREDIT_LINESMS($this->user, $this->pass, $this->from);
+			return $client->CREDIT_LINESMS($this->username, $this->password, $this->from);
 		}
 	}
 ?>

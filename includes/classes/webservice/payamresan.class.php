@@ -1,35 +1,34 @@
 <?php
-	class payamresan
-	{
+	class payamresan extends WP_SMS {
 		private $wsdl_link = "http://www.payam-resan.com/";
 		public $tariff = "http://www.payam-resan.com/CMS/";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 		
-		public function send_sms() {
+		public function SendSMS() {
 		
 			$to = implode(',', $this->to);
 			
 			$message = urlencode($this->msg);
 			
-			$client = file_get_contents("{$this->wsdl_link}APISend.aspx?Username={$this->user}&Password={$this->pass}&From={$this->from}&To={$to}&Text={$message}");
+			$client = file_get_contents("{$this->wsdl_link}APISend.aspx?Username={$this->username}&Password={$this->password}&From={$this->from}&To={$to}&Text={$message}");
+			
+			if($client) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
 			
 			return $client;
 		}
 
-		public function get_credit() {
+		public function GetCredit() {
 		
-			$client = file_get_contents("{$this->wsdl_link}Credit.aspx?Username={$this->user}&Password={$this->pass}");
+			$client = file_get_contents("{$this->wsdl_link}Credit.aspx?Username={$this->username}&Password={$this->password}");
 			
 			if( $client == 'ERR' )
-				return false;
+				return 0;
 			
 			return $client;
 		}

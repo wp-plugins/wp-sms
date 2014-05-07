@@ -33,7 +33,7 @@
 			<tbody>
 				<?php
 				
-				// Instantiate pagination object with appropriate arguments
+				// Instantiate pagination smsect with appropriate arguments
 				$pagesPerSection = 10;
 				$options = array(25, "All");
 				$stylePageOff = "pageOff";

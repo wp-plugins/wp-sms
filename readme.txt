@@ -3,35 +3,37 @@ Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 2.3.5
+Tested up to: 3.9
+Stable tag: 2.4
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
 == Description ==
 Very easy SMS Send by WordPress.
 
-1. `global $obj;`
-2. `$obj->to = array('09000000000');`
-3. `$obj->msg = "Hello World!";`
-4. `$obj->send_sms();`
+1. `global $sms;`
+2. `$sms->to = array('09000000000');`
+3. `$sms->msg = "Hello World!";`
+4. `$sms->SendSMS();`
 
 = Features =
 
-* Send SMS to number and numbers
-* Send SMS to subscribes
-* Subsribe sms
-* Show credit
-* Send SMS via FLASH
-* Widget support
-* Support shortcode
+* Send SMS to number and numbers.
+* Send SMS to subscribes.
+* Subsribe sms.
+* Show credit.
+* Send SMS via FLASH.
+* Widget support.
+* Support Hooks.
+* Support shortcode.
 * Support suggestion post by SMS.
 * Send activation from subscribe.
 * Notification SMS when published new post to subscribers.
 * Notification SMS when the new release of WordPress.
-* Notification SMS when registering a new user.
+* Notification SMS when registering a new username.
 * Notification SMS when get new comment.
-* Notification SMS when user login.
+* Notification SMS when username login.
+* Notification SMS when registering a new subscribe.
 
 = Translators =
 
@@ -40,8 +42,8 @@ Very easy SMS Send by WordPress.
 * Arabic (Thanks Hamad Al-Shammari)
 * Portuguese (Thanks Matt Moxx)
 
-Send email for Translation files: mst404[a]gmail[dot].com
-for translate, please open langs/default.po by Poedit and translate strings.
+[Percentage languages ​​translation](http://teamwork.wp-parsi.com/projects/wp-sms/)
+To complete the language deficits of [this section](http://teamwork.wp-parsi.com/projects/wp-sms/) apply.
 
 = Support =
 * [Donate to this plugin](http://mostafa-soufi.ir/donate/)
@@ -53,12 +55,34 @@ for translate, please open langs/default.po by Poedit and translate strings.
 3. To display Subscribe goto Themes -> Widgets, and adding `Subscribe to SMS` into your sidebar Or using this functions: `<?php wp_subscribes(); ?>` into theme.
 4. Using this functions for send manual SMS:
 
-* First: `global $obj;`
-* Enter the recipient's mobile number: `$obj->to = array('MobileNumber');`
-* Enter the SMS text: `$obj->msg = "YourMessage";`
-* Send SMS: `$obj->send_sms();`
+* First: `global $sms;`
+* `$sms->to = array('MobileNumber');`
+* `$sms->msg = "YourMessage";`
+* Send SMS: `$sms->SendSMS();`
 
 or using this Shortcode `[subscribe]` in Posts pages or Widget.
+
+= Actions =
+Run following action when send sms with this plugin.
+`wp_sms_send`
+
+Example: Send mail when send sms.
+`function send_mail_when_send_sms($message_info) {
+	wp_mail('you@mail.com', 'Send SMS', $message_info);
+}
+add_action('wp_sms_send', 'send_mail_when_send_sms');`
+
+Run following action when subscribe a new user.
+`wp_sms_subscribe`
+
+Example: Send sms to user when register a new subscriber.
+`function send_sms_when_subscribe_new_user($name, $mobile) {
+	global $sms;
+	$sms->to = array($mobile);
+	$sms->msg = "Hi {$name}, Thanks for subscribe.";
+	$sms->SendSMS();
+}
+add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 
 == Screenshots ==
 1. Screen shot (screenshot-1.png) in SMS Setting Page.
@@ -69,17 +93,30 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 6. Screen shot (screenshot-6.png) in Send SMS Page.
 7. Screen shot (screenshot-7.png) in SMS Posted Page.
 8. Screen shot (screenshot-8.png) in Subscribe list Page.
-9. Screen shot (screenshot-9.png) in Dashboard right now.
+9. Screen shot (screenshot-9.png) in At a Glance.
 10. Screen shot (screenshot-10.png) in SMS Subscribe widget.
 11. Screen shot (screenshot-11.png) in Subscribe new-post.php.
 12. Screen shot (screenshot-12.png) in Suggestion post in single.
 13. Screen shot (screenshot-13.png) in Contact Form 7 page.
 
 == Upgrade Notice ==
+= 2.4 =
+* CHANGE `$obj` variable TO `$sms` IN YOUR SOURCE CODE.
+
 = 2.0 =
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.4 =
+* Added: `WP_SMS` Class and placing a parent class.
+* Added: `wp_sms_send` Action when Send sms from the plugin.
+* Added: `wp_sms_subscribe` Action when register a new subscriber.
+* Added: Notification SMS when registering a new subscribe.
+* Added: Ponisha SMS Webservice.
+* Added: SMS Credit and total subscriber in At a Glance.
+* Fixed: Saved sms sender with `InsertToDB` method.
+* Optimized: Subscribe SMS ajax form.
+
 = 2.3.5 =
 * Updated: ippanel.com Webservice.
 * Added: Sarab SMS Webservice.
@@ -100,9 +137,9 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 
 = 2.3 =
 * Added: Tabs option in setting page.
-* Added: Notification SMS when registering a new user.
+* Added: Notification SMS when registering a new username.
 * Added: Notification SMS when get new comment.
-* Added: Notification SMS when user login.
+* Added: Notification SMS when username login.
 * Added: Text format to published new post notification.
 * Added: MP Panel Webservice.
 * Added: Mediana Webservice.
@@ -251,7 +288,7 @@ or using this Shortcode `[subscribe]` in Posts pages or Widget.
 * Fix a problem Active/Deactive all subscribe.
 
 = 1.6 =
-* Added Enable/Disable User in subscribe page.
+* Added Enable/Disable username in subscribe page.
 * Fix a problem in show credit.
 * Fix a problem in menu link.
 * Fix a problem in word counter.

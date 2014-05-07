@@ -13,8 +13,8 @@
 			$result = $wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '1' WHERE mobile = '{$mobile}'");
 			
 			if( $result ) {
-				_e('Your membership in the complete newsletter', 'wp-sms');
-				
+				do_action('wp_sms_subscribe', $check_mobile->name, $mobile);
+				echo 'success-1';
 				exit(0);
 			}
 		} else {

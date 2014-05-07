@@ -11,7 +11,7 @@
 		<tr>
 			<td><input type="text" name="get_name" id="get_name"/></td>
 			<td><input type="text" name="get_fname" id="get_fname"/></td>
-			<td><input type="text" name="get_fmobile" id="get_fmobile" value="09"/></td>
+			<td><input type="text" name="get_fmobile" id="get_fmobile" value="<?php echo get_option('wp_sms_mcc'); ?>"/></td>
 			<td><input type="submit" name="send_post" value="<?php _e('Send', 'wp-sms'); ?>"/></td>
 		</tr>
 	</table>

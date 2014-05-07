@@ -11,17 +11,12 @@
 		
 			if(get_option('wp_last_send_notification') == false) {
 			
-				$obj->to = array(get_option('wp_admin_mobile'));
-				$obj->msg = sprintf(__('WordPress %s is available! Please update now', 'wp-sms'), $update[1]->current);
+				global $sms;
 				
-				if( $obj->send_sms() ) {
+				$sms->to = array(get_option('wp_admin_mobile'));
+				$sms->msg = sprintf(__('WordPress %s is available! Please update now', 'wp-sms'), $update[1]->current);
 				
-					global $wpdb, $table_prefix, $obj, $date;
-				
-					$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
-					
-					$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$to}')");
-				}
+				$sms->SendSMS();
 				
 				update_option('wp_last_send_notification', true);
 				
@@ -32,83 +27,83 @@
 	}
 	
 	// Register new user
-	function wps_notification_new_user($user_id) {
+	function wps_notification_new_user($username_id) {
 	
-		global $obj, $date;
+		global $sms, $date;
 		
-		$obj->to = array(get_option('wp_admin_mobile'));
+		$sms->to = array(get_option('wp_admin_mobile'));
 		
 		$string = get_option('wpsms_nrnu_tt');
 		
-		$user_info = get_userdata($user_id);
+		$username_info = get_usernamedata($username_id);
 		
 		$template_vars = array(
-			'user_login'	=> $user_info->user_login,
-			'user_email'	=> $user_info->user_email,
+			'username_login'	=> $username_info->username_login,
+			'username_email'	=> $username_info->username_email,
 			'date_register'	=> $date,
 		);
 		
 		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 		
-		$obj->msg = $final_message;
+		$sms->msg = $final_message;
 		
-		$obj->send_sms();
+		$sms->SendSMS();
 	}
 	
 	if(get_option('wpsms_nrnu_stats'))
-		add_action('user_register', 'wps_notification_new_user', 10, 1);
+		add_action('username_register', 'wps_notification_new_user', 10, 1);
 	
 	// New Comment
-	function wps_notification_new_comment($comment_id, $comment_object){
+	function wps_notification_new_comment($comment_id, $comment_smsect){
 	
-		global $obj;
+		global $sms;
 		
-		$obj->to = array(get_option('wp_admin_mobile'));
+		$sms->to = array(get_option('wp_admin_mobile'));
 		
 		$string = get_option('wpsms_gnc_tt');
 		
 		$template_vars = array(
-			'comment_author'		=> $comment_object->comment_author,
-			'comment_author_email'	=> $comment_object->comment_author_email,
-			'comment_author_url'	=> $comment_object->comment_author_url,
-			'comment_author_IP'		=> $comment_object->comment_author_IP,
-			'comment_date'			=> $comment_object->comment_date,
-			'comment_content'		=> $comment_object->comment_content
+			'comment_author'		=> $comment_smsect->comment_author,
+			'comment_author_email'	=> $comment_smsect->comment_author_email,
+			'comment_author_url'	=> $comment_smsect->comment_author_url,
+			'comment_author_IP'		=> $comment_smsect->comment_author_IP,
+			'comment_date'			=> $comment_smsect->comment_date,
+			'comment_content'		=> $comment_smsect->comment_content
 		);
 		
 		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 		
-		$obj->msg = $final_message;
+		$sms->msg = $final_message;
 		
-		$obj->send_sms();
+		$sms->SendSMS();
 	}
 	
 	if(get_option('wpsms_gnc_stats'))
 		add_action('wp_insert_comment', 'wps_notification_new_comment',99,2);
 	
 	// User login
-	function wps_notification_login($user_login, $user){
+	function wps_notification_login($username_login, $username){
 	
-		global $obj;
+		global $sms;
 		
-		$obj->to = array(get_option('wp_admin_mobile'));
+		$sms->to = array(get_option('wp_admin_mobile'));
 		
 		$string = get_option('wpsms_ul_tt');
 		
 		$template_vars = array(
-			'user_login'	=> $user->user_login,
-			'display_name'	=> $user->display_name
+			'username_login'	=> $username->username_login,
+			'display_name'	=> $username->display_name
 		);
 		
 		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 		
-		$obj->msg = $final_message;
+		$sms->msg = $final_message;
 		
-		$obj->send_sms();
+		$sms->SendSMS();
 	}
 	
 	if(get_option('wpsms_ul_stats'))
-		add_action('wp_login', 'wps_notification_login',99,2);
+		add_action('wp_login', 'wps_notification_login', 99, 2);
 	
 	// Contact Form 7 Hooks
 	if( get_option('wps_add_wpcf7') ) {
@@ -130,7 +125,7 @@
 	
 	function wps_send_wpcf7_sms($form) {
 		
-		global $obj;
+		global $sms;
 		
 		$options = get_option('wpcf7_sms_' . $form->id);
 		
@@ -147,24 +142,19 @@
 			
 			$message = preg_replace_callback( $regex, $callback, $options['message'] );
 			
-			$obj->to = array( $options['phone'] );
-			$obj->msg = $message;
+			$sms->to = array( $options['phone'] );
+			$sms->msg = $message;
 			
-			if( $obj->send_sms() ) {
-			
-				global $wpdb, $table_prefix, $date;
-				
-				$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$options['phone']}')");
-			}
+			$sms->SendSMS();
 		}
 	}
 	
 	// Woocommerce Hooks
 	function wps_woocommerce_new_order($order_id){
 	
-		global $obj;
+		global $sms;
 		
-		$obj->to = array(get_option('wp_admin_mobile'));
+		$sms->to = array(get_option('wp_admin_mobile'));
 		
 		$string = get_option('wpsms_wc_no_tt');
 		
@@ -174,9 +164,9 @@
 		
 		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 		
-		$obj->msg = $final_message;
+		$sms->msg = $final_message;
 		
-		$obj->send_sms();
+		$sms->SendSMS();
 	}
 	
 	if(get_option('wpsms_wc_no_stats'))
@@ -185,13 +175,13 @@
 	// Easy Digital Downloads Hooks
 	function wps_edd_new_order() {
 	
-		global $obj;
+		global $sms;
 		
-		$obj->to = array(get_option('wp_admin_mobile'));
+		$sms->to = array(get_option('wp_admin_mobile'));
 		
-		$obj->msg = get_option('wpsms_edd_no_tt');
+		$sms->msg = get_option('wpsms_edd_no_tt');
 		
-		$obj->send_sms();
+		$sms->SendSMS();
 	}
 	
 	if(get_option('wpsms_edd_no_stats'))

@@ -1,31 +1,24 @@
 <?php
-	class persianSMS
-	{
+	class persianSMS extends WP_SMS {
 		private $wsdl_link = "http://persian-sms.com/API/SendSMS.asmx?WSDL";
 		public $tariff = "http://www.persian-sms.com/";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $api;
 		public $isflash = false;
 
-		function __construct()
-		{
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms()
-		{
+		public function SendSMS() {
 			try
 			{
 				$client = new SoapClient($this->wsdl_link);
-				$parameters['USERNAME']	= $this->user;
-				$parameters['PASSWORD']	= $this->pass;
+				$parameters['USERNAME']	= $this->username;
+				$parameters['PASSWORD']	= $this->password;
 				$parameters['TO']	= $this->to;
 				$parameters['FROM'] = $this->from;
 				$parameters['TEXT'] = $this->msg;
@@ -33,6 +26,9 @@
 				$parameters['API_CHANGE_ALLOW'] = 1;
 				$parameters['FLASH'] = $this->isflash;
 				$parameters['Internation']	= false;
+				
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
 				
 				return $client->Send_Sms4($parameters)->Send_Sms4Result;
 			}
@@ -42,12 +38,11 @@
 			}
 		}
 
-		public function get_credit()
-		{
+		public function GetCredit() {
 			try
 			{
 				$client = new SoapClient($this->wsdl_link);
-				return $client->CHECK_CREDIT(array("USERNAME"=>$this->user,"PASSWORD"=>$this->pass))->CHECK_CREDITResult;
+				return $client->CHECK_CREDIT(array("USERNAME" => $this->username, "PASSWORD" => $this->password))->CHECK_CREDITResult;
 			}
 			catch(SoapFault $ex)
 			{

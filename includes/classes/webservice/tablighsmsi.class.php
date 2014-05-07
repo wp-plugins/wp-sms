@@ -1,37 +1,34 @@
 <?php
-	class tablighsmsi
-	{
+	class tablighsmsi extends WP_SMS {
 		private $wsdl_link = "http://sms.tablighsmsi.com/webservice/index.php?wsdl";
 		public $tariff = "http://tablighsmsi.com";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 
-		function __construct()
-		{
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms()
-		{
+		public function SendSMS() {
 			$client = new SoapClient($this->wsdl_link);
 			
-			$result = $client->sendsms($this->user, $this->pass, $this->to, $this->from, $this->msg);
+			$result = $client->sendsms($this->username, $this->password, $this->to, $this->from, $this->msg);
+			
+			if($result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
 			
 			return $result;
 		}
 
-		function get_credit()
-		{
+		public function GetCredit() {
 			$client = new SoapClient($this->wsdl_link);
 			
-			$result = $client->balance($this->user, $this->pass);
+			$result = $client->balance($this->username, $this->password);
 			
 			return $result;
 		}

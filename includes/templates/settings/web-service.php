@@ -22,8 +22,8 @@
 		<a href="?page=wp-sms/setting&tab=notification" class="nav-tab<?php if($_GET['tab'] == 'notification') { echo " nav-tab-active"; } ?>"><?php _e('Notification', 'wp-sms'); ?></a>
 	</h2>
 	
-	<table class="form-table">
-		<form method="post" action="options.php" name="form">
+	<form method="post" action="options.php" name="form">
+		<table class="form-table">
 			<?php wp_nonce_field('update-options');?>
 			<tr>
 				<th><?php _e('Web Service', 'wp-sms'); ?>:</th>
@@ -180,6 +180,10 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sarabsms.ir'); ?>
 							</option>
+							<option value="ponishasms" <?php selected(get_option('wp_webservice'), 'ponishasms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'ponishasms.ir'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
@@ -216,7 +220,7 @@
 					<p class="description"><?php _e('Your username in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
 					
 					<?php if(!get_option('wp_username')) { ?>
-						<br /><p class="register"><?php echo sprintf(__('If you do not have a username for this service <a href="%s">click here..</a>', 'wp-sms'), $obj->tariff) ?></p>
+						<p class="register"><?php echo sprintf(__('If you do not have a username for this service <a href="%s">click here..</a>', 'wp-sms'), $sms->tariff) ?></p>
 					<?php } ;?>
 				</td>
 			</tr>
@@ -228,7 +232,7 @@
 					<p class="description"><?php _e('Your password in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
 					
 					<?php if(!get_option('wp_password')) { ?>
-						<br /><p class="register"><?php echo sprintf(__('If you do not have a password for this service <a href="%s">click here..</a>', 'wp-sms'), $obj->tariff) ?></p>
+						<p class="register"><?php echo sprintf(__('If you do not have a password for this service <a href="%s">click here..</a>', 'wp-sms'), $sms->tariff) ?></p>
 					<?php } ?>
 				</td>
 			</tr>
@@ -244,17 +248,17 @@
 			<tr>
 				<th><?php _e('Credit', 'wp-sms'); ?>:</th>
 				<td>
-				<?php global $obj; echo $obj->get_credit() . " " . $obj->unit; ?>
+				<?php global $sms; echo $sms->GetCredit() . " " . $sms->unit; ?>
 				</td>
 			</tr>
 
 			<tr>
 				<th><?php _e('Status', 'wp-sms'); ?>:</th>
 				<td>
-					<?php if($obj->get_credit()) { ?>
-						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/1.png" alt="Active" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Active', 'wp-sms'); ?></span>
+					<?php if($sms->GetCredit() > 0) { ?>
+						<img src="<?php echo WP_SMS_DIR_PLUGIN; ?>assets/images/1.png" alt="Active" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Active', 'wp-sms'); ?></span>
 					<?php } else { ?>
-						<img src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/images/0.png" alt="Deactive" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Deactive', 'wp-sms'); ?></span>
+						<img src="<?php echo WP_SMS_DIR_PLUGIN; ?>assets/images/0.png" alt="Deactive" align="absmiddle"/><span style="font-weight: bold;"><?php _e('Deactive', 'wp-sms'); ?></span>
 					<?php } ?>
 				</td>
 			</tr>
@@ -269,6 +273,6 @@
 					</p>
 				</td>
 			</tr>
-		</form>	
-	</table>
+		</table>
+	</form>	
 </div>

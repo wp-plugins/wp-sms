@@ -1,27 +1,24 @@
 <?php
 /*
 Plugin Name: Wordpress SMS
-Plugin URI: http://iran98.org/category/wordpress/plugins/wp-sms/
+Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.3.5
+Version: 2.4
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.3.5');
-
+	define('WP_SMS_VERSION', '2.4');
+	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
+	
 	include_once dirname( __FILE__ ) . '/install.php';
 	include_once dirname( __FILE__ ) . '/upgrade.php';
 	
-	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-newslleter.php';
-	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-features.php';
-	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-notifications.php';
-	
 	register_activation_hook(__FILE__, 'wp_sms_install');
 	
-	load_plugin_textdomain('wp-sms', false, dirname( plugin_basename( __FILE__ ) ) . '/includes/languages');
+	load_plugin_textdomain('wp-sms', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
 	__('Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.', 'wp-sms');
 
 	global $wp_sms_db_version, $wpdb;
@@ -32,12 +29,12 @@ License: GPL2
 
 		if (function_exists('add_options_page')) {
 
-			add_menu_page(__('Wordpress SMS', 'wp-sms'), __('Wordpress SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page');
-			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_send_sms_page');
+			add_menu_page(__('Wordpress SMS', 'wp-sms'), __('Wordpress SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_sendsms_page');
+			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_sendsms_page');
 			add_submenu_page(__FILE__, __('Posted SMS', 'wp-sms'), __('Posted', 'wp-sms'), 'manage_options', 'wp-sms/posted', 'wp_posted_sms_page');
 			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Newsletter subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
 			add_submenu_page(__FILE__, __('Setting', 'wp-sms'), __('Setting', 'wp-sms'), 'manage_options', 'wp-sms/setting', 'wp_sms_setting_page');
-			add_submenu_page(__FILE__, __('About', 'wp-sms'), __('About', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_about_setting_page');
+			add_submenu_page(__FILE__, __('About', 'wp-sms'), __('About', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_sms_about_page');
 		}
 
 	}
@@ -48,9 +45,9 @@ License: GPL2
 		global $wp_version;
 		
 		if( version_compare( $wp_version, '3.8-RC', '>=' ) || version_compare( $wp_version, '3.8', '>=' ) ) {
-			wp_enqueue_style('wps-admin-css', plugin_dir_url(__FILE__) . 'css/admin.css', true, '1.0');
+			wp_enqueue_style('wps-admin-css', plugin_dir_url(__FILE__) . 'assets/css/admin.css', true, '1.0');
 		} else {
-			wp_enqueue_style('wps-admin-css', plugin_dir_url(__FILE__) . 'css/admin-old.css', true, '1.0');
+			wp_enqueue_style('wps-admin-css', plugin_dir_url(__FILE__) . 'assets/css/admin-old.css', true, '1.0');
 		}
 	}
 	add_action('admin_head', 'wp_sms_icon');
@@ -58,18 +55,19 @@ License: GPL2
 	if(get_option('wp_webservice')) {
 
 		$webservice = get_option('wp_webservice');
+		include_once dirname( __FILE__ ) . "/includes/classes/wp-sms.class.php";
 		include_once dirname( __FILE__ ) . "/includes/classes/webservice/{$webservice}.class.php";
 
-		$obj = new $webservice;
+		$sms = new $webservice;
 		
-		$obj->user = get_option('wp_username');
-		$obj->pass = get_option('wp_password');
-		$obj->from = get_option('wp_number');
+		$sms->username = get_option('wp_username');
+		$sms->password = get_option('wp_password');
+		$sms->from = get_option('wp_number');
 
-		if($obj->unitrial == true) {
-			$obj->unit = __('Rial', 'wp-sms');
+		if($sms->unitrial == true) {
+			$sms->unit = __('Rial', 'wp-sms');
 		} else {
-			$obj->unit = __('SMS', 'wp-sms');
+			$sms->unit = __('SMS', 'wp-sms');
 		}
 	}
 	
@@ -82,13 +80,13 @@ License: GPL2
 		
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
 		
-		include_once dirname( __FILE__ ) . "/includes/newsletter/form.php";
+		include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-subscribe-form.php";
 	}
 	add_shortcode('subscribe', 'wp_subscribes');
 	
 	function wp_sms_loader(){
 	
-		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.1');
+		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.1');
 		
 		if( get_option('wp_call_jquery') )
 			wp_enqueue_script('jquery');
@@ -103,23 +101,20 @@ License: GPL2
 		if(is_super_admin() || is_admin_bar_showing()) {
 		
 			if($get_last_credit) {
-			
-				global $obj;
-				
-				$wp_admin_bar->add_menu(array
-					(
-						'id'		=>	'wp-credit-sms',
-						'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), number_format($get_last_credit), $obj->unit),
-						'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/setting'
-					));
-			}
-			$wp_admin_bar->add_menu(array
-				(
-					'id'		=>	'wp-send-sms',
-					'parent'	=>	'new-content',
-					'title'		=>	__('SMS', 'wp-sms'),
-					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
+				global $sms;
+				$wp_admin_bar->add_menu(array(
+					'id'		=>	'wp-credit-sms',
+					'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), number_format($get_last_credit), $sms->unit),
+					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/setting'
 				));
+			}
+			
+			$wp_admin_bar->add_menu(array(
+				'id'		=>	'wp-send-sms',
+				'parent'	=>	'new-content',
+				'title'		=>	__('SMS', 'wp-sms'),
+				'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
+			));
 		} else {
 			return false;
 		}
@@ -127,20 +122,30 @@ License: GPL2
 	add_action('admin_bar_menu', 'wp_sms_adminbar');
 
 	function wp_sms_rightnow_discussion() {
-	
-		global $obj;
-		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".__('Credit', 'wp-sms')." (".$obj->unit.")</a></td></tr>";
+		global $sms;
+		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".__('Credit', 'wp-sms')." (".$sms->unit.")</a></td></tr>";
 	}
 	add_action('right_now_discussion_table_end', 'wp_sms_rightnow_discussion');
 
 	function wp_sms_rightnow_content() {
-	
 		global $wpdb, $table_prefix;
-		$users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}sms_subscribes");
-		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".$users."</a></td><td><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".__('Newsletter Subscriber', 'wp-sms')."</a></td></tr>";
+		$usernames = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}sms_subscribes");
+		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".$usernames."</a></td><td><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/subscribe'>".__('Newsletter Subscriber', 'wp-sms')."</a></td></tr>";
 	}
 	add_action('right_now_content_table_end', 'wp_sms_rightnow_content');
-
+	
+	function wp_sms_glance() {
+	
+		global $wpdb, $table_prefix;
+		
+		$admin_url = get_bloginfo('url')."/wp-admin";
+		$subscribe = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}sms_subscribes");
+		
+		echo "<li class='wpsms-subscribe-count'><a href='{$admin_url}/admin.php?page=wp-sms/subscribe'>".sprintf(__('%s Subscriber', 'wp-sms'), $subscribe)."</a></li>";
+		echo "<li class='wpsms-credit-count'><a href='{$admin_url}/admin.php?page=wp-sms/setting&tab=web-service'>".sprintf(__('%s SMS Credit', 'wp-sms'), number_format(get_option('wp_last_credit')))."</a></li>";
+	}
+	add_action('dashboard_glance_items', 'wp_sms_glance');
+	
 	function wp_sms_enable() {
 	
 		$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/setting&tab=web-service";
@@ -181,14 +186,14 @@ License: GPL2
 	}
 	add_action('admin_enqueue_scripts', 'wp_sms_pointer');
 	
-	function wp_send_sms_page() {
+	function wp_sendsms_page() {
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		}
 		
 		global $wpdb, $table_prefix;
 		
-		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.1');
+		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.1');
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
 		
 		include_once dirname( __FILE__ ) . "/includes/templates/settings/send-sms.php";
@@ -201,7 +206,7 @@ License: GPL2
 		
 		global $wpdb, $table_prefix;
 		
-		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'css/pagination.css', true, '1.0');
+		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'assets/css/pagination.css', true, '1.0');
 		include_once dirname( __FILE__ ) . '/includes/classes/pagination.class.php';
 		
 		if($_POST['doaction']) {
@@ -234,7 +239,7 @@ License: GPL2
 		
 		global $wpdb, $table_prefix, $date;
 		
-		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'css/pagination.css', true, '1.0');
+		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'assets/css/pagination.css', true, '1.0');
 		include_once dirname( __FILE__ ) . '/includes/classes/pagination.class.php';
 		
 		if($_POST['doaction']) {
@@ -255,7 +260,7 @@ License: GPL2
 				case 'active':
 					if($check_ID) {
 						$wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '1' WHERE ID IN (".$get_IDs.")");
-						echo "<div class='updated'><p>" . __('User actived.', 'wp-sms') . "</div></p>";
+						echo "<div class='updated'><p>" . __('User is active.', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
 					}
@@ -264,7 +269,7 @@ License: GPL2
 				case 'deactive':
 					if($check_ID) {
 						$wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '0' WHERE ID IN (".$get_IDs.")");
-						echo "<div class='updated'><p>" . __('User deactived.', 'wp-sms') . "</div></p>";
+						echo "<div class='updated'><p>" . __('User is Deactive..', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
 					}
@@ -288,7 +293,7 @@ License: GPL2
 						$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes (date, name, mobile, status, group_ID) VALUES ('{$date}', '{$name}', '{$mobile}', '1', '{$group}')");
 						
 						if($check) {
-							echo "<div class='updated'><p>" . sprintf(__('User <strong>%s</strong> was added successfully.', 'wp-sms'), $name) . "</div></p>";
+							echo "<div class='updated'><p>" . sprintf(__('username <strong>%s</strong> was added successfully.', 'wp-sms'), $name) . "</div></p>";
 						}
 					} else {
 						echo "<div class='error'><p>" . __('Phone number is repeated', 'wp-sms') . "</div></p>";
@@ -350,7 +355,7 @@ License: GPL2
 					$check = $wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `name` = '{$name}', `mobile` = '{$mobile}', `status` = '".$_POST['wp_subscribe_status']."', `group_ID` = '{$group}' WHERE `ID` = '".$_GET['ID']."'");
 					
 					if($check) {
-						echo "<div class='updated'><p>" . sprintf(__('User <strong>%s</strong> was update successfully.', 'wp-sms'), $name) . "</div></p>";
+						echo "<div class='updated'><p>" . sprintf(__('username <strong>%s</strong> was update successfully.', 'wp-sms'), $name) . "</div></p>";
 					}
 					
 				} else {
@@ -374,7 +379,7 @@ License: GPL2
 	
 	function wp_sms_setting_page() {
 	
-		global $obj;
+		global $sms;
 		
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
@@ -382,13 +387,14 @@ License: GPL2
 			settings_fields('wp_sms_options');
 		}
 		
-		wp_enqueue_style('css', plugin_dir_url(__FILE__) . 'css/style.css', true, '1.0');
+		wp_enqueue_style('css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.0');
 		
 		$sms_page['about'] = get_bloginfo('url') . "/wp-admin/admin.php?page=wp-sms/about";
 		
 		switch($_GET['tab']) {
 			case 'web-service':
 				include_once dirname( __FILE__ ) . "/includes/templates/settings/web-service.php";
+				update_option('wp_last_credit', $sms->GetCredit());
 				break;
 			
 			case 'newsletter':
@@ -409,11 +415,14 @@ License: GPL2
 		}
 	}
 	
-	function wp_about_setting_page() {
+	function wp_sms_about_page() {
 		if (!current_user_can('manage_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		}
 		
 		include_once dirname( __FILE__ ) . "/includes/templates/settings/about.php";
 	}
-?>
+	
+	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-newslleter.php';
+	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-features.php';
+	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-notifications.php';

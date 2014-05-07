@@ -1,27 +1,22 @@
 <?php
-	class smsglobal
-	{
+	class smsglobal extends WP_SMS {
 		private $wsdl_link = "http://www.smsglobal.com/mobileworks/soapserver.php?wsdl";
 		public $tariff = "http://www.smsglobal.com/global/en/sms/pricing.php";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 
-		function __construct() {
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms() {
+		public function SendSMS() {
 		
 			$client = new SoapClient($this->wsdl_link);
 			
-			$validation_login = $client->apiValidateLogin($this->user, $this->pass);
+			$validation_login = $client->apiValidateLogin($this->username, $this->password);
 			
 			$xml_praser = xml_parser_create();
 			xml_parse_into_struct($xml_praser, $validation_login, $xml_data, $xml_index);
@@ -30,14 +25,19 @@
 	
 			$result = $client->apiSendSms($ticket_id, $this->from, implode(',', $this->to), $this->msg, 'text', '0', '0');
 			
+			if($result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
+			
 			return $result;
 		}
 
-		function get_credit() {
+		public function GetCredit() {
 		
 			$client = new SoapClient($this->wsdl_link);
 			
-			$validation_login = $client->apiValidateLogin($this->user, $this->pass);
+			$validation_login = $client->apiValidateLogin($this->username, $this->password);
 			
 			$xml_praser = xml_parser_create();
 			xml_parse_into_struct($xml_praser, $validation_login, $xml_data, $xml_index);

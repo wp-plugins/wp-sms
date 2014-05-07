@@ -98,8 +98,8 @@
 					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
 					<p class="description data">
 						<?php _e('Input data:', 'wp-sms'); ?>
-						<?php _e('Username', 'wp-sms'); ?>: <code>%user_login%</code>
-						<?php _e('User email', 'wp-sms'); ?>: <code>%user_email%</code>
+						<?php _e('Username', 'wp-sms'); ?>: <code>%username_login%</code>
+						<?php _e('User email', 'wp-sms'); ?>: <code>%username_email%</code>
 						<?php _e('Date register', 'wp-sms'); ?>: <code>%date_register%</code>
 					</p>
 				</td>
@@ -155,7 +155,7 @@
 					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
 					<p class="description data">
 						<?php _e('Input data:', 'wp-sms'); ?>
-						<?php _e('User login', 'wp-sms'); ?>: <code>%user_login%</code>
+						<?php _e('User login', 'wp-sms'); ?>: <code>%username_login%</code>
 						<?php _e('Display name', 'wp-sms'); ?>: <code>%display_name%</code>
 					</p>
 				</td>

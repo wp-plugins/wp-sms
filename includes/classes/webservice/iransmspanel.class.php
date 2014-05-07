@@ -1,6 +1,5 @@
 <?php
-	class iransmspanel
-	{
+	class iransmspanel extends WP_SMS {
 
 		/**
 		* Host
@@ -22,12 +21,7 @@
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
 		public $port = 0;
-		public $msg;
 		public $isflash = false;
 
 		/**
@@ -171,20 +165,25 @@
 		 */
 		public function send_sms() {
 			if (@function_exists('curl_init')) {
-				$this->Send_Via_cURL($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
+				$this->Send_Via_cURL($this->username, $this->password, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
 			}
 			
-			$result = $this->Send_Via_Socket($this->user, $this->pass, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
+			$result = $this->Send_Via_Socket($this->username, $this->password, $this->from, implode(',', $this->to), $this->port, $this->msg, $this->isflash);
+			
+			if(!$result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
 			
 			if(!$result)
 				return true;
 		}
 
-		public function get_credit() {
+		public function GetCredit() {
 		
 			$client = new SoapClient($this->wsdl_link);
 			
-			if( $client->Authentication($this->user, $this->pass) == '1' ) {
+			if( $client->Authentication($this->username, $this->password) == '1' ) {
 				return $client->GetCredit();
 			} else {
 				return false;

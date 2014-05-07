@@ -1,38 +1,36 @@
 <?php
-	class textsms
-	{
+	class textsms extends WP_SMS {
 		private $wsdl_link = "http://www.textsms.ir/webservice/smsService.php?wsdl";
 		public $tariff = "http://www.textsms.ir";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "disable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
 
-		function __construct()
-		{
+		public function __construct() {
+			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 
-		function send_sms()
-		{
+		public function SendSMS() {
 			$receiver = array();
-			foreach($this->to as $number)
-			{
+			foreach($this->to as $number) {
 				$receiver[] = "$number";
 			}
-			$result = new SoapClient($this->wsdl_link);
-			return $result->send_sms($this->user, $this->pass, $this->from, implode($receiver, ","), $this->msg);
+			$client = new SoapClient($this->wsdl_link);
+			$result = $client->send_sms($this->username, $this->password, $this->from, implode($receiver, ","), $this->msg);
+			
+			if($result) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+			}
+			
+			return $result;
 		}
 
-		function get_credit()
-		{
-			$result = new SoapClient($this->wsdl_link);
-			return $result->sms_credit($this->user, $this->pass);
+		public function GetCredit() {
+			$client = new SoapClient($this->wsdl_link);
+			return $client->sms_credit($this->username, $this->password);
 		}
 	}
 ?>

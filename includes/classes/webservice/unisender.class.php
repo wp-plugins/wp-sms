@@ -1,30 +1,24 @@
 <?php
-	class unisender
-	{
+	class unisender extends WP_SMS {
 		private $wsdl_link = "http://api.unisender.com/ru/api/";
 		public $tariff = "http://www.unisender.com/en/prices/";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
-		public $user;
-		public $pass;
-		public $from;
-		public $to;
-		public $msg;
 		public $isflash = false;
-
-		function __construct() {
-			
+		
+		public function __construct() {
+			parent::__construct();
 		}
-
-		function send_sms() {
+		
+		public function SendSMS() {
 			
 			$to = implode($this->to, ",");
 			
 			$sms_text = iconv('cp1251', 'utf-8', $this->msg);
 			
 			$POST = array (
-				'api_key'	=> $this->pass,
+				'api_key'	=> $this->password,
 				'phone'		=> $to,
 				'sender'	=> $this->from,
 				'text'		=> $sms_text
@@ -37,7 +31,7 @@
 			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 			curl_setopt($ch, CURLOPT_URL, "{$this->wsdl_link}sendSms?format=json");
 			$result = curl_exec($ch);
-
+			
 			if ($result) {
 				$jsonObj = json_decode($result);
 				
@@ -48,21 +42,27 @@
 				} else {
 					echo "SMS message is sent. Message id " . $jsonObj->result[0]->sms_id;
 					
+					$this->InsertToDB($this->from, $this->msg, $this->to);
+					$this->Hook('wp_sms_send', $result);
+					
 					return true;
 				}
 			} else {
 				echo "API access error";
 			}
 		}
-
-		function get_credit() {
 		
-			$json = file_get_contents("{$this->wsdl_link}getUserInfo?format=json&api_key={$this->pass}&login={$this->user}");
+		public function GetCredit() {
+		
+			$json = file_get_contents("{$this->wsdl_link}getUserInfo?format=json&api_key={$this->password}&login={$this->username}");
 			
 			$result = json_decode($json, true);
 			
 			if( $result['code'] == 'unspecified' )
-				return false;
+				return 0;
+			
+			if( $result['code'] == 'invalid_api_key' )
+				return 0;
 			
 			return $result['result']['balance'];
 		}

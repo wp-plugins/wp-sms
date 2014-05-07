@@ -33,9 +33,9 @@
 	
 		if(get_post_meta($post_ID, "subscribe_post", true) == 'yes') {
 		
-			global $wpdb, $table_prefix, $obj, $date;
+			global $wpdb, $table_prefix, $sms;
 			
-			$obj->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes");
+			$sms->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes");
 			
 			$string = get_option('wp_sms_text_template');
 			
@@ -48,19 +48,36 @@
 			$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 			
 			if( get_option('wp_sms_text_template') ) {
-				$obj->msg = $final_message;
+				$sms->msg = $final_message;
 			} else {
-				$obj->msg = get_the_title($post_ID);
+				$sms->msg = get_the_title($post_ID);
 			}
 			
-			if( $obj->send_sms() ) {
-			
-				$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
-				
-				$wpdb->query("INSERT INTO {$table_prefix}sms_send (date, sender, message, recipient) VALUES ('{$date}', '{$obj->from}', '{$obj->msg}', '{$to}')");
-			}
+			$sms->SendSMS();
 			
 			return $post_ID;
 		}
 	}
-	add_action('publish_post', 'wp_sms_subscribe_send');
+	if(get_option('wp_subscribes_send'))
+		add_action('publish_post', 'wp_sms_subscribe_send');
+	
+	function wp_sms_register_new_subscribe($name, $mobile) {
+	
+		global $sms;
+		
+		$string = get_option('wp_subscribes_text_send');
+		
+		$template_vars = array(
+			'subscribe_name'	=> $name,
+			'subscribe_mobile'	=> $mobile
+		);
+		
+		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
+		
+		$sms->to = array($mobile);
+		$sms->msg = $final_message;
+		
+		$sms->SendSMS();
+	}
+	if(get_option('wp_subscribes_send_sms'))
+		add_action('wp_sms_subscribe', 'wp_sms_register_new_subscribe', 10, 2);
