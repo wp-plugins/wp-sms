@@ -1,7 +1,7 @@
 <?php
-	class niazpardaz extends WP_SMS {
-		private $wsdl_link = "http://sms.niazpardaz.ir/post/send.asmx?wsdl";
-		public $tariff = "http://www.niazpardaz.com/sms/SmsPrice.aspx";
+	class sms extends WP_SMS {
+		private $wsdl_link = "http://n.sms.ir/post/send.asmx?wsdl";
+		public $tariff = "http://sms.ir/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "disable";

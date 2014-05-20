@@ -184,6 +184,18 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'ponishasms.ir'); ?>
 							</option>
+							<option value="payamakalmas" <?php selected(get_option('wp_webservice'), 'payamakalmas'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payamakalmas.ir'); ?>
+							</option>
+							<option value="sms" <?php selected(get_option('wp_webservice'), 'sms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'sms.ir'); ?>
+							</option>
+							<option value="popaksms" <?php selected(get_option('wp_webservice'), 'popaksms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'popaksms.ir'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
