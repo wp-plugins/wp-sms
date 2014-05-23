@@ -1,8 +1,8 @@
 <?php
 	class sms extends WP_SMS {
-		private $wsdl_link = "http://n.sms.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://p.sms.ir/post/send.asmx?wsdl";
 		public $tariff = "http://sms.ir/";
-		public $unitrial = true;
+		public $unitrial = false;
 		public $unit;
 		public $flash = "disable";
 		public $isflash = false;
