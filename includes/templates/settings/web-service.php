@@ -196,6 +196,10 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'popaksms.ir'); ?>
 							</option>
+							<option value="smsde" <?php selected(get_option('wp_webservice'), 'smsde'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsde.ir'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">

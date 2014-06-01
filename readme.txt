@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -107,6 +107,9 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.4.2 =
+* Added: SMSde Webservice.
+
 = 2.4.1 =
 * Added: Payamakalmas Webservice.
 * Added: SMS (IPE) Webservice.
