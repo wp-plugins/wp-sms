@@ -3,14 +3,14 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.4.2
+Version: 2.5
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.4.2');
+	define('WP_SMS_VERSION', '2.5');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	include_once dirname( __FILE__ ) . '/install.php';
@@ -239,8 +239,35 @@ License: GPL2
 		
 		global $wpdb, $table_prefix, $date;
 		
+		if($_GET['group']) {
+			$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '{$_GET['group']}'");
+		} else {
+			$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes`");
+		}
+		
+		if($_POST['search']) {
+			$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `name` LIKE '%{$_POST['s']}%' OR `mobile` LIKE '%{$_POST['s']}%'");
+		}
+		
+		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
+		
+		/* Pagination */
 		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'assets/css/pagination.css', true, '1.0');
 		include_once dirname( __FILE__ ) . '/includes/classes/pagination.class.php';
+		
+		// Instantiate pagination smsect with appropriate arguments
+		$pagesPerSection = 10;
+		$options = array(25, "All");
+		$stylePageOff = "pageOff";
+		$stylePageOn = "pageOn";
+		$styleErrors = "paginationErrors";
+		$styleSelect = "paginationSelect";
+
+		$Pagination = new Pagination($total, $pagesPerSection, $options, false, $stylePageOff, $stylePageOn, $styleErrors, $styleSelect);
+
+		$start = $Pagination->getEntryStart();
+		$end = $Pagination->getEntryEnd();
+		/* Pagination */
 		
 		if($_POST['doaction']) {
 		
@@ -367,14 +394,63 @@ License: GPL2
 			
 		}
 		
-		$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes`");
-		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
-		
 		if(!$get_group_result) {
 			add_action('admin_print_footer_scripts', 'wpsms_group_pointer');
 		}
 		
-		include_once dirname( __FILE__ ) . "/includes/templates/settings/subscribes.php";
+		if($_GET['action'] == 'import') {
+			
+			include_once dirname( __FILE__ ) . "/includes/classes/excel-reader.class.php";
+			
+			$get_mobile = $wpdb->get_col("SELECT `mobile` FROM {$table_prefix}sms_subscribes");
+			
+			if(isset($_POST['wps_import'])) {
+				if(!$_FILES['wps-import-file']['error']) {
+				
+					$data = new Spreadsheet_Excel_Reader($_FILES["wps-import-file"]["tmp_name"]);
+					
+					foreach($data->sheets[0]['cells'] as $items) {
+						
+						// Check duplicate items
+						if(in_array($items[2], $get_mobile)) {
+							$duplicate[] = $items[2];
+							continue;
+						}
+						
+						// Count submited items.
+						$total_submit[] = $data->sheets[0]['cells'];
+						
+						$result = $wpdb->insert("{$table_prefix}sms_subscribes",
+							array(
+								'date'		=>	date('Y-m-d H:i:s' ,current_time('timestamp', 0)),
+								'name'		=>	$items[1],
+								'mobile'	=>	$items[2],
+								'status'	=>	'1',
+								'group_ID'	=>	$_POST['wpsms_group_name']
+							)
+						);
+						
+					}
+					
+					if($result)
+						echo "<div class='updated'><p>" . sprintf(__('<strong>%s</strong> items was successfully added.', 'wp-sms'), count($total_submit)) . "</div></p>";
+					
+					if($duplicate)
+						echo "<div class='error'><p>" . sprintf(__('<strong>%s</strong> Mobile numbers Was repeated.', 'wp-sms'), count($duplicate)) . "</div></p>";
+						
+				} else {
+					echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
+				}
+			}
+			
+			include_once dirname( __FILE__ ) . "/includes/templates/settings/import.php";
+			
+		} else if($_GET['action'] == 'export') {
+			include_once dirname( __FILE__ ) . "/includes/templates/settings/export.php";
+		} else {
+			include_once dirname( __FILE__ ) . "/includes/templates/settings/subscribes.php";
+		}
+		
 	}
 	
 	function wp_sms_setting_page() {

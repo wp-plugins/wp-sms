@@ -19,10 +19,18 @@
 			</tr>
 			
 			<tr>
+				<th><?php _e('Add Mobile field to profile page?', 'wp-sms'); ?></th>
+				<td>
+					<input type="checkbox" name="wps_add_mobile_field" id="wps_add_mobile_field" <?php echo get_option('wps_add_mobile_field') ==true? 'checked="checked"':'';?>/>
+					<label for="wps_add_mobile_field"><?php _e('Active', 'wp-sms'); ?></label>
+				</td>
+			</tr>
+			
+			<tr>
 				<td>
 					<p class="submit">
 						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="wp_suggestion_status" />
+						<input type="hidden" name="page_options" value="wp_suggestion_status,wps_add_mobile_field" />
 						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>

@@ -35,8 +35,48 @@ jQuery(document).ready( function($) {
 <?php } ?>
 
 <div class="wrap">
-	<h2><?php _e('Members Newsletter', 'wp-sms'); ?> (<?php echo $total . ' ' . __('Subscriber', 'wp-sms'); ?>)</h2>
 	<?php if(!$_GET['action'] == 'edit') { ?>
+	<h2>
+		<?php _e('Members Newsletter', 'wp-sms'); ?>
+		<a class="add-new-h2" href="?page=wp-sms/subscribe&action=import"><?php _e('Import', 'wp-sms'); ?></a>
+		<a class="add-new-h2" href="?page=wp-sms/subscribe&action=export"><?php _e('Export', 'wp-sms'); ?></a>
+		<?php if($_POST['s']) { ?><span class="subtitle"><?php echo sprintf(__('Search result for %s', 'wp-sms'), $_POST['s']); ?></span><?php } ?>
+	</h2>
+	
+	
+	<ul class="subsubsub">
+		<li class="all"><a <?php if($_GET['group'] == false) { echo 'class="current" '; } ?>href="admin.php?page=wp-sms/subscribe"><?php _e('All', 'wp-sms'); ?> <span class="count">(<?php echo $total; ?>)</span></a> |</li>
+		<?php
+			foreach($get_group_result as $groups) {
+				
+				$current = null;
+				if($_GET['group'] == $groups->ID) {
+					$current = "class='current' ";
+				}
+				
+				$line = ' |';
+				$i++;
+				if( $i == count($get_group_result) ) {
+					$line = null;
+				}
+				
+				$result = $wpdb->get_col("SELECT * FROM {$table_prefix}sms_subscribes WHERE `group_ID` = '{$groups->ID}'");
+				
+				$count = count($result);
+				
+				echo "<li><a {$current} href='admin.php?page=wp-sms/subscribe&group={$groups->ID}'>{$groups->name} <span class='count'>({$count})</span></a>{$line}</li>";
+			}
+		?>
+	</ul>
+	
+	<form method="post" action="" id="posts-filter">
+		<p class="search-box">
+			<label for="post-search-input" class="screen-reader-text"><?php _e('Search subscribers', 'wp-sms'); ?></label>
+			<input type="search" value="" name="s" id="post-search-input">
+			<input type="submit" value="<?php _e('Search subscribers', 'wp-sms'); ?>" class="button" id="search-submit" name="search">
+		</p>
+	</form>
+	
 	<form action="" method="post">
 		<table class="widefat fixed" cellspacing="0">
 			<thead>
@@ -53,25 +93,18 @@ jQuery(document).ready( function($) {
 		
 
 			<tbody>
-				<?php
-				global $wpdb, $table_prefix;
-				
-				// Instantiate pagination smsect with appropriate arguments
-				$pagesPerSection = 10;
-				$options = array(25, "All");
-				$stylePageOff = "pageOff";
-				$stylePageOn = "pageOn";
-				$styleErrors = "paginationErrors";
-				$styleSelect = "paginationSelect";
-
-				$Pagination = new Pagination($total, $pagesPerSection, $options, false, $stylePageOff, $stylePageOn, $styleErrors, $styleSelect);
-
-				$start = $Pagination->getEntryStart();
-				$end = $Pagination->getEntryEnd();
-
+			<?php
 				// Retrieve MySQL data
-				$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
-
+				if($_GET['group']) {
+					$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '{$_GET['group']}' ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
+				} else {
+					$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
+				}
+				
+				if($_POST['search']) {
+					$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `name` LIKE '%{$_POST['s']}%' OR `mobile` LIKE '%{$_POST['s']}%' ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
+				}
+				
 				if(count($get_result ) > 0)
 				{
 					foreach($get_result as $gets)
@@ -85,9 +118,9 @@ jQuery(document).ready( function($) {
 					<td class="column-name"><?php echo $gets->mobile; ?></td>
 					<td class="column-name">
 						<?php
-							$result = $wpdb->get_row("SELECT `name` FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$gets->group_ID}'");
+							$result = $wpdb->get_row("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$gets->group_ID}'");
 							
-							echo $result->name;
+							echo "<a href='admin.php?page=wp-sms/subscribe&group={$result->ID}'>{$result->name}</a>";
 						?>
 					</td>
 					<td class="column-name"><img src="<?php echo WP_SMS_DIR_PLUGIN . '/assets/images/' . $gets->status; ?>.png" align="middle"/></td>
@@ -99,9 +132,9 @@ jQuery(document).ready( function($) {
 					<tr>
 						<td colspan="7"><?php _e('Not Found!', 'wp-sms'); ?></td>
 					</tr>
-				<?php } ?>
+			<?php } ?>
 			</tbody>
-
+			
 			<tfoot>
 				<tr>
 					<th id="cb" scope="col" class="manage-column column-cb check-column"><input type="checkbox" name="checkAll" value=""/></th>
@@ -204,13 +237,12 @@ jQuery(document).ready( function($) {
 			</tr>
 		</table>
 	</form>
+	
 	<?php endif; ?>
-
 	<?php } else { ?>
-
-	<?php
-		$get_result = $wpdb->get_results("SELECT * FROM {$table_prefix}sms_subscribes WHERE ID = '".$_GET['ID']."'");
-	?>
+	<?php $get_result = $wpdb->get_results("SELECT * FROM {$table_prefix}sms_subscribes WHERE ID = '".$_GET['ID']."'"); ?>
+	
+	<div class="clear"></div>
 	<form action="" method="post">
 		<table>
 			<tr><td colspan="2"><h3><?php _e('Edit subscribe:', 'wp-sms'); ?></h4></td></tr>

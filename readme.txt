@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 2.4.2
+Stable tag: 2.5
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -107,6 +107,13 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.5 =
+* Added: Option to enable mobile field to profile page. (Setting -> Features)
+* Added: Import & export in subscribe list page.
+* Added: Groups link in subscribe page.
+* Added: Search items in subscribe list page.
+* Added: Novin sms Webservice.
+
 = 2.4.2 =
 * Added: SMSde Webservice.
 

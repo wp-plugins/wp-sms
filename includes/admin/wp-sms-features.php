@@ -39,3 +39,12 @@
 		add_action('wp_head', 'wp_tell_a_freind_head');
 		add_action('the_content', 'wp_tell_a_freind');
 	}
+	
+	function wp_modify_contact_methods($fields) {
+	
+		$fields['mobile'] = __('Mobile', 'wp-sms');
+		
+		return $fields;
+	}
+	if(get_option('wps_add_mobile_field'))
+		add_filter('user_contactmethods', 'wp_modify_contact_methods');

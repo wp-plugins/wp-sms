@@ -7,7 +7,7 @@
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version    1.0
  */
-class WP_SMS {
+abstract class WP_SMS {
 
 	/**
 	 * Webservice username
@@ -79,7 +79,7 @@ class WP_SMS {
 		return $this->db->insert(
 			$this->tb_prefix . "sms_send",
 			array(
-				'date'		=>	date('Y-m-d H:i:s' ,current_time('timestamp',0)),
+				'date'		=>	date('Y-m-d H:i:s' ,current_time('timestamp', 0)),
 				'sender'	=>	$sender,
 				'message'	=>	$message,
 				'recipient'	=>	implode(',', $recipient)

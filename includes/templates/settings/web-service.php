@@ -48,6 +48,10 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'adpdigital.com'); ?>
 							</option>
+							<option value="smsde" <?php selected(get_option('wp_webservice'), 'smsde'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsde.ir'); ?>
+							</option>
 							<option value="payamakde" <?php selected(get_option('wp_webservice'), 'payamakde'); ?>>
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'payamakde.ir'); ?>
@@ -196,9 +200,9 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'popaksms.ir'); ?>
 							</option>
-							<option value="smsde" <?php selected(get_option('wp_webservice'), 'smsde'); ?>>
+							<option value="novin1sms" <?php selected(get_option('wp_webservice'), 'novin1sms'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsde.ir'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'novin1sms.ir'); ?>
 							</option>
 						</optgroup>
 						
