@@ -411,7 +411,7 @@ License: GPL2
 					
 					foreach($data->sheets[0]['cells'] as $items) {
 						
-						// Check duplicate items
+						// Check and count duplicate items
 						if(in_array($items[2], $get_mobile)) {
 							$duplicate[] = $items[2];
 							continue;

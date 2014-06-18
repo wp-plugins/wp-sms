@@ -2,7 +2,7 @@
 	class payamakalmas extends WP_SMS {
 		private $wsdl_link = "http://79.175.167.50/webservice/server.php?wsdl";
 		private $client = null;
-		public $tariff = "http://payamakalmas.ir/";
+		public $tariff = "http://almasac.ir/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
