@@ -114,7 +114,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added: Groups link in subscribe page.
 * Added: Search items in subscribe list page.
 * Added: Novin sms Webservice.
-* Added: Hamyaar sms sms Webservice.
+* Added: Hamyaar sms Webservice.
 
 = 2.4.2 =
 * Added: SMSde Webservice.
