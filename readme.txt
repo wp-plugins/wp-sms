@@ -108,11 +108,13 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 
 == Changelog ==
 = 2.5 =
+* Fixed: Error `Call to undefined method stdClass::SendSMS()` when enable/update plugin.
 * Added: Option to enable mobile field to profile page. (Setting -> Features)
 * Added: Import & export in subscribe list page.
 * Added: Groups link in subscribe page.
 * Added: Search items in subscribe list page.
 * Added: Novin sms Webservice.
+* Added: Hamyaar sms sms Webservice.
 
 = 2.4.2 =
 * Added: SMSde Webservice.

@@ -11,7 +11,11 @@
 		
 			if(get_option('wp_last_send_notification') == false) {
 			
-				global $sms;
+				$webservice = get_option('wp_webservice');
+				include_once dirname( __FILE__ ) . "/../classes/wp-sms.class.php";
+				include_once dirname( __FILE__ ) . "/../classes/webservice/{$webservice}.class.php";
+				
+				$sms = new $webservice;
 				
 				$sms->to = array(get_option('wp_admin_mobile'));
 				$sms->msg = sprintf(__('WordPress %s is available! Please update now', 'wp-sms'), $update[1]->current);
