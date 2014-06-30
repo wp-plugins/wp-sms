@@ -107,6 +107,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.5.x =
+* Updated: Arabic language.
+* Added: Matin SMS Webservice.
+
 = 2.5 =
 * Fixed: Error `Call to undefined method stdClass::SendSMS()` when enable/update plugin.
 * Added: Option to enable mobile field to profile page. (Setting -> Features)
