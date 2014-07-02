@@ -110,6 +110,8 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 = 2.5.x =
 * Updated: Arabic language.
 * Added: Matin SMS Webservice.
+* Added: Iranspk Webservice.
+* Added: Freepayamak Webservice.
 
 = 2.5 =
 * Fixed: Error `Call to undefined method stdClass::SendSMS()` when enable/update plugin.

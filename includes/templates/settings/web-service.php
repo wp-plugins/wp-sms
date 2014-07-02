@@ -212,6 +212,14 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smspanel.mat-in.ir'); ?>
 							</option>
+							<option value="iranspk" <?php selected(get_option('wp_webservice'), 'iranspk'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'iranspk.ir'); ?>
+							</option>
+							<option value="freepayamak" <?php selected(get_option('wp_webservice'), 'freepayamak'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'freepayamak.ir'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
