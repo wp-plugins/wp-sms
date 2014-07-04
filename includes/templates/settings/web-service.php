@@ -220,6 +220,10 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'freepayamak.ir'); ?>
 							</option>
+							<option value="itpayamak" <?php selected(get_option('wp_webservice'), 'itpayamak'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'itpayamak.ir'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
