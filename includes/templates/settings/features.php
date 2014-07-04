@@ -19,10 +19,11 @@
 			</tr>
 			
 			<tr>
-				<th><?php _e('Add Mobile field to profile page?', 'wp-sms'); ?></th>
+				<th><?php _e('Add Mobile number field?', 'wp-sms'); ?></th>
 				<td>
 					<input type="checkbox" name="wps_add_mobile_field" id="wps_add_mobile_field" <?php echo get_option('wps_add_mobile_field') ==true? 'checked="checked"':'';?>/>
 					<label for="wps_add_mobile_field"><?php _e('Active', 'wp-sms'); ?></label>
+					<p class="description"><?php _e('Add Mobile number to user profile and register form.', 'wp-sms'); ?></p>
 				</td>
 			</tr>
 			

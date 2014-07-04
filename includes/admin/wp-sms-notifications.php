@@ -39,11 +39,11 @@
 		
 		$string = get_option('wpsms_nrnu_tt');
 		
-		$username_info = get_usernamedata($username_id);
+		$username_info = get_userdata($username_id);
 		
 		$template_vars = array(
-			'username_login'	=> $username_info->username_login,
-			'username_email'	=> $username_info->username_email,
+			'user_login'	=> $username_info->user_login,
+			'user_email'	=> $username_info->user_email,
 			'date_register'	=> $date,
 		);
 		
@@ -55,7 +55,7 @@
 	}
 	
 	if(get_option('wpsms_nrnu_stats'))
-		add_action('username_register', 'wps_notification_new_user', 10, 1);
+		add_action('user_register', 'wps_notification_new_user', 10, 1);
 	
 	// New Comment
 	function wps_notification_new_comment($comment_id, $comment_smsect){

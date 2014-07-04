@@ -83,7 +83,7 @@
 				<td>
 					<input type="checkbox" name="wpsms_nrnu_stats" id="wpsms-nrnu-stats" <?php echo get_option('wpsms_nrnu_stats') ==true? 'checked="checked"':'';?>/>
 					<label for="wpsms-nrnu-stats"><?php _e('Active', 'wp-sms'); ?></label>
-					<p class="description"><?php _e('Send a sms to you When register a new wordpress user.', 'wp-sms'); ?></p>
+					<p class="description"><?php _e('Send a sms to you and user when register on wordpress.', 'wp-sms'); ?></p>
 				</td>
 			</tr>
 			
@@ -94,12 +94,23 @@
 				</th>
 				
 				<td>
+					<p><?php _e('For users:', 'wp-sms'); ?></p>
 					<textarea id="wpsms-nrnu-tt" cols="50" rows="7" name="wpsms_nrnu_tt"><?php echo get_option('wpsms_nrnu_tt'); ?></textarea>
 					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
 					<p class="description data">
 						<?php _e('Input data:', 'wp-sms'); ?>
-						<?php _e('Username', 'wp-sms'); ?>: <code>%username_login%</code>
-						<?php _e('User email', 'wp-sms'); ?>: <code>%username_email%</code>
+						<?php _e('Username', 'wp-sms'); ?>: <code>%user_login%</code>
+						<?php _e('User email', 'wp-sms'); ?>: <code>%user_email%</code>
+						<?php _e('Date register', 'wp-sms'); ?>: <code>%date_register%</code>
+					</p>
+					
+					<p><?php _e('For admin:', 'wp-sms'); ?></p>
+					<textarea id="wpsms-nrnu-tt" cols="50" rows="7" name="wpsms_narnu_tt"><?php echo get_option('wpsms_narnu_tt'); ?></textarea>
+					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
+					<p class="description data">
+						<?php _e('Input data:', 'wp-sms'); ?>
+						<?php _e('Username', 'wp-sms'); ?>: <code>%user_login%</code>
+						<?php _e('User email', 'wp-sms'); ?>: <code>%user_email%</code>
 						<?php _e('Date register', 'wp-sms'); ?>: <code>%date_register%</code>
 					</p>
 				</td>
@@ -232,7 +243,7 @@
 				<td>
 					<p class="submit">
 						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="wp_subscribes_send,wp_sms_text_template,wp_notification_new_wp_version,wpsms_nrnu_stats,wpsms_nrnu_tt,wpsms_gnc_stats,wpsms_gnc_tt,wpsms_ul_stats,wpsms_ul_tt,wps_add_wpcf7,wpsms_wc_no_stats,wpsms_wc_no_tt,wpsms_edd_no_stats,wpsms_edd_no_tt" />
+						<input type="hidden" name="page_options" value="wp_subscribes_send,wp_sms_text_template,wp_notification_new_wp_version,wpsms_nrnu_stats,wpsms_nrnu_tt,wpsms_narnu_tt,wpsms_gnc_stats,wpsms_gnc_tt,wpsms_ul_stats,wpsms_ul_tt,wps_add_wpcf7,wpsms_wc_no_stats,wpsms_wc_no_tt,wpsms_edd_no_stats,wpsms_edd_no_tt" />
 						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>
