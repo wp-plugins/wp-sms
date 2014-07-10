@@ -114,6 +114,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added: Iranspk Webservice.
 * Added: Freepayamak Webservice.
 * Added: IT Payamak Webservice.
+* Added: Irsmsland Webservice.
 * Fixed: Error `Call to a member function GetCredit()` in webservie page.
 * Fixed: Bug in notification register new user.
 * Updated: Arabic language.
