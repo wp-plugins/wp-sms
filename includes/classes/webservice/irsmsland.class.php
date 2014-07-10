@@ -13,19 +13,21 @@
 		
 		public function SendSMS() {
 			$client = new SoapClient($this->wsdl_link);
-			$result = $client->send($this->username, $this->password, $this->to, $this->from, $this->msg);
+			$result = $client->send($this->username, $this->password, array(array('number' => implode(",", $this->to))), $this->from, $this->msg);
 			
 			if($result) {
 				$this->InsertToDB($this->from, $this->msg, $this->to);
 				$this->Hook('wp_sms_send', $result);
 			}
 			
-			return $result;
+			return $result[0]['id'];
 		}
 		
 		public function GetCredit() {
 			$client = new SoapClient($this->wsdl_link);
-			return $client->getCredit($this->username, $this->password);
+			$result = $client->getCredit($this->username, $this->password);
+			
+			return $result[0]['id'];
 		}
 	}
 ?>
