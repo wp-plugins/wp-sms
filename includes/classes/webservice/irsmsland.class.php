@@ -12,6 +12,7 @@
 		}
 		
 		public function SendSMS() {
+			$client = new SoapClient($this->wsdl_link);
 			$result = $client->send($this->username, $this->password, $this->to, $this->from, $this->msg);
 			
 			if($result) {
