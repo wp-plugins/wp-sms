@@ -1,0 +1,1235 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress SMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-24 20:11+0330\n"
+"PO-Revision-Date: 2014-07-24 20:11+0330\n"
+"Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
+"Language-Team: Parsi Wordpress\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: F:\\Programming\\wamp\\www\\cms\\wordpress\\wp-content"
+"\\plugins\\wp-sms\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SearchPath-0: F:\\Programming\\wamp\\www\\cms\\wordpress\\wp-content"
+"\\plugins\\wp-sms\n"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-export.php:5
+msgid "Access denied!"
+msgstr "دسترسی غیرمجاز!"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-export.php:49
+msgid "Please select the desired items."
+msgstr "لطفاً یکم آیتم را انتخاب کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:21
+#, php-format
+msgid "Hi %s, the %s post suggested to you by %s. url: %s"
+msgstr "سلام %s, مطلب %s از طرف %s به شما پیشنهاد شده است. آدرس: %s"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:24
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:86
+msgid "SMS was sent with success"
+msgstr "پیامک با موفقیت ارسال شد"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:27
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe.php:60
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:329
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:389
+msgid "Please enter a valid mobile number"
+msgstr "شماره موبایل معتبر نیست"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:30
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe-activation.php:24
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe.php:63
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:332
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:392
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:442
+msgid "Please complete all fields"
+msgstr "لطفا تمامی فیلدها را کامل کنید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:44
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:87
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:143
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:184
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:255
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:84
+msgid "Mobile"
+msgstr "موبایل"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:53
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:14
+msgid "Your Mobile Number"
+msgstr "شماره موبایل شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-features.php:61
+msgid "<strong>ERROR</strong>: You must include a mobile number."
+msgstr "<strong>خطا</strong>: شماره موبایل خود را بنویسید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-newslleter.php:5
+msgid "Subscribe SMS"
+msgstr "اشتراک پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-notifications.php:21
+#, php-format
+msgid "WordPress %s is available! Please update now"
+msgstr "وردپرس %s در دسترس است! لطفا به‌روز رسانی کنید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe-activation.php:21
+msgid "Security Code is wrong"
+msgstr "کد امنیتی اشتباه است"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe.php:28
+msgid "Your activation code"
+msgstr "کدفعال سازی شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe.php:53
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:372
+msgid "Nothing found!"
+msgstr "چیزی یافت نشد!"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/admin/wp-sms-subscribe.php:57
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:326
+msgid "Phone number is repeated"
+msgstr "شماره موبایل تکراری است"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:2
+msgid "About Plugin"
+msgstr "درباره پلاگین"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:3
+#, php-format
+msgid "Version plugin: %s"
+msgstr "نگارش افزونه: %s"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:4
+msgid ""
+"The first free WordPress Iranian plugin that works on Web service messages."
+msgstr ""
+"اولین افزونه رایگان ایرانی برای وردپرس است که بر روی وب سرویس های پیامک کار "
+"میکند."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:5
+#, php-format
+msgid "This plugin created by %s from %s gorup"
+msgstr "این افزونه توسط %s از گروه %s ساخته شده است."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:6
+msgid "do you have problem with plugin?"
+msgstr "آیا مشکلی دارید؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:7
+#, php-format
+msgid "if you have you can tell your problem in <a href=\"%s\">forum</a>."
+msgstr ""
+"اگر در رابطه با افزونه مشکلی دارید، در <a href=\"%s\">انجمن</a> مطرح کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:9
+msgid "are you a translator?"
+msgstr "آیا مترجم هستید؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:10
+#, php-format
+msgid "please send your translation to %s."
+msgstr "فایل‌های زبان را به %s ارسال کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:12
+msgid "you want to know about how to add your web service to this plugin?"
+msgstr "چگونه وب سرویس را به این افزونه اضافه کنم؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:13
+#, php-format
+msgid "to adding your web service please contact with %s."
+msgstr "برای اضافه کردن وب‌سرویس خود با %s تماس بگیرید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:15
+msgid "Donate in plugin."
+msgstr "حمایت مالی به افزونه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:26
+msgid "Donate"
+msgstr "حمایت"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/export.php:2
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/export.php:23
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:42
+msgid "Export"
+msgstr "برون‌بری"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/export.php:7
+msgid "Export To"
+msgstr "برون‌بری به"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/export.php:12
+msgid "Please select."
+msgstr "لطفا انتخاب کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/export.php:18
+msgid "Select the output file type."
+msgstr "لطفاً نوع فایل خروجی را انتخاب کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/export.php:27
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/import.php:22
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:286
+msgid "Back"
+msgstr "بازگشت"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:3
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:11
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:31
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:3
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:18
+msgid "General"
+msgstr "عمومی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:4
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:12
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:32
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:4
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:19
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:29
+msgid "Web Service"
+msgstr "وب سرویس"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:5
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:13
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:33
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:5
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:20
+msgid "Newsletter"
+msgstr "خبرنامه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:6
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:14
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:34
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:6
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:21
+msgid "Features"
+msgstr "امکانات"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:7
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:15
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:35
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:7
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:22
+msgid "Notification"
+msgstr "اطلاع رسانی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:14
+msgid "Suggested post by SMS?"
+msgstr "پیشنهاد نوشته از طریق پیامک؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:17
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:25
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:25
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:33
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:41
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:67
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:49
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:76
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:85
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:123
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:153
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:183
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:196
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:225
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:156
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:274
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:299
+msgid "Active"
+msgstr "فعال"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:22
+msgid "Add Mobile number field?"
+msgstr "افزودن فیلد شماره موبایل؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:26
+msgid "Add Mobile number to user profile and register form."
+msgstr "افزودن فیلد شماره موبایل به شناسنامه کاربری و فرم نام‌نویسی."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:35
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:77
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:247
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:33
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:312
+msgid "Update"
+msgstr "به‌روزرسانی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/import.php:2
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:41
+msgid "Import"
+msgstr "درون‌ریزی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/import.php:7
+#, php-format
+msgid ""
+"<code>.xls</code> is the only acceptable format. Please see <a href=\"%s"
+"\">this image</a> to show a standard xls import file."
+msgstr ""
+"فرمت <code dir=\"ltr\">.xls</code> تنها فرمت قابل قبول برای درون‌ریزی است. <a "
+"href=\"%s\">این تصویر</a> را برای ساختار استاندارد درون‌ریزی مشاهده کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/import.php:11
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:23
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:88
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:144
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:189
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:89
+msgid "Group"
+msgstr "گروه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/import.php:19
+msgid "Upload"
+msgstr "بارگزاری"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/meta-box.php:2
+msgid "Send this post to subscribers?"
+msgstr "ارسال این نوشته به کاربران خبرنامه؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/meta-box.php:4
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:150
+msgid "Yes"
+msgstr "بله"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/meta-box.php:5
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:153
+msgid "No"
+msgstr "خیر"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:22
+msgid "Register?"
+msgstr "نام‌نویسی؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:30
+msgid "Verified with the activation code?"
+msgstr "تأیید با کد فعال سازی؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:38
+msgid "Send SMS?"
+msgstr "ارسال پیامک؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:42
+msgid "Send a sms to subscriber when register."
+msgstr "ارسال پیامک به مشترک وقتی که در خبرنامه عضو شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:49
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:57
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:93
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:131
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:161
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:204
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:233
+msgid "Text template"
+msgstr "قالب متن"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:54
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:62
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:99
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:109
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:136
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:166
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:209
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:238
+msgid "Enter the contents of the sms message."
+msgstr "محتوای متن ارسال پیامک را وارد کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:56
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:64
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:101
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:111
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:138
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:168
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:211
+msgid "Input data:"
+msgstr "داده‌های ورودی:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:57
+msgid "Subscribe name"
+msgstr "نام مشترک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:58
+msgid "Subscribe mobile"
+msgstr "موبایل مشترک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:64
+msgid "Calling jQuery in Wordpress?"
+msgstr "فراخوانی جی‌کوئری در وردپرس؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:68
+msgid "Enable this option with JQuery is called in the theme"
+msgstr "با فعال کردن این گزینه جی کوئری در پوسته فراخوانی میشود"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:42
+msgid "Wordpress Notifications"
+msgstr "اطلاع رسانی‌های وردپرس"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:46
+msgid "Published new posts"
+msgstr "انتشار نوشته‌ی تازه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:50
+msgid "Send a sms to subscribers When published new posts."
+msgstr "ارسال پیامک به مشترکین خبرنامه هنگام انتشار نوشته‌ی تازه."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:65
+msgid "Title post"
+msgstr "عنوان نوشته"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:66
+msgid "URL post"
+msgstr "آدرس نوشته"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:67
+msgid "Date post"
+msgstr "تاریخ نوشته"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:73
+msgid "The new release of WordPress"
+msgstr "انتشار نگارش تازه وردپرس"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:77
+msgid "Send a sms to you When the new release of WordPress."
+msgstr "ارسال پیامک به شما هنگام انتشار نگارش تازه‌ی وردپرس."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:82
+msgid "Register a new user"
+msgstr "نام‌نویسی کاربر جدید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:86
+msgid "Send a sms to you and user when register on wordpress."
+msgstr "ارسال پیامک به شما و خود کاربر هنگام نام‌نویسی در وردپرس."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:97
+msgid "For users:"
+msgstr "برای کاربر(ها):"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:102
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:112
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:257
+msgid "Username"
+msgstr "نام‌کاربری"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:103
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:113
+msgid "User email"
+msgstr "پست‌الکترونیک کاربر"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:104
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:114
+msgid "Date register"
+msgstr "تاریخ نام‌نویسی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:107
+msgid "For admin:"
+msgstr "برای مدیر:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:120
+msgid "New comment"
+msgstr "دیدگاه تازه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:124
+msgid "Send a sms to you When get a new comment."
+msgstr "ارسال پیامک به شما هنگام دریافت دیدگاه تازه."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:139
+msgid "Comment author"
+msgstr "نویسنده‌ی دیدگاه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:140
+msgid "Comment author email"
+msgstr "رایان‌نامه‌ی نویسنده دیدگاه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:141
+msgid "Comment author url"
+msgstr "نشانی نویسنده دیدگاه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:142
+msgid "Comment author IP"
+msgstr "آی‌پی نویسنده دیدگاه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:143
+msgid "Comment date"
+msgstr "تاریخ ارسال دیدگاه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:144
+msgid "Comment content"
+msgstr "متن دیدگاه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:150
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:169
+msgid "User login"
+msgstr "ورود کاربر"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:154
+msgid "Send a sms to you When user is login."
+msgstr "ارسال پیامک به شما هنگام ورود کاربر به سایت."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:170
+msgid "Display name"
+msgstr "نام نمایشی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:176
+msgid "Contact form 7 plugin"
+msgstr "افزونه Contact form 7"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:180
+msgid "SMS meta box"
+msgstr "جعبه اطلاعات پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:184
+msgid ""
+"Added Wordpress SMS meta box to Contact form 7 plugin when enable this "
+"option."
+msgstr ""
+"با فعال کردن این گزینه جعبه اطلاعات پیامک وردپرس به افزونه فرم تماس 7 اضافه "
+"میشود."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:189
+msgid "WooCommerce plugin"
+msgstr "افزونه WooCommerce"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:193
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:222
+msgid "New order"
+msgstr "سفارش جدید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:197
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:226
+msgid "Send a sms to you When get new order."
+msgstr "ارسال پیامک به شما هنگام دریافت سفارش جدید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:212
+msgid "Order ID"
+msgstr "شماره سفارش"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:218
+msgid "Easy Digital Downloads plugin"
+msgstr "افزونه Easy Digital Downloads"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:8
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:8
+msgid "Are you sure?"
+msgstr "آیا مطمئن هستید؟"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:20
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:34
+msgid "Posted SMS"
+msgstr "پیامک ارسال شده"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:20
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:135
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:139
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:4
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:70
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:115
+msgid "SMS"
+msgstr "پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:26
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:77
+msgid "Post Date"
+msgstr "تاریخ ارسال"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:27
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:78
+msgid "Sender"
+msgstr "ارسال کننده"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:28
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:79
+msgid "Message"
+msgstr "متن پیام"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:29
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:80
+msgid "Recipient"
+msgstr "دریافت کننده"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:69
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:133
+msgid "Not Found!"
+msgstr "چیزی یافت نشد!"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:88
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:154
+msgid "Bulk Actions"
+msgstr "کارهای دسته جمعی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:89
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:155
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:236
+msgid "Remove"
+msgstr "حذف"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:91
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:159
+msgid "Apply"
+msgstr "اجرا"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:101
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:169
+msgid "Page"
+msgstr "صفحه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/posted.php:101
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:169
+msgid "From"
+msgstr "از"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:44
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:98
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:163
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:33
+msgid "Send SMS"
+msgstr "ارسال پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:90
+msgid "Please enter a message"
+msgstr "لطفا قسمت پیامک را وارد کنید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:101
+msgid "Send from"
+msgstr "ارسال از"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:105
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:10
+msgid "Send to"
+msgstr "ارسال به"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:110
+msgid "Subscribe users"
+msgstr "کاربران خبرنامه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:112
+msgid "Number(s)"
+msgstr "شماره(ها)"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:119
+#, php-format
+msgid "All (%s subscribers active)"
+msgstr "همه (%s مشترک فعال)"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:129
+msgid "For example"
+msgstr "برای مثال"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:138
+msgid "The remaining words"
+msgstr "کلمات باقی‌مانده"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:141
+msgid "Your credit"
+msgstr "اعتبار شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:147
+msgid "Send a Flash"
+msgstr "ارسال یه‌صورت فلش"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:156
+msgid "Flash is possible to send messages without being asked, opens"
+msgstr "ارسال فلش امکانی است که پیام را بدون درخواست گیرند، باز می کند"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:174
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/send-sms.php:182
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:152
+#, php-format
+msgid "Please check the <a href=\"%s\">SMS credit</a> the settings"
+msgstr "لطفاً تنظیمات <a href=\"%s\">اعتباری پیامک</a> را بررسی کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:21
+msgid "Your mobile country code"
+msgstr "کد موبایل کشور شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:24
+msgid "Enter your mobile country code. (For example: Iran 09, Australia 61)"
+msgstr "کد موبایل کشورخود را وارد کنید. (برای مثال: ایران 09، استرالیا 61)"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:23
+msgid "Outset Create group to better manage the subscribers."
+msgstr "ابتدا گروه جدید بسازید تا مشترکین را بهتر مدیریت کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:40
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:35
+msgid "Members Newsletter"
+msgstr "مشترکین خبرنامه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:43
+#, php-format
+msgid "Search result for %s"
+msgstr "نتیجه جستجو برای %s"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:48
+msgid "All"
+msgstr "همه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:74
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:76
+msgid "Search subscribers"
+msgstr "جستجوی مشترک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:85
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:141
+msgid "Register date"
+msgstr "تاریخ عضویت"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:86
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:142
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:179
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:250
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:79
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-widget.php:2
+msgid "Name"
+msgstr "نام"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:89
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:145
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:271
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:296
+msgid "Status"
+msgstr "وضعیت"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:90
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:127
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:146
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:281
+msgid "Edit"
+msgstr "ویرایش"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:157
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:275
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:301
+msgid "Deactive"
+msgstr "غیرفعال"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:177
+msgid "Add new subscribe:"
+msgstr "افزودن مشترک جدید:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:200
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:215
+msgid "Add"
+msgstr "افزودن"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:208
+msgid "Add new Group:"
+msgstr "افزودن گروه جدید:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:210
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:225
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:260
+msgid "Group name"
+msgstr "نام گروه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:223
+msgid "Delete Group:"
+msgstr "حذف گروه:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:248
+msgid "Edit subscribe:"
+msgstr "ویرایش مشترک:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:32
+msgid "Select your Web Service"
+msgstr "وب‌سرویس خودرا انتخاب کنید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:34
+msgid "Iran"
+msgstr "ایران"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:37
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:41
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:45
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:49
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:53
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:57
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:61
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:65
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:69
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:73
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:77
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:81
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:85
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:89
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:93
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:97
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:101
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:105
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:109
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:113
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:117
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:121
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:125
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:129
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:133
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:137
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:141
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:145
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:149
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:153
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:157
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:161
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:165
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:169
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:173
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:177
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:181
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:185
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:189
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:193
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:197
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:201
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:205
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:209
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:213
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:217
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:221
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:225
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:232
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:239
+#, php-format
+msgid "Web Service (%s)"
+msgstr "وب سرویس (%s)"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:229
+msgid "Australia"
+msgstr "استرالیا"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:236
+msgid "New Zealand"
+msgstr "نیوزلند"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:244
+msgid "For more information about adding Web Service"
+msgstr "اطلاعات بیشتر در مورد اضافه کردن وب سرویس"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:249
+#, php-format
+msgid ""
+"If you do not have a web service, <a href=\"%s\" target=\"_blank\">click "
+"here.</a>"
+msgstr ""
+"اگر شما وب سرویس پیامک ندارید، <a href=\"%s\" target=\"_blank\">اینجا را</a> "
+"کلیک کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:250
+#, php-format
+msgid ""
+"If your Web service is not on the top list, <a href=\"%s\" target=\"_blank"
+"\">click here.</a>"
+msgstr ""
+"اگر وب سرویس شما در لیست بالا نیست،<a href=\"%s\" target=\"_blank\">اینجا "
+"را</a> کلیک کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:260
+msgid "Your username in"
+msgstr "نام‌کاربری شما در"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:263
+#, php-format
+msgid ""
+"If you do not have a username for this service <a href=\"%s\">click here..</"
+"a>"
+msgstr ""
+"درصورتی که نام‌کاربری این سرویس را ندارید <a href=\"%s\">اینجا را</a> کلیک "
+"کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:269
+msgid "Password"
+msgstr "رمزعبور"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:272
+msgid "Your password in"
+msgstr "رمزعبور شما در"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:275
+#, php-format
+msgid ""
+"If you do not have a password for this service <a href=\"%s\">click here..</"
+"a>"
+msgstr ""
+"درصورتی که رمزعبور این سرویس را ندارید <a href=\"%s\">اینجا را</a> کلیک کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:281
+msgid "Number"
+msgstr "شماره"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:284
+msgid "Your SMS sender number in"
+msgstr "شماره ارسال کننده پیامک شما در"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:289
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:126
+msgid "Credit"
+msgstr "اعتبار"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:26
+msgid "You will join the newsletter!"
+msgstr "شما عضو خبرنامه شدید!"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:31
+msgid "Your subscription was canceled."
+msgstr "عضویت شما لغو شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:37
+msgid "You will join the newsletter, Activation code sent to your number."
+msgstr "شما عضو خبرنامه شدید، کدفعال سازی به موبایل شما ارسال شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:59
+msgid "Your membership in the complete newsletter!"
+msgstr "ثبت نام شما در خبرنامه کامل شد!"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:75
+msgid "Enter your information for SMS Subscribe"
+msgstr "برای عضویت در خبرنامه پیامکی، اطلاعات خود را وارد کنید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:102
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:111
+msgid "Subscribe"
+msgstr "اشتراک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:105
+msgid "Unsubscribe"
+msgstr "لغو اشتراک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:118
+msgid "Please enter the activation code:"
+msgstr "لطفا کدفعال سازی را وارد کنید:"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:120
+msgid "Activation"
+msgstr "فعال سازی"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:126
+msgid "Subscribe is Deactive!"
+msgstr "خبرنامه غیرفعال است!"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-tell-friend.php:1
+msgid "Suggested by SMS"
+msgstr "پیشنهاد از طریق پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-tell-friend.php:5
+msgid "Your name"
+msgstr "نام شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-tell-friend.php:6
+msgid "Your friend name"
+msgstr "نام دوست شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-tell-friend.php:7
+msgid "Your friend mobile"
+msgstr "موبایل دوست شما"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-tell-friend.php:15
+msgid "Send"
+msgstr "ارسال"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:12
+msgid "Enter enter mobile number to receive message."
+msgstr "برای دریافت پیغام، شماره موبایل را وارد کنید."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:18
+msgid "Message body"
+msgstr "متن پیام"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:22
+msgid ""
+"Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to "
+"the subscriber newsletter."
+msgstr ""
+"ارسال پیامک از طریق وردپرس، عضویت در خبرنامه پیامکی و ارسال پیامک به مشترکین "
+"خبرنامه."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:32
+msgid "Wordpress SMS"
+msgstr "پیامک وردپرس"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:34
+msgid "Posted"
+msgstr "ارسالی‌ها"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:35
+msgid "Newsletter subscribers"
+msgstr "مشترکین خبرنامه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:36
+msgid "Setting"
+msgstr "تنظیمات"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:37
+msgid "About"
+msgstr "درباره"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:68
+msgid "Rial"
+msgstr "ریال"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:107
+#, php-format
+msgid "Your Credit: %s %s"
+msgstr "اعتبار شما: %s %s"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:133
+msgid "Newsletter Subscriber"
+msgstr "مشترک خبرنامه"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:144
+#, php-format
+msgid "%s Subscriber"
+msgstr "%s مشترک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:145
+#, php-format
+msgid "%s SMS Credit"
+msgstr "%s اعتبار پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:160
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:161
+msgid "Subscribe to SMS"
+msgstr "اشتراک در پیامک"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:191
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:204
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:237
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:461
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:499
+msgid "You do not have sufficient permissions to access this page."
+msgstr "شما مجوز کافی برای دیدن این برگه را ندارید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:221
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:281
+msgid "With success was removed"
+msgstr "باموفقیت حذف شد"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:223
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:283
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:292
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:301
+msgid "Not Found"
+msgstr "چیزی یافت نشد"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:290
+msgid "User is active."
+msgstr "کابر فعال شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:299
+msgid "User is Deactive.."
+msgstr "کابر فعال شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:323
+#, php-format
+msgid "username <strong>%s</strong> was added successfully."
+msgstr "کاربر <strong>%s</strong> با موفقیت اضافه شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:347
+#, php-format
+msgid "Group <strong>%s</strong> was added successfully."
+msgstr "گروه <strong>%s</strong> با موفقیت اضافه شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:350
+msgid "Group name is repeated"
+msgstr "نام گروه تکراری است"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:353
+msgid "Please complete field"
+msgstr "لطفا فیلد را کامل کنید"
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:368
+#, php-format
+msgid "Group <strong>%s</strong> was successfully removed."
+msgstr "گروه <strong>%s</strong> با موفقیت حذف شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:385
+#, php-format
+msgid "username <strong>%s</strong> was update successfully."
+msgstr "کاربر <strong>%s</strong> با موفقیت به‌روز  شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:436
+#, php-format
+msgid "<strong>%s</strong> items was successfully added."
+msgstr "تعداد <strong>%s</strong> آیتم با موفقیت اضافه شد."
+
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:439
+#, php-format
+msgid "<strong>%s</strong> Mobile numbers Was repeated."
+msgstr "تعداد  <strong>%s</strong> شماره موبایل تکراری بود."
+
+#~ msgid "Send a sms when register a new subscribe."
+#~ msgstr "ارسال پیامک هنگام نام‌نویسی مشترک جدید."
+
+#~ msgid "Send activation code via SMS?"
+#~ msgstr "ارسال کدفعال سازی از طریق پیامک؟"
+
+#~ msgid "Send SMS to subscriber?"
+#~ msgstr "ارسال پیامک به مشترک؟"
+
+#~ msgid "You will join the newsletter"
+#~ msgstr "شما عضو خبرنامه شدید"
+
+#~ msgid "Error communicating with the database!"
+#~ msgstr "خطای در ارتباط با پایگاه داده!"
+
+#, fuzzy
+#~ msgid "username deactived."
+#~ msgstr "کاربر غیرفعال شد."
+
+#~ msgid "Add SMS meta box to contact form 7?"
+#~ msgstr "اضافه کردن جعبه اطلاعات پیامک در فرم تماس 7؟"
+
+#~ msgid "Send a sms to you When get new order from woocommerce."
+#~ msgstr "ارسال پیامک به شما هنگام دریافت سفارش جدید از ووکامرس"
+
+#~ msgid "Send a sms to you When get new order from Easy Digital Downloads."
+#~ msgstr ""
+#~ "ارسال پیامک به شما هنگام دریافت سفارش جدید از Easy Digital Downloads"
+
+#~ msgid "Customer first name"
+#~ msgstr "نام مشتری"
+
+#~ msgid "Customer last name"
+#~ msgstr "نام‌خانوادگی مشتری"
+
+#~ msgid ""
+#~ "Enable this option with When a new version of WordPress was ready, will "
+#~ "be informed via SMS for you."
+#~ msgstr ""
+#~ "با فعال کردن این گزینه وقتی نسخه جدید وردپرس آماده شد، از طریق پیامک به "
+#~ "شما اطلاع داده می شود."
+
+#~ msgid "Posts sent to subscribers?"
+#~ msgstr "ارسال نوشته‌ها به مشترکین؟"
+
+#~ msgid "Other Features"
+#~ msgstr "سایر ویژگی‌ها"
+
+#~ msgid "Post Suggestion"
+#~ msgstr "پیشنهاد نوشته"
+
+#~ msgid "Notification SMS of a new wordPress version?"
+#~ msgstr "اطلاع رسانی با پیامک در صورت انتشار نسخه جدید وردپرس؟"
+
+#~ msgid "Select"
+#~ msgstr "انتخاب"
+
+#~ msgid "Credit SMS Setting"
+#~ msgstr "تنظیمات اعتبار پیامک"
+
+#~ msgid "SMS Setting"
+#~ msgstr "تنظیمات پیامک"
+
+#~ msgid "WP SMS"
+#~ msgstr "پیامک وردپرس"
+
+#~ msgid "A message was received from the Contact Form 7: "
+#~ msgstr "یک پیام از فرم تماس 7 دریافت شد: "
+
+#~ msgid "(SMS wordpress plugin)"
+#~ msgstr "(افزونه پیامک وردپرس)"
+
+#~ msgid "Notification SMS when messages received from Contact Form 7 plugin?"
+#~ msgstr "اطلاع رسانی با پیامک در صورت دریافت پیغام از افزونه فرم تماس 7؟"
+
+#~ msgid ""
+#~ "Enable this option with When a new message received of Contact Form 7 "
+#~ "plugin, will be informed via SMS"
+#~ msgstr ""
+#~ "با فعال کردن این گزینه پیغام جدید از فرم تماس 7 دریافت شد، از طریق پیامک "
+#~ "اطلاع داده می شود"
+
+#~ msgid "Subscribe users (%s) active"
+#~ msgstr "مشترکین خبرنامه (%s) فعال"
+
+#~ msgid "Groups"
+#~ msgstr "گروه‌ها"
+
+#~ msgid "Your mobile"
+#~ msgstr "موبایل شما"
+
+#~ msgid "First create a new group!"
+#~ msgstr "ابتدا یک گروه جدید بسازید!"
+
+#~ msgid "Subscribes list"
+#~ msgstr "لیست مشترک‌ها"
+
+#~ msgid "ID"
+#~ msgstr "شماره"
+
+#~ msgid "SMS Panel (%s)"
+#~ msgstr "سامانه پیامک (%s)"
+
+#~ msgid "Enable or disable this feature"
+#~ msgstr "کد موبایل"
+
+#~ msgid "Common"
+#~ msgstr "مشترک"
+
+#~ msgid "Click for more information"
+#~ msgstr "برای اطلاعات بیشتر کلیک کنید"
+
+#~ msgid "Your Web Service does not exist?"
+#~ msgstr "سرویس دهنده شما وجود ندارد؟"
+
+#~ msgid "Paniz SMS (panizsms.ir)"
+#~ msgstr "سامانه پیامک پانیز (panizsms.ir)"
+
+#~ msgid "Parand Host (%s)"
+#~ msgstr "پرند هاست (%s)"
+
+#~ msgid "Iransmspanel (%s)"
+#~ msgstr "سامانه پیامک ایران اس‌ام‌اس پنل (%s)"
+
+#~ msgid "Host Iran (%s)"
+#~ msgstr "سامانه پیامک هاست ایران (%s)"
+
+#~ msgid "Webstudio (%s)"
+#~ msgstr "سامانه پیامک وب استودیو (%s)"
+
+#~ msgid "Payame Avval (payameavval.com)"
+#~ msgstr "سامانه پیام کوتاه پیام اول (payameavval.com)"
+
+#~ msgid "Number with success was added"
+#~ msgstr "با موفقیت اضافه شد"
+
+#~ msgid "parsasms (parsasms.com)"
+#~ msgstr "سامانه پیامک پارس اس‌ام‌اس (parssms.com)"
+
+#~ msgid "Peaple"
+#~ msgstr "نفر"
+
+#~ msgid "Orange SMS (orangesms.net)"
+#~ msgstr "سامانه پیامک اورنگ (orangesms.net)"
+
+#~ msgid "The main server"
+#~ msgstr "سرویس‌دهنده‌ اصلی"
+
+#~ msgid "Programming by"
+#~ msgstr "برنامه نویسی توسط"
+
+#~ msgid "About WP-SMS Plugin"
+#~ msgstr "درباره پلاگین پیامک"
+
+#~ msgid "Your username in sms.webstudio.ir"
+#~ msgstr "نام کاربری شما در sms.webstudio.ir"
+
+#~ msgid "To receive a username and password to visit:"
+#~ msgstr "برای دریافت نام‌کاربری و رمزعبور، مراجعه کنید به:"
+
+#~ msgid "Minimum words"
+#~ msgstr "حداقل کلمات"
+
+#~ msgid "Words"
+#~ msgstr "کلمات"
+
+#~ msgid "Dollar"
+#~ msgstr "دلار"
+
+#~ msgid "Unit Money"
+#~ msgstr "واحد پول"
+
+#~ msgid "Error! Please Credit check settings"
+#~ msgstr "خطا! لطفا تنظیمات اعتباری را بررسی کنید"
+
+#~ msgid "Dolar"
+#~ msgstr "دلار"
