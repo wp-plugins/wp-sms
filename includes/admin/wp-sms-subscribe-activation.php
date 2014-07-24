@@ -5,12 +5,12 @@
 	$activation = trim($_REQUEST['activation']);
 	
 	if($activation) {
-	
-		$check_mobile = $wpdb->get_row("SELECT * FROM {$table_prefix}sms_subscribes WHERE `mobile` = '{$mobile}'");
+		
+		$check_mobile = $wpdb->get_row($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `mobile` = '%s'", $mobile));
 		
 		if($activation == $check_mobile->activate_key) {
 		
-			$result = $wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '1' WHERE mobile = '{$mobile}'");
+			$result = $wpdb->update("{$table_prefix}sms_subscribes", array('status' => '1'), array('mobile' => $mobile) );
 			
 			if( $result ) {
 				do_action('wp_sms_subscribe', $check_mobile->name, $mobile);

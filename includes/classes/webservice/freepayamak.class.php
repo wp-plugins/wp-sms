@@ -1,6 +1,6 @@
 <?php
 	class freepayamak extends WP_SMS {
-		private $wsdl_link = "http://sms.freepayamak.ir/MyLogin.aspx?ReturnUrl=%2f";
+		private $wsdl_link = "http://sms.freepayamak.ir/post/send.asmx?wsdl";
 		public $tariff = "http://freepayamak.ir/";
 		public $unitrial = true;
 		public $unit;

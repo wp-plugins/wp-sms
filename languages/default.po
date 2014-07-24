@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wordpress SMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-04 16:48+0330\n"
-"PO-Revision-Date: 2014-07-04 16:48+0330\n"
+"POT-Creation-Date: 2014-07-24 20:11+0330\n"
+"PO-Revision-Date: 2014-07-24 20:11+0330\n"
 "Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
 "Language-Team: Parsi Wordpress\n"
 "Language: fa_IR\n"
@@ -236,7 +236,7 @@ msgstr ""
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:225
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:156
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:274
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:295
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:299
 msgid "Active"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgstr ""
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:77
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:247
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:33
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:308
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:312
 msgid "Update"
 msgstr ""
 
@@ -404,7 +404,7 @@ msgstr ""
 
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:102
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:112
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:253
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:257
 msgid "Username"
 msgstr ""
 
@@ -681,7 +681,7 @@ msgstr ""
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:89
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:145
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:271
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:292
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:296
 msgid "Status"
 msgstr ""
 
@@ -694,7 +694,7 @@ msgstr ""
 
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:157
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/subscribes.php:275
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:297
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:301
 msgid "Deactive"
 msgstr ""
 
@@ -780,73 +780,74 @@ msgstr ""
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:213
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:217
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:221
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:228
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:235
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:225
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:232
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:239
 #, php-format
 msgid "Web Service (%s)"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:225
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:229
 msgid "Australia"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:232
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:236
 msgid "New Zealand"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:240
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:244
 msgid "For more information about adding Web Service"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:245
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:249
 #, php-format
 msgid ""
 "If you do not have a web service, <a href=\"%s\" target=\"_blank\">click "
 "here.</a>"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:246
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:250
 #, php-format
 msgid ""
 "If your Web service is not on the top list, <a href=\"%s\" target=\"_blank"
 "\">click here.</a>"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:256
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:260
 msgid "Your username in"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:259
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:263
 #, php-format
 msgid ""
 "If you do not have a username for this service <a href=\"%s\">click here..</"
 "a>"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:265
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:269
 msgid "Password"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:268
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:272
 msgid "Your password in"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:271
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:275
 #, php-format
 msgid ""
 "If you do not have a password for this service <a href=\"%s\">click here..</"
 "a>"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:277
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:281
 msgid "Number"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:280
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:284
 msgid "Your SMS sender number in"
 msgstr ""
 
-#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:285
+#: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:289
 #: F:\Programming\wamp\www\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:126
 msgid "Credit"
 msgstr ""

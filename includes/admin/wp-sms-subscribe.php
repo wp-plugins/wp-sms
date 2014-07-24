@@ -11,7 +11,7 @@
 		
 			global $wpdb, $table_prefix, $sms, $date;
 			
-			$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes WHERE mobile='{$mobile}'");
+			$check_mobile = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `mobile` = '%s'", $mobile));
 			
 			if(!$check_mobile || $type != 'subscribe') {
 			
@@ -22,8 +22,18 @@
 					if(get_option('wp_subscribes_activation')) {
 					
 						$key = rand(1000, 9999);
-						$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes (date, name, mobile, status, activate_key, group_ID) VALUES ('".$get_current_date."', '{$name}', '{$mobile}', '0', '{$key}', '{$group}')");
-
+						
+						$check = $wpdb->insert("{$table_prefix}sms_subscribes",
+							array(
+								'date'			=>	$get_current_date,
+								'name'			=>	$name,
+								'mobile'		=>	$mobile,
+								'status'		=>	'0',
+								'activate_key'	=>	$key,
+								'group_ID'		=>	$group
+							)
+						);
+						
 						$sms->to = array($mobile);
 						$sms->msg = __('Your activation code', 'wp-sms') . ': ' . $key;
 						
@@ -33,8 +43,16 @@
 							echo 'success-3';
 						
 					} else {
-					
-						$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes (date, name, mobile, status, group_ID) VALUES ('{$get_current_date}', '{$name}', '{$mobile}', '1', '{$group}')");
+						
+						$check = $wpdb->insert("{$table_prefix}sms_subscribes",
+							array(
+								'date'			=>	$get_current_date,
+								'name'			=>	$name,
+								'mobile'		=>	$mobile,
+								'status'		=>	'1',
+								'group_ID'		=>	$group
+							)
+						);
 						
 						if($check) {
 							do_action('wp_sms_subscribe', $name, $mobile);
@@ -42,10 +60,12 @@
 							exit(0);
 						}
 					}
+					
 				} else if($type == 'unsubscribe') {
 					if($check_mobile) {
 					
-						$check = $wpdb->query("DELETE FROM {$table_prefix}sms_subscribes WHERE mobile='{$mobile}'");
+						$check = $wpdb->delete("{$table_prefix}sms_subscribes", array('mobile' => $mobile) );
+						
 						if($check)
 							echo 'success-2';
 							
@@ -53,6 +73,7 @@
 						_e('Nothing found!', 'wp-sms');
 					}
 				}
+				
 			} else {
 				_e('Phone number is repeated', 'wp-sms');
 			}

@@ -3,14 +3,14 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.5.1
+Version: 2.5.2
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
 
-	define('WP_SMS_VERSION', '2.5.1');
+	define('WP_SMS_VERSION', '2.5.2');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	include_once dirname( __FILE__ ) . '/install.php';
@@ -211,13 +211,20 @@ License: GPL2
 		
 		if($_POST['doaction']) {
 		
-			$get_IDs = implode(",", $_POST['column_ID']);
-			$check_ID = $wpdb->query("SELECT * FROM {$table_prefix}sms_send WHERE ID='".$get_IDs."'");
+			if($_POST['column_ID'])
+				$get_IDs = implode(",", $_POST['column_ID']);
+			
+			$check_ID = $wpdb->query($wpdb->prepare("SELECT * FROM {$table_prefix}sms_send WHERE ID IN (%s)", $get_IDs));
 
 			switch($_POST['action']) {
+			
 				case 'trash':
 					if($check_ID) {
-						$wpdb->query("DELETE FROM {$table_prefix}sms_send WHERE ID IN (".$get_IDs.")");
+					
+						foreach($_POST['column_ID'] as $items) {
+							$wpdb->delete("{$table_prefix}sms_send", array('ID' => $items) );
+						}
+						
 						echo "<div class='updated'><p>" . __('With success was removed', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -226,7 +233,7 @@ License: GPL2
 			}
 		}
 		
-		$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_send`");
+		$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_send`", false));
 		
 		include_once dirname( __FILE__ ) . "/includes/templates/settings/posted.php";
 	}
@@ -240,13 +247,14 @@ License: GPL2
 		global $wpdb, $table_prefix, $date;
 		
 		if($_GET['group']) {
-			$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '{$_GET['group']}'");
+			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '%s'", $_GET['group']));
 		} else {
-			$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes`");
+			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes`", false));
 		}
 		
 		if($_POST['search']) {
-			$total = $wpdb->query("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `name` LIKE '%{$_POST['s']}%' OR `mobile` LIKE '%{$_POST['s']}%'");
+			$search_query = "%" . $_POST['s'] . "%";
+			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `name` LIKE '%s' OR `mobile` LIKE '%s'", $search_query, $search_query));
 		}
 		
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
@@ -271,13 +279,19 @@ License: GPL2
 		
 		if($_POST['doaction']) {
 		
-			$get_IDs = implode(",", $_POST['column_ID']);
-			$check_ID = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes WHERE ID='".$get_IDs."'");
+			if($_POST['column_ID'])
+				$get_IDs = implode(",", $_POST['column_ID']);
+			
+			$check_ID = $wpdb->query($wpdb->prepare("SELECT * FROM {$table_prefix}sms_subscribes WHERE ID IN (%s)", $get_IDs));
 
 			switch($_POST['action']) {
 				case 'trash':
 					if($check_ID) {
-						$wpdb->query("DELETE FROM {$table_prefix}sms_subscribes WHERE ID IN (".$get_IDs.")");
+					
+						foreach($_POST['column_ID'] as $items) {
+							$wpdb->delete("{$table_prefix}sms_subscribes", array('ID' => $items) );
+						}
+						
 						echo "<div class='updated'><p>" . __('With success was removed', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -286,7 +300,11 @@ License: GPL2
 				
 				case 'active':
 					if($check_ID) {
-						$wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '1' WHERE ID IN (".$get_IDs.")");
+						
+						foreach($_POST['column_ID'] as $items) {
+							$wpdb->update("{$table_prefix}sms_subscribes", array('status' => '1'), array('ID' => $items) );
+						}
+						
 						echo "<div class='updated'><p>" . __('User is active.', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -295,7 +313,11 @@ License: GPL2
 				
 				case 'deactive':
 					if($check_ID) {
-						$wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `status` = '0' WHERE ID IN (".$get_IDs.")");
+					
+						foreach($_POST['column_ID'] as $items) {
+							$wpdb->update("{$table_prefix}sms_subscribes", array('status' => '0'), array('ID' => $items) );
+						}
+						
 						echo "<div class='updated'><p>" . __('User is Deactive..', 'wp-sms') . "</div></p>";
 					} else {
 						echo "<div class='error'><p>" . __('Not Found', 'wp-sms') . "</div></p>";
@@ -312,16 +334,27 @@ License: GPL2
 		
 			if($name && $mobile && $group) {
 			
-				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == '09') && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 				
-					$check_mobile = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes WHERE mobile='{$mobile}'");
+					$check_mobile = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `mobile` = '%s'", $mobile));
 					
 					if(!$check_mobile) {
-						$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes (date, name, mobile, status, group_ID) VALUES ('{$date}', '{$name}', '{$mobile}', '1', '{$group}')");
+					
+						$check = $wpdb->insert(
+							"{$table_prefix}sms_subscribes", 
+							array(
+								'date'		=> $date,
+								'name'		=> $name,
+								'mobile'	=> $mobile,
+								'status'	=> '1',
+								'group_ID'	=> $group,
+							)
+						);
 						
 						if($check) {
 							echo "<div class='updated'><p>" . sprintf(__('username <strong>%s</strong> was added successfully.', 'wp-sms'), $name) . "</div></p>";
 						}
+						
 					} else {
 						echo "<div class='error'><p>" . __('Phone number is repeated', 'wp-sms') . "</div></p>";
 					}
@@ -338,14 +371,21 @@ License: GPL2
 		
 			if($group) {
 			
-				$check_group = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE name='{$group}'");
+				$check_group = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes_group` WHERE `name` = '%s'", $group));
 				
 				if(!$check_group) {
-					$check = $wpdb->query("INSERT INTO {$table_prefix}sms_subscribes_group (name) VALUES ('{$group}')");
+				
+					$check = $wpdb->insert(
+						"{$table_prefix}sms_subscribes_group", 
+						array(
+							'name'	=> $group
+						)
+					);
 					
 					if($check) {
 						echo "<div class='updated'><p>" . sprintf(__('Group <strong>%s</strong> was added successfully.', 'wp-sms'), $group) . "</div></p>";
 					}
+					
 				} else {
 					echo "<div class='error'><p>" . __('Group name is repeated', 'wp-sms') . "</div></p>";
 				}
@@ -357,16 +397,18 @@ License: GPL2
 		if(isset($_POST['wpsms_delete_group'])) {
 		
 			if($group) {
-			
-				$check_group = $wpdb->query("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$group}'");
+				
+				$check_group = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes_group` WHERE `ID` = '%s'", $group));
 				
 				if($check_group) {
-					$group_name = $wpdb->get_row("SELECT * FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$group}'");
-					$check = $wpdb->query("DELETE FROM {$table_prefix}sms_subscribes_group WHERE `ID` = '{$group}'");
+				
+					$group_name = $wpdb->get_row($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes_group` WHERE `ID` = '%s'", $group));
+					$check = $wpdb->delete("{$table_prefix}sms_subscribes_group", array('ID' => $group) );
 					
 					if($check) {
 						echo "<div class='updated'><p>" . sprintf(__('Group <strong>%s</strong> was successfully removed.', 'wp-sms'), $group_name->name) . "</div></p>";
 					}
+					
 				}
 			} else {
 				echo "<div class='error'><p>" . __('Nothing found!', 'wp-sms') . "</div></p>";
@@ -379,7 +421,17 @@ License: GPL2
 			if($name && $mobile && $group) {
 				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 				
-					$check = $wpdb->query("UPDATE {$table_prefix}sms_subscribes SET `name` = '{$name}', `mobile` = '{$mobile}', `status` = '".$_POST['wp_subscribe_status']."', `group_ID` = '{$group}' WHERE `ID` = '".$_GET['ID']."'");
+					$check = $wpdb->update("{$table_prefix}sms_subscribes",
+						array(
+							'name'		=> $name,
+							'mobile'	=> $mobile,
+							'status'	=> $_POST['wp_subscribe_status'],
+							'group_ID'	=> $group
+						),
+						array(
+							'ID'		=> $_GET['ID']
+						)
+					);
 					
 					if($check) {
 						echo "<div class='updated'><p>" . sprintf(__('username <strong>%s</strong> was update successfully.', 'wp-sms'), $name) . "</div></p>";
@@ -402,7 +454,7 @@ License: GPL2
 			
 			include_once dirname( __FILE__ ) . "/includes/classes/excel-reader.class.php";
 			
-			$get_mobile = $wpdb->get_col("SELECT `mobile` FROM {$table_prefix}sms_subscribes");
+			$get_mobile = $wpdb->get_col($wpdb->prepare("SELECT `mobile` FROM {$table_prefix}sms_subscribes", false));
 			
 			if(isset($_POST['wps_import'])) {
 				if(!$_FILES['wps-import-file']['error']) {
