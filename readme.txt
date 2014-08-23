@@ -107,6 +107,11 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.5.3 =
+* Added: Smstoos Webservice.
+* Fixed: Showing sms credit in adminbar. Not be displayed for the users.
+* Fixed: Send sms for subscriber when publish new posts.
+
 = 2.5.2 =
 * Added: Avalpayam Webservice.
 * Fixed: bugs in database queries.

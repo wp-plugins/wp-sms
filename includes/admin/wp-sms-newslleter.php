@@ -19,13 +19,11 @@
 
 	function wp_sms_subscribe_post_save($post_id) {
 	
-		if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-		if(!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'subscribe_box_nonce')) return;
 		if(!current_user_can('edit_post')) return;
 
 		if( isset( $_POST['subscribe_post'] ) )
-		update_post_meta($post_id, 'subscribe_post', esc_attr($_POST['subscribe_post']));
-
+			update_post_meta($post_id, 'subscribe_post', esc_attr($_POST['subscribe_post']));
+			
 	}
 	add_action('save_post', 'wp_sms_subscribe_post_save');
 

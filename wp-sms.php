@@ -3,14 +3,13 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.5.2
+Version: 2.5.3
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-
-	define('WP_SMS_VERSION', '2.5.2');
+	define('WP_SMS_VERSION', '2.5.3');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	include_once dirname( __FILE__ ) . '/install.php';
@@ -98,7 +97,7 @@ License: GPL2
 		global $wp_admin_bar;
 		$get_last_credit = get_option('wp_last_credit');
 		
-		if(is_super_admin() || is_admin_bar_showing()) {
+		if(is_super_admin() && is_admin_bar_showing()) {
 		
 			if($get_last_credit) {
 				global $sms;

@@ -136,7 +136,7 @@
 		if( $options['message'] && $options['phone'] ) {
 		
 			// Replace merged Contact Form 7 fields
-			if( defined( 'WPCF7_VERSION' ) && WPCF7_VERSION < 3.1 ) {
+			/*if( defined( 'WPCF7_VERSION' ) && WPCF7_VERSION < 3.1 ) {
 				$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
 			} else {
 				$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
@@ -144,10 +144,10 @@
 			
 			$callback = array( &$form, 'mail_callback' );
 			
-			$message = preg_replace_callback( $regex, $callback, $options['message'] );
+			$message = preg_replace_callback( $regex, $form, $options['message'] );*/
 			
 			$sms->to = array( $options['phone'] );
-			$sms->msg = $message;
+			$sms->msg = $options['message'];
 			
 			$sms->SendSMS();
 		}
