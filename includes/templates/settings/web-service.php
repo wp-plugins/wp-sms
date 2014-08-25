@@ -78,7 +78,7 @@
 							</option>
 							<option value="sms_s" <?php selected(get_option('wp_webservice'), 'sms_s'); ?>>
 								&nbsp;&nbsp;-&nbsp;
-								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'SMS-S.ir'); ?>
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'modiresms.com'); ?>
 							</option>
 							<option value="sadat24" <?php selected(get_option('wp_webservice'), 'sadat24'); ?>>
 								&nbsp;&nbsp;-&nbsp;
