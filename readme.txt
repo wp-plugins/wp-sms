@@ -3,8 +3,8 @@ Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 2.5.3
+Tested up to: 4.0
+Stable tag: 2.5.4
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -106,6 +106,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.5.4 =
+* Added: sms-gateway.at Webservice.
+* Updated: for WordPress 4.0 release. 
+
 = 2.5.3 =
 * Added: Smstoos Webservice.
 * Added: Smsmaster Webservice.

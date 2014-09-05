@@ -1,5 +1,4 @@
-﻿// محاسبه تعداد کاراکتر های باقیمانده پیامک
-var smsCount = 1;
+﻿var smsCount = 1;
 function smsLeftChar(txtSms, lblLeft, lblSms, lblMax, txtSign) {
 
     var smsBody = $('#' + txtSms).val(); //+ $('#' + txtSign).val();
@@ -46,8 +45,6 @@ function smsLeftChar(txtSms, lblLeft, lblSms, lblMax, txtSign) {
 }
 
 function checkSMSLength(textarea, counterSpan, partSpan, maxSpan, def) {
-
-
     var text = document.getElementById(textarea).value;
     var ucs2 = text.search(/[^\x00-\x7E]/) != -1
     if (!ucs2) text = text.replace(/([[\]{}~^|\\])/g, "\\$1");
@@ -67,11 +64,8 @@ function checkSMSLength(textarea, counterSpan, partSpan, maxSpan, def) {
     document.getElementById(maxSpan).innerHTML = unitLength;
     document.getElementById(counterSpan).innerHTML = (unitLength * count - msgLen);
     document.getElementById(partSpan).innerHTML = count;
-
-
 }
 
-// تشخیص یونیکد بودن متن
 function isUnicode(str) {
     var letters = [];
     for (var i = 1; i <= str.length; i++) {

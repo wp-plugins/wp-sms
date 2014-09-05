@@ -25,7 +25,7 @@
 				$this->Hook('wp_sms_send', $result);
 			}
 			
-			print_r( $result );
+			return $result;
 		}
 
 		public function GetCredit() {

@@ -1,4 +1,3 @@
-<script src="<?php bloginfo('url'); ?>/wp-content/plugins/wp-sms/assets/js/functions.js" type="text/javascript"></script>
 <script type="text/javascript">
 	var boxId2 = 'wp_get_message';
 	var counter = 'wp_counter';
