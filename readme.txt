@@ -107,12 +107,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
-= 2.5.5 =
-* Added: Spanish language.
-
 = 2.5.4 =
 * Added: sms-gateway.at Webservice.
-* Updated: for WordPress 4.0 release. 
+* Added: Spanish language.
+* Updated: for WordPress 4.0 release.
 
 = 2.5.3 =
 * Added: Smstoos Webservice.
