@@ -41,6 +41,7 @@ Very easy SMS Send by WordPress.
 * Persian
 * Arabic (Thanks Hamad Al-Shammari)
 * Portuguese (Thanks Matt Moxx)
+* Spanish (Thanks Yordan Soares)
 
 [Percentage languages ​​translation](http://teamwork.wp-parsi.com/projects/wp-sms/)
 To complete the language deficits of [this section](http://teamwork.wp-parsi.com/projects/wp-sms/) apply.
@@ -106,6 +107,9 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.5.5 =
+* Added: Spanish language.
+
 = 2.5.4 =
 * Added: sms-gateway.at Webservice.
 * Updated: for WordPress 4.0 release. 
