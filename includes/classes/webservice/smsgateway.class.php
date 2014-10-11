@@ -13,11 +13,11 @@
 		
 		public function SendSMS() {
 			
-			$to = implode(',', $this->to);
+			$to = implode('&number[]=', $this->to);
 			
 			$msg = urlencode($this->msg);
 			
-			$result = file_get_contents("{$this->wsdl_link}sendsms.php?username={$this->username}&absender={$this->from}&validpass={$this->password}&number={$to}&message={$msg}&receipt=1");
+			$result = file_get_contents("{$this->wsdl_link}sendsms.php?username={$this->username}&validpass={$this->password}&absender={$this->from}&number[]={$to}&message={$msg}&receipt=1");
 			
 			if($result) {
 				$this->InsertToDB($this->from, $this->msg, $this->to);
