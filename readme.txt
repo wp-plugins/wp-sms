@@ -107,6 +107,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.5.* =
+* Added: ssmss.ir Webservice.
+* Added: isun.company Webservice.
+
 = 2.5.4 =
 * Added: sms-gateway.at Webservice.
 * Added: Spanish language.

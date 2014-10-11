@@ -240,6 +240,14 @@
 								&nbsp;&nbsp;-&nbsp;
 								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'smsmaster.ir'); ?>
 							</option>
+							<option value="ssmss" <?php selected(get_option('wp_webservice'), 'ssmss'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'ssmss.ir'); ?>
+							</option>
+							<option value="isun" <?php selected(get_option('wp_webservice'), 'isun'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'isun.company'); ?>
+							</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
