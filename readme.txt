@@ -111,6 +111,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added: ssmss.ir Webservice.
 * Added: isun.company Webservice.
 * Added: idehpayam.com Webservice.
+* Added: smsarak.ir Webservice.
 
 = 2.5.4 =
 * Added: sms-gateway.at Webservice.
