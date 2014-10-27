@@ -1,6 +1,6 @@
 <?php
 	class sms extends WP_SMS {
-		private $wsdl_link = "http://p.sms.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://n.sms.ir/ws/SendReceive.asmx?WSDL";
 		public $tariff = "http://sms.ir/";
 		public $unitrial = false;
 		public $unit;
