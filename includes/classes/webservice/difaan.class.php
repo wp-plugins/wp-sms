@@ -28,7 +28,10 @@
 		}
 		
 		public function GetCredit() {
-			return 1;
+			if(fsockopen(preg_replace('#^https?://#', '', $this->wsdl_link), 80))
+				return 1;
+			else
+				return false;
 		}
 	}
 ?>
