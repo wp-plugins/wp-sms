@@ -286,6 +286,13 @@
 							</option>
 						</optgroup>
 						
+						<optgroup label="<?php _e('Indian', 'wp-sms'); ?>">
+							<option value="shreesms" <?php selected(get_option('wp_webservice'), 'shreesms'); ?>>
+								&nbsp;&nbsp;-&nbsp;
+								<?php echo sprintf(__('Web Service (%s)', 'wp-sms'), 'shreesms.net'); ?>
+							</option>
+						</optgroup>
+						
 						<!--Option information-->
 						<option value="1" id="option-information"><?php _e('For more information about adding Web Service', 'wp-sms'); ?></option>
 						<!--Option information-->
