@@ -1,7 +1,7 @@
 <?php
 	class difaan extends WP_SMS {
-		private $wsdl_link = "http://119.152.247.218:9710/";
-		public $tariff = "http://119.152.247.218:9710/";
+		private $wsdl_link = "http://csmsplus.mobilinkworld.com/";
+		public $tariff = "http://csmsplus.mobilinkworld.com/";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
@@ -16,7 +16,8 @@
 			$msg = urlencode($this->msg);
 			
 			foreach($this->to as $number) {
-				$result = file_get_contents("{$this->wsdl_link}http/send-message?username={$this->username}&password={$this->password}&to={$number}&message-type=sms.automatic&message={$msg}");
+				//$result = file_get_contents("{$this->wsdl_link}http/send-message?username={$this->username}&password={$this->password}&to={$number}&message-type=sms.automatic&message={$msg}");
+				$result = file_get_contents("{$this->wsdl_link}sendsms_url.html?login={$this->username}&pass={$this->password}&from={$this->from}&to={$number}&msg={$msg}");
 			}
 			
 			if ($result) {
@@ -28,10 +29,7 @@
 		}
 		
 		public function GetCredit() {
-			if(fsockopen(preg_replace('#^https?://#', '', $this->wsdl_link), 80))
-				return 1;
-			else
-				return false;
+			return 1;
 		}
 	}
 ?>
