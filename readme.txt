@@ -39,7 +39,9 @@ Very easy SMS Send by WordPress.
 * Import/Export Subscribes.
 
 = Premium Features =
+
 Webservice added:
+
 * bulksms.com
 * clockworksms.com
 * twilio.com
@@ -53,6 +55,7 @@ Webservice added:
 * mobily.ws
 
 Other features:
+
 * Integrate with (Quform)
 * Premium Support
 * Adding a web service with request
