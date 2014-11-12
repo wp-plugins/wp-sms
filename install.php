@@ -3,7 +3,7 @@
 
 		global $wp_sms_db_version, $table_prefix, $wpdb;
 		
-		$create_sms_subscribes = ("CREATE TABLE {$table_prefix}sms_subscribes(
+		$create_sms_subscribes = ("CREATE TABLE IF NOT EXISTS {$table_prefix}sms_subscribes(
 			ID int(10) NOT NULL auto_increment,
 			date DATETIME,
 			name VARCHAR(20),
@@ -14,13 +14,13 @@
 			PRIMARY KEY(ID)) CHARSET=utf8
 		");
 		
-		$create_sms_subscribes_group = ("CREATE TABLE {$table_prefix}sms_subscribes_group(
+		$create_sms_subscribes_group = ("CREATE TABLE IF NOT EXISTS {$table_prefix}sms_subscribes_group(
 			ID int(10) NOT NULL auto_increment,
 			name VARCHAR(20),
 			PRIMARY KEY(ID)) CHARSET=utf8
 		");
 		
-		$create_sms_send = ("CREATE TABLE {$table_prefix}sms_send(
+		$create_sms_send = ("CREATE TABLE IF NOT EXISTS {$table_prefix}sms_send(
 			ID int(10) NOT NULL auto_increment,
 			date DATETIME,
 			sender VARCHAR(20) NOT NULL,

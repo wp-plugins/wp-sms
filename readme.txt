@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 2.5.4
+Stable tag: 2.6
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -16,35 +16,57 @@ Very easy SMS Send by WordPress.
 3. `$sms->msg = "Hello World!";`
 4. `$sms->SendSMS();`
 
+[Premium version is available.](http://codecanyon.net/item/wp-sms-pro/9380372)
+
 = Features =
 
-* Send SMS to number and numbers.
-* Send SMS to subscribes.
+* Send SMS to number(s) and subscribes.
 * Subsribe sms.
 * Show credit.
 * Send SMS via FLASH.
-* Widget support.
+* Widget for register user to sms subscribes
 * Support Hooks.
 * Support shortcode.
-* Support suggestion post by SMS.
-* Send activation from subscribe.
+* Suggestion post by SMS.
+* Send activation code to subscribes.
 * Notification SMS when published new post to subscribers.
 * Notification SMS when the new release of WordPress.
 * Notification SMS when registering a new username.
 * Notification SMS when get new comment.
 * Notification SMS when username login.
 * Notification SMS when registering a new subscribe.
+* Integrate with (Contact form 7, WooCommerce, Easy Digital Downloads)
+* Import/Export Subscribes.
+
+= Premium Features =
+Webservice added:
+* bulksms.com
+* clockworksms.com
+* twilio.com
+* infobip.com
+* smstrade.de
+* yamamah.com
+* clickatell.com
+* viensms.com
+* isms.com.my
+* nexmo.com
+* mobily.ws
+
+Other features:
+* Integrate with (Quform)
+* Premium Support
+* Adding a web service with request
+
+[Buy Pro Version](http://codecanyon.net/item/wp-sms-pro/9380372)
 
 = Translators =
-
 * English
 * Persian
 * Arabic (Thanks Hamad Al-Shammari)
 * Portuguese (Thanks Matt Moxx)
 * Spanish (Thanks Yordan Soares)
 
-[Percentage languages ​​translation](http://teamwork.wp-parsi.com/projects/wp-sms/)
-To complete the language deficits of [this section](http://teamwork.wp-parsi.com/projects/wp-sms/) apply.
+Translations are done by people just like you, help make WP SMS available to more people around the world and [do a translation](http://teamwork.wp-parsi.com/projects/wp-sms/) today!
 
 = Support =
 * [Donate to this plugin](http://mostafa-soufi.ir/donate/)
@@ -107,7 +129,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
-= 2.5.* =
+= 2.6 =
+* Fixed: database error for exists table.
+* Fixed: small bugs.
+* Added: chosen javascript library to plugin.
 * Added: ssmss.ir Webservice.
 * Added: isun.company Webservice.
 * Added: idehpayam.com Webservice.

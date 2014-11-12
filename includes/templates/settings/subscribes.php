@@ -35,22 +35,23 @@ jQuery(document).ready( function($) {
 <?php } ?>
 
 <div class="wrap">
-	<?php if(!$_GET['action'] == 'edit') { ?>
+	<?php if(!isset($_GET['action']) == 'edit') { ?>
 	<h2>
 		<?php _e('Members Newsletter', 'wp-sms'); ?>
 		<a class="add-new-h2" href="?page=wp-sms/subscribe&action=import"><?php _e('Import', 'wp-sms'); ?></a>
 		<a class="add-new-h2" href="?page=wp-sms/subscribe&action=export"><?php _e('Export', 'wp-sms'); ?></a>
-		<?php if($_POST['s']) { ?><span class="subtitle"><?php echo sprintf(__('Search result for %s', 'wp-sms'), $_POST['s']); ?></span><?php } ?>
+		<?php if(isset($_POST['s'])) { ?><span class="subtitle"><?php echo sprintf(__('Search result for %s', 'wp-sms'), $_POST['s']); ?></span><?php } ?>
 	</h2>
 	
 	
 	<ul class="subsubsub">
-		<li class="all"><a <?php if($_GET['group'] == false) { echo 'class="current" '; } ?>href="admin.php?page=wp-sms/subscribe"><?php _e('All', 'wp-sms'); ?> <span class="count">(<?php echo $total; ?>)</span></a> |</li>
+		<li class="all"><a <?php if(isset($_GET['group']) == false) { echo 'class="current" '; } ?>href="admin.php?page=wp-sms/subscribe"><?php _e('All', 'wp-sms'); ?> <span class="count">(<?php echo $total; ?>)</span></a> |</li>
 		<?php
+			$i = null;
 			foreach($get_group_result as $groups) {
 				
 				$current = null;
-				if($_GET['group'] == $groups->ID) {
+				if(isset($_GET['group']) == $groups->ID) {
 					$current = "class='current' ";
 				}
 				
@@ -95,13 +96,13 @@ jQuery(document).ready( function($) {
 			<tbody>
 			<?php
 				// Retrieve MySQL data
-				if($_GET['group']) {
+				if(isset($_GET['group'])) {
 					$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '{$_GET['group']}' ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
 				} else {
 					$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
 				}
 				
-				if($_POST['search']) {
+				if(isset($_POST['search'])) {
 					$get_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `name` LIKE '%{$_POST['s']}%' OR `mobile` LIKE '%{$_POST['s']}%' ORDER BY `{$table_prefix}sms_subscribes`.`ID` DESC  LIMIT {$start}, {$end}");
 				}
 				

@@ -11,7 +11,7 @@
 				<label for="wpsms_group_name"><?php _e('Group', 'wp-sms'); ?>:</label>
 				<select name="wpsms_group_name" id="wpsms_group_name">
 					<?php foreach($get_group_result as $items): ?>
-					<option value="<?php echo $items->ID; ?>" <?php selected($get_result[0]->group_ID, $items->ID); ?>><?php echo $items->name; ?></option>
+					<option value="<?php echo $items->ID; ?>"><?php echo $items->name; ?></option>
 					<?php endforeach; ?>
 				</select>
 			</p>

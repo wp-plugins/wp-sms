@@ -24,6 +24,13 @@ abstract class WP_SMS {
 	public $password;
 	
 	/**
+	 * Webservice API/Key
+	 *
+	 * @var string
+	 */
+	public $has_key = false;
+	
+	/**
 	 * SMsS send from number
 	 *
 	 * @var string

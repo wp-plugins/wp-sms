@@ -3,15 +3,16 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.5.4
+Version: 2.6
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.5.4');
+	define('WP_SMS_VERSION', '2.6');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
+	include_once dirname( __FILE__ ) . '/different-versions.php';
 	include_once dirname( __FILE__ ) . '/install.php';
 	include_once dirname( __FILE__ ) . '/upgrade.php';
 	
@@ -61,6 +62,11 @@ License: GPL2
 		
 		$sms->username = get_option('wp_username');
 		$sms->password = get_option('wp_password');
+		
+		if($sms->has_key && get_option('wps_key')) {
+			$sms->has_key = get_option('wps_key');
+		}
+		
 		$sms->from = get_option('wp_number');
 
 		if($sms->unitrial == true) {
@@ -210,10 +216,8 @@ License: GPL2
 		wp_enqueue_style('pagination-css', plugin_dir_url(__FILE__) . 'assets/css/pagination.css', true, '1.0');
 		include_once dirname( __FILE__ ) . '/includes/classes/pagination.class.php';
 		
-		if($_POST['doaction']) {
-		
-			if($_POST['column_ID'])
-				$get_IDs = implode(",", $_POST['column_ID']);
+		if(isset($_POST['doaction']) && isset($_POST['column_ID'])) {
+			$get_IDs = implode(",", $_POST['column_ID']);
 			
 			$check_ID = $wpdb->query($wpdb->prepare("SELECT * FROM {$table_prefix}sms_send WHERE ID IN (%s)", $get_IDs));
 
@@ -234,7 +238,7 @@ License: GPL2
 			}
 		}
 		
-		$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_send`", false));
+		$total = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_send`");
 		
 		include_once dirname( __FILE__ ) . "/includes/templates/settings/posted.php";
 	}
@@ -247,13 +251,14 @@ License: GPL2
 		
 		global $wpdb, $table_prefix, $date;
 		
-		if($_GET['group']) {
+		if(isset($_GET['group'])) {
 			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '%s'", $_GET['group']));
 		} else {
-			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes`", false));
+			$total = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes`");
+			$total = count($total[0]);
 		}
 		
-		if($_POST['search']) {
+		if(isset($_POST['search'])) {
 			$search_query = "%" . $_POST['s'] . "%";
 			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `name` LIKE '%s' OR `mobile` LIKE '%s'", $search_query, $search_query));
 		}
@@ -278,11 +283,8 @@ License: GPL2
 		$end = $Pagination->getEntryEnd();
 		/* Pagination */
 		
-		if($_POST['doaction']) {
-		
-			if($_POST['column_ID'])
-				$get_IDs = implode(",", $_POST['column_ID']);
-			
+		if(isset($_POST['doaction'])) {
+			$get_IDs = implode(",", $_POST['column_ID']);
 			$check_ID = $wpdb->query($wpdb->prepare("SELECT * FROM {$table_prefix}sms_subscribes WHERE ID IN (%s)", $get_IDs));
 
 			switch($_POST['action']) {
@@ -327,9 +329,14 @@ License: GPL2
 			}
 		}
 		
-		$name	= trim($_POST['wp_subscribe_name']);
-		$mobile	= trim($_POST['wp_subscribe_mobile']);
-		$group	= trim($_POST['wpsms_group_name']);
+		if(isset($_POST['wp_subscribe_name']))
+			$name = trim($_POST['wp_subscribe_name']);
+		
+		if(isset($_POST['wp_subscribe_mobile']))
+			$mobile	= trim($_POST['wp_subscribe_mobile']);
+		
+		if(isset($_POST['wpsms_group_name']))
+			$group	= trim($_POST['wpsms_group_name']);
 		
 		if(isset($_POST['wp_add_subscribe'])) {
 		
@@ -451,55 +458,59 @@ License: GPL2
 			add_action('admin_print_footer_scripts', 'wpsms_group_pointer');
 		}
 		
-		if($_GET['action'] == 'import') {
-			
-			include_once dirname( __FILE__ ) . "/includes/classes/excel-reader.class.php";
-			
-			$get_mobile = $wpdb->get_col($wpdb->prepare("SELECT `mobile` FROM {$table_prefix}sms_subscribes", false));
-			
-			if(isset($_POST['wps_import'])) {
-				if(!$_FILES['wps-import-file']['error']) {
+		if(isset($_GET['action'])) {
+			if($_GET['action'] == 'import') {
 				
-					$data = new Spreadsheet_Excel_Reader($_FILES["wps-import-file"]["tmp_name"]);
+				include_once dirname( __FILE__ ) . "/includes/classes/excel-reader.class.php";
+				
+				$get_mobile = $wpdb->get_col("SELECT `mobile` FROM {$table_prefix}sms_subscribes");
+				
+				if(isset($_POST['wps_import'])) {
+					if(!$_FILES['wps-import-file']['error']) {
 					
-					foreach($data->sheets[0]['cells'] as $items) {
+						$data = new Spreadsheet_Excel_Reader($_FILES["wps-import-file"]["tmp_name"]);
 						
-						// Check and count duplicate items
-						if(in_array($items[2], $get_mobile)) {
-							$duplicate[] = $items[2];
-							continue;
+						foreach($data->sheets[0]['cells'] as $items) {
+							
+							// Check and count duplicate items
+							if(in_array($items[2], $get_mobile)) {
+								$duplicate[] = $items[2];
+								continue;
+							}
+							
+							// Count submited items.
+							$total_submit[] = $data->sheets[0]['cells'];
+							
+							$result = $wpdb->insert("{$table_prefix}sms_subscribes",
+								array(
+									'date'		=>	date('Y-m-d H:i:s' ,current_time('timestamp', 0)),
+									'name'		=>	$items[1],
+									'mobile'	=>	$items[2],
+									'status'	=>	'1',
+									'group_ID'	=>	$_POST['wpsms_group_name']
+								)
+							);
+							
 						}
 						
-						// Count submited items.
-						$total_submit[] = $data->sheets[0]['cells'];
+						if($result)
+							echo "<div class='updated'><p>" . sprintf(__('<strong>%s</strong> items was successfully added.', 'wp-sms'), count($total_submit)) . "</div></p>";
 						
-						$result = $wpdb->insert("{$table_prefix}sms_subscribes",
-							array(
-								'date'		=>	date('Y-m-d H:i:s' ,current_time('timestamp', 0)),
-								'name'		=>	$items[1],
-								'mobile'	=>	$items[2],
-								'status'	=>	'1',
-								'group_ID'	=>	$_POST['wpsms_group_name']
-							)
-						);
-						
+						if($duplicate)
+							echo "<div class='error'><p>" . sprintf(__('<strong>%s</strong> Mobile numbers Was repeated.', 'wp-sms'), count($duplicate)) . "</div></p>";
+							
+					} else {
+						echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
 					}
-					
-					if($result)
-						echo "<div class='updated'><p>" . sprintf(__('<strong>%s</strong> items was successfully added.', 'wp-sms'), count($total_submit)) . "</div></p>";
-					
-					if($duplicate)
-						echo "<div class='error'><p>" . sprintf(__('<strong>%s</strong> Mobile numbers Was repeated.', 'wp-sms'), count($duplicate)) . "</div></p>";
-						
-				} else {
-					echo "<div class='error'><p>" . __('Please complete all fields', 'wp-sms') . "</div></p>";
 				}
+				
+				include_once dirname( __FILE__ ) . "/includes/templates/settings/import.php";
+				
+			} else if($_GET['action'] == 'export') {
+				include_once dirname( __FILE__ ) . "/includes/templates/settings/export.php";
+			} else {
+				include_once dirname( __FILE__ ) . "/includes/templates/settings/subscribes.php";
 			}
-			
-			include_once dirname( __FILE__ ) . "/includes/templates/settings/import.php";
-			
-		} else if($_GET['action'] == 'export') {
-			include_once dirname( __FILE__ ) . "/includes/templates/settings/export.php";
 		} else {
 			include_once dirname( __FILE__ ) . "/includes/templates/settings/subscribes.php";
 		}
@@ -520,30 +531,33 @@ License: GPL2
 		
 		$sms_page['about'] = get_bloginfo('url') . "/wp-admin/admin.php?page=wp-sms/about";
 		
-		switch($_GET['tab']) {
-			case 'web-service':
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/web-service.php";
-				
-				if(get_option('wp_webservice'))
-					update_option('wp_last_credit', $sms->GetCredit());
+		if(isset($_GET['tab'])) {
+			switch($_GET['tab']) {
+				case 'web-service':
+					wp_enqueue_style('chosen', plugin_dir_url(__FILE__) . 'assets/css/chosen.min.css', true, '1.2.0');
+					wp_enqueue_script('chosen', plugin_dir_url(__FILE__) . 'assets/js/chosen.jquery.min.js', true, '1.2.0');
 					
-				break;
-			
-			case 'newsletter':
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/newsletter.php";
-				break;
-			
-			case 'features':
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/features.php";
-				break;
-			
-			case 'notification':
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/notification.php";
-				break;
-			
-			default:
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/setting.php";
-				break;
+					include_once dirname( __FILE__ ) . "/includes/templates/settings/web-service.php";
+					
+					if(get_option('wp_webservice'))
+						update_option('wp_last_credit', $sms->GetCredit());
+						
+					break;
+				
+				case 'newsletter':
+					include_once dirname( __FILE__ ) . "/includes/templates/settings/newsletter.php";
+					break;
+				
+				case 'features':
+					include_once dirname( __FILE__ ) . "/includes/templates/settings/features.php";
+					break;
+				
+				case 'notification':
+					include_once dirname( __FILE__ ) . "/includes/templates/settings/notification.php";
+					break;
+			}
+		} else {
+			include_once dirname( __FILE__ ) . "/includes/templates/settings/setting.php";
 		}
 	}
 	
@@ -558,3 +572,4 @@ License: GPL2
 	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-newslleter.php';
 	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-features.php';
 	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-notifications.php';
+	
