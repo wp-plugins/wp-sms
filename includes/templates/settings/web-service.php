@@ -92,6 +92,7 @@
 							<option value="isun" <?php selected(get_option('wp_webservice'), 'isun'); ?>>isun.company</option>
 							<option value="idehpayam" <?php selected(get_option('wp_webservice'), 'idehpayam'); ?>>idehpayam.com</option>
 							<option value="smsarak" <?php selected(get_option('wp_webservice'), 'smsarak'); ?>>smsarak.ir</option>
+							<option value="novinpayamak" <?php selected(get_option('wp_webservice'), 'novinpayamak'); ?>>novinpayamak.com</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
