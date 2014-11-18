@@ -10,8 +10,6 @@
 		public function __construct() {
 			parent::__construct();
 			ini_set("soap.wsdl_cache_enabled", "0");
-			
-			$this->has_key = true;
 		}
 
 		public function SendSMS() {
@@ -40,7 +38,7 @@
 		public function GetCredit() {
 			$client = new SoapClient('http://www.novinpayamak.com/services/CISGate/wsdl', array('encoding' => 'UTF-8'));
 			
-			$result = $client->CheckRealCredit(array('Auth' => array('email' => $this->has_key, 'password' => $this->password)));
+			$result = $client->CheckRealCredit(array('Auth' => array('email' => $this->username, 'password' => $this->password)));
 			
 			if($result->Status != 1000)
 				return false;

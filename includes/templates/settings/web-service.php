@@ -115,6 +115,10 @@
 							<option value="shreesms" <?php selected(get_option('wp_webservice'), 'shreesms'); ?>>shreesms.net</option>
 						</optgroup>
 						
+						<optgroup label="<?php _e('Italian', 'wp-sms'); ?>">
+							<option value="dot4all" <?php selected(get_option('wp_webservice'), 'dot4all'); ?>>dot4all.it</option>
+						</optgroup>
+						
 						<!--Option information-->
 						<option value="1" id="option-information"><?php _e('For more information about adding Web Service', 'wp-sms'); ?></option>
 						<!--Option information-->
