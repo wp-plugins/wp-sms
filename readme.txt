@@ -53,7 +53,6 @@ Webservice added:
 * isms.com.my
 * nexmo.com
 * mobily.ws
-* dot4all.it
 * clickatell.com
 
 Other features:
@@ -144,6 +143,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added: smsarak.ir Webservice.
 * Added: difaan Webservice.
 * Added: Novinpayamak Webservice.
+* Added: Dot4all Webservice.
 
 = 2.5.4 =
 * Added: sms-gateway.at Webservice.
