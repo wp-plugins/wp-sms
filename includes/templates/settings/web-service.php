@@ -8,6 +8,14 @@
 	
 	jQuery(document).ready(function(){
 		jQuery(".chosen-select").chosen();
+		
+		jQuery("#wps_reset").click(function(){
+			if(confirm('<?php _e('Your Web service data will be deleted. Are you sure?', 'wp-sms'); ?>')) {
+				return true;
+			} else {
+				return false;
+			}
+		});
 	});
 </script>
 
@@ -93,6 +101,9 @@
 							<option value="idehpayam" <?php selected(get_option('wp_webservice'), 'idehpayam'); ?>>idehpayam.com</option>
 							<option value="smsarak" <?php selected(get_option('wp_webservice'), 'smsarak'); ?>>smsarak.ir</option>
 							<option value="novinpayamak" <?php selected(get_option('wp_webservice'), 'novinpayamak'); ?>>novinpayamak.com</option>
+							<option value="melipayamak" <?php selected(get_option('wp_webservice'), 'melipayamak'); ?>>melipayamak.ir</option>
+							<option value="postgah" <?php selected(get_option('wp_webservice'), 'postgah'); ?>>postgah.net</option>
+							<option value="smsfa" <?php selected(get_option('wp_webservice'), 'smsfa'); ?>>smsfa.net</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
@@ -123,6 +134,10 @@
 						<option value="1" id="option-information"><?php _e('For more information about adding Web Service', 'wp-sms'); ?></option>
 						<!--Option information-->
 					</select>
+					
+					<?php if(get_option('wp_webservice')) { ?>
+						<a href="admin.php?page=wp-sms/setting&tab=web-service&action=reset" class="button" id="wps_reset"><?php _e('Reset', 'wp-sms'); ?></a>
+					<?php } ?>
 					
 					<?php if(!get_option('wp_webservice')) { ?>
 					<p class="description"><?php echo sprintf(__('If you do not have a web service, <a href="%s" target="_blank">click here.</a>', 'wp-sms'), 'http://www.parandhost.com/sms/webservice-for-wordpress-sms-plugin/'); ?></p>

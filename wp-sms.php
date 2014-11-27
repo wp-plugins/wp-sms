@@ -3,14 +3,16 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.6
+Version: 2.6.1
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.6');
+	define('WP_SMS_VERSION', '2.6.1');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
+	
+	define('WP_SMS_MOBILE_REGEX', '/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i');
 	
 	include_once dirname( __FILE__ ) . '/different-versions.php';
 	include_once dirname( __FILE__ ) . '/install.php';
@@ -342,7 +344,7 @@ License: GPL2
 		
 			if($name && $mobile && $group) {
 			
-				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+				if(preg_match(WP_SMS_MOBILE_REGEX, $mobile)) {
 				
 					$check_mobile = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `mobile` = '%s'", $mobile));
 					
@@ -427,7 +429,7 @@ License: GPL2
 		if(isset($_POST['wp_edit_subscribe'])) {
 		
 			if($name && $mobile && $group) {
-				if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+				if(preg_match(WP_SMS_MOBILE_REGEX, $mobile)) {
 				
 					$check = $wpdb->update("{$table_prefix}sms_subscribes",
 						array(
@@ -536,6 +538,11 @@ License: GPL2
 				case 'web-service':
 					wp_enqueue_style('chosen', plugin_dir_url(__FILE__) . 'assets/css/chosen.min.css', true, '1.2.0');
 					wp_enqueue_script('chosen', plugin_dir_url(__FILE__) . 'assets/js/chosen.jquery.min.js', true, '1.2.0');
+					
+					if(isset($_GET['action']) == 'reset') {
+						delete_option('wp_webservice');
+						echo '<meta http-equiv="refresh" content="0; url=admin.php?page=wp-sms/setting&tab=web-service" />';
+					}
 					
 					include_once dirname( __FILE__ ) . "/includes/templates/settings/web-service.php";
 					

@@ -7,7 +7,7 @@
 	$type	= $_REQUEST['type'];
 	
 	if($name && $mobile) {
-		if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+		if(preg_match(WP_SMS_MOBILE_REGEX, $mobile)) {
 		
 			global $wpdb, $table_prefix, $sms, $date;
 			
