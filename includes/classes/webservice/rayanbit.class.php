@@ -2,7 +2,7 @@
 	class rayanbit extends WP_SMS {
 		private $wsdl_link = "http://sms.rayanbit.net/post/send.asmx?wsdl";
 		public $tariff = "http://sms.rayanbit.net";
-		public $unitrial = true;
+		public $unitrial = false;
 		public $unit;
 		public $flash = "disable";
 		public $isflash = false;
