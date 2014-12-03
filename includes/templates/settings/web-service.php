@@ -104,6 +104,7 @@
 							<option value="melipayamak" <?php selected(get_option('wp_webservice'), 'melipayamak'); ?>>melipayamak.ir</option>
 							<option value="postgah" <?php selected(get_option('wp_webservice'), 'postgah'); ?>>postgah.net</option>
 							<option value="smsfa" <?php selected(get_option('wp_webservice'), 'smsfa'); ?>>smsfa.net</option>
+							<option value="rayanbit" <?php selected(get_option('wp_webservice'), 'rayanbit'); ?>>rayanbit.net</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">

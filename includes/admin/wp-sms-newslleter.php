@@ -29,7 +29,7 @@
 
 	function wp_sms_subscribe_send($post_ID) {
 	
-		if(get_post_meta($post_ID, "subscribe_post", true) == 'yes') {
+		if($_REQUEST['subscribe_post'] == 'yes') {
 		
 			global $wpdb, $table_prefix, $sms;
 			
