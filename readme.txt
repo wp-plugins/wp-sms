@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 2.6.2
+Stable tag: 2.6.3
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -133,6 +133,14 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.6.3 =
+* Added SMS.ir (new version) web service.
+* Fixed sms items in posted sms page.
+* Fixed subscribe items in subscribe page.
+* Fixed Mobile validation number.
+* Fixed Warning error when export subscribers.
+* Changed rial unit to credit.
+
 = 2.6.2 =
 * Fixed Notifications sms to subscribes.
 * Added Rayanbit.net web service.
