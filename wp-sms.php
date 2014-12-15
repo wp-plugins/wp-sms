@@ -3,16 +3,16 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.6.2
+Version: 2.6.3
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.6.2');
+	define('WP_SMS_VERSION', '2.6.3');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
-	define('WP_SMS_MOBILE_REGEX', '/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i');
+	define('WP_SMS_MOBILE_REGEX', '/^[\+|\(|\)|\d|\- ]*$/');
 	
 	include_once dirname( __FILE__ ) . '/different-versions.php';
 	include_once dirname( __FILE__ ) . '/install.php';
@@ -34,7 +34,7 @@ License: GPL2
 			add_menu_page(__('Wordpress SMS', 'wp-sms'), __('Wordpress SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_sendsms_page');
 			add_submenu_page(__FILE__, __('Send SMS', 'wp-sms'), __('Send SMS', 'wp-sms'), 'manage_options', __FILE__, 'wp_sendsms_page');
 			add_submenu_page(__FILE__, __('Posted SMS', 'wp-sms'), __('Posted', 'wp-sms'), 'manage_options', 'wp-sms/posted', 'wp_posted_sms_page');
-			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Newsletter subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
+			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
 			add_submenu_page(__FILE__, __('Setting', 'wp-sms'), __('Setting', 'wp-sms'), 'manage_options', 'wp-sms/setting', 'wp_sms_setting_page');
 			add_submenu_page(__FILE__, __('About', 'wp-sms'), __('About', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_sms_about_page');
 		}
@@ -72,7 +72,7 @@ License: GPL2
 		$sms->from = get_option('wp_number');
 
 		if($sms->unitrial == true) {
-			$sms->unit = __('Rial', 'wp-sms');
+			$sms->unit = __('Credit', 'wp-sms');
 		} else {
 			$sms->unit = __('SMS', 'wp-sms');
 		}
@@ -257,7 +257,7 @@ License: GPL2
 			$total = $wpdb->query($wpdb->prepare("SELECT * FROM `{$table_prefix}sms_subscribes` WHERE `group_ID` = '%s'", $_GET['group']));
 		} else {
 			$total = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes`");
-			$total = count($total[0]);
+			$total = count($total);
 		}
 		
 		if(isset($_POST['search'])) {

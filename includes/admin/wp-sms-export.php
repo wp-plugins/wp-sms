@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	require('../../../../../wp-load.php');
 	
 	if( !is_super_admin() )

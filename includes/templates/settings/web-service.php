@@ -84,7 +84,8 @@
 							<option value="sarabsms" <?php selected(get_option('wp_webservice'), 'sarabsms'); ?>>sarabsms.ir</option>
 							<option value="ponishasms" <?php selected(get_option('wp_webservice'), 'ponishasms'); ?>>ponishasms.ir</option>
 							<option value="payamakalmas" <?php selected(get_option('wp_webservice'), 'payamakalmas'); ?>>payamakalmas.ir</option>
-							<option value="sms" <?php selected(get_option('wp_webservice'), 'sms'); ?>>sms.ir</option>
+							<option value="sms" <?php selected(get_option('wp_webservice'), 'sms'); ?>>sms.ir - Old</option>
+							<option value="sms_new" <?php selected(get_option('wp_webservice'), 'sms_new'); ?>>sms.ir - New</option>
 							<option value="popaksms" <?php selected(get_option('wp_webservice'), 'popaksms'); ?>>popaksms.ir</option>
 							<option value="novin1sms" <?php selected(get_option('wp_webservice'), 'novin1sms'); ?>>novin1sms.ir</option>
 							<option value="hamyaarsms" <?php selected(get_option('wp_webservice'), 'hamyaarsms'); ?>>hamyaarsms.ir</option>

@@ -17,7 +17,7 @@
 </script>
 
 <div class="wrap">
-	<h2><?php _e('Posted SMS', 'wp-sms'); ?> (<?php echo count($total[0]) . ' ' . __('SMS', 'wp-sms'); ?>)</h2>
+	<h2><?php _e('Posted SMS', 'wp-sms'); ?> (<?php echo count($total) . ' ' . __('SMS', 'wp-sms'); ?>)</h2>
 	<form action="" method="post">
 		<table class="widefat fixed" cellspacing="0">
 			<thead>
@@ -41,7 +41,7 @@
 				$styleErrors = "paginationErrors";
 				$styleSelect = "paginationSelect";
 				
-				$Pagination = new Pagination(count($total[0]), $pagesPerSection, $options, false, $stylePageOff, $stylePageOn, $styleErrors, $styleSelect);
+				$Pagination = new Pagination(count($total), $pagesPerSection, $options, false, $stylePageOff, $stylePageOn, $styleErrors, $styleSelect);
 				
 				$start = $Pagination->getEntryStart();
 				$end = $Pagination->getEntryEnd();
