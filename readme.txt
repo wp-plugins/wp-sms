@@ -135,6 +135,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 == Changelog ==
 = 2.6.3 =
 * Added SMS.ir (new version) web service.
+* Added Smsmelli.com (new version) web service.
 * Fixed sms items in posted sms page.
 * Fixed subscribe items in subscribe page.
 * Fixed Mobile validation number.
