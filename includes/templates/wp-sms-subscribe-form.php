@@ -19,7 +19,7 @@
 				$("#wpsms-subscribe-loading").hide();
 			});
 			
-			$.get("<?php echo WP_SMS_DIR_PLUGIN; ?>includes/admin/wp-sms-subscribe.php", {name:get_subscribe_name, mobile:get_subscribe_mobile, group:get_subscribe_group, type:get_subscribe_type}, function(data, status){
+			$.get("<?php echo WP_SMS_DIR_PLUGIN; ?>includes/ajax/wp-sms-subscribe.php", {name:get_subscribe_name, mobile:get_subscribe_mobile, group:get_subscribe_group, type:get_subscribe_type}, function(data, status){
 				switch(data) {
 					case 'success-1':
 						$("#wpsms-subscribe table").hide();
@@ -51,7 +51,7 @@
 			var get_subscribe_mobile = $("#wpsms-mobile").val();
 			var get_activation = $("#wpsms-ativation-code").val();
 			
-			$.get("<?php echo WP_SMS_DIR_PLUGIN; ?>includes/admin/wp-sms-subscribe-activation.php", {mobile:get_subscribe_mobile, activation:get_activation}, function(data, status){
+			$.get("<?php echo WP_SMS_DIR_PLUGIN; ?>includes/ajax/wp-sms-subscribe-activation.php", {mobile:get_subscribe_mobile, activation:get_activation}, function(data, status){
 				switch(data) {
 					case 'success-1':
 						$("#wpsms-result").hide();

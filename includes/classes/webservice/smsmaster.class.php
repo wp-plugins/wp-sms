@@ -9,7 +9,10 @@
 
 		public function __construct() {
 			parent::__construct();
-			include_once dirname( __FILE__ ) . '/../nusoap.class.php';
+			
+			if(!class_exists('nusoap_client'))
+				include_once dirname( __FILE__ ) . '/../nusoap.class.php';
+				
 			$this->client = new nusoap_client($this->wsdl_link);
 		}
 

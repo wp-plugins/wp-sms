@@ -7,19 +7,12 @@
 </script>
 
 <div class="wrap">
-	<h2 class="nav-tab-wrapper">
-		<a href="?page=wp-sms/setting" class="nav-tab<?php if($_GET['tab'] == '') { echo " nav-tab-active";} ?>"><?php _e('General', 'wp-sms'); ?></a>
-		<a href="?page=wp-sms/setting&tab=web-service" class="nav-tab<?php if($_GET['tab'] == 'web-service') { echo " nav-tab-active"; } ?>"><?php _e('Web Service', 'wp-sms'); ?></a>
-		<a href="?page=wp-sms/setting&tab=newsletter" class="nav-tab<?php if($_GET['tab'] == 'newsletter') { echo " nav-tab-active"; } ?>"><?php _e('Newsletter', 'wp-sms'); ?></a>
-		<a href="?page=wp-sms/setting&tab=features" class="nav-tab<?php if($_GET['tab'] == 'features') { echo " nav-tab-active"; } ?>"><?php _e('Features', 'wp-sms'); ?></a>
-		<a href="?page=wp-sms/setting&tab=notification" class="nav-tab<?php if($_GET['tab'] == 'notification') { echo " nav-tab-active"; } ?>"><?php _e('Notification', 'wp-sms'); ?></a>
-	</h2>
-	
+	<?php include( dirname( __FILE__ ) . '/tabs.php' ); ?>
 	<table class="form-table">
 		<form method="post" action="options.php" name="form">
 			<?php wp_nonce_field('update-options');?>
 			<tr>
-				<th><?php _e('Register?', 'wp-sms'); ?></th>
+				<th><?php _e('Status', 'wp-sms'); ?></th>
 				<td>
 					<input type="checkbox" name="wp_subscribes_status" id="wp_subscribes_status" <?php echo get_option('wp_subscribes_status') ==true? 'checked="checked"':'';?>/>
 					<label for="wp_subscribes_status"><?php _e('Active', 'wp-sms'); ?></label>
@@ -27,7 +20,7 @@
 			</tr>
 
 			<tr>
-				<th><?php _e('Verified with the activation code?', 'wp-sms'); ?></th>
+				<th><?php _e('Verified with the activation code', 'wp-sms'); ?></th>
 				<td>
 					<input type="checkbox" name="wp_subscribes_activation" id="wp_subscribes_activation" <?php echo get_option('wp_subscribes_activation') ==true? 'checked="checked"':'';?>/>
 					<label for="wp_subscribes_activation"><?php _e('Active', 'wp-sms'); ?></label>
@@ -35,7 +28,7 @@
 			</tr>
 			
 			<tr>
-				<th><?php _e('Send SMS?', 'wp-sms'); ?></th>
+				<th><?php _e('Send SMS', 'wp-sms'); ?></th>
 				<td>
 					<input type="checkbox" name="wp_subscribes_send_sms" id="wp_subscribes_send_sms" <?php echo get_option('wp_subscribes_send_sms') ==true? 'checked="checked"':'';?>/>
 					<label for="wp_subscribes_send_sms"><?php _e('Active', 'wp-sms'); ?></label>
@@ -61,7 +54,7 @@
 			</tr>
 			
 			<tr>
-				<th><?php _e('Calling jQuery in Wordpress?', 'wp-sms'); ?></th>
+				<th><?php _e('Calling jQuery in Wordpress', 'wp-sms'); ?></th>
 				<td>
 					<input type="checkbox" name="wp_call_jquery" id="wp_call_jquery" <?php echo get_option('wp_call_jquery') ==true? 'checked="checked"':'';?>/>
 					<label for="wp_call_jquery"><?php _e('Active', 'wp-sms'); ?></label>

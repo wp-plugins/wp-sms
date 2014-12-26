@@ -3,13 +3,13 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.6.3
+Version: 2.6.4
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.6.3');
+	define('WP_SMS_VERSION', '2.6.4');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	define('WP_SMS_MOBILE_REGEX', '/^[\+|\(|\)|\d|\- ]*$/');
@@ -36,7 +36,6 @@ License: GPL2
 			add_submenu_page(__FILE__, __('Posted SMS', 'wp-sms'), __('Posted', 'wp-sms'), 'manage_options', 'wp-sms/posted', 'wp_posted_sms_page');
 			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
 			add_submenu_page(__FILE__, __('Setting', 'wp-sms'), __('Setting', 'wp-sms'), 'manage_options', 'wp-sms/setting', 'wp_sms_setting_page');
-			add_submenu_page(__FILE__, __('About', 'wp-sms'), __('About', 'wp-sms'), 'manage_options', 'wp-sms/about', 'wp_sms_about_page');
 		}
 
 	}
@@ -205,7 +204,7 @@ License: GPL2
 		
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
 		
-		include_once dirname( __FILE__ ) . "/includes/templates/settings/send-sms.php";
+		include_once dirname( __FILE__ ) . "/includes/templates/send/send-sms.php";
 	}
 	
 	function wp_posted_sms_page() {
@@ -242,7 +241,7 @@ License: GPL2
 		
 		$total = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_send`");
 		
-		include_once dirname( __FILE__ ) . "/includes/templates/settings/posted.php";
+		include_once dirname( __FILE__ ) . "/includes/templates/posted/posted.php";
 	}
 	
 	function wp_subscribes_page() {
@@ -506,15 +505,15 @@ License: GPL2
 					}
 				}
 				
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/import.php";
+				include_once dirname( __FILE__ ) . "/includes/templates/subscribe/import.php";
 				
 			} else if($_GET['action'] == 'export') {
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/export.php";
+				include_once dirname( __FILE__ ) . "/includes/templates/subscribe/export.php";
 			} else {
-				include_once dirname( __FILE__ ) . "/includes/templates/settings/subscribes.php";
+				include_once dirname( __FILE__ ) . "/includes/templates/subscribe/subscribes.php";
 			}
 		} else {
-			include_once dirname( __FILE__ ) . "/includes/templates/settings/subscribes.php";
+			include_once dirname( __FILE__ ) . "/includes/templates/subscribe/subscribes.php";
 		}
 		
 	}
@@ -531,7 +530,7 @@ License: GPL2
 		
 		wp_enqueue_style('css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.0');
 		
-		$sms_page['about'] = get_bloginfo('url') . "/wp-admin/admin.php?page=wp-sms/about";
+		$sms_page['about'] = get_bloginfo('url') . "/admin.php?page=wp-sms/setting&tab=about";
 		
 		if(isset($_GET['tab'])) {
 			switch($_GET['tab']) {
@@ -548,35 +547,30 @@ License: GPL2
 					
 					if(get_option('wp_webservice'))
 						update_option('wp_last_credit', $sms->GetCredit());
-						
 					break;
 				
 				case 'newsletter':
 					include_once dirname( __FILE__ ) . "/includes/templates/settings/newsletter.php";
-					break;
+				break;
 				
 				case 'features':
 					include_once dirname( __FILE__ ) . "/includes/templates/settings/features.php";
-					break;
+				break;
 				
 				case 'notification':
 					include_once dirname( __FILE__ ) . "/includes/templates/settings/notification.php";
-					break;
+				break;
+				
+				case 'about':
+					include_once dirname( __FILE__ ) . "/includes/templates/settings/about.php";
+				break;
 			}
 		} else {
 			include_once dirname( __FILE__ ) . "/includes/templates/settings/setting.php";
 		}
 	}
 	
-	function wp_sms_about_page() {
-		if (!current_user_can('manage_options')) {
-			wp_die(__('You do not have sufficient permissions to access this page.'));
-		}
-		
-		include_once dirname( __FILE__ ) . "/includes/templates/settings/about.php";
-	}
-	
-	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-newslleter.php';
-	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-features.php';
-	include_once dirname( __FILE__ ) . '/includes/admin/wp-sms-notifications.php';
+	include_once dirname( __FILE__ ) . '/newslleter.php';
+	include_once dirname( __FILE__ ) . '/features.php';
+	include_once dirname( __FILE__ ) . '/notifications.php';
 	

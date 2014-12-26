@@ -14,7 +14,7 @@
 		$selected = isset( $values['subscribe_post'] ) ? esc_attr( $values['subscribe_post'][0] ) : '';
 		wp_nonce_field('subscribe_box_nonce', 'meta_box_nonce');
 		
-		include_once dirname( __FILE__ ) . "/../templates/settings/meta-box.php";
+		include_once dirname( __FILE__ ) . "/includes/templates/wp-meta-box.php";
 	}
 
 	function wp_sms_subscribe_post_save($post_id) {

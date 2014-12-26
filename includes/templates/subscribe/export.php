@@ -1,6 +1,6 @@
 <div class="wrap">
 	<h2><?php _e('Export', 'wp-sms'); ?></h2>
-	<form id="export-filters" method="post" action="<?php echo plugins_url('wp-sms/includes/admin/wp-sms-export.php'); ?>">
+	<form id="export-filters" method="post" action="<?php echo plugins_url('wp-sms/export.php'); ?>">
 		<table>
 			<tr valign="top">
 				<th scope="row">

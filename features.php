@@ -16,7 +16,7 @@
 			if($_POST['send_post']) {
 				$mobile = $_POST['get_fmobile'];
 				if($_POST['get_name'] && $_POST['get_fname'] && $_POST['get_fmobile']) {
-					if( (strlen($mobile) >= 11) && (substr($mobile, 0, 2) == get_option('wp_sms_mcc')) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
+					if( (strlen($mobile) >= 11) && (preg_match("([a-zA-Z])", $mobile) == 0) ) {
 						$sms->to = array($_POST['get_fmobile']);
 						$sms->msg = sprintf(__('Hi %s, the %s post suggested to you by %s. url: %s', 'wp-sms'), $_POST['get_fname'], get_the_title(), $_POST['get_name'], wp_get_shortlink());
 						
