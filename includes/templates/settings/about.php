@@ -3,7 +3,7 @@
 	<table class="form-table">
 		<tbody>
 			<tr valign="top">
-				<td align="center" scope="row"><img src="<?php echo plugins_url('wp-sms-pro/assets/images/logo-250.png'); ?>"></td>
+				<td align="center" scope="row"><img src="<?php echo plugins_url('wp-sms/assets/images/logo-250.png'); ?>"></td>
 			</tr>
 			
 			<tr valign="top">
