@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 2.6.3
+Stable tag: 2.6.4
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -58,6 +58,7 @@ Webservice added:
 Other features:
 
 * Integrate with (Quform)
+* Notification SMS when WooCommerce stock is low
 * Premium Support
 * Adding a web service with request
 
@@ -111,19 +112,19 @@ Example: Send sms to user when register a new subscriber.
 add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 
 == Screenshots ==
-1. Screen shot (screenshot-1.png) in SMS Setting Page.
-2. Screen shot (screenshot-2.png) in Webservice page.
-3. Screen shot (screenshot-3.png) in Newslleter page.
-4. Screen shot (screenshot-4.png) in Features page.
-5. Screen shot (screenshot-5.png) in Notifications page.
-6. Screen shot (screenshot-6.png) in Send SMS Page.
-7. Screen shot (screenshot-7.png) in SMS Posted Page.
-8. Screen shot (screenshot-8.png) in Subscribe list Page.
-9. Screen shot (screenshot-9.png) in At a Glance.
-10. Screen shot (screenshot-10.png) in SMS Subscribe widget.
-11. Screen shot (screenshot-11.png) in Subscribe new-post.php.
-12. Screen shot (screenshot-12.png) in Suggestion post in single.
-13. Screen shot (screenshot-13.png) in Contact Form 7 page.
+1. SMS Setting Page.
+2. Webservice page.
+3. Newslleter page.
+4. Features page.
+5. Notifications page.
+6. Send SMS Page.
+7. SMS Posted Page.
+8. Subscribe list Page.
+9. At a Glance.
+10. SMS Subscribe widget.
+11. Subscribe new-post.php.
+12. Suggestion post in single.
+13. Contact Form 7 page.
 
 == Upgrade Notice ==
 = 2.4 =
@@ -133,6 +134,11 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.6.4 =
+* Fixed nusoap_client issue when include this class with other plugins.
+* Remove mobile country code from tell friend section.
+* Change folder and files structure plugin.
+
 = 2.6.3 =
 * Added SMS.ir (new version) web service.
 * Added Smsmelli.com (new version) web service.
