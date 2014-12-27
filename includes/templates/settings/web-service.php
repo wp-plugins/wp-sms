@@ -43,6 +43,7 @@
 							<option value="adpdigital" <?php selected(get_option('wp_webservice'), 'adpdigital'); ?>>adpdigital.com</option>
 							<option value="smsde" <?php selected(get_option('wp_webservice'), 'smsde'); ?>>smsde.ir</option>
 							<option value="payamakde" <?php selected(get_option('wp_webservice'), 'payamakde'); ?>>payamakde.ir</option>
+							<option value="markazpayamak" <?php selected(get_option('wp_webservice'), 'markazpayamak'); ?>>markazpayamak.ir</option>
 							<option value="payameavval" <?php selected(get_option('wp_webservice'), 'payameavval'); ?>>payameavval.com</option>
 							<option value="smsclick" <?php selected(get_option('wp_webservice'), 'smsclick'); ?>>smsclick.ir</option>
 							<option value="persiansms" <?php selected(get_option('wp_webservice'), 'persiansms'); ?>>persiansms.com</option>
