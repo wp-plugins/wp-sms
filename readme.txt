@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 2.6.4
+Stable tag: 2.6.5
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -58,7 +58,6 @@ Webservice added:
 Other features:
 
 * Integrate with (Quform)
-* Notification SMS when WooCommerce stock is low
 * Premium Support
 * Adding a web service with request
 
@@ -134,6 +133,9 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.6.5 =
+* Fixed problem in include Tell friend template file.
+
 = 2.6.4 =
 * Fixed nusoap_client issue when include this class with other plugins.
 * Remove mobile country code from tell friend section.

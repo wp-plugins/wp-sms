@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit;
 	
 	function wp_tell_a_freind_head() {
-		include_once dirname( __FILE__ ) . "/../templates/wp-sms-tell-friend-head.php";
+		include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-tell-friend-head.php";
 	}
 	
 	function wp_tell_a_freind($content) {
@@ -11,7 +11,7 @@
 		
 			global $sms;
 			
-			include_once dirname( __FILE__ ) . "/../templates/wp-sms-tell-friend.php";
+			include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-tell-friend.php";
 			
 			if($_POST['send_post']) {
 				$mobile = $_POST['get_fmobile'];
