@@ -136,7 +136,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 = 2.6.5 =
 * Added smsroo.ir web service.
 * Added smsban.ir web service.
-* Fixed problem in include Tell friend template file.
+* Fixed problem in include files.
 
 = 2.6.4 =
 * Fixed nusoap_client issue when include this class with other plugins.

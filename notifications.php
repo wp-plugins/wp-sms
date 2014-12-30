@@ -8,8 +8,8 @@
 		if($update[1]->current > $wp_version) {
 			if(get_option('wp_last_send_notification') == false) {
 				$webservice = get_option('wp_webservice');
-				include_once dirname( __FILE__ ) . "/../classes/wp-sms.class.php";
-				include_once dirname( __FILE__ ) . "/../classes/webservice/{$webservice}.class.php";
+				include_once dirname( __FILE__ ) . "/includes/classes/wp-sms.class.php";
+				include_once dirname( __FILE__ ) . "/includes/classes/webservice/{$webservice}.class.php";
 				$sms = new $webservice;
 				$sms->to = array(get_option('wp_admin_mobile'));
 				$sms->msg = sprintf(__('WordPress %s is available! Please update now', 'wp-sms'), $update[1]->current);
@@ -87,7 +87,7 @@
 	
 	function wps_setup_wpcf7_form($form) {
 		$options = get_option('wpcf7_sms_' . $form->id);
-		include_once dirname( __FILE__ ) . "/../templates/wp-sms-wpcf7-form.php";
+		include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-wpcf7-form.php";
 	}
 	
 	function wps_save_wpcf7_form($form) {
