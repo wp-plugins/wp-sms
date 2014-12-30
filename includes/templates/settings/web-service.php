@@ -102,6 +102,7 @@
 							<option value="rayanbit" <?php selected(get_option('wp_webservice'), 'rayanbit'); ?>>rayanbit.net</option>
 							<option value="smsmelli" <?php selected(get_option('wp_webservice'), 'smsmelli'); ?>>smsmelli.com</option>
 							<option value="smsban" <?php selected(get_option('wp_webservice'), 'smsban'); ?>>smsban.ir</option>
+							<option value="smsroo" <?php selected(get_option('wp_webservice'), 'smsroo'); ?>>smsroo.ir</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
