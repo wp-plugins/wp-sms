@@ -166,7 +166,7 @@
 			</tr>
 			
 			<tr valign="top">
-				<th scope="row" colspan="2"><h3><?php _e('Contact form 7 plugin', 'wp-sms'); ?></h3></th>
+				<th scope="row" colspan="2"><h3>Contact form 7</h3></th>
 			</tr>
 			
 			<tr>
@@ -179,7 +179,7 @@
 			</tr>
 			
 			<tr valign="top">
-				<th scope="row" colspan="2"><h3><?php _e('WooCommerce plugin', 'wp-sms'); ?></h3></th>
+				<th scope="row" colspan="2"><h3>WooCommerce</h3></th>
 			</tr>
 			
 			<tr>
@@ -208,7 +208,7 @@
 			</tr>
 			
 			<tr valign="top">
-				<th scope="row" colspan="2"><h3><?php _e('Easy Digital Downloads plugin', 'wp-sms'); ?></h3></th>
+				<th scope="row" colspan="2"><h3>Easy Digital Downloads</h3></th>
 			</tr>
 			
 			<tr>

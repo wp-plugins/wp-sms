@@ -36,7 +36,6 @@
 		$sms->msg = $final_message;
 		$sms->SendSMS();
 	}
-	
 	if(get_option('wpsms_nrnu_stats'))
 		add_action('user_register', 'wps_notification_new_user', 10, 1);
 	
@@ -57,7 +56,6 @@
 		$sms->msg = $final_message;
 		$sms->SendSMS();
 	}
-	
 	if(get_option('wpsms_gnc_stats'))
 		add_action('wp_insert_comment', 'wps_notification_new_comment',99,2);
 	
@@ -74,7 +72,6 @@
 		$sms->msg = $final_message;
 		$sms->SendSMS();
 	}
-	
 	if(get_option('wpsms_ul_stats'))
 		add_action('wp_login', 'wps_notification_login', 99, 2);
 	
@@ -124,7 +121,6 @@
 		$sms->msg = $final_message;
 		$sms->SendSMS();
 	}
-	
 	if(get_option('wpsms_wc_no_stats'))
 		add_action('woocommerce_new_order', 'wps_woocommerce_new_order');
 	
@@ -135,6 +131,5 @@
 		$sms->msg = get_option('wpsms_edd_no_tt');
 		$sms->SendSMS();
 	}
-	
 	if(get_option('wpsms_edd_no_stats'))
 		add_action('edd_complete_purchase', 'wps_edd_new_order');

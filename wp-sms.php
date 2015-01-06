@@ -3,13 +3,13 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.6.6
+Version: 2.6.7
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.6.6');
+	define('WP_SMS_VERSION', '2.6.7');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	define('WP_SMS_MOBILE_REGEX', '/^[\+|\(|\)|\d|\- ]*$/');
@@ -110,7 +110,7 @@ License: GPL2
 				global $sms;
 				$wp_admin_bar->add_menu(array(
 					'id'		=>	'wp-credit-sms',
-					'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), number_format($get_last_credit), $sms->unit),
+					'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), $get_last_credit, $sms->unit),
 					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/setting'
 				));
 			}
@@ -129,7 +129,7 @@ License: GPL2
 
 	function wp_sms_rightnow_discussion() {
 		global $sms;
-		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".number_format(get_option('wp_last_credit'))."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".__('Credit', 'wp-sms')." (".$sms->unit.")</a></td></tr>";
+		echo "<tr><td class='b'><a href='".get_bloginfo('url')."/wp-admin/admin.php?page=wp-sms/wp-sms.php'>".get_option('wp_last_credit')."</a></td><td><a href='".get_bloginfo('url')."/admin.php?page=wp-sms/wp-sms.php'>".__('Credit', 'wp-sms')." (".$sms->unit.")</a></td></tr>";
 	}
 	add_action('right_now_discussion_table_end', 'wp_sms_rightnow_discussion');
 
@@ -148,7 +148,7 @@ License: GPL2
 		$subscribe = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}sms_subscribes");
 		
 		echo "<li class='wpsms-subscribe-count'><a href='{$admin_url}/admin.php?page=wp-sms/subscribe'>".sprintf(__('%s Subscriber', 'wp-sms'), $subscribe)."</a></li>";
-		echo "<li class='wpsms-credit-count'><a href='{$admin_url}/admin.php?page=wp-sms/setting&tab=web-service'>".sprintf(__('%s SMS Credit', 'wp-sms'), number_format(get_option('wp_last_credit')))."</a></li>";
+		echo "<li class='wpsms-credit-count'><a href='{$admin_url}/admin.php?page=wp-sms/setting&tab=web-service'>".sprintf(__('%s SMS Credit', 'wp-sms'), get_option('wp_last_credit'))."</a></li>";
 	}
 	add_action('dashboard_glance_items', 'wp_sms_glance');
 	
