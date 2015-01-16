@@ -9,6 +9,7 @@
 
 		public function __construct() {
 			parent::__construct();
+			$this->validateNumber = "09xxxxxxxx";
 			
 			if(!class_exists('nusoap_client'))
 				include_once dirname( __FILE__ ) . '/../nusoap.class.php';

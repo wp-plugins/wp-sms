@@ -1,8 +1,8 @@
 <?php
-	class avalpayam extends WP_SMS {
-		private $wsdl_link = "http://www.avalpayam.com/class/sms/wssimple/server.php?wsdl";
+	class smshooshmand extends WP_SMS {
+		private $wsdl_link = "http://smshooshmand.com/class/sms/webservice3/server.php?wsdl";
 		private $client = null;
-		public $tariff = "http://avalpayam.com/";
+		public $tariff = "http://smshooshmand.com/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
@@ -15,14 +15,14 @@
 			if(!class_exists('nusoap_client'))
 				include_once dirname( __FILE__ ) . '/../nusoap.class.php';
 			
-			$this->client = new nusoap_client($this->wsdl_link);
+			$this->client = new nusoap_client($this->wsdl_link,array('trace'=>true));
 			
 			$this->client->soap_defencoding = 'UTF-8';
 			$this->client->decode_utf8 = true;
 		}
 
 		public function SendSMS() {
-			$result = $this->client->call("SendSMS", array('Username' => $this->username, 'Password' => $this->password, 'SenderNumber' => $this->from, 'RecipientNumbers' => $this->to, 'Message' => $this->msg, 'Type' => 'normal'));
+			$result = $this->client->call("SendSMS", array('user' => $this->username, 'pass' => $this->password, 'fromNum' => $this->from, 'toNum' => $this->to, 'messageContent' => $this->msg, 'messageType' => 'normal'));
 			
 			if($result) {
 				$this->InsertToDB($this->from, $this->msg, $this->to);
@@ -33,7 +33,7 @@
 		}
 
 		public function GetCredit() {
-			$result = $this->client->call("GetCredit", array('Username' => $this->username, 'Password' => $this->password));
+			$result = $this->client->call("GetCredit", array('user' => $this->username, 'pass' => $this->password));
 			
 			return $result;
 		}

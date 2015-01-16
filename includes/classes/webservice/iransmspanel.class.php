@@ -23,6 +23,11 @@
 		public $flash = "enable";
 		public $port = 0;
 		public $isflash = false;
+		
+		public function __construct() {
+			parent::__construct();
+			$this->validateNumber = "09xxxxxxxx";
+		}
 
 		/**
 		 * This function is used to send SMS via socket.

@@ -9,10 +9,10 @@
 		
 		public function __construct() {
 			parent::__construct();
+			$this->validateNumber = "";
 		}
 		
 		public function SendSMS() {
-			
 			$to = implode($this->to, ",");
 			
 			$sms_text = iconv('cp1251', 'utf-8', $this->msg);
@@ -53,7 +53,6 @@
 		}
 		
 		public function GetCredit() {
-		
 			$json = file_get_contents("{$this->wsdl_link}getUserInfo?format=json&api_key={$this->password}&login={$this->username}");
 			
 			$result = json_decode($json, true);

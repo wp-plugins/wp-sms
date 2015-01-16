@@ -9,6 +9,7 @@
 		
 		public function __construct() {
 			parent::__construct();
+			$this->validateNumber = "09xxxxxxxx";
 		}
 		
 		public function SendSMS() {

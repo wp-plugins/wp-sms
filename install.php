@@ -16,7 +16,7 @@
 		
 		$create_sms_subscribes_group = ("CREATE TABLE IF NOT EXISTS {$table_prefix}sms_subscribes_group(
 			ID int(10) NOT NULL auto_increment,
-			name VARCHAR(20),
+			name VARCHAR(250),
 			PRIMARY KEY(ID)) CHARSET=utf8
 		");
 		

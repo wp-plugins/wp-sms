@@ -7,3 +7,7 @@
 .wpsms-credit-count a:before {
     content: "\f111" !important;
 }
+#wp-admin-bar-wp-credit-sms .ab-icon:before {
+    content: '\f466';
+    top: 3px;
+}

@@ -9,6 +9,8 @@
 		
 		public function __construct() {
 			parent::__construct();
+			$this->validateNumber = "09xxxxxxxx";
+			
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 		

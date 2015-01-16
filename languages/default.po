@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wordpress SMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-25 17:37+0330\n"
-"PO-Revision-Date: 2014-12-25 17:37+0330\n"
+"POT-Creation-Date: 2015-01-16 18:04+0330\n"
+"PO-Revision-Date: 2015-01-16 18:04+0330\n"
 "Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
 "Language-Team: Parsi Wordpress\n"
 "Language: fa_IR\n"
@@ -30,47 +30,47 @@ msgstr ""
 msgid "Please select the desired items."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:21
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:18
 #, php-format
 msgid "Hi %s, the %s post suggested to you by %s. url: %s"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:24
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:85
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:21
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:207
 msgid "SMS was sent with success"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:27
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:24
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/ajax/wp-sms-subscribe.php:81
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:371
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:450
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:379
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:458
 msgid "Please enter a valid mobile number"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:30
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:27
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/ajax/wp-sms-subscribe-activation.php:24
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/ajax/wp-sms-subscribe.php:84
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:374
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:453
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:504
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:382
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:461
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:512
 msgid "Please complete all fields"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:44
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:40
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:88
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:144
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:185
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:256
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:84
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:82
 msgid "Mobile"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:53
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:48
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:7
 msgid "Your Mobile Number"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:61
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/features.php:56
 msgid "<strong>ERROR</strong>: You must include a mobile number."
 msgstr ""
 
@@ -83,12 +83,12 @@ msgid "Your activation code"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/ajax/wp-sms-subscribe.php:73
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:423
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:431
 msgid "Nothing found!"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/ajax/wp-sms-subscribe.php:78
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:368
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:376
 msgid "Phone number is repeated"
 msgstr ""
 
@@ -103,11 +103,11 @@ msgid "Posted SMS"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/posted/posted.php:20
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:134
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:138
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:93
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:97
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:4
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:76
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:121
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:117
 msgid "SMS"
 msgstr ""
 
@@ -162,75 +162,74 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:43
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:97
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:162
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:48
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:53
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:119
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:31
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:35
 msgid "Send SMS"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:89
-msgid "Please enter a message"
-msgstr ""
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:100
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:56
 msgid "Send from"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:104
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:60
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:10
 msgid "Send to"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:109
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:63
 msgid "Subscribe users"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:111
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:64
+msgid "Wordpress Users"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:65
 msgid "Number(s)"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:118
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:73
 #, php-format
 msgid "All (%s subscribers active)"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:128
-msgid "For example"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:82
+#, php-format
+msgid "<b>%s</b> Users have mobile number."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:137
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:87
+#, php-format
+msgid "For example: <code>%s</code>"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:96
 msgid "The remaining words"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:140
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:99
 msgid "Your credit"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:146
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:105
 msgid "Send a Flash"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:149
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:108
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-meta-box.php:4
 msgid "Yes"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:152
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:110
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-meta-box.php:5
 msgid "No"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:155
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:112
 msgid "Flash is possible to send messages without being asked, opens"
-msgstr ""
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:173
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:181
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:158
-#, php-format
-msgid "Please check the <a href=\"%s\">SMS credit</a> the settings"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:10
@@ -284,7 +283,8 @@ msgstr ""
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:176
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:189
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:218
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:191
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:27
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:189
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:157
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:275
 msgid "Active"
@@ -301,14 +301,14 @@ msgstr ""
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:28
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:70
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:240
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:26
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:216
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:38
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:214
 msgid "Update"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:15
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:189
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:203
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:187
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:201
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:90
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:146
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:272
@@ -416,7 +416,7 @@ msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:95
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:105
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:146
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:152
 msgid "Username"
 msgstr ""
 
@@ -479,10 +479,6 @@ msgstr ""
 msgid "Display name"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:169
-msgid "Contact form 7 plugin"
-msgstr ""
-
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:173
 msgid "SMS meta box"
 msgstr ""
@@ -491,10 +487,6 @@ msgstr ""
 msgid ""
 "Added Wordpress SMS meta box to Contact form 7 plugin when enable this "
 "option."
-msgstr ""
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:182
-msgid "WooCommerce plugin"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:186
@@ -511,16 +503,27 @@ msgstr ""
 msgid "Order ID"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:211
-msgid "Easy Digital Downloads plugin"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:10
+#, php-format
+msgid ""
+"Enter your mobile number for get sms from plugin. Your mobile should like "
+"<code>%s</code>"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:14
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:15
 msgid "Your mobile country code"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:17
-msgid "Enter your mobile country code. (For example: Iran 09, Australia 61)"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:18
+msgid "Enter your mobile country code."
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:24
+msgid "Show Credit in Admin menu"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:28
+msgid "Show your credit account in admin menu."
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/tabs.php:2
@@ -560,93 +563,83 @@ msgstr ""
 msgid "Iran"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:105
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:111
 msgid "Australia"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:109
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:115
 msgid "New Zealand"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:113
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:119
 msgid "Austria"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:117
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:123
 msgid "Pakistan"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:121
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:127
 msgid "Indian"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:125
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:131
 msgid "Italian"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:130
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:136
 msgid "For more information about adding Web Service"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:135
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:141
 msgid "Reset"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:139
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:145
 #, php-format
 msgid ""
 "If your Web service is not on the top list, <a href=\"%s\">click here.</a>"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:149
-msgid "Your username in"
-msgstr ""
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:152
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:155
 #, php-format
-msgid ""
-"If you do not have a username for this service <a href=\"%s\">click here..</"
-"a>"
+msgid "Your username in <a href=\"%s\">%s</a>"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:158
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:160
 msgid "Password"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:161
-msgid "Your password in"
-msgstr ""
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:164
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:163
 #, php-format
-msgid ""
-"If you do not have a password for this service <a href=\"%s\">click here..</"
-"a>"
+msgid "Your password in <a href=\"%s\">%s</a>"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:171
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:169
 msgid "API/Key"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:174
-msgid "Your API Key in"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:172
+#, php-format
+msgid "Your API Key in <a href=\"%s\">%s</a>"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:180
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:178
 msgid "Number"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:183
-msgid "Your SMS sender number in"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:181
+#, php-format
+msgid "Your SMS sender number in <a href=\"%s\">%s</a>"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:196
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:194
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:74
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:132
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:126
 msgid "Credit"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:205
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:203
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:158
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:276
 msgid "Deactive"
@@ -693,7 +686,7 @@ msgstr ""
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:89
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:145
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:190
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:89
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:87
 msgid "Group"
 msgstr ""
 
@@ -733,8 +726,7 @@ msgstr ""
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:143
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:180
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:251
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:79
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-widget.php:2
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:77
 msgid "Name"
 msgstr ""
 
@@ -792,28 +784,24 @@ msgstr ""
 msgid "Your membership in the complete newsletter!"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:75
-msgid "Enter your information for SMS Subscribe"
-msgstr ""
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:102
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:111
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:100
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:109
 msgid "Subscribe"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:105
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:103
 msgid "Unsubscribe"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:118
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:116
 msgid "Please enter the activation code:"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:120
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:118
 msgid "Activation"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:126
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-subscribe-form.php:124
 msgid "Subscribe is Deactive!"
 msgstr ""
 
@@ -837,6 +825,18 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-widget.php:2
+msgid "Title"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-widget.php:7
+msgid "Description"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-widget.php:9
+msgid "HTML code is valid."
+msgstr ""
+
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/wp-sms-wpcf7-form.php:12
 msgid "Enter enter mobile number to receive message."
 msgstr ""
@@ -846,12 +846,21 @@ msgid "Message body"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/newslleter.php:5
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/widget.php:44
 msgid "Subscribe SMS"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/notifications.php:21
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/notifications.php:15
 #, php-format
 msgid "WordPress %s is available! Please update now"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/widget.php:13
+msgid "Subscribe SMS Form"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/widget.php:14
+msgid "Subscribe SMS Widget"
 msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:34
@@ -870,91 +879,95 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:113
-#, php-format
-msgid "Your Credit: %s %s"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:86
+msgid "Enter your information for SMS Subscribe"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:139
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:133
 msgid "Newsletter Subscriber"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:150
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:141
 #, php-format
 msgid "%s Subscriber"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:151
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:142
 #, php-format
 msgid "%s SMS Credit"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:166
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:167
-msgid "Subscribe to SMS"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:148
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:176
+#, php-format
+msgid "Please check the <a href=\"%s\">SMS credit</a> the settings"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:197
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:212
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:250
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:526
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:163
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:220
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:258
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:534
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:234
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:299
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:211
+msgid "Please enter a message"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:242
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:307
 msgid "With success was removed"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:236
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:301
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:314
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:327
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:244
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:309
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:322
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:335
 msgid "Not Found"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:312
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:320
 msgid "User is active."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:325
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:333
 msgid "User is Deactive.."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:364
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:372
 #, php-format
 msgid "username <strong>%s</strong> was added successfully."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:395
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:403
 #, php-format
 msgid "Group <strong>%s</strong> was added successfully."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:399
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:407
 msgid "Group name is repeated"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:402
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:410
 msgid "Please complete field"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:418
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:426
 #, php-format
 msgid "Group <strong>%s</strong> was successfully removed."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:446
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:454
 #, php-format
 msgid "username <strong>%s</strong> was update successfully."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:498
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:506
 #, php-format
 msgid "<strong>%s</strong> items was successfully added."
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:501
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:509
 #, php-format
 msgid "<strong>%s</strong> Mobile numbers Was repeated."
 msgstr ""

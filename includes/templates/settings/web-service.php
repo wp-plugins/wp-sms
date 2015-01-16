@@ -104,6 +104,8 @@
 							<option value="smsban" <?php selected(get_option('wp_webservice'), 'smsban'); ?>>smsban.ir</option>
 							<option value="smsroo" <?php selected(get_option('wp_webservice'), 'smsroo'); ?>>smsroo.ir</option>
 							<option value="navidsoft" <?php selected(get_option('wp_webservice'), 'navidsoft'); ?>>navid-soft.ir</option>
+							<option value="afe" <?php selected(get_option('wp_webservice'), 'afe'); ?>>afe.ir</option>
+							<option value="smshooshmand" <?php selected(get_option('wp_webservice'), 'smshooshmand'); ?>>smshooshmand.com</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
@@ -149,24 +151,16 @@
 			<tr>
 				<th><?php _e('Username', 'wp-sms'); ?>:</th>
 				<td>
-					<input type="text" dir="ltr" style="width: 200px;" name="wp_username" value="<?php echo get_option('wp_username'); ?>"/>
-					<p class="description"><?php _e('Your username in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
-					
-					<?php if(!get_option('wp_username')) { ?>
-						<p class="register"><?php echo sprintf(__('If you do not have a username for this service <a href="%s">click here..</a>', 'wp-sms'), $sms->tariff) ?></p>
-					<?php } ;?>
+					<input type="text" dir="ltr" name="wp_username" value="<?php echo get_option('wp_username'); ?>"/>
+					<p class="description"><?php echo sprintf(__('Your username in <a href="%s">%s</a>', 'wp-sms'), $sms->tariff, get_option('wp_webservice')); ?></p>
 				</td>
 			</tr>
-
+			
 			<tr>
 				<th><?php _e('Password', 'wp-sms'); ?>:</th>
 				<td>
-					<input type="password" dir="ltr" style="width: 200px;" name="wp_password" value="<?php echo get_option('wp_password'); ?>"/>
-					<p class="description"><?php _e('Your password in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
-					
-					<?php if(!get_option('wp_password')) { ?>
-						<p class="register"><?php echo sprintf(__('If you do not have a password for this service <a href="%s">click here..</a>', 'wp-sms'), $sms->tariff) ?></p>
-					<?php } ?>
+					<input type="password" dir="ltr" name="wp_password" value="<?php echo get_option('wp_password'); ?>"/>
+					<p class="description"><?php echo sprintf(__('Your password in <a href="%s">%s</a>', 'wp-sms'), $sms->tariff, get_option('wp_webservice')); ?></p>
 				</td>
 			</tr>
 			
@@ -174,8 +168,8 @@
 			<tr>
 				<th><?php _e('API/Key', 'wp-sms'); ?>:</th>
 				<td>
-					<input type="text" dir="ltr" style="width: 200px;" name="wps_key" value="<?php echo get_option('wps_key'); ?>"/>
-					<p class="description"><?php _e('Your API Key in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
+					<input type="text" dir="ltr" name="wps_key" value="<?php echo get_option('wps_key'); ?>"/>
+					<p class="description"><?php echo sprintf(__('Your API Key in <a href="%s">%s</a>', 'wp-sms'), $sms->tariff, get_option('wp_webservice')); ?></p>
 				</td>
 			</tr>
 			<?php } ?>
@@ -183,8 +177,8 @@
 			<tr>
 				<th><?php _e('Number', 'wp-sms'); ?>:</th>
 				<td>
-					<input type="text" dir="ltr" style="width: 200px;" name="wp_number" value="<?php echo get_option('wp_number'); ?>"/>
-					<p class="description"><?php _e('Your SMS sender number in', 'wp-sms'); ?>: <?php echo get_option('wp_webservice'); ?></p>
+					<input type="text" dir="ltr" name="wp_number" value="<?php echo get_option('wp_number'); ?>"/>
+					<p class="description"><?php echo sprintf(__('Your SMS sender number in <a href="%s">%s</a>', 'wp-sms'), $sms->tariff, get_option('wp_webservice')); ?></p>
 				</td>
 			</tr>
 			

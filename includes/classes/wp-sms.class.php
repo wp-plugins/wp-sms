@@ -31,6 +31,13 @@ abstract class WP_SMS {
 	public $has_key = false;
 	
 	/**
+	 * Validation mobile number
+	 *
+	 * @var string
+	 */
+	public $validateNumber = "";
+	
+	/**
 	 * SMsS send from number
 	 *
 	 * @var string
@@ -69,12 +76,10 @@ abstract class WP_SMS {
 	 * Constructors
 	 */
 	public function __construct() {
-		
 		global $wpdb, $table_prefix;
 		
 		$this->db = $wpdb;
 		$this->tb_prefix = $table_prefix;
-		
 	}
 	
 	public function Hook($tag, $arg) {
@@ -82,7 +87,6 @@ abstract class WP_SMS {
 	}
 	
 	public function InsertToDB($sender, $message, $recipient) {
-		
 		return $this->db->insert(
 			$this->tb_prefix . "sms_send",
 			array(
@@ -92,6 +96,5 @@ abstract class WP_SMS {
 				'recipient'	=>	implode(',', $recipient)
 			)
 		);
-
 	}
 }

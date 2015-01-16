@@ -9,10 +9,10 @@
 		
 		public function __construct() {
 			parent::__construct();
+			$this->validateNumber = "";
 		}
 		
 		public function SendSMS() {
-			
 			$to = implode('&number[]=', $this->to);
 			
 			$msg = urlencode($this->msg);
@@ -25,7 +25,6 @@
 			}
 			
 			return $result;
-			
 		}
 		
 		public function GetCredit() {

@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 2.6.7
+Stable tag: 2.7
 
 Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
 
@@ -54,6 +54,7 @@ Webservice added:
 * nexmo.com
 * mobily.ws
 * clickatell.com
+* msg91.com
 
 Other features:
 
@@ -133,6 +134,16 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.7 =
+* Added Numbers of Wordpress Users to send sms page.
+* Added Mobile validate number to class plugin.
+* Added Option for Disable/Enable credit account in admin menu.
+* Added afe.ir webservice.
+* Added smshooshmand.com webservice.
+* Added Description field optino for subscribe form widget.
+* Included username & password field for reset button in webservice tab.
+* Updated: Widget code now adhears to WordPress standards.
+
 = 2.6.7 =
 * Added navid-soft web service.
 * Remove number_format in show credit sms.

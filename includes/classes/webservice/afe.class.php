@@ -1,7 +1,7 @@
 <?php
-	class isun extends WP_SMS {
-		private $wsdl_link = "http://www.sms.isun.company/WebService/webservice.asmx?wsdl";
-		public $tariff = "http://www.sms.isun.company";
+	class afe extends WP_SMS {
+		private $wsdl_link = "http://www.afe.ir/WebService/webservice.asmx?WSDL";
+		public $tariff = "http://afe.ir";
 		public $unitrial = false;
 		public $unit;
 		public $flash = "enable";
@@ -13,7 +13,7 @@
 		}
 
 		public function SendSMS() {
-			$client = new SoapClient('http://www.sms.isun.company/WebService/V4/BoxService.asmx?wsdl');
+			$client = new SoapClient('http://www.afe.ir/WebService/V4/BoxService.asmx?WSDL');
 			
 			if($this->isflash) {
 				$type = 0;

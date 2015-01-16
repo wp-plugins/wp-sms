@@ -6,11 +6,8 @@
 	}
 	
 	function wp_tell_a_freind($content) {
-	
 		if(is_single()) {
-		
 			global $sms;
-			
 			include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-tell-friend.php";
 			
 			if($_POST['send_post']) {
@@ -32,7 +29,6 @@
 			}
 		}
 		return $content;
-		
 	}
 	
 	if(get_option('wp_suggestion_status')) {
@@ -42,7 +38,6 @@
 	
 	function wps_modify_contact_methods($fields) {
 		$fields['mobile'] = __('Mobile', 'wp-sms');
-		
 		return $fields;
 	}
 	
@@ -59,23 +54,18 @@
 	function wps_registration_errors($errors, $sanitized_user_login, $user_email) {
 		if ( empty( $_POST['mobile'] ) )
 		$errors->add( 'first_name_error', __('<strong>ERROR</strong>: You must include a mobile number.', 'wp-sms') );
-		
 		return $errors;
 	}
 	
 	function wps_save_register($user_id) {
 		if ( isset( $_POST['mobile'] ) ) {
-		
 			global $sms, $date;
-			
 			// Update user meta
 			update_user_meta($user_id, 'mobile', $_POST['mobile']);
 			
 			// Send sms to user.
 			$string = get_option('wpsms_narnu_tt');
-			
 			$username_info = get_userdata($user_id);
-			
 			$template_vars = array(
 				'user_login'	=> $username_info->user_login,
 				'user_email'	=> $username_info->user_email,
@@ -83,10 +73,8 @@
 			);
 			
 			$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
-			
 			$sms->to = array($_POST['mobile']);
 			$sms->msg = $final_message;
-			
 			$sms->SendSMS();
 		}
 	}

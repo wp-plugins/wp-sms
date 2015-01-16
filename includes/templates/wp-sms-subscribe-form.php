@@ -71,9 +71,7 @@
 	<?php if(get_option('wp_subscribes_status')) { ?>
 	<div id="wpsms-subscribe-loading"></div>
 	<table>
-		<tr>
-			<td colspan="2"><?php _e('Enter your information for SMS Subscribe', 'wp-sms'); ?></td>
-		</tr>
+		<td colspan="2"><?php echo $description; ?></td>
 
 		<tr>
 			<td><?php _e('Name', 'wp-sms'); ?>:</td>

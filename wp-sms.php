@@ -3,13 +3,13 @@
 Plugin Name: Wordpress SMS
 Plugin URI: http://mostafa-soufi.ir/blog/wordpress-sms
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.6.7
+Version: 2.7
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.6.7');
+	define('WP_SMS_VERSION', '2.7');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	define('WP_SMS_MOBILE_REGEX', '/^[\+|\(|\)|\d|\- ]*$/');
@@ -80,18 +80,17 @@ License: GPL2
 	if( !get_option('wp_sms_mcc') )
 		update_option('wp_sms_mcc', '09');
 	
-	function wp_subscribes() {
-	
+	function wp_subscribes($description = null) {
 		global $wpdb, $table_prefix;
+		if(!$description)
+			$description = __('Enter your information for SMS Subscribe', 'wp-sms');
 		
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
-		
 		include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-subscribe-form.php";
 	}
 	add_shortcode('subscribe', 'wp_subscribes');
 	
 	function wp_sms_loader(){
-	
 		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.1');
 		
 		if( get_option('wp_call_jquery') )
@@ -100,18 +99,15 @@ License: GPL2
 	add_action('wp_enqueue_scripts', 'wp_sms_loader');
 
 	function wp_sms_adminbar() {
-	
 		global $wp_admin_bar;
-		$get_last_credit = get_option('wp_last_credit');
 		
 		if(is_super_admin() && is_admin_bar_showing()) {
-		
-			if($get_last_credit) {
+			if(get_option('wp_last_credit') && get_option('wp_sms_cam')) {
 				global $sms;
 				$wp_admin_bar->add_menu(array(
 					'id'		=>	'wp-credit-sms',
-					'title'		=>	 sprintf(__('Your Credit: %s %s', 'wp-sms'), $get_last_credit, $sms->unit),
-					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/setting'
+					'title'		=>	'<span class="ab-icon"></span>'.get_option('wp_last_credit'),
+					'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/setting',
 				));
 			}
 			
@@ -121,8 +117,6 @@ License: GPL2
 				'title'		=>	__('SMS', 'wp-sms'),
 				'href'		=>	get_bloginfo('url').'/wp-admin/admin.php?page=wp-sms/wp-sms.php'
 			));
-		} else {
-			return false;
 		}
 	}
 	add_action('admin_bar_menu', 'wp_sms_adminbar');
@@ -141,19 +135,15 @@ License: GPL2
 	add_action('right_now_content_table_end', 'wp_sms_rightnow_content');
 	
 	function wp_sms_glance() {
-	
 		global $wpdb, $table_prefix;
-		
 		$admin_url = get_bloginfo('url')."/wp-admin";
 		$subscribe = $wpdb->get_var("SELECT COUNT(*) FROM {$table_prefix}sms_subscribes");
-		
 		echo "<li class='wpsms-subscribe-count'><a href='{$admin_url}/admin.php?page=wp-sms/subscribe'>".sprintf(__('%s Subscriber', 'wp-sms'), $subscribe)."</a></li>";
 		echo "<li class='wpsms-credit-count'><a href='{$admin_url}/admin.php?page=wp-sms/setting&tab=web-service'>".sprintf(__('%s SMS Credit', 'wp-sms'), get_option('wp_last_credit'))."</a></li>";
 	}
 	add_action('dashboard_glance_items', 'wp_sms_glance');
 	
 	function wp_sms_enable() {
-	
 		$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/setting&tab=web-service";
 		echo '<div class="error"><p>'.sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url).'</p></div>';
 	}
@@ -161,31 +151,7 @@ License: GPL2
 	if(!get_option('wp_username') || !get_option('wp_password'))
 		add_action('admin_notices', 'wp_sms_enable');
 	
-	function wp_sms_widget() {
-	
-		wp_register_sidebar_widget('wp_sms', __('Subscribe to SMS', 'wp-sms'), 'wp_subscribe_show_widget', array('description'	=>	__('Subscribe to SMS', 'wp-sms')));
-		wp_register_widget_control('wp_sms', __('Subscribe to SMS', 'wp-sms'), 'wp_subscribe_control_widget');
-	}
-	add_action('plugins_loaded', 'wp_sms_widget');
-	
-	function wp_subscribe_show_widget($args) {
-	
-		extract($args);
-			echo $before_title . get_option('wp_sms_widget_name') . $after_title;
-			wp_subscribes();
-	}
-
-	function wp_subscribe_control_widget() {
-	
-		if($_POST['wp_sms_submit_widget']) {
-			update_option('wp_sms_widget_name', $_POST['wp_sms_widget_name']);
-		}
-		
-		include_once dirname( __FILE__ ) . "/includes/templates/wp-sms-widget.php";
-	}
-	
 	function wp_sms_pointer($hook_suffix) {
-	
 		wp_enqueue_style('wp-pointer');
 		wp_enqueue_script('wp-pointer');
 		wp_enqueue_script('utils');
@@ -197,12 +163,54 @@ License: GPL2
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		}
 		
-		global $wpdb, $table_prefix;
+		global $sms, $wpdb, $table_prefix, $date;
 		
 		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.1');
 		wp_enqueue_script('functions', plugin_dir_url(__FILE__) . 'assets/js/functions.js', true, '1.0');
 		
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
+		$get_users_mobile = $wpdb->get_col("SELECT `meta_value` FROM `{$table_prefix}usermeta` WHERE `meta_key` = 'mobile'");
+		
+		if(get_option('wp_webservice') && !$sms->GetCredit()) {
+			$get_bloginfo_url = get_admin_url() . "admin.php?page=wp-sms/setting&tab=web-service";
+			echo '<div class="error"><p>' . sprintf(__('Please check the <a href="%s">SMS credit</a> the settings', 'wp-sms'), $get_bloginfo_url) . '</p></div>';
+			return;
+		} else if(!get_option('wp_webservice')) {
+			return;
+		}
+		
+		if(isset($_POST['SendSMS'])) {
+			if($_POST['wp_get_message']) {
+				if($_POST['wp_send_to'] == "wp_subscribe_username") {
+					if( $_POST['wpsms_group_name'] == 'all' ) {
+						$sms->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes WHERE `status` = '1'");
+					} else {
+						$sms->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes WHERE `status` = '1' AND `group_ID` = '".$_POST['wpsms_group_name']."'");
+					}
+				} else if($_POST['wp_send_to'] == "wp_users") {
+					$sms->to = $get_users_mobile;
+				} else if($_POST['wp_send_to'] == "wp_tellephone") {
+					$sms->to = explode(",", $_POST['wp_get_number']);
+				}
+				
+				$sms->msg = $_POST['wp_get_message'];
+
+				if($_POST['wp_flash'] == "true") {
+					$sms->isflash = true;
+				}
+				elseif($_POST['wp_flash'] == "false") {
+					$sms->isflash = false;
+				}
+
+				if($sms->SendSMS()) {
+					$to = implode($wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes"), ",");
+					echo "<div class='updated'><p>" . __('SMS was sent with success', 'wp-sms') . "</p></div>";
+					update_option('wp_last_credit', $sms->GetCredit());
+				}
+			} else {
+				echo "<div class='error'><p>" . __('Please enter a message', 'wp-sms') . "</p></div>";
+			}
+		}
 		
 		include_once dirname( __FILE__ ) . "/includes/templates/send/send-sms.php";
 	}
@@ -540,6 +548,8 @@ License: GPL2
 					
 					if(isset($_GET['action']) == 'reset') {
 						delete_option('wp_webservice');
+						delete_option('wp_username');
+						delete_option('wp_password');
 						echo '<meta http-equiv="refresh" content="0; url=admin.php?page=wp-sms/setting&tab=web-service" />';
 					}
 					
@@ -570,6 +580,7 @@ License: GPL2
 		}
 	}
 	
+	include_once dirname( __FILE__ ) . '/widget.php';
 	include_once dirname( __FILE__ ) . '/newslleter.php';
 	include_once dirname( __FILE__ ) . '/features.php';
 	include_once dirname( __FILE__ ) . '/notifications.php';
