@@ -58,8 +58,9 @@ Webservice added:
 
 Other features:
 
-* Integrate with (Quform)
 * Premium Support
+* Integrate with Quform
+* Integrate with Gravity form
 * Adding a web service with request
 
 [Buy Pro Version](http://codecanyon.net/item/wp-sms-pro/9380372)
