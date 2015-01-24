@@ -106,6 +106,7 @@
 							<option value="navidsoft" <?php selected(get_option('wp_webservice'), 'navidsoft'); ?>>navid-soft.ir</option>
 							<option value="afe" <?php selected(get_option('wp_webservice'), 'afe'); ?>>afe.ir</option>
 							<option value="smshooshmand" <?php selected(get_option('wp_webservice'), 'smshooshmand'); ?>>smshooshmand.com</option>
+							<option value="asanak" <?php selected(get_option('wp_webservice'), 'asanak'); ?>>asanak.ir</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
