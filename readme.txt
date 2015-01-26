@@ -1,15 +1,15 @@
 === Wordpress SMS ===
 Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/donate/
-Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel
+Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel, woocommerce, subscribes sms, Easy Digital Downloads
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 2.7
+Stable tag: 2.7.1
 
-Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
+Send SMS via WordPress, Subscribe SMS newsletter and Send SMS to Number(s), Subscribes and Wordpress Users.
 
 == Description ==
-Very easy SMS Send by WordPress.
+Very easy Send SMS by PHP code:
 
 1. `global $sms;`
 2. `$sms->to = array('09000000000');`
@@ -20,18 +20,18 @@ Very easy SMS Send by WordPress.
 
 = Features =
 
-* Send SMS to number(s) and subscribes.
+* Send SMS to number(s), subscribes and wordpress users.
 * Subsribe sms.
-* Show credit.
+* Show credit of sms provider in admin menu.
 * Send SMS via FLASH.
-* Widget for register user to sms subscribes
-* Support Hooks.
-* Support shortcode.
+* Widget for register user to sms subscribes.
+* Support Wordpress Hooks.
+* Support Shortcode.
 * Suggestion post by SMS.
 * Send activation code to subscribes.
 * Notification SMS when published new post to subscribers.
 * Notification SMS when the new release of WordPress.
-* Notification SMS when registering a new username.
+* Notification SMS when registering a new User.
 * Notification SMS when get new comment.
 * Notification SMS when username login.
 * Notification SMS when registering a new subscribe.
@@ -41,7 +41,6 @@ Very easy SMS Send by WordPress.
 = Premium Features =
 
 Webservice added:
-
 * bulksms.com
 * clockworksms.com
 * twilio.com
@@ -57,11 +56,13 @@ Webservice added:
 * msg91.com
 
 Other features:
-
 * Premium Support
 * Integrate with Quform
 * Integrate with Gravity form
-* Adding a web service with request
+* Notification SMS when published new woocommerce products to subscribers.
+* Notification SMS when Change order in woocommerce.
+* Mobile field number in woocommerce checkout page.
+* Adding a web service with request.
 
 [Buy Pro Version](http://codecanyon.net/item/wp-sms-pro/9380372)
 
@@ -76,7 +77,8 @@ Translations are done by people just like you, help make WP SMS available to mor
 
 = Support =
 * [Donate to this plugin](http://mostafa-soufi.ir/donate/)
-* [Persian Support](http://forum.wp-parsi.com/forum/17-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%DB%8C%DA%AF%D8%B1/)
+* [English Support Forum](https://wordpress.org/support/plugin/wp-sms)
+* [Persian Support Forum](http://forum.wp-parsi.com/forum/17-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%DB%8C%DA%AF%D8%B1/)
 
 == Installation ==
 1. Upload `wp-sms` to the `/wp-content/plugins/` directory
@@ -135,6 +137,14 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.7.1 =
+* Added Variables %status% and %order_name% for woocommerce new order.
+* Added asanak.ir webservice.
+* Added Mobile field number in create a new user from admin.
+* Updated idehpayam Webservice.
+- Fixed notification sms when create a new user.
+* Fixed return credit in smsglobal webservice.
+
 = 2.7 =
 * Added Numbers of Wordpress Users to send sms page.
 * Added Mobile validate number to class plugin.

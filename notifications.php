@@ -22,16 +22,26 @@
 	}
 	
 	// Register new user
-	function wps_notification_new_user($username_id) {
+	function wps_notification_new_user($user_id) {
 		global $sms, $date;
-		$sms->to = array(get_option('wp_admin_mobile'));
-		$string = get_option('wpsms_nrnu_tt');
-		$username_info = get_userdata($username_id);
+		
+		$user = get_userdata($user_id);
 		$template_vars = array(
-			'user_login'	=> $username_info->user_login,
-			'user_email'	=> $username_info->user_email,
+			'user_login'	=> $user->user_login,
+			'user_email'	=> $user->user_email,
 			'date_register'	=> $date,
 		);
+		
+		// Send SMS to admin
+		$sms->to = array(get_option('wp_admin_mobile'));
+		$string = get_option('wpsms_narnu_tt');
+		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
+		$sms->msg = $final_message;
+		$sms->SendSMS();
+		
+		// Send SMS to user register
+		$sms->to = array($user->mobile);
+		$string = get_option('wpsms_nrnu_tt');
 		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 		$sms->msg = $final_message;
 		$sms->SendSMS();
@@ -95,14 +105,6 @@
 		global $sms;
 		$options = get_option('wpcf7_sms_' . $form->id);
 		if( $options['message'] && $options['phone'] ) {
-			// Replace merged Contact Form 7 fields
-			/*if( defined( 'WPCF7_VERSION' ) && WPCF7_VERSION < 3.1 ) {
-				$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
-			} else {
-				$regex = '/(\[?)\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\](\]?)/';
-			}
-			$callback = array( &$form, 'mail_callback' );
-			$message = preg_replace_callback( $regex, $form, $options['message'] );*/
 			$sms->to = array( $options['phone'] );
 			$sms->msg = $options['message'];
 			$sms->SendSMS();
@@ -110,19 +112,27 @@
 	}
 	
 	// Woocommerce Hooks
-	function wps_woocommerce_new_order($order_id){
+	function wps_wcc_new_order($order_id){
 		global $sms;
-		$sms->to = array(get_option('wp_admin_mobile'));
+		$order = new WC_Order($order_id);
+		$get_mobile = get_option('wp_admin_mobile');
+		
+		if(!$get_mobile)
+			return;
+		
+		$sms->to = array($get_mobile);
 		$string = get_option('wpsms_wc_no_tt');
 		$template_vars = array(
-			'order_id'	=> $order_id,
+			'order_id'			=> $order_id,
+			'status'			=> $order->get_status(),
+			'order_name'		=> $order->get_order_number()
 		);
 		$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
 		$sms->msg = $final_message;
 		$sms->SendSMS();
 	}
 	if(get_option('wpsms_wc_no_stats'))
-		add_action('woocommerce_new_order', 'wps_woocommerce_new_order');
+		add_action('woocommerce_new_order', 'wps_wcc_new_order');
 	
 	// Easy Digital Downloads Hooks
 	function wps_edd_new_order() {

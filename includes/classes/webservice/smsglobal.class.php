@@ -14,16 +14,12 @@
 		}
 
 		public function SendSMS() {
-		
 			$client = new SoapClient($this->wsdl_link);
-			
 			$validation_login = $client->apiValidateLogin($this->username, $this->password);
-			
 			$xml_praser = xml_parser_create();
 			xml_parse_into_struct($xml_praser, $validation_login, $xml_data, $xml_index);
 			xml_parser_free($xml_praser);
 			$ticket_id = $xml_data[$xml_index['TICKET'][0]]['value'];
-	
 			$result = $client->apiSendSms($ticket_id, $this->from, implode(',', $this->to), $this->msg, 'text', '0', '0');
 			
 			if($result) {
@@ -35,21 +31,15 @@
 		}
 
 		public function GetCredit() {
-		
 			$client = new SoapClient($this->wsdl_link);
-			
 			$validation_login = $client->apiValidateLogin($this->username, $this->password);
-			
 			$xml_praser = xml_parser_create();
 			xml_parse_into_struct($xml_praser, $validation_login, $xml_data, $xml_index);
 			xml_parser_free($xml_praser);
 			$ticket_id = $xml_data[$xml_index['TICKET'][0]]['value'];
-			
 			$credit = $client->apiBalanceCheck($ticket_id, 'IR');
-			
 			$xml_credit = simplexml_load_string($credit);
-	
-			return strstr($xml_credit->credit, '.', true);
+			
+			return (string) $xml_credit->credit;
 		}
 	}
-?>

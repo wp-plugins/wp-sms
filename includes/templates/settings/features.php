@@ -3,6 +3,7 @@
 	<table class="form-table">
 		<form method="post" action="options.php" name="form">
 			<?php wp_nonce_field('update-options');?>
+			<tr valign="top"><th scope="row" colspan="2"><h3>Wordpress</h3></th></tr>
 			<tr>
 				<th><?php _e('Suggested post by SMS', 'wp-sms'); ?></th>
 				<td>
@@ -10,6 +11,8 @@
 					<label for="wp_suggestion_status"><?php _e('Active', 'wp-sms'); ?></label>
 				</td>
 			</tr>
+			
+			<tr valign="top"><th scope="row" colspan="2"><h3>WooCommerce</h3></th></tr>
 			
 			<tr>
 				<th><?php _e('Add Mobile number field', 'wp-sms'); ?></th>

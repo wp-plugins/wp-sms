@@ -87,7 +87,7 @@
 				</th>
 				
 				<td>
-					<p><?php _e('For users:', 'wp-sms'); ?></p>
+					<p><?php _e('For user:', 'wp-sms'); ?></p>
 					<textarea id="wpsms-nrnu-tt" cols="50" rows="7" name="wpsms_nrnu_tt"><?php echo get_option('wpsms_nrnu_tt'); ?></textarea>
 					<p class="description"><?php _e('Enter the contents of the sms message.', 'wp-sms'); ?></p>
 					<p class="description data">
@@ -203,6 +203,8 @@
 					<p class="description data">
 						<?php _e('Input data:', 'wp-sms'); ?>
 						<?php _e('Order ID', 'wp-sms'); ?>: <code>%order_id%</code>
+						<?php _e('Order Status', 'wp-sms'); ?>: <code>%status%</code>
+						<?php _e('Order Name', 'wp-sms'); ?>: <code>%order_name%</code>
 					</p>
 				</td>
 			</tr>

@@ -32,6 +32,14 @@
 					<p><?php echo sprintf(__('Please contact with email %s', 'wp-sms'), '<code>mst404@gmail.com</code>'); ?></p>
 				</td>
 			</tr>
+			
+			<tr valign="top">
+				<td colspan="2" scope="row"><h2><?php _e('Pro version', 'wp-sms'); ?></h2></td>
+			</tr>
+			
+			<tr valign="top">
+				<td scope="row"><?php echo sprintf(__('If you need a more feature of WP SMS, you can purchase %s.', 'wp-sms'), '<a href="http://codecanyon.net/item/wp-sms-pro/9380372" target="_blank">'.__('Pro version', 'wp-sms').'</a>'); ?></td>
+			</tr>
 		</tbody>
 </table>
 </div>

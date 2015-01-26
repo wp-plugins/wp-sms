@@ -1,46 +1,39 @@
 <?php
 	class idehpayam extends WP_SMS {
-		private $wsdl_link = "http://www.idehpayam.com/WsSms.asmx?WSDL";
-		public $tariff = "http://www.idehpayam.com";
+		private $wsdl_link = "http://panel.idehpayam.com/class/sms/wssimple/server.php?wsdl";
+		private $client = null;
+		public $tariff = "http://idehpayam.com/";
 		public $unitrial = true;
 		public $unit;
-		public $flash = "disable";
+		public $flash = "enable";
 		public $isflash = false;
 
 		public function __construct() {
 			parent::__construct();
 			$this->validateNumber = "09xxxxxxxx";
 			
-			ini_set("soap.wsdl_cache_enabled", "0");
+			if(!class_exists('nusoap_client'))
+				include_once dirname( __FILE__ ) . '/../nusoap.class.php';
+			
+			$this->client = new nusoap_client($this->wsdl_link);
+			$this->client->soap_defencoding = 'UTF-8';
+			$this->client->decode_utf8 = true;
 		}
 
 		public function SendSMS() {
-			$client = new SoapClient($this->wsdl_link);
+			$result = $this->client->call("SendSMS", array('Username' => $this->username, 'Password' => $this->password, 'SenderNumber' => $this->from, 'RecipientNumbers' => $this->to, 'Message' => $this->msg, 'Type' => 'normal'));
 			
-			$value = array(
-				'username'	=> $this->username,
-				'password'	=> $this->password,
-				'to'		=> implode(',', $this->to),
-				'text'		=> $this->msg,
-				'from'		=> $this->from,
-				'api'		=> '22'
-			);
-			
-			$result = $client->sendsms($value);
-			
-			if($result->sendsmsResult->long) {
+			if($result) {
 				$this->InsertToDB($this->from, $this->msg, $this->to);
 				$this->Hook('wp_sms_send', $result);
 			}
 			
-			return $result->sendsmsResult->long;
+			return $result;
 		}
 
 		public function GetCredit() {
-			$client = new SoapClient($this->wsdl_link);
-			$result = $client->Credites(array('username' => $this->username, 'password' => $this->password));
-			
-			return $result->CreditesResult;
+			$result = $this->client->call("GetCredit", array('Username' => $this->username, 'Password' => $this->password));
+			return $result;
 		}
 	}
 ?>

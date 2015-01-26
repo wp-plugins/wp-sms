@@ -13,13 +13,13 @@
 			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 		
-		function send_sms() {
+		function SendSMS() {
 			$client = new SoapClient($this->wsdl_link);
 			$result = $client->sendSms(array('userCredential'=>array('username' => $this->user, 'password' => $this->pass),'srcAddresses' => $this->from, 'destAddresses' => $this->to, 'msgBody' => $this->msg, 'msgEncoding' => 8));
 			return $result;
 		}
 		
-		function get_credit() {
+		function GetCredit() {
 			try {
 				$client = new SoapClient($this->wsdl_link);
 				
