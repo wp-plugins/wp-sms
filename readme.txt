@@ -41,6 +41,7 @@ Very easy Send SMS by PHP code:
 = Premium Features =
 
 Webservice added:
+
 * bulksms.com
 * clockworksms.com
 * twilio.com
@@ -56,6 +57,7 @@ Webservice added:
 * msg91.com
 
 Other features:
+
 * Premium Support
 * Integrate with Quform
 * Integrate with Gravity form
