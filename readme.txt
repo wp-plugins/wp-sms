@@ -141,9 +141,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 == Changelog ==
 = 2.7.1 =
 * Added Variables %status% and %order_name% for woocommerce new order.
+* Added smsservice.ir webservice.
 * Added asanak.ir webservice.
-* Added Mobile field number in create a new user from admin.
 * Updated idehpayam Webservice.
+* Added Mobile field number in create a new user from admin.
 - Fixed notification sms when create a new user.
 * Fixed return credit in smsglobal webservice.
 
