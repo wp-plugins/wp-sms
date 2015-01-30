@@ -107,6 +107,7 @@
 							<option value="afe" <?php selected(get_option('wp_webservice'), 'afe'); ?>>afe.ir</option>
 							<option value="smshooshmand" <?php selected(get_option('wp_webservice'), 'smshooshmand'); ?>>smshooshmand.com</option>
 							<option value="asanak" <?php selected(get_option('wp_webservice'), 'asanak'); ?>>asanak.ir</option>
+							<option value="smsservice" <?php selected(get_option('wp_webservice'), 'smsservice'); ?>>smsservice.ir</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
