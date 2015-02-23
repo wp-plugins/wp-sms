@@ -55,6 +55,9 @@ Webservice added:
 * mobily.ws
 * clickatell.com
 * msg91.com
+* magicdeal4u.com
+* livesms.eu
+* cellsynt.net
 
 Other features:
 
@@ -139,6 +142,12 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.7.* =
+* Added MarkazPayamak.ir webservice.
+* Added payamak-panel.com webservice.
+* Added barmanpayamak.ir webservice.
+* Change webservice in asanak.ir webservice.
+
 = 2.7.1 =
 * Added Variables %status% and %order_name% for woocommerce new order.
 * Added smsservice.ir webservice.
