@@ -1,6 +1,6 @@
 <?php
 	class asanak extends WP_SMS {
-		private $wsdl_link = "http://ws.asanak.ir:8082/services/CompositeSmsGateway?wsdl";
+		private $wsdl_link = "http://panel.asanak.ir/webservice/v1rest/sendsms";
 		public $tariff = "http://asanak.ir/";
 		public $unitrial = false;
 		public $unit;
@@ -10,24 +10,36 @@
 		function __construct() {
 			parent::__construct();
 			$this->validateNumber = "09xxxxxxxx";
-			ini_set("soap.wsdl_cache_enabled", "0");
 		}
 		
 		function SendSMS() {
-			$client = new SoapClient($this->wsdl_link);
-			$result = $client->sendSms(array('userCredential'=>array('username' => $this->user, 'password' => $this->pass),'srcAddresses' => $this->from, 'destAddresses' => $this->to, 'msgBody' => $this->msg, 'msgEncoding' => 8));
-			return $result;
+			$to = implode('-', $this->to);
+			$msg = urlencode(trim($this->msg));
+			$url = $this->wsdl_link.'?username='.$this->username.'&password='.$this->password.'&source='.$this->from.'&destination='.$to.'&message='. $msg;
+			
+			$headers[] = 'Accept: text/html';
+			$headers[] = 'Connection: Keep-Alive';
+			$headers[] = 'Content-type: application/x-www-form-urlencoded;charset=UTF-8';
+			
+			$process = curl_init($url);
+			curl_setopt($process, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($process, CURLOPT_HEADER, 0);
+			curl_setopt($process, CURLOPT_TIMEOUT, 30);
+			curl_setopt($process, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($process, CURLOPT_FOLLOWLOCATION, 1);
+			
+			if(curl_exec($process)) {
+				$this->InsertToDB($this->from, $this->msg, $this->to);
+				$this->Hook('wp_sms_send', $result);
+				
+				return true;
+			}
 		}
 		
 		function GetCredit() {
-			try {
-				$client = new SoapClient($this->wsdl_link);
+			if(!$this->user && !$this->password)
+					return false;
 				
-				$result = $client->getUserCredit(array('userCredential' => array('username' => $this->user, 'password' => $this->pass)));
-				return $result->return->credit;
-
-			} catch (SoapFault $ex) {
-				exit($ex->faultstring);
-			}
+			return true;
 		}
 	}
