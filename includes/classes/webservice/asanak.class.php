@@ -38,8 +38,8 @@
 		
 		function GetCredit() {
 			if(!$this->user && !$this->password)
-					return false;
-				
+				return false;
+			
 			return true;
 		}
 	}

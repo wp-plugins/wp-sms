@@ -1,6 +1,6 @@
 <?php
 	class panizsms extends WP_SMS {
-		private $wsdl_link = "http://www.panizsms.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://api.payamak-panel.com//post/send.asmx?wsdl";
 		public $tariff = "http://www.panizsms.com/";
 		public $unitrial = true;
 		public $unit;

@@ -110,6 +110,7 @@
 							<option value="smsservice" <?php selected(get_option('wp_webservice'), 'smsservice'); ?>>smsservice.ir</option>
 							<option value="payamakpanel" <?php selected(get_option('wp_webservice'), 'payamakpanel'); ?>>payamak-panel.com</option>
 							<option value="barmanpayamak" <?php selected(get_option('wp_webservice'), 'barmanpayamak'); ?>>barmanpayamak.ir</option>
+							<option value="farazpayam" <?php selected(get_option('wp_webservice'), 'farazpayam'); ?>>farazpayam.com</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
