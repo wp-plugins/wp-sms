@@ -1,6 +1,6 @@
 <?php
 	class barmanpayamak extends WP_SMS {
-		private $wsdl_link = "http://panel.barmanpayamak.ir/post/send.asmx?wsdl";
+		private $wsdl_link = "http://api.payamak-panel.com/post/send.asmx?WSDL";
 		public $tariff = "http://www.barmanpayamak.ir/";
 		public $unitrial = true;
 		public $unit;
