@@ -4,7 +4,7 @@ Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel, woocommerce, subscribes sms, Easy Digital Downloads
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 2.7.1
+Stable tag: 2.7.2
 
 Send SMS via WordPress, Subscribe SMS newsletter and Send SMS to Number(s), Subscribes and Wordpress Users.
 
@@ -58,6 +58,8 @@ Webservice added:
 * magicdeal4u.com
 * livesms.eu
 * cellsynt.net
+* gateway.sa
+* ra.sa
 
 Other features:
 
@@ -142,7 +144,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
-= 2.7.* =
+= 2.7.2 =
 * Added MarkazPayamak.ir webservice.
 * Added payamak-panel.com webservice.
 * Added barmanpayamak.ir webservice.
