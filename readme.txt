@@ -149,6 +149,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added payamak-panel.com webservice.
 * Added barmanpayamak.ir webservice.
 * Added farazpayam.com webservice.
+* Added 0098sms.com webservice.
 * Change webservice in asanak.ir webservice.
 
 = 2.7.1 =
