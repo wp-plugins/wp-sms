@@ -112,6 +112,7 @@
 							<option value="barmanpayamak" <?php selected(get_option('wp_webservice'), 'barmanpayamak'); ?>>barmanpayamak.ir</option>
 							<option value="farazpayam" <?php selected(get_option('wp_webservice'), 'farazpayam'); ?>>farazpayam.com</option>
 							<option value="_0098sms" <?php selected(get_option('wp_webservice'), '_0098sms'); ?>>0098sms.com</option>
+							<option value="amansoft" <?php selected(get_option('wp_webservice'), 'amansoft'); ?>>amansoft.ir</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">

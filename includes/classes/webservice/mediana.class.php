@@ -1,6 +1,6 @@
 <?php
 	class mediana extends WP_SMS {
-		private $wsdl_link = "http://185.4.28.180/class/sms/wssimple/server.php?wsdl";
+		private $wsdl_link = "http://37.130.202.188/class/sms/wssimple/server.php?wsdl";
 		private $client = null;
 		public $tariff = "http://mediana.ir/";
 		public $unitrial = true;
