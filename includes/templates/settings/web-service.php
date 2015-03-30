@@ -137,6 +137,7 @@
 						
 						<optgroup label="<?php _e('Italian', 'wp-sms'); ?>">
 							<option value="dot4all" <?php selected(get_option('wp_webservice'), 'dot4all'); ?>>dot4all.it</option>
+							<option value="smshosting" <?php selected(get_option('wp_webservice'), 'smshosting'); ?>>smshosting.it</option>
 						</optgroup>
 						
 						<!--Option information-->

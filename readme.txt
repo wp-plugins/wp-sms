@@ -52,15 +52,15 @@ Webservice added:
 * viensms.com
 * isms.com.my
 * nexmo.com
+* sms4marketing.it
 * mobily.ws
-* clickatell.com
 * msg91.com
 * magicdeal4u.com
 * livesms.eu
 * cellsynt.net
 * gateway.sa
 * ra.sa
-
+	
 Other features:
 
 * Premium Support
@@ -144,6 +144,9 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.7.* =
+* Added smshosting.it webservice.
+
 = 2.7.2 =
 * Added MarkazPayamak.ir webservice.
 * Added payamak-panel.com webservice.
