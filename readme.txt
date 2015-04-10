@@ -1,10 +1,10 @@
 === Wordpress SMS ===
 Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/donate/
-Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel, woocommerce, subscribes sms, Easy Digital Downloads
+Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel, woocommerce, subscribes sms, Easy Digital Downloads, twilio, bulksms, clockworksms, nexmo
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 2.7.2
+Stable tag: 2.7.3
 
 Send SMS via WordPress, Subscribe SMS newsletter and Send SMS to Number(s), Subscribes and Wordpress Users.
 
@@ -42,9 +42,9 @@ Very easy Send SMS by PHP code:
 
 Webservice added:
 
+* twilio.com
 * bulksms.com
 * clockworksms.com
-* twilio.com
 * infobip.com
 * smstrade.de
 * yamamah.com
@@ -60,6 +60,8 @@ Webservice added:
 * cellsynt.net
 * gateway.sa
 * ra.sa
+* dsms.in
+* cpsms.dk
 	
 Other features:
 
@@ -144,8 +146,9 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
-= 2.7.* =
+= 2.7.3 =
 * Added smshosting.it webservice.
+* Added afilnet.com webservice.
 
 = 2.7.2 =
 * Added MarkazPayamak.ir webservice.

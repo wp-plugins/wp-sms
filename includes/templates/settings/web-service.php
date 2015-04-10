@@ -119,6 +119,10 @@
 							<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>smsglobal.com</option>
 						</optgroup>
 						
+						<optgroup label="<?php _e('Spania', 'wp-sms'); ?>">
+							<option value="afilnet" <?php selected(get_option('wp_webservice'), 'afilnet'); ?>>afilnet.com</option>
+						</optgroup>
+						
 						<optgroup label="<?php _e('New Zealand', 'wp-sms'); ?>">
 							<option value="unisender" <?php selected(get_option('wp_webservice'), 'unisender'); ?>>unisender.com</option>
 						</optgroup>
