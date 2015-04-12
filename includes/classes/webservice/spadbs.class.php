@@ -1,6 +1,6 @@
 <?php
 	class spadbs extends WP_SMS {
-		private $wsdl_link = "http://www.sms.spadbs.ir/webservice-win/index.php?wsdl";
+		private $wsdl_link = "http://s-card.ir/webservice/wsdl.wsdl";
 		private $client = null;
 		public $tariff = "http://spadsms.ir/";
 		public $unitrial = true;
@@ -15,7 +15,12 @@
 
 		public function SendSMS() {
 			$client = new SoapClient($this->wsdl_link);
-			$result = $client->send_multiple($this->username, $this->password, $this->to, $this->from, $this->msg);
+			
+			foreach($this->to as $items) {
+				$to[] = array('number' => '09351523606');
+			}
+			
+			$result = $client->send($this->username, $this->password, $to, $this->from, $this->msg);
 			
 			if($result) {
 				$this->InsertToDB($this->from, $this->msg, $this->to);
@@ -30,8 +35,8 @@
 				return;
 			
 			$client = new SoapClient($this->wsdl_link);
-			$result = $client->get_credit($this->username, $this->password);
-			return $result;
+			$result = $client->getCredit($this->username, $this->password);
+			return $result[0]['id'];
 		}
 	}
 ?>
