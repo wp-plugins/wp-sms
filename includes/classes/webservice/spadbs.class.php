@@ -17,7 +17,7 @@
 			$client = new SoapClient($this->wsdl_link);
 			
 			foreach($this->to as $items) {
-				$to[] = array('number' => '09351523606');
+				$to[] = array('number' => $items);
 			}
 			
 			$result = $client->send($this->username, $this->password, $to, $this->from, $this->msg);
