@@ -151,6 +151,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added afilnet.com webservice.
 * Added faraed.com webservice.
 * Added spadsms.ir webservice.
+* Added niazpardaz.com (New webservice).
 
 = 2.7.2 =
 * Added MarkazPayamak.ir webservice.

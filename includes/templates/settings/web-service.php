@@ -69,6 +69,7 @@
 							<option value="mdpanel" <?php selected(get_option('wp_webservice'), 'mdpanel'); ?>>ippanel.com</option>
 							<option value="payameroz" <?php selected(get_option('wp_webservice'), 'payameroz'); ?>>payameroz.ir</option>
 							<option value="niazpardaz" <?php selected(get_option('wp_webservice'), 'niazpardaz'); ?>>niazpardaz.com</option>
+							<option value="niazpardazcom" <?php selected(get_option('wp_webservice'), 'niazpardazcom'); ?>>niazpardaz.com - New</option>
 							<option value="hisms" <?php selected(get_option('wp_webservice'), 'hisms'); ?>>hi-sms.ir</option>
 							<option value="joghataysms" <?php selected(get_option('wp_webservice'), 'joghataysms'); ?>>joghataysms.ir</option>
 							<option value="mediana" <?php selected(get_option('wp_webservice'), 'mediana'); ?>>mediana.ir</option>
