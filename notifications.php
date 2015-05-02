@@ -105,8 +105,10 @@
 		global $sms;
 		$options = get_option('wpcf7_sms_' . $form->id);
 		if( $options['message'] && $options['phone'] ) {
+			$message = preg_replace('/%([a-zA-Z0-9._-]+)%/e', '$_POST["$1"]', $options['message']);
+			
 			$sms->to = array( $options['phone'] );
-			$sms->msg = $options['message'];
+			$sms->msg = $message;
 			$sms->SendSMS();
 		}
 	}

@@ -17,6 +17,7 @@
 					<div class="mail-field">
 						<label for="wpcf7-mail-body"><?php _e('Message body', 'wp-sms'); ?>:</label><br/>
 						<textarea id="wpcf7-mail-body" name="wpcf7-sms[message]" cols="100" rows="2"><?php echo $options['message']; ?></textarea>
+						<p class="description"><?php _e('<b>Note:</b> Use %% Instead of [], for example: %your-name%', 'wp-sms'); ?></p>
 					</div>
 				</div>
 				<br class="clear"/>
