@@ -3,8 +3,8 @@ Contributors: mostafa.s1990
 Donate link: http://mostafa-soufi.ir/donate/
 Tags: sms, wordpress, send, subscribe, sms subscribe, message, register, notification, webservice, sms panel, woocommerce, subscribes sms, Easy Digital Downloads, twilio, bulksms, clockworksms, nexmo
 Requires at least: 3.0
-Tested up to: 4.1.1
-Stable tag: 2.7.4
+Tested up to: 4.2.2
+Stable tag: 2.8
 
 Send SMS via WordPress, Subscribe SMS newsletter and Send SMS to Number(s), Subscribes and Wordpress Users.
 
@@ -16,7 +16,7 @@ Very easy Send SMS by PHP code:
 3. `$sms->msg = "Hello World!";`
 4. `$sms->SendSMS();`
 
-[Premium version is available.](http://codecanyon.net/item/wp-sms-pro/9380372)
+[Premium version is available.](http://wp-sms-plugin.com/purchases)
 
 = Features =
 
@@ -35,7 +35,7 @@ Very easy Send SMS by PHP code:
 * Notification SMS when get new comment.
 * Notification SMS when username login.
 * Notification SMS when registering a new subscribe.
-* Integrate with (Contact form 7, WooCommerce, Easy Digital Downloads)
+* Integrate with (Contact form 7, WooCommerce, Easy Digital Downloads, Awesome Support)
 * Import/Export Subscribes.
 
 = Premium Features =
@@ -43,12 +43,13 @@ Very easy Send SMS by PHP code:
 Webservice added:
 
 * twilio.com
+* plivo.com
+* clickatell.com
 * bulksms.com
 * clockworksms.com
 * infobip.com
 * smstrade.de
 * yamamah.com
-* clickatell.com
 * viensms.com
 * isms.com.my
 * nexmo.com
@@ -62,6 +63,11 @@ Webservice added:
 * ra.sa
 * dsms.in
 * cpsms.dk
+* cmtelecom.com
+* bulksmshyderabad.co.in
+* ozioma.net
+* sendsms247.com
+* smslive247.com
 	
 Other features:
 
@@ -73,7 +79,7 @@ Other features:
 * Mobile field number in woocommerce checkout page.
 * Adding a web service with request.
 
-[Buy Pro Version](http://codecanyon.net/item/wp-sms-pro/9380372)
+[Buy Pro Version](http://wp-sms-plugin.com/purchases)
 
 = Translators =
 * English
@@ -146,6 +152,16 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.8 =
+* Added rules on mobile field number for subscribe form. (maximum and minimum number)
+* Added place holder on mobile filed number for subscribe form for help to user.
+* Added Chinese translator. (Thanks Jack Chen)
+* Added Addons page in plugin.
+* Improved subscribe ajax form.
+* Improved subscribe form and changed the form design.
+* Fixed a problem in send post to subscribers.
+* New logo designed [Thanks Arin](http://aringrafix.com/)
+
 = 2.7.4 =
 * Fixed Contact form 7 shortcode. currently supported.
 

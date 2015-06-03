@@ -3,6 +3,10 @@
 		jQuery('#wp_subscribes_send_sms').click(function() {
 			jQuery('#wp_subscribes_stats').fadeToggle();
 		});
+		
+		jQuery('#wps_mnt_status').click(function() {
+			jQuery('.wps_mnt_rules').fadeToggle();
+		});
 	});
 </script>
 
@@ -20,10 +24,16 @@
 			</tr>
 
 			<tr>
-				<th><?php _e('Verified with the activation code', 'wp-sms'); ?></th>
+				<th><?php _e('Verified subscribe with the activation code', 'wp-sms'); ?></th>
 				<td>
+					<?php if(get_option('wp_webservice')) { ?>
 					<input type="checkbox" name="wp_subscribes_activation" id="wp_subscribes_activation" <?php echo get_option('wp_subscribes_activation') ==true? 'checked="checked"':'';?>/>
 					<label for="wp_subscribes_activation"><?php _e('Active', 'wp-sms'); ?></label>
+					<?php } else { ?>
+					<input type="checkbox" disabled="disabled"/>
+					<label for="wp_subscribes_activation"><?php _e('Active', 'wp-sms'); ?></label>
+					<p class="description"><?php _e('First you should have select a web service and activate it!', 'wp-sms'); ?></p>
+					<?php } ?>
 				</td>
 			</tr>
 			
@@ -63,10 +73,53 @@
 			</tr>
 			
 			<tr>
+				<th><?php _e('Mobile Number terms', 'wp-sms'); ?></th>
+				<td>
+					<input type="checkbox" name="wps_mnt_status" id="wps_mnt_status" <?php echo get_option('wps_mnt_status') ==true? 'checked="checked"':'';?>/>
+					<label for="wps_mnt_status"><?php _e('Active', 'wp-sms'); ?></label>
+					<p class="description">(<?php _e('Define rules for mobile number input field.', 'wp-sms'); ?>)</p>
+				</td>
+			</tr>
+			
+			<?php if( get_option('wps_mnt_status') ) { $hidden=""; } else { $hidden=" style='display: none;'"; }?>
+			<tr valign="top"<?php echo $hidden;?> class="wps_mnt_rules">
+				<td scope="row">
+					<label for="wpsms-text-template"><?php _e('Placeholder field', 'wp-sms'); ?>:</label>
+				</th>
+				
+				<td>
+					<input type="text" value="<?php echo get_option('wps_mnt_place_holder'); ?>" name="wps_mnt_place_holder">
+					<p class="description"><?php _e('Define text for mobile number field.', 'wp-sms'); ?></p>
+				</td>
+			</tr>
+			
+			<tr valign="top"<?php echo $hidden;?> class="wps_mnt_rules">
+				<td scope="row">
+					<label for="wpsms-text-template"><?php _e('Max Mobile number', 'wp-sms'); ?>:</label>
+				</th>
+				
+				<td>
+					<input type="text" value="<?php echo get_option('wps_mnt_max'); ?>" name="wps_mnt_max" dir="ltr">
+					<p class="description"><?php _e('Define maximum number mobile number.', 'wp-sms'); ?></p>
+				</td>
+			</tr>
+			
+			<tr valign="top"<?php echo $hidden;?> class="wps_mnt_rules">
+				<td scope="row">
+					<label for="wpsms-text-template"><?php _e('Min Mobile number', 'wp-sms'); ?>:</label>
+				</th>
+				
+				<td>
+					<input type="text" value="<?php echo get_option('wps_mnt_min'); ?>" name="wps_mnt_min" dir="ltr">
+					<p class="description"><?php _e('Define minimum number mobile number.', 'wp-sms'); ?></p>
+				</td>
+			</tr>
+			
+			<tr>
 				<td>
 					<p class="submit">
 						<input type="hidden" name="action" value="update" />
-						<input type="hidden" name="page_options" value="wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send_sms,wp_subscribes_text_send,wp_subscribes_send,wp_call_jquery" />
+						<input type="hidden" name="page_options" value="wp_subscribes_status,wp_subscribes_activation,wp_subscribes_send_sms,wp_subscribes_text_send,wp_subscribes_send,wp_call_jquery,wps_mnt_status,wps_mnt_place_holder,wps_mnt_max,wps_mnt_min" />
 						<input type="submit" class="button-primary" name="Submit" value="<?php _e('Update', 'wp-sms'); ?>" />
 					</p>
 				</td>

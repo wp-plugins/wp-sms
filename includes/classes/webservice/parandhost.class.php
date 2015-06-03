@@ -29,6 +29,8 @@
 		}
 
 		public function GetCredit() {
+			if(!$this->username && !$this->password) return;
+			
 			$options = array('login' => $this->username, 'password' => $this->password);
 			$client = new SoapClient($this->wsdl_link, $options);
 			

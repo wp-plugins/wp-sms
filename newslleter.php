@@ -27,37 +27,33 @@
 	}
 	add_action('save_post', 'wp_sms_subscribe_post_save');
 
-	function wp_sms_subscribe_send($post_ID) {
-	
+	function wp_sms_subscribe_send($wp_sms_new_status = NULL, $wp_sms_old_status = NULL, $post_ID = NULL) {
 		if($_REQUEST['subscribe_post'] == 'yes') {
-		
-			global $wpdb, $table_prefix, $sms;
-			
-			$sms->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes");
-			
-			$string = get_option('wp_sms_text_template');
-			
-			$template_vars = array(
-				'title_post'		=> get_the_title($post_ID),
-				'url_post'			=> wp_get_shortlink($post_ID),
-				'date_post'			=> get_post_time(get_option('date_format'), true, $post_ID)
-			);
-			
-			$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
-			
-			if( get_option('wp_sms_text_template') ) {
-				$sms->msg = $final_message;
-			} else {
-				$sms->msg = get_the_title($post_ID);
+			if ( 'publish' == $wp_sms_new_status && 'publish' != $wp_sms_old_status ) {
+				
+				global $wpdb, $table_prefix, $sms;
+				$sms->to = $wpdb->get_col("SELECT mobile FROM {$table_prefix}sms_subscribes");
+				$string = get_option('wp_sms_text_template');
+				
+				$template_vars = array(
+					'title_post' => get_the_title($post_ID),
+					'url_post' => wp_get_shortlink($post_ID),
+					'date_post' => get_post_time(get_option('date_format'), true, $post_ID)
+				);
+				
+				$final_message = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
+				if( get_option('wp_sms_text_template') ) {
+					$sms->msg = $final_message;
+				} else {
+					$sms->msg = get_the_title($post_ID);
+				}
+				$sms->SendSMS();
 			}
-			
-			$sms->SendSMS();
-			
-			return $post_ID;
 		}
+		return $post_ID;
 	}
 	if(get_option('wp_subscribes_send'))
-		add_action('publish_post', 'wp_sms_subscribe_send');
+		add_action('transition_post_status', 'wp_sms_subscribe_send', 10, 3);
 	
 	function wp_sms_register_new_subscribe($name, $mobile) {
 	

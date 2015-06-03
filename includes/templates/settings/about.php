@@ -24,12 +24,12 @@
 			
 			<tr valign="top">
 				<td colspan="2" scope="row">
-					<ul>
-						<li><?php _e('do you have problem with plugin?', 'wp-sms'); ?></li>
-						<li><?php _e('are you a translator?', 'wp-sms'); ?></li>
-						<li><?php _e('You want add your web service to this plugin?', 'wp-sms'); ?></li>
-					</ul>
-					<p><?php echo sprintf(__('Please contact with email %s', 'wp-sms'), '<code>mst404@gmail.com</code>'); ?></p>
+					<p><?php _e('Do you have a problem?', 'wp-sms'); ?></p>
+					<p>— <?php echo sprintf(__('Please contact with email %s', 'wp-sms'), '<code>info@wp-sms-plugin.com</code>'); ?></p>
+					<p><?php _e('You want add your gateway to this plugin?', 'wp-sms'); ?></p>
+					<p>— <?php echo sprintf(__('Go to the link %s', 'wp-sms'), '<a href="http://wp-sms-plugin.com/add-gateway/" target="_blank">wp-sms-plugin.com/add-gateway</a>'); ?></p>
+					<p><?php _e('Are you a translator?', 'wp-sms'); ?></p>
+					<p>— <?php echo sprintf(__('Go to the link %s', 'wp-sms'), '<a href="http://wp-sms-plugin.com/contact/" target="_blank">wp-sms-plugin.com/contact</a>'); ?></p>
 				</td>
 			</tr>
 			
@@ -38,7 +38,7 @@
 			</tr>
 			
 			<tr valign="top">
-				<td scope="row"><?php echo sprintf(__('If you need a more feature of WP SMS, you can purchase %s.', 'wp-sms'), '<a href="http://codecanyon.net/item/wp-sms-pro/9380372" target="_blank">'.__('Pro version', 'wp-sms').'</a>'); ?></td>
+				<td scope="row"><?php echo sprintf(__('If you need a more feature of WP SMS, you can purchase %s, or use %s on plugin.', 'wp-sms'), '<a href="http://wp-sms-plugin.com/purchases" target="_blank">'.__('Pro version', 'wp-sms').'</a>', '<a href="'.admin_url('admin.php?page=wp-sms/addons').'">'.__('Addons', 'wp-sms').'</a>'); ?></td>
 			</tr>
 		</tbody>
 </table>

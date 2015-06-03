@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Wordpress SMS
-Plugin URI: http://wp-sms.ir/
+Plugin URI: http://wp-sms-plugin.com/
 Description: Send a SMS via WordPress, Subscribe for sms newsletter and send an SMS to the subscriber newsletter.
-Version: 2.7.4
+Version: 2.8
 Author: Mostafa Soufi
 Author URI: http://mostafa-soufi.ir/
 Text Domain: wp-sms
 License: GPL2
 */
-	define('WP_SMS_VERSION', '2.7.4');
+	define('WP_SMS_VERSION', '2.8');
 	define('WP_SMS_DIR_PLUGIN', plugin_dir_url(__FILE__));
 	
 	define('WP_SMS_MOBILE_REGEX', '/^[\+|\(|\)|\d|\- ]*$/');
@@ -36,6 +36,7 @@ License: GPL2
 			add_submenu_page(__FILE__, __('Posted SMS', 'wp-sms'), __('Posted', 'wp-sms'), 'manage_options', 'wp-sms/posted', 'wp_posted_sms_page');
 			add_submenu_page(__FILE__, __('Members Newsletter', 'wp-sms'), __('Subscribers', 'wp-sms'), 'manage_options', 'wp-sms/subscribe', 'wp_subscribes_page');
 			add_submenu_page(__FILE__, __('Setting', 'wp-sms'), __('Setting', 'wp-sms'), 'manage_options', 'wp-sms/setting', 'wp_sms_setting_page');
+			add_submenu_page(__FILE__, __('Addons', 'wp-sms'), __('Addons', 'wp-sms'), 'manage_options', 'wp-sms/addons', 'wp_sms_addons_page');
 		}
 
 	}
@@ -91,7 +92,7 @@ License: GPL2
 	add_shortcode('subscribe', 'wp_subscribes');
 	
 	function wp_sms_loader(){
-		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.1');
+		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/subscribe.css', true, '1.1');
 		
 		if( get_option('wp_call_jquery') )
 			wp_enqueue_script('jquery');
@@ -165,7 +166,6 @@ License: GPL2
 		
 		global $sms, $wpdb, $table_prefix, $date;
 		
-		wp_enqueue_style('wpsms-css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.1');
 		wp_enqueue_script('functions', plugin_dir_url(__FILE__) . 'assets/js/functions.js', true, '1.0');
 		
 		$get_group_result = $wpdb->get_results("SELECT * FROM `{$table_prefix}sms_subscribes_group`");
@@ -536,8 +536,6 @@ License: GPL2
 			settings_fields('wp_sms_options');
 		}
 		
-		wp_enqueue_style('css', plugin_dir_url(__FILE__) . 'assets/css/style.css', true, '1.0');
-		
 		$sms_page['about'] = get_bloginfo('url') . "/admin.php?page=wp-sms/setting&tab=about";
 		
 		if(isset($_GET['tab'])) {
@@ -578,6 +576,19 @@ License: GPL2
 		} else {
 			include_once dirname( __FILE__ ) . "/includes/templates/settings/setting.php";
 		}
+	}
+	
+	function wp_sms_addons_page() {
+		if (!current_user_can('manage_options')) {
+			wp_die(__('You do not have sufficient permissions to access this page.'));
+			
+			settings_fields('wp_sms_options');
+		}
+		
+		$json_url = file_get_contents('http://wp-sms-plugin.com/addons.php?lang=' . get_locale());
+		$json = json_decode($json_url);
+		
+		include_once dirname( __FILE__ ) . "/includes/templates/addons/addons.php";
 	}
 	
 	include_once dirname( __FILE__ ) . '/widget.php';
