@@ -117,6 +117,8 @@
 							<option value="faraed" <?php selected(get_option('wp_webservice'), 'faraed'); ?>>faraed.com</option>
 							<option value="spadbs" <?php selected(get_option('wp_webservice'), 'spadbs'); ?>>spadsms.ir</option>
 							<option value="bandarsms" <?php selected(get_option('wp_webservice'), 'bandarsms'); ?>>bandarit.ir</option>
+							<option value="tgfsms" <?php selected(get_option('wp_webservice'), 'tgfsms'); ?>>tgfsms.ir</option>
+							<option value="payamgah" <?php selected(get_option('wp_webservice'), 'payamgah'); ?>>payamgah.net</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
