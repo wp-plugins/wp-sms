@@ -157,10 +157,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added place holder on mobile filed number for subscribe form for help to user.
 * Added Chinese translator. (Thanks Jack Chen)
 * Added Addons page in plugin.
+* Added payamgah.net webservice.
 * Improved subscribe ajax form.
 * Improved subscribe form and changed the form design.
 * Fixed a problem in send post to subscribers.
-* New logo designed [Thanks Arin](http://aringrafix.com/)
 
 = 2.7.4 =
 * Fixed Contact form 7 shortcode. currently supported.
