@@ -158,6 +158,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added Chinese translator. (Thanks Jack Chen)
 * Added Addons page in plugin.
 * Added payamgah.net webservice.
+* Added sabasms.biz webservice.
 * Improved subscribe ajax form.
 * Improved subscribe form and changed the form design.
 * Fixed a problem in send post to subscribers.
