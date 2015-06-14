@@ -1,7 +1,7 @@
 <?php
-	class novinpayamak extends WP_SMS {
-		private $wsdl_link = "http://www.novinpayamak.com/services/SMSBox/wsdl";
-		public $tariff = "http://www.smscall.ir/?page_id=63";
+	class sabasms extends WP_SMS {
+		private $wsdl_link = "http://www.sabasms.biz/services/SMSBox/wsdl";
+		public $tariff = "http://www.sabasms.biz/";
 		public $unitrial = true;
 		public $unit;
 		public $flash = "enable";
@@ -40,7 +40,7 @@
 
 		public function GetCredit() {
 			if(!$this->username && !$this->password) return;
-			$client = new SoapClient('http://www.novinpayamak.com/services/CISGate/wsdl', array('encoding' => 'UTF-8'));
+			$client = new SoapClient('http://www.sabasms.biz/services/CISGate/wsdl', array('encoding' => 'UTF-8'));
 			$result = $client->CheckRealCredit(array('Auth' => array('email' => $this->username, 'password' => $this->password)));
 			
 			if($result->Status != 1000)
