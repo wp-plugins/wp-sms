@@ -159,6 +159,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added Addons page in plugin.
 * Added payamgah.net webservice.
 * Added sabasms.biz webservice.
+* Added chapargah.ir webservice.
 * Improved subscribe ajax form.
 * Improved subscribe form and changed the form design.
 * Fixed a problem in send post to subscribers.
