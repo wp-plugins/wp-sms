@@ -122,6 +122,7 @@
 							<option value="payamgah" <?php selected(get_option('wp_webservice'), 'payamgah'); ?>>payamgah.net</option>
 							<option value="sabasms" <?php selected(get_option('wp_webservice'), 'sabasms'); ?>>sabasms.biz</option>
 							<option value="chapargah" <?php selected(get_option('wp_webservice'), 'chapargah'); ?>>chapargah.ir</option>
+							<option value="yashilsms" <?php selected(get_option('wp_webservice'), 'yashilsms'); ?>>yashil-sms.ir</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">

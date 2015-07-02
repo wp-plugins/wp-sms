@@ -35,5 +35,7 @@
 		dbDelta($create_sms_send);
 		
 		add_option('wp_sms_db_version', WP_SMS_VERSION);
+		
+		// Delete notification new wp_version option
+		delete_option('wp_notification_new_wp_version');
 	}
-?>

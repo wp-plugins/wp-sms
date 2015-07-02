@@ -161,6 +161,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * Added sabasms.biz webservice.
 * Added chapargah.ir webservice.
 * Added farapayamak.com webservice.
+* Added yashil-sms.ir webservice.
 * Improved subscribe ajax form.
 * Improved subscribe form and changed the form design.
 * Fixed a problem in send post to subscribers.
