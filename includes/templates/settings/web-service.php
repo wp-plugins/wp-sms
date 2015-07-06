@@ -125,10 +125,6 @@
 							<option value="yashilsms" <?php selected(get_option('wp_webservice'), 'yashilsms'); ?>>yashil-sms.ir</option>
 						</optgroup>
 						
-						<optgroup label="<?php _e('Australia', 'wp-sms'); ?>">
-							<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>smsglobal.com</option>
-						</optgroup>
-						
 						<optgroup label="<?php _e('Spania', 'wp-sms'); ?>">
 							<option value="afilnet" <?php selected(get_option('wp_webservice'), 'afilnet'); ?>>afilnet.com</option>
 						</optgroup>
@@ -154,7 +150,8 @@
 							<option value="smshosting" <?php selected(get_option('wp_webservice'), 'smshosting'); ?>>smshosting.it</option>
 						</optgroup>
 						
-						<optgroup label="<?php _e('Premium list', 'wp-sms'); ?>">
+						<optgroup label="<?php _e('Global', 'wp-sms'); ?>">
+							<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>smsglobal.com</option>
 							<option value="bearsms" <?php selected(get_option('wp_webservice'), 'bearsms'); ?>>bearsms.com</option>
 							<option value="smss" <?php selected(get_option('wp_webservice'), 'smss'); ?>>smss.co.il</option>
 						</optgroup>
