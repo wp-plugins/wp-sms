@@ -154,6 +154,11 @@
 							<option value="smshosting" <?php selected(get_option('wp_webservice'), 'smshosting'); ?>>smshosting.it</option>
 						</optgroup>
 						
+						<optgroup label="<?php _e('Premium list', 'wp-sms'); ?>">
+							<option value="bearsms" <?php selected(get_option('wp_webservice'), 'bearsms'); ?>>bearsms.com</option>
+							<option value="smss" <?php selected(get_option('wp_webservice'), 'smss'); ?>>smss.co.il</option>
+						</optgroup>
+						
 						<!--Option information-->
 						<option value="1" id="option-information"><?php _e('For more information about adding Web Service', 'wp-sms'); ?></option>
 						<!--Option information-->
