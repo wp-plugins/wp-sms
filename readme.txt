@@ -152,6 +152,10 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 * BACKUP YOUR DATABASE BEFORE INSTALLING!
 
 == Changelog ==
+= 2.8.1 =
+* Added bearsms.com webservice.
+* Added smss.co.il webservice.
+
 = 2.8 =
 * Added rules on mobile field number for subscribe form. (maximum and minimum number)
 * Added place holder on mobile filed number for subscribe form for help to user.
