@@ -1,7 +1,7 @@
 <?php
 class clickatell extends WP_SMS {
-    private $wsdl_link = "http://api.clickatell.com/";
-    public $tariff = "http://api.clickatell.com/";
+    private $wsdl_link = "https://api.clickatell.com/";
+    public $tariff = "https://api.clickatell.com/";
     public $unitrial = false;
     public $unit;
     public $flash = "enable";
@@ -20,7 +20,7 @@ class clickatell extends WP_SMS {
             $result = file_get_contents($this->wsdl_link."http/sendmsg?user=".$this->username."&password=".$this->password."&api_id=".$this->has_key."&to=".$to."&text=".$msg);
         }
 
-        if (strpos($result,'ID') !== false) {
+        if (substr($result,0,2) === 'ID') {
                 $this->InsertToDB($this->from, $this->msg, $this->to);
                 $this->Hook('wp_sms_send', $result);
                 return true;
