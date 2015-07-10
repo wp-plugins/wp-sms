@@ -31,11 +31,13 @@
 		<table class="form-table">
 			<?php wp_nonce_field('update-options');?>
 			<tr>
-				<th><?php _e('Web Service', 'wp-sms'); ?>:</th>
+				<th><?php _e('Web Servicle', 'wp-sms'); ?>:</th>
 				<td>
 					<select name="wp_webservice" id="wp-webservice" class="chosen-select<?php echo is_rtl() == true? " chosen-rtl":""; ?>" onChange="javascript:openwin()">
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
-						
+						<optgroup label="<?php _e('Cyprus', 'wp-sms'); ?>">
+							<option value="clickatell" <?php selected(get_option('wp_webservice'), 'clickatell'); ?>>clickatell.com</option>
+						</optgroup>
 						<optgroup label="<?php _e('Iran', 'wp-sms'); ?>">
 							<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>Parandhost.com</option>
 							<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>iransmspanel.ir</option>
