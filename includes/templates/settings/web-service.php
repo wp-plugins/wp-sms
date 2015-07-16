@@ -154,6 +154,7 @@
 							<option value="smsglobal" <?php selected(get_option('wp_webservice'), 'smsglobal'); ?>>smsglobal.com</option>
 							<option value="bearsms" <?php selected(get_option('wp_webservice'), 'bearsms'); ?>>bearsms.com</option>
 							<option value="smss" <?php selected(get_option('wp_webservice'), 'smss'); ?>>smss.co.il</option>
+							<option value="mtarget" <?php selected(get_option('wp_webservice'), 'mtarget'); ?>>mtarget.fr</option>
 						</optgroup>
 						
 						<!--Option information-->
