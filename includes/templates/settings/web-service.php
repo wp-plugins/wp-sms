@@ -37,9 +37,10 @@
 						<option value=""><?php _e('Select your Web Service', 'wp-sms'); ?></option>
 						
 						<optgroup label="<?php _e('Iran', 'wp-sms'); ?>">
-							<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>Parandhost.com</option>
+							<option value="sarinapayamak" <?php selected(get_option('wp_webservice'), 'sarinapayamak'); ?>>Sarinapayamak.com</option>
+							<option value="parandhost" <?php selected(get_option('wp_webservice'), 'parandhost'); ?>>parandhost.com</option>
 							<option value="iransmspanel" <?php selected(get_option('wp_webservice'), 'iransmspanel'); ?>>iransmspanel.ir</option>
-							<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>Hostiran.net</option>
+							<option value="hostiran" <?php selected(get_option('wp_webservice'), 'hostiran'); ?>>hostiran.net</option>
 							<option value="adpdigital" <?php selected(get_option('wp_webservice'), 'adpdigital'); ?>>adpdigital.com</option>
 							<option value="smsde" <?php selected(get_option('wp_webservice'), 'smsde'); ?>>smsde.ir</option>
 							<option value="payamakde" <?php selected(get_option('wp_webservice'), 'payamakde'); ?>>payamakde.ir</option>

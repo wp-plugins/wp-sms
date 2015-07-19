@@ -68,6 +68,7 @@ Webservice added:
 * ozioma.net
 * sendsms247.com
 * smslive247.com
+* vsms.club
 	
 Other features:
 
@@ -153,6 +154,7 @@ add_action('wp_sms_subscribe', 'send_sms_when_subscribe_new_user', 10, 2);`
 
 == Changelog ==
 = 2.8.1 =
+* Added Sarinapayamak.com webservice.
 * Added mtarget.fr webservice.
 * Added bearsms.com webservice.
 * Added smss.co.il webservice.
