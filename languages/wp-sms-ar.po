@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wordpress SMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-08 17:51+0330\n"
-"PO-Revision-Date: 2015-06-08 17:51+0330\n"
+"POT-Creation-Date: 2015-07-23 00:08+0330\n"
+"PO-Revision-Date: 2015-07-23 00:08+0330\n"
 "Last-Translator: aBuhaTim <al3zz@hotmail.com>\n"
 "Language-Team: \n"
 "Language: sms_AR\n"
@@ -259,11 +259,11 @@ msgstr "الاعضاء المشتركين"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:64
 msgid "Wordpress Users"
-msgstr "أعضاء ووردبريس"
+msgstr "المسجلين في الموقع"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:65
 msgid "Number(s)"
-msgstr "العدد"
+msgstr "إدخال رقم"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:73
 #, php-format
@@ -278,7 +278,7 @@ msgstr "<b>%s</b> عضو  لديهم رقم الهاتف النقال"
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:87
 #, php-format
 msgid "For example: <code>%s</code>"
-msgstr "على سبيل المثال: <code>%s</code>"
+msgstr "مثال: <code>%s</code>"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/send/send-sms.php:96
 msgid "The remaining words"
@@ -322,7 +322,7 @@ msgstr ""
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:22
 msgid "Support"
-msgstr "الدعم"
+msgstr "الدعم الفني"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:27
 #, fuzzy
@@ -332,7 +332,7 @@ msgstr "هل لديك مشكلة مع البرنامج المساعد؟"
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:28
 #, php-format
 msgid "Please contact with email %s"
-msgstr "يرجى التواصل معنا عبر البريد الالكتروني %s"
+msgstr "يرجى التواصل معنا من خلال  البريد الالكتروني %s"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/about.php:29
 #, fuzzy
@@ -383,11 +383,11 @@ msgstr "المقال المقترح بواسطة الرسائل النصية"
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:189
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:220
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:27
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:205
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:219
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:157
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:275
 msgid "Active"
-msgstr "نشط"
+msgstr "فعّال"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:18
 msgid "Add Mobile number field"
@@ -395,19 +395,19 @@ msgstr "إضافة حقل رقم الجوال"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:22
 msgid "Add Mobile number to user profile and register form."
-msgstr "إضافة رقم الجوال الى الملف الشخصي للمستخدم ونموذج التسجيل."
+msgstr "إضافة رقم الجوال إلى الملف الشخصي للمستخدم ونموذج التسجيل."
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/features.php:31
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:123
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:242
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:38
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:230
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:244
 msgid "Update"
 msgstr "تحديث"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:19
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:203
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:217
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:231
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:90
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:146
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:272
@@ -464,7 +464,7 @@ msgstr "اسم المشترك"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:61
 msgid "Subscribe mobile"
-msgstr "محمول المشترك"
+msgstr "جوال المشترك"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/newsletter.php:67
 msgid "Calling jQuery in Wordpress"
@@ -560,7 +560,7 @@ msgstr "للأعضاء:"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:95
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:105
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:168
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:182
 msgid "Username"
 msgstr "اسم المستخدم"
 
@@ -600,7 +600,7 @@ msgstr "رابط كاتب التعليق"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:135
 msgid "Comment author IP"
-msgstr "آي بي كاتب التعليق"
+msgstr "IP كاتب التعليق"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/notification.php:136
 msgid "Comment date"
@@ -670,8 +670,8 @@ msgid ""
 "Enter your mobile number for get sms from plugin. Your mobile should like "
 "<code>%s</code>"
 msgstr ""
-"أدخل رقم هاتفك المحمول للحصول على الرسائل القصيرة من البرنامج المساعد. يجب "
-"أن يكون هاتفك <code>%s</code>"
+"أدخل رقم هاتفك الجوال للحصول على الرسائل القصيرة من البرنامج المساعد. يجب أن "
+"يكون هاتفك <code>%s</code>"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/setting.php:15
 msgid "Your mobile country code"
@@ -696,7 +696,7 @@ msgstr "عام"
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/tabs.php:3
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:34
 msgid "Web Service"
-msgstr "مزودوي الخدمة"
+msgstr "إعدادات بوابة الإرسال"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/tabs.php:4
 msgid "Newsletter"
@@ -726,88 +726,92 @@ msgstr "إختر مزود الخدمة"
 msgid "Iran"
 msgstr "ايران"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:122
-msgid "Australia"
-msgstr "استراليا"
-
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:126
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:129
 msgid "Spania"
 msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:130
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:133
+msgid "German"
+msgstr ""
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:137
 msgid "New Zealand"
 msgstr "نيوزيلندا"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:134
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:141
 msgid "Austria"
 msgstr "النمسا"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:138
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:145
 msgid "Pakistan"
 msgstr "باكستان"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:142
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:149
 msgid "Indian"
 msgstr "الهند"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:146
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:153
 #, fuzzy
 msgid "Italian"
 msgstr "استراليا"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:152
-msgid "For more information about adding Web Service"
-msgstr "لمزيد من المعلومات حول مزود الخدمة"
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:158
+msgid "Global"
+msgstr ""
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:157
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:166
+msgid "For more information about adding Web Service"
+msgstr "لمزيد من المعلومات حول إضافة مزودي الخدمات للقائمة"
+
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:171
 msgid "Reset"
 msgstr "إعادة تعيين"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:161
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:175
 #, php-format
 msgid ""
 "If your Web service is not on the top list, <a href=\"%s\">click here.</a>"
 msgstr "إذا لم يكن مزود الخدمة ليس ضمن القائمة، <a href=\"%s\">اضغط هنا.</a>"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:171
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:185
 #, php-format
 msgid "Your username in <a href=\"%s\">%s</a>"
-msgstr "اسم المستخدم الخاص بك في <a href=\"%s\">%s</a>"
+msgstr "اسم المستخدم لحسابك في بوابة <a href=\"%s\">%s</a>"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:176
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:190
 msgid "Password"
 msgstr "كلمة المرور"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:179
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:193
 #, php-format
 msgid "Your password in <a href=\"%s\">%s</a>"
 msgstr "كلمة المرور الخاصة بك في <a href=\"%s\">%s</a>"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:185
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:199
 msgid "API/Key"
 msgstr "API/مفتاح"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:188
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:202
 #, php-format
 msgid "Your API Key in <a href=\"%s\">%s</a>"
 msgstr "مفتاح API الخاصة بك في <a href=\"%s\">%s</a>"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:194
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:208
 msgid "Number"
-msgstr "العدد"
+msgstr "إسم المرسل"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:197
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:211
 #, php-format
 msgid "Your SMS sender number in <a href=\"%s\">%s</a>"
-msgstr "رقم المرسل الخاصة بك في <a href=\"%s\">%s</a>"
+msgstr "إسم المرسل الخاص بك في <a href=\"%s\">%s</a>"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:210
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:224
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:75
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:127
 msgid "Credit"
 msgstr "الرصيد"
 
-#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:219
+#: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/settings/web-service.php:233
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:158
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:276
 msgid "Deactive"
@@ -897,7 +901,7 @@ msgstr "تاريخ التسجيل"
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:180
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:251
 msgid "Name"
-msgstr "الأسم"
+msgstr "الإسم"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:91
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/includes/templates/subscribe/subscribes.php:128
@@ -1043,7 +1047,7 @@ msgstr "ودجت الاشتراك في الرسائل النصية"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:34
 msgid "Wordpress SMS"
-msgstr "الرسائل النصية"
+msgstr "رسالة نصية"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:36
 msgid "Posted"
@@ -1073,7 +1077,7 @@ msgstr "%s مشترك"
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:143
 #, php-format
 msgid "%s SMS Credit"
-msgstr "رصيد الرسالة النصية %s"
+msgstr "رصيد الحساب  %s"
 
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:149
 #: F:\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-sms/wp-sms.php:176
@@ -1162,7 +1166,8 @@ msgstr "<strong>%s</strong> من أرقام المحمول متكررة."
 #~ "Premium version from Wordpress SMS Plugin with feature and new web "
 #~ "services."
 #~ msgstr ""
-#~ "الإصدار المدفوع من منتج الرسائل النصية يحتوي على ميزات و شركات إضافية."
+#~ "الإصدار المدفوع من منتج الرسائل النصية يحتوي على ميزات و مزودي خدمات "
+#~ "إضافيين."
 
 #~ msgid "Add Mobile Field to Checkout form"
 #~ msgstr "إضافة حقل الجوال الى صفحة الملف الشخصي؟"
