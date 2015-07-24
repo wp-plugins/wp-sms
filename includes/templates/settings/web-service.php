@@ -128,6 +128,11 @@
 						
 						<optgroup label="<?php _e('Spania', 'wp-sms'); ?>">
 							<option value="afilnet" <?php selected(get_option('wp_webservice'), 'afilnet'); ?>>afilnet.com</option>
+							<option value="labsmobile" <?php selected(get_option('wp_webservice'), 'labsmobile'); ?>>labsmobile.com</option>
+						</optgroup>
+						
+						<optgroup label="<?php _e('German', 'wp-sms'); ?>">
+							<option value="sms77" <?php selected(get_option('wp_webservice'), 'sms77'); ?>>sms77.de</option>
 						</optgroup>
 						
 						<optgroup label="<?php _e('New Zealand', 'wp-sms'); ?>">
